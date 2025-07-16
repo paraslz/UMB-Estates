@@ -26,19 +26,6 @@
         .animate-fade-in {
             animation: fade-in 0.5s ease-out forwards;
         }
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #16a34a;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -168,7 +155,6 @@
                 "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-01:</b> A rat census must be conducted quarterly. If fresh damage exceeds 10%, a baiting campaign must be initiated immediately.</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule. Delays due to weather should be mitigated by deploying additional resources once conditions improve.</p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Harvesting intervals should be maintained between 10-15 days to minimize over-ripe bunches and loose fruit loss.</p></div>"
             };
 
-
             // --- GLOBAL VARIABLES ---
             let chartInstances = {};
             const container = document.getElementById('selected-estate-container');
@@ -215,24 +201,12 @@
                             <div><h3 class="text-xl font-semibold mb-2">Palm Age Profile</h3><div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.ageProfile.note}</p></div>
                         </div>
                         
-                        <!-- Key Observations & AI Action Plan -->
+                        <!-- Key Observations -->
                         <div class="mb-8">
                             <h3 class="text-xl font-semibold mb-2 border-b pb-2">Key Observations & Issues</h3>
                             <ul id="observations-list" class="list-disc list-inside space-y-2 text-gray-700 mt-4">${observationsHTML}</ul>
                         </div>
                         
-                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mb-8">
-                            <h3 class="text-xl font-semibold mb-2 text-green-900">✨ AI-Powered Action Plan</h3>
-                            <p class="text-green-800 mb-4">Click the button to generate a strategic action plan based on the key observations above.</p>
-                            <div class="text-center">
-                                <button id="generate-plan-btn" class="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition shadow-md flex items-center justify-center mx-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
-                                    Generate Action Plan
-                                </button>
-                            </div>
-                            <div id="action-plan-container" class="mt-4"></div>
-                        </div>
-
                         <div class="mb-8 text-center"><button class="policy-modal-btn bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
                         <div class="space-y-2">
                             <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Plantation Advisory Report Details</button>
@@ -297,53 +271,6 @@
                     });
                 });
                 container.querySelector('.policy-modal-btn')?.addEventListener('click', () => openPolicyModal(estateData));
-                document.getElementById('generate-plan-btn')?.addEventListener('click', generateActionPlan);
-            }
-            
-            async function generateActionPlan() {
-                const container = document.getElementById('action-plan-container');
-                container.innerHTML = '<div class="loader"></div>';
-
-                const observationsList = document.getElementById('observations-list');
-                const issues = Array.from(observationsList.getElementsByTagName('li')).map(li => li.innerText).join('\n');
-                
-                const prompt = `Based on the following key observations and issues from a plantation estate report, act as an experienced plantation management consultant. Provide a prioritized, actionable plan for the estate manager. For each issue, suggest specific, practical steps to address it. Format the response in clear sections with bold headings and bullet points for the action items. Here are the issues:\n\n${issues}`;
-
-                try {
-                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                    const payload = { contents: chatHistory };
-                    const apiKey = ""; 
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                    
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`API request failed with status ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    
-                    let text = 'No response from AI.';
-                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                        text = result.candidates[0].content.parts[0].text;
-                    }
-                    
-                    // Basic Markdown to HTML conversion
-                    let html = text
-                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
-                        .replace(/\n/g, '<br>') // Newlines
-                        .replace(/(\*|-)\s(.*?)(<br>|$)/g, '<li class="ml-4 list-disc">$2</li>'); // Bullets
-                    
-                    container.innerHTML = `<div class="prose max-w-none text-gray-700">${html}</div>`;
-
-                } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    container.innerHTML = `<p class="text-red-500">Failed to generate action plan. Please try again. Error: ${error.message}</p>`;
-                }
             }
 
             renderEstate();
