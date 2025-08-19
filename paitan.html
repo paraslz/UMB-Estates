@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Paitan Estate - Plantation and Agronomy Report</title>
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <script src="[https://cdn.jsdelivr.net/npm/chart.js](https://cdn.jsdelivr.net/npm/chart.js)"></script>
-    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap)" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         .details-content { display: none; }
@@ -75,12 +75,13 @@
                         "lines": [
                             "Total Planted: 2,220.10 ha",
                             "Mature: 2,098.95 ha",
-                            "Immature & Replanting: 121.15 ha"
+                            "Immature: 6.76 ha",
+                            "Replanting: 114.39 ha"
                         ]
                     },
                     "yield": {
                         "title": "Yield/Ha (YTD vs Last Year)",
-                        "value": "6.21 MT",
+                        "value": "6.21 / 6.10 MT",
                         "note": "2% above last year"
                     },
                     "cost": {
@@ -89,45 +90,45 @@
                         "note": "8% lower than budget"
                     },
                     "manuring": {
-                        "title": "Manuring Progress (FY25/26)",
-                        "value": "Slow",
-                        "note": "0% for NK1 & Mix B"
+                        "title": "Manuring Progress",
+                        "value": "Behind Schedule",
+                        "note": "Delays in Mix B & NK1"
                     },
                      "weeding": {
-                        "title": "Weeding Progress (FY25/26)",
-                        "value": "Delayed",
-                        "note": "Inter-row 53%, Circle 70%"
+                        "title": "Weeding Status",
+                        "value": "Slightly Delayed",
+                        "note": "VOPs a concern"
                     }
                 },
                 "keyMetrics": [
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": ">20 days (Poor)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Manuring Delay", "value": "FY25/26 prog. behind" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding", "value": "Behind schedule" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Ganoderma census outdated" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Productivity", "value": "1.86 MT/md (Low)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "19.81%" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Ganoderma census pending" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "19.81%" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding", "value": "VOPs overgrown" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": ">20 days (High)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Manuring Delay", "value": "Mix B and NK1 application delayed" }
                 ],
                 "chartData": {
                     "production": {
-                        "labels": ["May-24", "Jun-24", "Jul-24", "Aug-24", "Sep-24", "Oct-24", "Nov-24", "Dec-24", "Jan-25", "Feb-25", "Mar-25", "Apr-25"],
-                        "ffb": [1.88, 2.15, 2.00, 1.93, 1.99, 1.22, 2.88, 3.14, 3.45, 4.07, 3.83, 0.53],
-                        "rainfall": [226, 258, 240, 231, 239, 146, 345, 377, 1038, 488, 459, 63],
-                        "note": "*Monthly FFB Yield (MT/Ha) & Rainfall (mm) for FY24/25. (Source: AR Pg. 84)"
+                        "labels": ["May-25", "Jun-25", "Jul-25"],
+                        "ffb": [2.04, 2.22, 1.95], // Assuming Jul-25 is an average from the report context
+                        "rainfall": [261, 168, 87],
+                        "note": "*Monthly FFB Yield (MT/Ha) & Rainfall (mm). (Source: AR Pg. 19, 84)"
                     },
                     "ageProfile": {
-                        "labels": ["Old Mature (>20 Yrs)", "Prime Mature (8-19 Yrs)", "Young Mature (4-7 Yrs)", "Immature & Replanting (<4 Yrs)"],
-                        "data": [85, 10, 0, 5],
+                        "labels": ["Old Mature (>20 Yrs)", "Prime Mature (8-19 Yrs)", "Young Mature (4-7 Yrs)", "Immature (<4 Yrs)", "Replanting"],
+                        "data": [1881.33, 217.62, 0, 6.76, 114.39],
                         "title": "Paitan Estate - Palm Age Distribution",
                         "note": "*Source: Agronomy Report 2/2025, Pg. 9-11."
                     }
                 },
                 "observations": [
-                    "<b>Significant Manuring Delays:</b> The FY24/25 program was completed 3-5 months late. The current FY25/26 program is also behind schedule with 0% progress on Mix B and NK1 fertilizers, a key factor limiting yield. <span class='observation-ref'>(AR Pg. 15, 66)</span>",
-                    "<b>Extended Harvesting Intervals:</b> Crop recovery is subpar, with most blocks recording harvesting intervals exceeding 20 days due to harvester gang restructuring and peak crop season. The estate only achieved an average of 4.8 harvesting rounds in 3 months. <span class='observation-ref'>(AR Pg. 18, 69)</span>",
-                    "<b>Weeding Program Behind Schedule:</b> Both inter-row (53% complete) and circle spraying (70% complete) are behind schedule. Overgrowth of Volunteer Oil Palms (VOPs) is a particular concern in Blocks 51, 50, and 48. <span class='observation-ref'>(AR Pg. 35, 41)</span>",
-                    "<b>Poor Harvesting Standards:</b> While overripe bunches were minimal, the presence of unripe bunches was noted in Block 69 and needs to be addressed, especially with newly recruited harvesters. <span class='observation-ref'>(AR Pg. 19)</span>",
-                    "<b>Inconsistent EFB/Compost Application:</b> The application of EFB compost is uneven and incomplete, failing to meet expectations. This prevents it from being factored in for fertilizer reduction. <span class='observation-ref'>(AR Pg. 54-56)</span>",
-                    "<b>Outdated Ganoderma Census:</b> The last Ganoderma census was conducted in December 2022. An updated census is required to assess the current status of infection and manage the disease effectively. <span class='observation-ref'>(AR Pg. 50)</span>"
+                    "<b>Extended Harvesting Intervals:</b> Most blocks recorded harvesting intervals exceeding 20 days due to harvester gang restructuring and peak crop season. <span class='observation-ref'>(AR Pg. 19)</span>",
+                    "<b>Slow Manuring Progress:</b> Manuring is behind schedule, with no progress on Mix B and NK1 applications, attributed to late fertilizer delivery. <span class='observation-ref'>(AR Pg. 16)</span>",
+                    "<b>Delayed Weeding:</b> Spraying progress is slightly behind schedule, with several blocks pending for both inter-row and circle spraying. <span class='observation-ref'>(AR Pg. 36)</span>",
+                    "<b>VOPs Overgrowth:</b> Volunteer Oil Palms (VOPs) are a particular concern in Blocks 51, 50, and 48, requiring immediate attention. <span class='observation-ref'>(AR Pg. 41)</span>",
+                    "<b>Inconsistent EFB Compost Application:</b> The application of EFB compost is uneven and incomplete in some blocks, impacting its potential as a substitute for inorganic fertilizers. <span class='observation-ref'>(AR Pg. 55-56)</span>",
+                    "<b>Outdated Ganoderma Census:</b> The last Ganoderma census was conducted in December 2022. An updated census is required to assess the current infection status. <span class='observation-ref'>(AR Pg. 50-51)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -145,14 +146,14 @@
                         "Immature": "The immature area (P2023) has unsatisfactory ground conditions and delayed manuring. (Source: PA, Pg. 73)"
                     },
                     "agronomy": {
-                        "Executive Summary": "The second agronomy visit for 2025 was conducted on 18th July 2025. Key yield-limiting factors identified are delays in manuring and extended harvesting intervals. Ground upkeep is slightly delayed, VOPs remain a concern, and canopy management is acceptable, though pruning quality needs improvement. The fertilizer recommendation for FY26/27 has been formulated. <span class='observation-ref'>(AR Pg. 4-8)</span>",
-                        "Nutrient inputs progress of manuring": "The FY24/25 manuring program was completed but with significant delays of 3-5 months. The current FY25/26 program is progressing slowly, with 0% application for NK 1 and MIX B as of July 2025, attributed to late fertilizer delivery. <span class='observation-ref'>(AR Pg. 15-16)</span>",
-                        "Agronomic observation": "Crop recovery intervals are extended beyond 20 days. While overripe bunches are minimal, unripe bunches are a concern in some blocks. Pruning is 91% complete and generally acceptable, though some over-pruning was noted. Weeding is behind schedule, and VOPs are a major concern in blocks 51, 50, and 48. The Ganoderma census is outdated (last conducted in Dec 2022). <span class='observation-ref'>(AR Pg. 18, 26, 35-36, 41, 50)</span>",
-                        "Yield performance": "Full-year yield for FY24/25 was 22% lower than the previous year. However, the current yield for FY25/26 (as of July) shows a 2% increase compared to the same period last year. This improvement is constrained by extended harvesting intervals, which averaged only 4.8 rounds over a 3-month period. <span class='observation-ref'>(AR Pg. 66-69)</span>",
-                        "Fertilizer recommendation": "The fertilizer program for FY25/26 remains unchanged. A new recommendation for FY26/27 has been formulated, withdrawing fertilizer for blocks scheduled for replanting and reallocating sub-soil fertilizer from Block 06B-77 to 13C-84. <span class='observation-ref'>(AR Pg. 71)</span>"
+                        "Executive Summary": "Yield performance for FY25/26 is 2% higher than the previous year, but limiting factors include delays in manuring and extended harvesting intervals. (Source: AR, Pg. 6, 67)",
+                        "Nutrient inputs progress of manuring": "Manuring progress is slow, with no application of Mix B and NK1 as of July 2025 due to late delivery. Sub-soil application in Block 77 was generally acceptable but required adjustments. (Source: AR, Pg. 16-17)",
+                        "Agronomic observation": "Crop recovery is below standard, with harvesting intervals exceeding 20 days in most blocks. Pruning is 91% complete and acceptable, but frond management is inconsistent. Ground upkeep is slightly delayed. (Source: AR, Pg. 19, 26, 32, 36)",
+                        "Yield performance": "The yield to date for FY25/26 (3 months) is 2% higher than the same period last year. However, the number of harvesting rounds is below target, averaging 4.8 rounds over 3 months. (Source: AR, Pg. 67-69)",
+                        "Fertilizer recommendation": "The fertilizer program for FY25/26 remains unchanged. The program for FY26/27 has been formulated. Manuring is withdrawn for blocks scheduled for replanting. (Source: AR, Pg. 71)"
                     }
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-01:</b> Rat baiting was carried out on all blocks regardless of infestation levels, which deviates from policy. Policy requires a census first and baiting only when the threshold (>10%) is exceeded. <span class='observation-ref'>(AR Pg. 50)</span></p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Significant delays in the FY24/25 and FY25/26 manuring programs are detrimental to palm nutrient status and yield. Adherence to the schedule is critical. <span class='observation-ref'>(AR Pg. 15, 25)</span></p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Harvesting intervals exceeding 20 days and issues with unripe bunches indicate a need to improve harvesting standards to optimize crop recovery and oil quality. <span class='observation-ref'>(AR Pg. 18-19)</span></p></div> <div class='policy-item'><p class='font-semibold'>Replanting</p><p class='text-sm text-gray-600'><b>Policy Ref: REPLANT-LEG-01:</b> The planting of Mucuna at a 1:2 ratio deviates from the standard of two planting points between palms to ensure better ground coverage. <span class='observation-ref'>(AR Pg. 63)</span></p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-01:</b> Rat baiting has deviated from policy; it was carried out for all blocks regardless of infestation levels. Baiting should only be initiated when infestation levels exceed 10%. (Source: AR, Pg. 47, 50)</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule. Current progress is slow due to delivery issues. Ensure proper storage conditions to avoid fertilizer deterioration. (Source: AR, Pg. 16)</p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Maintain harvesting intervals below 15 days. Current intervals are extended (>20 days), which needs to be addressed to improve crop recovery. (Source: AR, Pg. 19)</p></div>"
             };
 
 
@@ -176,7 +177,7 @@
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
-                                       metric.title.includes('Manuring') ? 'bg-red-50 text-red-800' : 'bg-yellow-50 text-yellow-800';
+                                       metric.title.includes('Manuring') ? 'bg-yellow-50 text-yellow-800' : 'bg-red-50 text-red-800';
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
@@ -253,7 +254,7 @@
                         type: 'pie',
                         data: {
                             labels: estateData.chartData.ageProfile.labels,
-                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#b91c1c', '#fb923c', '#a7f3d0', '#6ee7b7'], hoverOffset: 4 }]
+                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#047857', '#34d399', '#a7f3d0', '#fde68a', '#fca5a5'], hoverOffset: 4 }]
                         },
                         options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: false }, legend: { position: 'right' } } }
                     });
