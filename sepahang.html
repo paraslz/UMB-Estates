@@ -68,65 +68,65 @@
             const estateData = {
                 "id": "sepahang",
                 "name": "South East Pahang Estate",
-                "reportInfo": "Data based on PA Report (June 2025) & Agronomy Report (Nov 2024).",
+                "reportInfo": "Data based on PA Report (June 2025) & Agronomy Report (July 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
                         "lines": [
                             "Total Planted: 1,522.07 ha",
                             "Mature: 1,522.07 ha",
-                            "Prime: 1,522.07 ha"
+                            "Prime: 1,039 ha (68%)"
                         ]
                     },
                     "yield": {
                         "title": "Yield/Ha (YTD vs Budget)",
                         "value": "22.30 / 23.70 MT",
-                        "note": "6% below budget"
+                        "note": "6% below budget (PA Data)"
                     },
                     "cost": {
                         "title": "FFB Cost/Tonne (YTD vs Budget)",
                         "value": "RM 258.38 / RM 281.89",
-                        "note": "8% lower than budget"
+                        "note": "8% lower than budget (PA Data)"
                     },
-                    "labour": {
-                        "title": "Labour Status",
-                        "value": "Adequate",
-                        "note": "1:13 ha ratio"
+                    "weeding": {
+                        "title": "Weeding Progress",
+                        "value": "Unsatisfactory",
+                        "note": "Major yield-limiting factor"
                     },
-                     "pests": {
-                        "title": "Pest Status",
-                        "value": "Severe (Ganoderma)",
-                        "note": "Rats & Bagworms under control"
+                     "manuring": {
+                        "title": "Manuring Progress",
+                        "value": "Delayed (76% Done)",
+                        "note": "NK Mix & Hi-Kay delayed"
                     }
                 },
                 "keyMetrics": [
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Productivity", "value": "2.76-2.80 MT/md (Acceptable)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Severe (Ganoderma)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "19.61%" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding Condition", "value": "Acceptable, needs improvement" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "10-18 days (Acceptable)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' /></svg>`, "label": "Barn Owl Occupancy", "value": "81% (Satisfactory)" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "High Rat Damage (>10%)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Crop Recovery", "value": "Unsatisfactory (Losses)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding Condition", "value": "Below Standard" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "10-14 days (Acceptable)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' /></svg>`, "label": "Barn Owl Occupancy", "value": "41% (Decreased)" }
                 ],
                 "chartData": {
                     "production": {
-                        "labels": ["May-24", "Jun-24", "Jul-24", "Aug-24", "Sep-24", "Oct-24"],
-                        "ffb": [],
-                        "rainfall": [266.9, 297.2, 98.2, 123.8, 660.9, 170.1],
-                        "note": "*Monthly FFB production data not available in PA report. Rainfall data from AR Pg. 81."
+                        "labels": ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
+                        "ffb": [22.30], // Annual data, will be represented differently
+                        "rainfall": [221, 135, 64, 195, 226, 167, 238, 279, 205, 118, 200, 125],
+                        "note": "*FFB Yield is for FY 24/25. Rainfall data from AR Pg. 18."
                     },
                     "ageProfile": {
-                        "labels": ["Prime Mature (18-20 Yrs)"],
-                        "data": [100],
-                        "title": "South East Pahang Estate - Palm Age Distribution",
-                        "note": "*Source: PA Report 1/2025, Pg. 9."
+                        "labels": ["0-3 Yrs (Immature)", "4-7 Yrs (Young)", "8-19 Yrs (Prime)", "20-25 Yrs (Old)", ">26 Yrs (Very Old)"],
+                        "data": [0, 0, 1039, 483, 0],
+                        "title": "South East Pahang Estate - Palm Age Distribution (Ha)",
+                        "note": "*Source: AR 1/2025, Pg. 10."
                     }
                 },
                 "observations": [
-                    "<b>Severe Ganoderma Infection:</b> Ganoderma infection is significant across the estate, with census results showing infection rates between 7.01% and 8.36%. Soil mounding at the palm base is being carried out to manage the issue. <span class='observation-ref'>(PA Pg. 32)</span>",
-                    "<b>High General Charges:</b> The total expenditure for General Charges is RM 1,330.09/ha, which is 9% higher than budget. This is mainly due to increased labour overheads from the rental and maintenance of the genset. <span class='observation-ref'>(PA Pg. 14)</span>",
-                    "<b>Delayed Upkeep Programs:</b> Both weeding and manuring programs are behind schedule. Weeding cost is 12% below budget due to delays, and manuring is 42% below budget due to reduced dosages and flood-related delays. <span class='observation-ref'>(PA Pg. 18, 26)</span>",
-                    "<b>Innovative Road Maintenance:</b> While major road works are pending, the estate is using an innovative and practical method of filling potholes with recycled car tires filled with stones, which has proven effective. <span class='observation-ref'>(PA Pg. 34)</span>",
-                    "<b>Satisfactory Cost Management:</b> Despite crop production being 6% below budget, the ex-estate cost of production is RM 258.38/tonne, which is 8% below budget and considered satisfactory. <span class='observation-ref'>(PA Pg. 43, 44)</span>"
+                    "<b>Unsatisfactory Crop Recovery & High Rat Damage:</b> Significant crop is being lost due to uncollected bunches left in the field and high rat infestation (>10% damage) that requires a systematic baiting program. <span class='observation-ref'>(AR Pg. 30, 50)</span>",
+                    "<b>Delayed Upkeep & Weeding Quality:</b> Both weeding and manuring programs are behind schedule, a fact highlighted in both reports. Weeding quality is below standard and is considered a major yield-limiting factor. <span class='observation-ref'>(PA Pg. 18; AR Pg. 13, 41)</span>",
+                    "<b>Severe Ganoderma Infection:</b> The estate is dealing with a significant Ganoderma infection, with census results showing rates between 7.01% and 8.36%. Soil mounding is the current mitigation strategy. <span class='observation-ref'>(PA Pg. 32)</span>",
+                    "<b>High General Charges:</b> Expenditure for General Charges is 9% higher than budget, primarily due to increased labour overheads related to genset rental and maintenance for the worker's quarters. <span class='observation-ref'>(PA Pg. 14)</span>",
+                    "<b>Inadvisable Mounding Technique:</b> The 'slant cutting' method used for soil excavation to mound palms is causing excessive root damage and increases the risk of fertilizer runoff into trenches. <span class='observation-ref'>(AR Pg. 19-20)</span>",
+                    "<b>Incorrect Palm Census Data:</b> The estate's palm census data contains multiple calculation errors regarding Stand-per-Hectare (SPH), making it unreliable for determining fertilizer requirements and planning. <span class='observation-ref'>(AR Pg. 11)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -144,14 +144,14 @@
                         "Immature": "N/A"
                     },
                     "agronomy": {
-                        "Executive Summary": "Yields have improved significantly, but are still below potential. Key issues to address are crop recovery, weeding quality, and rat baiting methods. <span class='observation-ref'>(AR Pg. 4-6)</span>",
-                        "Nutrient inputs progress of manuring": "The manuring program for FY2024/25 is 55% complete as of October. The estate is advised to limit the use of EMDEK spreaders in areas with low SPH and weedy interrows to reduce fertilizer wastage. <span class='observation-ref'>(AR Pg. 13-14, 20)</span>",
-                        "Agronomic observation": "Crop recovery is suboptimal, with uncollected and rotten bunches observed. Pruning quality is satisfactory. Ground vegetation needs further improvement to eradicate noxious weeds. <span class='observation-ref'>(AR Pg. 25, 33, 42)</span>",
-                        "Yield performance": "FFB yield increased by 67% from May-Oct 2024 compared to the same period last year. However, yields remain below potential due to the limiting factors identified. <span class='observation-ref'>(AR Pg. 61-62)</span>",
-                        "Fertilizer recommendation": "The FY2025/26 fertilizer program has been formulated based on leaf analysis and field observations to address nutrient needs. <span class='observation-ref'>(AR Pg. 66-76)</span>"
+                        "Executive Summary": "Yield has rebounded significantly but further improvements are needed. Key priorities are improving crop recovery in the field and taking prompt action on yield-limiting factors like poor weed control and manuring delays. <span class='observation-ref'>(AR Pg. 7)</span>",
+                        "Nutrient inputs progress of manuring": "The manuring programme for FY2024/25 was delayed and only 76% completed. This was due to insufficient stock of NK Mix from the supplier and flooding in Hi-Kay application areas. Delays can adversely impact FFB yields. <span class='observation-ref'>(AR Pg. 13-14)</span>",
+                        "Agronomic observation": "Crop recovery is unsatisfactory with significant instances of uncollected bunches. Pruning is satisfactory, but weed control is below standard and needs immediate improvement. Rat damage is high and requires a systematic baiting program. <span class='observation-ref'>(AR Pg. 25, 32, 41, 50)</span>",
+                        "Yield performance": "FFB yield for FY2024/25 was 22.30 MT/Ha, a 36% increase from the previous year. The improvement is due to an increase in bunches per palm, from 5.96 to 8.06. <span class='observation-ref'>(AR Pg. 53-54)</span>",
+                        "Fertilizer recommendation": "No changes to the 2025/2026 fertilizer program. The estate must minimize the gap between the scheduled program and actual application to avoid yield impact. <span class='observation-ref'>(AR Pg. 60)</span>"
                     }
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Ganoderma)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> Given the severe Ganoderma infection rate (7-8.36%), continue the program of soil mounding at the palm base for all infected palms to prolong their productive life. <span class='observation-ref'>(PA Pg. 32)</span></p></div> <div class='policy-item'><p class='font-semibold'>Weeding & Ground Cover</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-CON-03:</b> As weeding is now fully contracted, strictly adhere to the planned schedule to prevent the recurrence and flowering of noxious weeds, which would reset control efforts. <span class='observation-ref'>(PA Pg. 18, 23)</span></p></div> <div class='policy-item'><p class='font-semibold'>Road Maintenance</p><p class='text-sm text-gray-600'><b>Policy Ref: INFRA-RD-02:</b> Schedule road grading for the next financial year to address eroded and soggy areas. Continue using innovative, cost-effective methods like recycled tire patching for pothole repairs. <span class='observation-ref'>(PA Pg. 34-35)</span></p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-02:</b> With fresh rat damage exceeding 10% across most blocks, a systematic, single-direction baiting program must be implemented immediately, followed by a post-baiting census one month later. <span class='observation-ref'>(AR Pg. 50)</span></p></div> <div class='policy-item'><p class='font-semibold'>Weeding & Ground Cover</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-CON-02:</b> Implement a structured weeding program with 3 rounds of selective inter-row spraying and 2 rounds of circle spraying annually. Given the continued use of the Vicon spreader, maintaining minimal weed presence is critical to prevent fertilizer wastage. <span class='observation-ref'>(AR Pg. 47, 58)</span></p></div> <div class='policy-item'><p class='font-semibold'>Crop Recovery</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-CR-01:</b> Address the significant crop losses from uncollected/overnight bunches by improving field supervision, planning, and management to ensure all harvested FFB is collected promptly. <span class='observation-ref'>(AR Pg. 30)</span></p></div>"
             };
 
 
@@ -175,7 +175,7 @@
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
-                                       metric.title.includes('Labour') ? 'bg-purple-50 text-purple-800' : 'bg-red-50 text-red-800';
+                                       metric.title.includes('Weeding') ? 'bg-red-50 text-red-800' : 'bg-yellow-50 text-yellow-800';
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
@@ -201,12 +201,12 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">${summaryMetricsHTML}</div>
                         <div class="mb-8"><h3 class="text-xl font-semibold mb-4 border-b pb-2">Key Metrics & Agronomic Status</h3><div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">${keyMetricsHTML}</div></div>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                            <div><h3 class="text-xl font-semibold mb-2">Monthly Production vs Rainfall</h3>${productionChartHTML}<p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
-                            <div><h3 class="text-xl font-semibold mb-2">Palm Age Profile</h3><div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.ageProfile.note}</p></div>
+                            <div><h3 class="text-xl font-semibold mb-2">FFB Yield (FY24/25) vs Monthly Rainfall</h3>${productionChartHTML}<p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
+                            <div><h3 class="text-xl font-semibold mb-2">Palm Age Profile (Ha)</h3><div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.ageProfile.note}</p></div>
                         </div>
                         
                         <div class="mb-8">
-                            <h3 class="text-xl font-semibold mb-2 border-b pb-2">Key Observations & Issues</h3>
+                            <h3 class="text-xl font-semibold mb-2 border-b pb-2">Key Agronomy & Plantation Issues</h3>
                             <ul id="observations-list" class="list-disc list-inside space-y-2 text-gray-700 mt-4">${observationsHTML}</ul>
                         </div>
                         
@@ -227,22 +227,52 @@
                 if (chartInstances[ageCanvasId]) chartInstances[ageCanvasId].destroy();
 
                 const prodCtx = document.getElementById(prodCanvasId)?.getContext('2d');
-                if(prodCtx && ((estateData.chartData.production.labels && estateData.chartData.production.labels.length > 0) || (estateData.chartData.production.rainfall && estateData.chartData.production.rainfall.length > 0))) {
-                    const datasets = [];
-                    if (estateData.chartData.production.ffb && estateData.chartData.production.ffb.length > 0) {
-                        datasets.push({ label: 'FFB Production (MT)', data: estateData.chartData.production.ffb, type: 'line', borderColor: '#ca8a04', backgroundColor: 'transparent', yAxisID: 'y-ffb', tension: 0.4 });
-                    }
-                    if (estateData.chartData.production.rainfall && estateData.chartData.production.rainfall.length > 0) {
-                        datasets.push({ label: 'Rainfall (mm)', data: estateData.chartData.production.rainfall, backgroundColor: '#3b82f6', yAxisID: 'y-rainfall' });
-                    }
-
-                    chartInstances[prodCanvasId] = new Chart(prodCtx, {
+                if(prodCtx) {
+                     chartInstances[prodCanvasId] = new Chart(prodCtx, {
                         type: 'bar',
                         data: {
                             labels: estateData.chartData.production.labels,
-                            datasets: datasets
+                            datasets: [
+                                {
+                                    label: 'FFB Yield (MT/Ha)',
+                                    data: [estateData.chartData.production.ffb[0]], // Display as a single bar or line
+                                    type: 'line',
+                                    borderColor: '#ca8a04',
+                                    backgroundColor: 'transparent',
+                                    yAxisID: 'y-ffb',
+                                    tension: 0.4,
+                                    fill: false,
+                                    pointRadius: 5,
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: 'Rainfall (mm)',
+                                    data: estateData.chartData.production.rainfall,
+                                    backgroundColor: '#3b82f6',
+                                    yAxisID: 'y-rainfall'
+                                }
+                            ]
                         },
-                        options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, 'y-ffb': { type: 'linear', position: 'left', title: { display: true, text: 'FFB Production (MT)' } }, 'y-rainfall': { type: 'linear', position: 'right', title: { display: true, text: 'Rainfall (mm)' }, grid: { drawOnChartArea: false } } } }
+                        options: { 
+                            responsive: true, 
+                            maintainAspectRatio: false, 
+                            scales: { 
+                                x: { grid: { display: false } }, 
+                                'y-ffb': { 
+                                    type: 'linear', 
+                                    position: 'left', 
+                                    title: { display: true, text: 'FFB Yield (MT/Ha)' },
+                                    beginAtZero: false,
+                                    suggestedMin: 20 // Adjust as needed
+                                }, 
+                                'y-rainfall': { 
+                                    type: 'linear', 
+                                    position: 'right', 
+                                    title: { display: true, text: 'Rainfall (mm)' }, 
+                                    grid: { drawOnChartArea: false } 
+                                } 
+                            } 
+                        }
                     });
                 }
 
@@ -252,9 +282,25 @@
                         type: 'pie',
                         data: {
                             labels: estateData.chartData.ageProfile.labels,
-                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#047857', '#34d399', '#a7f3d0'], hoverOffset: 4 }]
+                            datasets: [{ 
+                                data: estateData.chartData.ageProfile.data, 
+                                backgroundColor: ['#a3e635', '#4d7c0f', '#16a34a', '#f97316', '#be123c'], 
+                                hoverOffset: 4 
+                            }]
                         },
-                        options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: false }, legend: { position: 'right' } } }
+                        options: { 
+                            responsive: true, 
+                            maintainAspectRatio: false, 
+                            plugins: { 
+                                title: { 
+                                    display: true,
+                                    text: estateData.chartData.ageProfile.title
+                                }, 
+                                legend: { 
+                                    position: 'right' 
+                                } 
+                            } 
+                        }
                     });
                 }
             }
