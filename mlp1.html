@@ -68,7 +68,7 @@
             const estateData = {
                 "id": "mlp1",
                 "name": "MLP 1 Estate",
-                "reportInfo": "Data based on PA Report (May 2025) & Agronomy Report (Apr 2025).",
+                "reportInfo": "Data based on PA Report (May 2025), Agronomy Report (Apr 2025), and Audit Report (16/25).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -91,7 +91,7 @@
                     "labour": {
                         "title": "Labour Status",
                         "value": "Shortage",
-                        "note": "Requires 10 harvesters"
+                        "note": "Short of 10 harvesters (1:14 ha)"
                     },
                      "pests": {
                         "title": "Pest Status",
@@ -100,7 +100,7 @@
                     }
                 },
                 "keyMetrics": [
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Shortage", "value": "Requires 10 more harvesters" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Ratio", "value": "1:14 ha (10 Short)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Under Control" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "20.22%" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding", "value": "Unsatisfactory Quality" },
@@ -123,6 +123,7 @@
                 },
                 "observations": [
                     "<b>Low Yield and High Cost:</b> Yield is 21% below budget, and cost of production is 15% above budget, primarily due to low crop production. <span class='observation-ref'>(PA Pg. 49-50)</span>",
+                    "<b>Harvester Shortage:</b> The estate has a shortage of 10 harvesters, with a ratio of 1:14 ha. The current workforce is inadequate for the size of the estate. <span class='observation-ref'>(PA Pg. 16)</span>",
                     "<b>Inconsistent Harvesting:</b> Harvesting intervals are long and inconsistent, extending up to 36 days, which significantly impacts crop recovery. <span class='observation-ref'>(AR Pg. 17)</span>",
                     "<b>Delayed Manuring:</b> Manuring programs have been delayed by 1-5 months, affecting palm nutrition. <span class='observation-ref'>(AR Pg. 12)</span>",
                     "<b>Unsatisfactory Weeding:</b> The quality of selective spraying is unacceptable, with many woodies left unsprayed. Circle spraying is also behind schedule. <span class='observation-ref'>(PA Pg. 22, 26)</span>",
@@ -149,6 +150,11 @@
                         "Agronomic observation": "Harvesting intervals are inconsistent, and ripeness standards need better control. Pruning progress is acceptable, but frond stacking needs improvement. (Source: AR, Pg. 17, 21, 24)",
                         "Yield performance": "The yield for the first 10 months of FY24/25 is 1% lower than the same period last year, with deviations in manuring and harvesting being the main limiting factors. (Source: AR, Pg. 42-43)",
                         "Fertilizer recommendation": "The fertilizer program for FY2025/26 remains unchanged. (Source: AR, Pg. 45-47)"
+                    },
+                    "audit": {
+                        "Overall Rating": "Marginally Deficient. While most key controls were applied, some important controls lacked consistency or effectiveness, requiring timely corrective action. (Source: Audit Report, Pg. 2)",
+                        "Payroll and Personnel": "Shortcomings in Quarto Connects attendance records were identified, including manual amendments after biometric capture and entries at odd hours. This undermines the system's reliability. (Source: Audit Report, Pg. 2-4)",
+                        "Rest Day Payment": "FFB Checkers were paid for rest day work without corresponding productivity (no bunch count chits). This indicates a lack of verification before payment and has led to unjustifiable wage expenses. (Source: Audit Report, Pg. 8-9, 12)"
                     }
                 },
                 "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gen-01:</b> Conduct regular pest census to monitor infestation levels. No major issues currently, but vigilance is required.</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must strictly adhere to the schedule to avoid yield losses. Improve application quality and supervision.</p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Harvesting intervals must be shortened to 15 days or less to improve crop recovery and quality.</p></div>"
@@ -216,30 +222,32 @@
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Audited Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
                     </div>`;
             }
 
-            function initializeChartsForEstate() {
-                const prodCanvasId = `prodChart-${estateData.id}`;
-                const ageCanvasId = `ageChart-${estateData.id}`;
+            function initializeChartsForEstate(estate) {
+                const prodCanvasId = `prodChart-${estate.id}`;
+                const ageCanvasId = `ageChart-${estate.id}`;
                 if (chartInstances[prodCanvasId]) chartInstances[prodCanvasId].destroy();
                 if (chartInstances[ageCanvasId]) chartInstances[ageCanvasId].destroy();
 
                 const prodCtx = document.getElementById(prodCanvasId)?.getContext('2d');
-                if(prodCtx && ((estateData.chartData.production.labels && estateData.chartData.production.labels.length > 0) || (estateData.chartData.production.rainfall && estateData.chartData.production.rainfall.length > 0))) {
+                if(prodCtx && ((estate.chartData.production.labels && estate.chartData.production.labels.length > 0) || (estate.chartData.production.rainfall && estate.chartData.production.rainfall.length > 0))) {
                     const datasets = [];
-                    if (estateData.chartData.production.ffb && estateData.chartData.production.ffb.length > 0) {
-                        datasets.push({ label: 'FFB Yield (MT/Ha)', data: estateData.chartData.production.ffb, type: 'line', borderColor: '#ca8a04', backgroundColor: 'transparent', yAxisID: 'y-ffb', tension: 0.4 });
+                    if (estate.chartData.production.ffb && estate.chartData.production.ffb.length > 0) {
+                        datasets.push({ label: 'FFB Yield (MT/Ha)', data: estate.chartData.production.ffb, type: 'line', borderColor: '#ca8a04', backgroundColor: 'transparent', yAxisID: 'y-ffb', tension: 0.4 });
                     }
-                    if (estateData.chartData.production.rainfall && estateData.chartData.production.rainfall.length > 0) {
-                        datasets.push({ label: 'Rainfall (mm)', data: estateData.chartData.production.rainfall, backgroundColor: '#3b82f6', yAxisID: 'y-rainfall' });
+                    if (estate.chartData.production.rainfall && estate.chartData.production.rainfall.length > 0) {
+                        datasets.push({ label: 'Rainfall (mm)', data: estate.chartData.production.rainfall, backgroundColor: '#3b82f6', yAxisID: 'y-rainfall' });
                     }
 
                     chartInstances[prodCanvasId] = new Chart(prodCtx, {
                         type: 'bar',
                         data: {
-                            labels: estateData.chartData.production.labels,
+                            labels: estate.chartData.production.labels,
                             datasets: datasets
                         },
                         options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, 'y-ffb': { type: 'linear', position: 'left', title: { display: true, text: 'FFB Yield (MT/Ha)' } }, 'y-rainfall': { type: 'linear', position: 'right', title: { display: true, text: 'Rainfall (mm)' }, grid: { drawOnChartArea: false } } } }
@@ -247,30 +255,35 @@
                 }
 
                 const ageCtx = document.getElementById(ageCanvasId)?.getContext('2d');
-                if(ageCtx && estateData.chartData.ageProfile.data && estateData.chartData.ageProfile.data.length > 0) {
+                if(ageCtx && estate.chartData.ageProfile.data && estate.chartData.ageProfile.data.length > 0) {
                     chartInstances[ageCanvasId] = new Chart(ageCtx, {
                         type: 'pie',
                         data: {
-                            labels: estateData.chartData.ageProfile.labels,
-                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#047857', '#34d399', '#a7f3d0'], hoverOffset: 4 }]
+                            labels: estate.chartData.ageProfile.labels,
+                            datasets: [{ data: estate.chartData.ageProfile.data, backgroundColor: ['#047857', '#34d399', '#a7f3d0'], hoverOffset: 4 }]
                         },
                         options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: false }, legend: { position: 'right' } } }
                     });
                 }
             }
             
-            function populateInternalDropdowns() {
-                const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
-                const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
-                if (agronomyDiv && estateData.reports.agronomy) {
-                    agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+            function populateInternalDropdowns(estate) {
+                const agronomyDiv = document.getElementById(`${estate.id}-agronomy`);
+                const plantationDiv = document.getElementById(`${estate.id}-plantation`);
+                const auditDiv = document.getElementById(`${estate.id}-audit`);
+
+                if (agronomyDiv && estate.reports.agronomy) {
+                    agronomyDiv.innerHTML = Object.entries(estate.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
-                if (plantationDiv && estateData.reports.plantation) {
-                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                if (plantationDiv && estate.reports.plantation) {
+                    plantationDiv.innerHTML = Object.entries(estate.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
+                 if (auditDiv && estate.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estate.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
             }
 
-            function attachEventListeners() {
+            function attachEventListeners(estate) {
                 container.querySelectorAll('.dropdown-btn').forEach(button => {
                     button.addEventListener('click', (event) => {
                         const id = event.currentTarget.dataset.dropdownId;
@@ -279,7 +292,7 @@
                         event.currentTarget.classList.toggle('active', isActive);
                     });
                 });
-                container.querySelector('.policy-modal-btn')?.addEventListener('click', () => openPolicyModal(estateData));
+                container.querySelector('.policy-modal-btn')?.addEventListener('click', () => openPolicyModal(estate));
             }
 
             renderEstate();
