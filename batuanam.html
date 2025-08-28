@@ -68,7 +68,7 @@
             const estateData = {
                 "id": "batuanam",
                 "name": "Batu Anam Estate",
-                "reportInfo": "Data based on PA Report (Jan 2025) & Agronomy Report (Visit: 10th July 2025).",
+                "reportInfo": "Data based on PA Report (Jan 2025) & Agronomy Report (Visit: 10th July 2025). Audit Report (21/25).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -154,6 +154,12 @@
                     "pinfosys": {
                         "CEO Financial Summary": "N/A",
                         "Summary of Oil Palm Expenditure": "N/A"
+                    },
+                    "audit": {
+                        "Overall Rating": "Satisfactory. Some weaknesses in control procedures were identified but were not critical enough to compromise the internal control system. (Source: Audit Report, Pg. 2)",
+                        "Contracts and Tenders": "Parameter errors were found in the Quarto Systems for Contracts Job Orders, with inconsistencies in date and time records for creation, updates, and approvals. This indicates a potential system configuration or time synchronization issue. (Source: Audit Report, Pg. 2-5)",
+                        "Stores and Purchases": "The diesoline fuel pump was overdue for calibration, leading to a significant stock variance. A physical stock check revealed a 12% surplus (732 litres) compared to the stock card, attributed to a 10% variance in the pump's meter reading. (Source: Audit Report, Pg. 7-8)",
+                        "Recommendations and Actions": "Management has been advised to get a formal explanation from the Quarto Support Team, enforce server-based time stamping, and ensure regular password changes. For the fuel pump, the estate will arrange for service and recalibration, and implement monthly stock adjustments. (Source: Audit Report, Pg. 6, 8-9)"
                     }
                 },
                 "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Ganoderma)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> Conduct annual Ganoderma census. Implement palm base soil mounding in areas with >5% infection. Remove and destroy infected palms.</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule. Use of mechanical spreaders should be limited to areas with SPH >120 and clean interrows.</p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Harvesting intervals should be maintained around 15 days to ensure good crop recovery and minimize losses.</p></div>"
@@ -223,6 +229,8 @@
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Pinfosys Report Details</button>
                             <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Audited Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
                     </div>`;
             }
@@ -270,6 +278,7 @@
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
                 const pinfosysDiv = document.getElementById(`${estateData.id}-pinfosys`);
+                const auditDiv = document.getElementById(`${estateData.id}-audit`);
 
                 if (agronomyDiv && estateData.reports.agronomy) {
                     agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
@@ -279,6 +288,9 @@
                 }
                  if (pinfosysDiv && estateData.reports.pinfosys) {
                     pinfosysDiv.innerHTML = Object.entries(estateData.reports.pinfosys).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
+                if (auditDiv && estateData.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
             }
 
