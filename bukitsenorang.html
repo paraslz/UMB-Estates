@@ -68,7 +68,7 @@
             const estateData = {
                 "id": "bukitsenorang",
                 "name": "Bukit Senorang Estate",
-                "reportInfo": "Data based on PA Report (Jun 2025) & Agronomy Visit (24th June 2025).",
+                "reportInfo": "Data based on PA Report (Jun 2025), Agronomy Visit (24th June 2025), and Audit Report (20/25).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -151,6 +151,12 @@
                         "Pest and Disease Control": "Rat damage census indicates infestation levels exceeding the 20% threshold in several blocks, requiring a systematic baiting campaign. Barn owl occupancy remains low at 21%. Bagworm (Metisa plana) infestation was detected, and while treatments are ongoing, they need to be better organized for effectiveness. Ganoderma infection is significant in all old plantings, causing substantial palm loss and requiring sanitation measures like palm mounding and deboling. (Source: Agro, Pg. 43-52)",
                         "Yield performance": "The estate achieved a yield of 18.2 MT/ha in FY2024/25, a 22% increase from the previous year. Notable gains were seen across all fields. However, yields in older plantings (P98, P00) are limited by low palm density and Ganoderma. The yield potential in young mature areas like P20 has yet to be fully reached. (Source: Agro, Pg. 80-81)",
                         "Fertilizer recommendation": "The fertilizer program for FY2025/26 has been reviewed, and no amendments are deemed necessary at this time. The estate is advised to commence the application of Mixture B without further delay. The fertilizer requirement will be recalculated based on the latest palm density data in the next visit. (Source: Agro, Pg. 84)"
+                    },
+                    "audit": {
+                        "Overall Rating": "Deficient. Key controls were not being applied, and weaknesses significantly impaired the overall system of internal control, requiring prompt corrective action. (Source: Audit Report, Pg. 2)",
+                        "Contracts and Tenders": "Significant issues were noted, including a major delay in the 134.02 ha replanting project, requiring two extensions of time. Additionally, a mounding contract worth over RM 212,000 was awarded without competitive quotes and approved by the CEO instead of the Executive Director, violating the Authorization and Authority Limits. (Source: Audit Report, Pg. 3, 6-7)",
+                        "Payroll and Personnel": "A critical loophole was found in the biometric face recognition system, which allowed attendance to be recorded using static photographs for workers who were on annual leave. This vulnerability compromises the reliability of attendance records. (Source: Audit Report, Pg. 10, 13)",
+                        "Stores and Purchases": "Expensive and fast-moving harvesting tools were being purchased as direct charge items rather than being treated as stock items. This practice makes it difficult to monitor and trace the items, increasing the risk of misappropriation. (Source: Audit Report, Pg. 15-16)"
                     }
                 },
                 "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Bagworm & Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Bagworm-01:</b> Treat bagworm infestations with Bacillus thuringiensis (Bt) or trunk injection of Acephate. For rats, initiate baiting campaigns with second-generation rodenticides when damage exceeds thresholds. (Agro Pg. 48, 60)</p></div> <div class='policy-item'><p class='font-semibold'>Ganoderma Management</p><p class='text-sm text-gray-600'><b>Policy Ref: GANO-CTRL-01:</b> Conduct yearly Ganoderma census. For infected areas, implement palm mounding to prolong palm life and deboling/sanitation during replanting to reduce inoculum source. (Agro Pg. 51)</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule to avoid delays. Ensure proper storage on pallets and conduct quality control sampling during unloading. (Agro Pg. 17-19)</p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Harvesting intervals should be maintained. Improve harvesting quality in tall palms to ensure all bunches and loose fruits are collected. Complete progressive pruning to facilitate harvesting. (Agro Pg. 25, 28)</p></div>"
@@ -218,6 +224,8 @@
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Audited Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
                     </div>`;
             }
@@ -264,11 +272,16 @@
             function populateInternalDropdowns() {
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
+                const auditDiv = document.getElementById(`${estateData.id}-audit`);
+
                 if (agronomyDiv && estateData.reports.agronomy) {
                     agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
                 if (plantationDiv && estateData.reports.plantation) {
                     plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
+                 if (auditDiv && estateData.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
             }
 
