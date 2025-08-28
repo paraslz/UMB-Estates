@@ -68,7 +68,7 @@
             const estateData = {
                 "id": "haruan",
                 "name": "Haruan Estate (Inti)",
-                "reportInfo": "Data based on PA Report (Feb 2025) & Agronomy Report (Apr 2025).",
+                "reportInfo": "Data based on PA Report (Feb 2025), Agronomy Report (Apr 2025), and Audit Report (May 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -127,7 +127,7 @@
                     "<b>Flooding Impact:</b> Prolonged flooding has significantly disrupted manuring and harvesting operations, leading to crop loss and delays. <span class='observation-ref'>(AR Pg. 4, 19, 27)</span>",
                     "<b>Low Harvester Productivity:</b> At 1.32 MT/man-day, harvester productivity is low for the palm age profile and requires improvement. <span class='observation-ref'>(PAR Pg. 55-56)</span>",
                     "<b>Inconsistent Pruning:</b> While progressive pruning is implemented, some areas require corrective pruning, and the standard of frond stacking is unsatisfactory. <span class='observation-ref'>(AR Pg. 5, 37)</span>",
-                    "<b>Rhinoceros Beetle Attack:</b> The 2023 immature planting area is affected by Rhinoceros beetle attacks, requiring treatment with Cypermethrin. <span class='observation-ref'>(PAR Pg. 66)</span>"
+                    "<b>Uncollected FFB:</b> Audit found 409 harvested bunches left uncollected for up to 29 days, indicating poor supervision and lack of bunch count chit implementation. <span class='observation-ref'>(Audit Rpt. Pg. 15-16)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -150,6 +150,12 @@
                         "Agronomic observation": "Crop recovery is suboptimal due to flooding, with over-ripe and uncollected bunches observed. Pruning standards need improvement. Field vegetation has improved but VOPs and jungle woodies remain. (Source: AR, Pg. 26-27, 37, 51, 53)",
                         "Yield performance": "Average yield for FY2024/25 increased by 13% but remains below potential. Crop recovery in Biawan division was particularly poor due to flooding. (Source: AR, Pg. 63-65)",
                         "Fertilizer recommendation": "The FY2025/26 fertilizer program has been revised to reduce application rounds from four to three due to the short application season, with adjusted dosages. (Source: AR, Pg. 68, 70-71)"
+                    },
+                    "audit": {
+                        "Overall Rating": "Marginally Deficient. The audit found that while most key controls were applied, certain important controls lacked consistency or effectiveness, requiring timely corrective action from management. (Source: Audit Rpt, Pg. 2)",
+                        "High Manual Slashing Cost": "Field maintenance costs were excessively high due to uncontrolled man-day allocation for manual slashing, poor cost monitoring, and overlapping daily-rated and piece-rated payments for the same blocks. The audit noted a lack of supervision and accountability. (Source: Audit Rpt, Pg. 2-7)",
+                        "Wages Overpayment": "Total overpayment of IDR 4,788,796 was identified due to a system bug causing double man-day payments, paying for more hectares than available in a block, and fictitious wage claims by a Field Mandore. (Source: Audit Rpt, Pg. 10-14)",
+                        "Uncollected Harvested Bunches": "A field visit found 409 harvested FFB bunches left uncollected for up to 29 days. This was attributed to poor supervision, lack of follow-up, and failure to use a bunch count chit system for traceability. (Source: Audit Rpt, Pg. 15-18)"
                     }
                 },
                 "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-01:</b> A rat census must be conducted regularly. If fresh damage exceeds 5%, a baiting campaign must be initiated immediately.</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule. Delays due to weather should be mitigated by deploying additional resources once conditions improve.</p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Harvesting intervals should be maintained between 10-15 days to minimize over-ripe bunches and loose fruit loss.</p><p class='text-sm text-gray-600'><b>Policy Ref: PRUNE-STD-01:</b> Over-pruning is strictly prohibited. Retain at least two subtending fronds for palms under 15 years.</p></div>"
@@ -208,6 +214,8 @@
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Audited Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
                     </div>`;
             }
@@ -249,11 +257,16 @@
             function populateInternalDropdowns() {
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
+                const auditDiv = document.getElementById(`${estateData.id}-audit`);
+
                 if (agronomyDiv && estateData.reports.agronomy) {
                     agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
                 if (plantationDiv && estateData.reports.plantation) {
                     plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
+                 if (auditDiv && estateData.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
             }
 
