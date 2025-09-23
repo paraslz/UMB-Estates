@@ -68,20 +68,20 @@
             const estateData = {
                 "id": "tengkarasan",
                 "name": "Tengkarasan Estate",
-                "reportInfo": "Data based on PA Report (May 2025), Agronomy Report (Apr 2025), and Audit Report (Apr 2025).",
+                "reportInfo": "Data based on PA Report (May 2025), Agronomy Report (August 2025), and Audit Report (Apr 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
                         "lines": [
-                            "Total Planted: 2,442.67 ha",
-                            "Mature: 2,306.80 ha",
-                            "Immature: 135.87 ha"
+                            "Total Planted: 2,251.76 ha",
+                            "Mature: 2,122.65 ha",
+                            "Immature: 129.11 ha"
                         ]
                     },
                     "yield": {
                         "title": "Yield/Ha (FY 24/25 vs FY 23/24)",
-                        "value": "17.11 / 20.22 MT",
-                        "note": "18% below last year"
+                        "value": "18.81 / 21.94 MT",
+                        "note": "17% below last year"
                     },
                     "cost": {
                         "title": "FFB Cost/Tonne (YTD vs Budget)",
@@ -104,29 +104,30 @@
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Under Control" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "19.81%" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding", "value": "Behind Schedule" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "10-18 days (Good)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Manuring Delay", "value": "Mix A fertilizer application delayed" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "~20 days (Needs Improvement)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Manuring Delay", "value": "NK & Mix A application delayed" }
                 ],
                 "chartData": {
                     "production": {
                         "labels": ["May-24", "Jun-24", "Jul-24", "Aug-24", "Sep-24", "Oct-24", "Nov-24", "Dec-24", "Jan-25", "Feb-25"],
                         "ffb": [1.59, 1.61, 1.78, 1.68, 1.75, 1.83, 1.53, 1.46, 1.15, 0.96],
                         "rainfall": [],
-                        "note": "*Monthly FFB Yield (MT/Ha). Rainfall data not available. (Source: AR Pg. 45)"
+                        "note": "*Monthly FFB Yield (MT/Ha) from previous report. Rainfall data not available."
                     },
                     "ageProfile": {
-                        "labels": ["Old Mature (20+ Yrs)", "Prime Mature (8-19 Yrs)", "Young Mature (4-7 Yrs)", "Immature (<4 Yrs)"],
-                        "data": [52, 44, 2, 2],
+                        "labels": ["Old Mature (20+ Yrs)", "Prime Mature (8-19 Yrs)", "Immature (<4 Yrs)"],
+                        "data": [73.1, 20.6, 6.3],
                         "title": "Tengkarasan Estate - Palm Age Distribution",
-                        "note": "*Source: Agronomy Report 1/2025, Pg. 10."
+                        "note": "*Source: Agronomy Report 2/2025, Pg. 9-10. Calculation based on YOP."
                     }
                 },
                 "observations": [
+                    "<b>Delayed Manuring:</b> The FY25/26 manuring program is significantly behind schedule. As of August 2025, NK Mix and Mix A applications are delayed by 2-3 months and are only ~50% complete. <span class='observation-ref'>(AR Pg. 15-16)</span>",
+                    "<b>Extended Harvesting Intervals:</b> Crop recovery is unsatisfactory. Harvesting intervals exceeded 30 days in June 2025 due to harvester shortages. While improving to below 20 days, this is still far from the 15-day target. <span class='observation-ref'>(AR Pg. 23-24)</span>",
                     "<b>Diesoline Stock Variance:</b> Audit found a significant 1,459-litre (18%) variance in diesoline stock due to an uncalibrated tank and a leaking pump nozzle, leading to wastage. <span class='observation-ref'>(Audit Rpt. Pg. 3-4)</span>",
-                    "<b>Inadequate Fire Safety:</b> Fire extinguisher placement in workers' quarters is inadequate and inappropriate, with an over-reliance on CO2 types instead of the more versatile ABC powder extinguishers, especially in flammable wooden quarters. <span class='observation-ref'>(Audit Rpt. Pg. 6-8)</span>",
-                    "<b>Operational Inefficiency in Spraying:</b> Delays of over 4 hours in deploying sprayers to the field were noted due to a shortage of operational tractors, reducing sprayer productivity and income. <span class='observation-ref'>(Audit Rpt. Pg. 12-13)</span>",
-                    "<b>Delayed Manuring:</b> The application of Mix A fertilizer is behind schedule, with only 53% completion as of March 2025. <span class='observation-ref'>(AR Pg. 13)</span>",
-                    "<b>Weeding Behind Schedule:</b> Both circle spraying and selective spraying programs are significantly behind schedule, which can impact nutrient competition and field accessibility. <span class='observation-ref'>(AR Pg. 24, 33)</span>"
+                    "<b>Unsatisfactory Weeding & Ground Upkeep:</b> The first round of circle spraying is only 6% complete, allowing VOPs and broadleaf weeds to establish. Ground upkeep in recently supplied areas is also poor. <span class='observation-ref'>(AR Pg. 42, 46)</span>",
+                    "<b>Inadequate Fire Safety:</b> Fire extinguisher placement in workers' quarters is inadequate, with an over-reliance on CO2 types instead of the more versatile ABC powder extinguishers, posing a risk in flammable wooden quarters. <span class='observation-ref'>(Audit Rpt. Pg. 6-8)</span>",
+                    "<b>Poor Palm Condition in Rehabilitated Areas:</b> Palms in several blocks (53, 54, 55, 56, 77) remain in poor condition with stunted growth and nutrient deficiencies due to past water stagnation issues, despite recent rehabilitation. <span class='observation-ref'>(AR Pg. 29-31)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -144,11 +145,11 @@
                         "Immature": "The 135.87 ha immature area (P23A) has unsatisfactory ground conditions and delayed fertilizer application. (Source: PA, Pg. 62-66)"
                     },
                     "agronomy": {
-                        "Executive Summary": "Yield performance is below potential due to delays in harvesting. Crop recovery has improved recently. Weeding and manuring programs are behind schedule. (Source: AR, Pg. 4-6)",
-                        "Nutrient inputs progress of manuring": "The application of Mix A fertilizer is delayed (53% complete). The fertilizer store has a wet floor condition that needs to be resolved. (Source: AR, Pg. 13-14)",
-                        "Agronomic observation": "Crop recovery has improved with shorter harvesting intervals, but control of ripeness standards needs improvement. Pruning is 63% complete and generally acceptable. (Source: AR, Pg. 17, 24)",
-                        "Yield performance": "The yield to date is 18% lower than the previous year, mainly due to extended harvesting intervals in the first half of the year. (Source: AR, Pg. 52-53)",
-                        "Fertilizer recommendation": "The fertilizer program for FY25/26 remains unchanged. (Source: AR, Pg. 55-61)"
+                        "Executive Summary": "FY24/25 yield was 17% lower than the previous year, partly due to extended harvesting intervals. For FY25/26, yield is showing improvement. Key limiting factors are delayed manuring, extended harvesting intervals, and unsatisfactory ground upkeep. (Source: AR, Pg. 58-63)",
+                        "Nutrient inputs progress of manuring": "The FY24/25 program completed in April 2025, but Mix A was delayed by 2-3 months. The FY25/26 program is significantly delayed as of August 2025, with NK Mix and Mix A only ~50% complete due to weather and tractor constraints for transport. (Source: AR, Pg. 14-16)",
+                        "Agronomic observation": "Crop recovery is unsatisfactory due to harvesting intervals exceeding 30 days in June 2025, though now improving. Canopy management is acceptable. Circle spraying is only 6% complete, and Volunteer Oil Palms (VOPs) are a concern. Rat baiting was conducted across the estate after a census showed high damage levels (14-17%). Ganoderma is insignificant. (Source: AR, Pg. 23, 33, 42, 53-54)",
+                        "Yield performance": "FY24/25 yield was 18.81 mt/ha, a 17% decline from FY23/24 (21.94 mt/ha). This is attributed to extended harvesting intervals and delayed manuring. The first 4 months of FY25/26 show a 23% yield increase over the same period last year. (Source: AR, Pg. 58, 61)",
+                        "Fertilizer recommendation": "The program for the second half of FY25/26 remains unchanged, but with dosage adjustments for merged supply palm areas. The FY26/27 fertilizer program has been created. (Source: AR, Pg. 64)"
                     },
                     "audit": {
                         "Overall Rating": "Marginally Deficient. The audit found that while most key controls were applied, certain important controls lacked consistency or effectiveness, requiring timely corrective action from management. (Source: Audit Rpt, Pg. 2)",
@@ -260,7 +261,7 @@
                         type: 'pie',
                         data: {
                             labels: estateData.chartData.ageProfile.labels,
-                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#047857', '#34d399', '#a7f3d0'], hoverOffset: 4 }]
+                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#991b1b', '#f59e0b', '#22c55e'], hoverOffset: 4 }]
                         },
                         options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: false }, legend: { position: 'right' } } }
                     });
