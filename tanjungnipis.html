@@ -68,7 +68,8 @@
             const estateData = {
                 "id": "tanjungnipis",
                 "name": "Tanjung Nipis Estate",
-                "reportInfo": "Data based on PA Report (May 2025) & Agronomy Report (May 2025).",
+                // MODIFIED: Added Audit Report to info
+                "reportInfo": "Data based on PA Report (May 2025), Agronomy Report (May 2025) & Audit Report (Oct 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -94,18 +95,18 @@
                         "note": "1:12 ha ratio"
                     },
                      "pests": {
-                        "title": "Pest Status",
-                        "value": "Under Control",
-                        "note": "No major issues"
+                        "title": "Audit Rating",
+                        "value": "Marginally Deficient",
+                        "note": "Source: Audit Report Oct 2025"
                     }
                 },
                 "keyMetrics": [
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Labour Shortage", "value": "Requires 27 more workers" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Under Control" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "19.32%" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding", "value": "Behind Schedule" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "10-21 days (Inconsistent)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Manuring Delay", "value": "Application delayed by 2+ months" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Manuring Delay", "value": "Application delayed by 2+ months" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Vehicle Management", "value": "Prolonged Breakdowns" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' /></svg>`, "label": "Payroll Errors", "value": "Wages paid incorrectly" }
                 ],
                 "chartData": {
                     "production": {
@@ -121,12 +122,13 @@
                         "note": "*Source: Agronomy Report 1/2025, Pg. 12."
                     }
                 },
+                // MODIFIED: Blended observations from PA, Agronomy, and Audit reports
                 "observations": [
-                    "<b>Labour Shortage:</b> The estate is short of 27 workers, particularly harvesters, which is impacting field operations like harvesting and weeding. <span class='observation-ref'>(PA Pg. 16)</span>",
-                    "<b>Inconsistent Harvesting:</b> Harvesting intervals are inconsistent, ranging from 10 to 29 days, with some blocks badly delayed, affecting crop recovery. <span class='observation-ref'>(AR Pg. 17)</span>",
-                    "<b>Delayed Weeding Programs:</b> Both circle and selective spraying are behind schedule, with only 34% and 43% completion rates respectively. <span class='observation-ref'>(PA Pg. 23-24)</span>",
-                    "<b>Delayed Manuring:</b> Most fertilizer applications were delayed by more than two months, which can negatively impact palm nutrition and yield. <span class='observation-ref'>(AR Pg. 13)</span>",
-                    "<b>Poor Ground Conditions in TOBE Division:</b> The newly acquired TOBE division has unsatisfactory ground conditions that require significant rehabilitation and weeding. <span class='observation-ref'>(PA Pg. 31-32)</span>"
+                    "<b>Labour Shortage & Payroll Errors:</b> The estate is short of 27 workers, impacting operations. This is compounded by payroll errors and poor vehicle documentation, leading to incorrect wage payments and mischarging. <span class='observation-ref'>(PA Pg. 16; Audit Pg. 9-14)</span>",
+                    "<b>Inconsistent Harvesting:</b> Harvesting intervals are inconsistent (10-29 days), badly delaying some blocks and affecting crop recovery. <span class='observation-ref'>(AR Pg. 17)</span>",
+                    "<b>Delayed Field Upkeep:</b> Weeding (34-43% complete) and manuring (delayed 2+ months) programs are both significantly behind schedule. <span class='observation-ref'>(PA Pg. 23-24; AR Pg. 13)</span>",
+                    "<b>Poor Vehicle & Equipment Management:</b> 4 of 6 land surf crawlers are non-operational due to prolonged breakdown. Furthermore, resources (petrol, spare parts) for mist blowers are untraceable, indicating poor cost monitoring and accountability. <span class='observation-ref'>(Audit Pg. 2-8)</span>",
+                    "<b>Poor Ground Conditions in TOBE Division:</b> The newly acquired TOBE division has unsatisfactory ground conditions requiring significant rehabilitation. <span class='observation-ref'>(PA Pg. 31-32)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -149,6 +151,13 @@
                         "Agronomic observation": "Crop recovery has improved with shorter harvesting intervals, but ripeness standards need attention. Pruning is behind schedule, and frond stacking is inconsistent. (Source: AR, Pg. 17, 21, 25)",
                         "Yield performance": "The estate's yield for FY2024/25 was 2% lower than the previous year, with inconsistent harvesting being a key limiting factor. (Source: AR, Pg. 58-59)",
                         "Fertilizer recommendation": "The fertilizer program for FY2025/26 has been prepared. (Source: AR, Pg. 62-64)"
+                    },
+                    // ADDED: New Audit Report section
+                    "audit": {
+                        "Overall Rating": "<b>Marginally Deficient.</b> Key controls were applied, but some important controls lacked consistency or effectiveness, requiring timely corrective action. (Source: Audit, Pg. 1-2)",
+                        "Purchasing - Untraceable Resources": "All petrol, spare parts, and repair expenses for 16 mist blowers were charged to a single cost centre without specifying the individual unit's asset number. This prevents effective monitoring of costs, efficiency, and potential misuse. (Source: Audit, Pg. 2-4)",
+                        "Vehicles - Prolonged Breakdowns": "4 of 6 land surf crawlers are non-operational due to prolonged breakdowns (6-7+ months) with high repair costs. Management has been advised to write off these 4 units as they are beyond economical repair. (Source: Audit, Pg. 5-8)",
+                        "Payroll - Payment Errors": "Discovered 47 instances of wage payments (totaling RM 3,468) to drivers without any corresponding vehicle usage records in the Vehicle Log Book (VLB) or Vehicle Running Distribution (VRD) report. This was due to poor management of vehicle documentation, failure to update the VLB, and incorrect charging practices. (Source: Audit, Pg. 9-14)"
                     }
                 },
                 "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-01:</b> Conduct a census to determine rat infestation levels before initiating baiting campaigns. Avoid indiscriminate application.</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Ensure timely application of fertilizers according to the program. Address any storage issues promptly.</p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Maintain harvesting intervals below 15 days. Ensure proper ripeness standards are followed.</p></div>"
@@ -216,6 +225,9 @@
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            <!-- ADDED: New Audit Report Button -->
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Audit Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
                     </div>`;
             }
@@ -259,14 +271,22 @@
                 }
             }
             
+            // MODIFIED: Added logic for Audit Report
             function populateInternalDropdowns() {
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
+                const auditDiv = document.getElementById(`${estateData.id}-audit`);
+
                 if (agronomyDiv && estateData.reports.agronomy) {
                     agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
                 if (plantationDiv && estateData.reports.plantation) {
                     plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
+                if (auditDiv && estateData.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                } else if (auditDiv) {
+                    auditDiv.innerHTML = `<p class="text-sm text-gray-600">Not Available</p>`;
                 }
             }
 
