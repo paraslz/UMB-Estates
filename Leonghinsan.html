@@ -13,6 +13,7 @@
         .details-content { display: none; }
         .details-content.active { display: block; }
         .dropdown-btn.active { background-color: #14532d; } /* dark green */
+        .dropdown-btn[data-dropdown-id*="audit"].active { background-color: #7f1d1d; } /* dark red for active audit */
         .policy-item { border-left: 3px solid #16a34a; padding-left: 1rem; margin-top: 0.75rem; }
         .modal { display: none; }
         .modal.active { display: flex; }
@@ -68,43 +69,43 @@
             const estateData = {
                 "id": "leonghinsan",
                 "name": "Leong Hin San Estate",
-                "reportInfo": "Data based on PA Report (July 2025) & Agronomy Report (June 2025).",
+                "reportInfo": "Data based on PA Report (Visit: 15th July 2025), Agronomy Report (June 2025) & Audit Report (Nov 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
                         "lines": [
-                            "Total Planted: 761.16 ha",
-                            "Mature: 761.16 ha",
-                            "Old (>20 Yrs): 429 ha (56%)"
+                            "Total Planted: 761.16 ha (PA Pg. 10)",
+                            "Mature: 761.16 ha (PA Pg. 10)",
+                            "Old (>20 Yrs): 429 ha (56%) (PA Pg. 10)"
                         ]
                     },
                     "yield": {
-                        "title": "Yield/Ha (FY 24/25)",
-                        "value": "32.10 MT",
-                        "note": "5.2% above previous year"
+                        "title": "Yield/Ha (FY 24/25 vs Budget)",
+                        "value": "32.10 / 27.07 MT",
+                        "note": "18.6% above budget (PA Pg. 48)"
                     },
                     "cost": {
-                        "title": "FFB Cost/Tonne (FY 24/25)",
-                        "value": "RM 265.60",
-                        "note": "3% lower than budget"
+                        "title": "FFB Cost/Tonne (FY 24/25 vs Budget)",
+                        "value": "RM 265.60 / RM 272.94",
+                        "note": "2.7% lower than budget (PA Pg. 49)"
                     },
                     "weeding": {
                         "title": "Weeding Progress",
                         "value": "Behind Schedule",
-                        "note": "Circle (64%), Selective (68%)"
+                        "note": "Circle (64%), Selective (68%) (PA Pg. 21, 24)"
                     },
                      "manuring": {
                         "title": "Manuring Progress",
                         "value": "Completed",
-                        "note": "Some delays of 1-3 months noted"
+                        "note": "100% completed (PA Pg. 30)"
                     }
                 },
                 "keyMetrics": [
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Ganoderma is significant" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "High (Ganoderma)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Harvester Productivity", "value": "3.0 MT/md (Acceptable)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Worker Ratio", "value": "1 : 10 ha (Surplus)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-indigo-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21.75 8.25-13.5 2.25m0 0L2.25 8.25m11.25-6v6m-11.25 0v6m11.25 0-11.25 6m11.25-6v6m6-3.75-1.5-1.5m0 0L18 8.25m-1.5-1.5V6.375c0-.621.504-1.125 1.125-1.125H21' /></svg>`, "label": "Harvester Ratio", "value": "1 : 17 ha (Excessive)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding Condition", "value": "Acceptable, needs improvement" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding Condition", "value": "Acceptable (Needs Improve)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "<20 days (Acceptable)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' /></svg>`, "label": "Barn Owl Occupancy", "value": "25% (Decreased)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-pink-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01' /></svg>`, "label": "Harvesting Cost", "value": "RM 115 / tonne" }
@@ -125,11 +126,11 @@
                 },
                 "observations": [
                     "<b>Significant Ganoderma Infection:</b> Ganoderma is a major concern, causing significant loss of productive palms. Infection rates exceed 5% in most fields, with some over 10%. Palm mounding is in progress to mitigate losses. <span class='observation-ref'>(AR Pg. 43-44)</span>",
-                    "<b>Aging Palm Profile:</b> 56% of the estate's palms (429 ha) are in the 20-25 year old category. While yields are still high, this indicates a future need for a replanting strategy. <span class='observation-ref'>(AR Pg. 10)</span>",
+                    "<b>Critical Vehicle Mismanagement & High Costs:</b> Running costs for tractors are excessive. An audit found this is due to chronic oil leaks (consumption up to 0.47 Lt/Hr vs. 0.05 Lt/Hr benchmark) concealed by a 'self-regulated top-up' practice, indicating poor supervision and high risk of mechanical failure. <span class='observation-ref'>(Audit Pg. 2-5; PA Pg. 50-51)</span>",
                     "<b>Weeding Program Behind Schedule:</b> Both circle and selective weeding programs are behind schedule, having completed only about 2 out of 3 budgeted rounds. Circle conditions are suboptimal in several blocks. <span class='observation-ref'>(AR Pg. 33-34; PA Pg. 21)</span>",
+                    "<b>Delayed Compliance Reporting:</b> An audit highlighted a significant delay (approx. 2 weeks) in lodging a police report for an absconded foreign worker, exposing the company to potential legal and regulatory risks. <span class='observation-ref'>(Audit Pg. 7-8)</span>",
                     "<b>Incomplete Loose Fruit Collection:</b> While harvesting standards are generally acceptable, there are instances of incomplete loose fruit collection, especially where palm circles have debris, leading to potential crop loss. <span class='observation-ref'>(AR Pg. 22-23)</span>",
-                    "<b>High Vehicle Running Costs:</b> The running costs for all farm tractors exceed the budget, primarily due to frequent breakdowns, low running hours, and significant repair costs (e.g., RM 80,000 for a crane overhaul). <span class='observation-ref'>(PA Pg. 50-51)</span>",
-                    "<b>Low Barn Owl Occupancy:</b> The barn owl box occupancy rate has dropped to a low 25%. A replacement and maintenance program for damaged boxes is underway to improve biological rat control. <span class='observation-ref'>(PA Pg. 33)</span>"
+                    "<b>Aging Palm Profile:</b> 56% of the estate's palms (429 ha) are in the 20-25 year old category. While yields are still high, this indicates a future need for a replanting strategy. <span class='observation-ref'>(AR Pg. 10)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -152,9 +153,15 @@
                         "Agronomic observation": "Harvesting intervals are acceptable (<20 days). Loose fruit collection needs improvement. Pruning is acceptable. Weeding is behind schedule, with circle conditions being suboptimal in some areas. <span class='observation-ref'>(AR Pg. 20, 22, 26, 34)</span>",
                         "Yield performance": "The estate yielded 32.10 MT/ha in FY2024/25, a 5.2% increase from the previous year, which is satisfactory. Crop recovery has been good, but loose fruit collection can be improved. <span class='observation-ref'>(AR Pg. 48-49)</span>",
                         "Fertilizer recommendation": "The fertilizer programme for FY2025/26 should be maintained without amendment. The next program will be formulated after the October 2025 visit. <span class='observation-ref'>(AR Pg. 52)</span>"
-                    }
+                    },
+                    "audit": {
+                        "Overall Rating": "<b>Marginally Deficient.</b> <span class='observation-ref'>(Audit Pg. 1-2)</span>",
+                        "Finding 5.1 (Vehicle Running)": "<b>Excessive Lubricant Usage:</b> Observed significant engine oil consumption (e.g., 0.47 Lt/Hr vs. 0.05 Lt/Hr benchmark) in multiple tractors due to chronic oil leaks. The practice of daily 'self-regulated top-up' by drivers concealed these mechanical defects from management. <span class='observation-ref'>(Audit Pg. 2-4)</span><br><b>Management Action:</b> Agreed to inspect and repair tractors, establish consumption benchmarks, and trial outsourcing internal FFB transportation. <span class='observation-ref'>(Audit Pg. 5-7)</span>",
+                        "Finding 5.2 (Payroll & Personnel)": "<b>Delayed Reporting of Absconded Worker:</b> A police report for an absconded worker was delayed by nearly two weeks (absconded June 14, reported July 1), breaching the Employment Act (Section 15(2)) and exposing UMB to legal risks. <span class='observation-ref'>(Audit Pg. 7-8)</span><br><b>Management Action:</b> Agreed to lodge police reports immediately after 2 consecutive days of absence and follow all HR procedures for permit revocation. <span class='observation-ref'>(Audit Pg. 9-10)</span>"
+                    },
+                    "pinfosys": "N/A"
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Pest & Disease (Ganoderma)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> Continue the program of palm mounding for Ganoderma-infected palms in younger fields (2010, 2011, 2012 plantings) to prolong their productive life. Ensure mounding is done with adequate, well-compacted soil. <span class='observation-ref'>(AR Pg. 45; PA Pg. 35)</span></p></div> <div class='policy-item'><p class='font-semibold'>Weeding & Ground Cover</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-CON-02:</b> The estate must catch up on the delayed weeding schedule. Prioritize circle weeding to facilitate loose fruit collection and continue with inter-row spraying to eradicate remaining noxious weeds. <span class='observation-ref'>(AR Pg. 34; PA Pg. 21)</span></p></div> <div class='policy-item'><p class='font-semibold'>Vehicle Maintenance</p><p class='text-sm text-gray-600'><b>Policy Ref: INFRA-VEH-01:</b> Review the maintenance program for all farm tractors to address the frequent breakdowns and high repair costs that are impacting internal transport and overall expenditure. Assess the viability of replacing older units. <span class='observation-ref'>(PA Pg. 50-52)</span></p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Pest & Disease (Ganoderma)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> Continue the program of palm mounding for Ganoderma-infected palms in younger fields (2010, 2011, 2012 plantings) to prolong their productive life. Ensure mounding is done with adequate, well-compacted soil. <span class='observation-ref'>(AR Pg. 45; PA Pg. 35)</span></p></div> <div class='policy-item'><p class='font-semibold'>Weeding & Ground Cover</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-CON-02:</b> The estate must catch up on the delayed weeding schedule. Prioritize circle weeding to facilitate loose fruit collection and continue with inter-row spraying to eradicate remaining noxious weeds. <span class'='observation-ref'>(AR Pg. 34; PA Pg. 21)</span></p></div> <div class='policy-item'><p class='font-semibold'>Vehicle Maintenance</p><p class='text-sm text-gray-600'><b>Policy Ref: INFRA-VEH-01:</b> Review the maintenance program for all farm tractors to address the frequent breakdowns and high repair costs that are impacting internal transport and overall expenditure. Assess the viability of replacing older units. <span class'='observation-ref'>(PA Pg. 50-52)</span></p></div>"
             };
 
 
@@ -215,10 +222,14 @@
                         
                         <div class="mb-8 text-center"><button class="policy-modal-btn bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
                         <div class="space-y-2">
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-red-800 text-white p-3 rounded-md hover:bg-red-700 transition">Internal Audit Issues (Nov 2025)</button>
+                            <div id="${estate.id}-audit" class="details-content bg-red-50 p-4 rounded-md border border-red-200"></div>
                             <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Plantation Advisory Report Details</button>
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Pinfosys Report Details</button>
+                            <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
                     </div>`;
             }
@@ -309,11 +320,31 @@
             function populateInternalDropdowns() {
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
+                const auditDiv = document.getElementById(`${estateData.id}-audit`);
+                const pinfosysDiv = document.getElementById(`${estateData.id}-pinfosys`);
+
+                // Populate Agronomy
                 if (agronomyDiv && estateData.reports.agronomy) {
                     agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
+
+                // Populate Plantation
                 if (plantationDiv && estateData.reports.plantation) {
                     plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
+
+                // Populate Audit
+                if (auditDiv && estateData.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
+
+                // Populate Pinfosys
+                if (pinfosysDiv) {
+                     if (estateData.reports.pinfosys && estateData.reports.pinfosys !== "N/A") {
+                        pinfosysDiv.innerHTML = Object.entries(estateData.reports.pinfosys).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p classs="text-sm text-gray-600">${content}</p>`).join('');
+                    } else {
+                        pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600">N/A</p>`;
+                    }
                 }
             }
 
