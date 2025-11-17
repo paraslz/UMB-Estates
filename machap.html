@@ -68,7 +68,7 @@
             const estateData = {
                 "id": "machap",
                 "name": "Machap & Melaka Pinda Estate",
-                "reportInfo": "Data based on Agronomy Report (Visit Date: 26th August 2025) & PA Report (Visit Date: 20th June 2025).",
+                "reportInfo": "Data based on Agronomy Report (Visit Date: 26th August 2025), PA Report (Visit Date: 20th June 2025) & Audit Report (November 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -105,7 +105,7 @@
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "19.76%" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Fertilizer Wastage", "value": "High (Needs Attention)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": ">15 days (Needs Improvement)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' /></svg>`, "label": "Replanting", "value": "Postponed (PA Report)" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-gray-500' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12 12 0 0012 21.644a12 12 0 008.618-15.64z' /></svg>`, "label": "Audit Rating (Nov '25)", "value": "Satisfactory" }
                 ],
                 "chartData": {
                     "production": {
@@ -126,9 +126,9 @@
                     "<b>Fertilizer Wastage:</b> Identified as a key issue requiring immediate attention. Losses occur due to improper application methods, such as in deep trenches from mounding and deposition on palm trunks by the EMDEK spreader. <span class='observation-ref'>(AR Pg. 26-28, 58-59, 66)</span>",
                     "<b>Harvesting & Pruning Standards:</b> Harvesting intervals frequently exceed the 15-day target. Pruning quality has improved but sporadic over-pruning and under-pruning still occur, especially in young mature areas. <span class='observation-ref'>(AR Pg. 31, 37, 39, 53)</span>",
                     "<b>Rat Infestation:</b> Rat damage census in several blocks (MC2020A, MC2022B, MC2022C) exceeded the 10% action threshold, prompting a baiting campaign. A post-baiting census is required to assess effectiveness. <span class='observation-ref'>(AR Pg. 51-52)</span>",
-                    "<b>Improper Mounding Technique:</b> The current slant trench cutting method for mounding is causing excessive root damage and creating channels for fertilizer runoff. A switch to straight trenching is recommended. <span class='observation-ref'>(AR Pg. 21, 26, 66)</span>",
                     "<b>Strong Production & Cost Control (PA View):</b> From the PA report's perspective, FFB production (27.79 T/ha) is 24% above budget and cost is 15% below budget, which is highly satisfactory. <span class='observation-ref'>(PA Pg. 45, 46)</span>",
-                    "<b>Low Barn Owl Occupancy:</b> The occupancy rate of Barn Owl boxes is very low (8%). The estate is replacing old boxes and should investigate placement to improve occupancy. <span class='observation-ref'>(PA Pg. 5, 34)</span>"
+                    "<b>FFB Weighing Irregularities (Audit):</b> Audit identified procedural risks in FFB weighing when using an external weighbridge. Time-in/out stamps were only seconds apart due to manual tare weight entry, posing a risk of manipulation. No material variance was found. <span class='observation-ref'>(Audit Rpt Pg. 2-4)</span>",
+                    "<b>Weak Store Management (Audit):</b> Audit found duplicate stock codes for similar items and noted that lubricant stock was inaccurately measured by 'shaking the drum', risking stock discrepancies and shortages. <span class='observation-ref'>(Audit Rpt Pg. 6-8)</span>"
                 ],
                 "reports": {
                     "agronomy": {
@@ -152,7 +152,12 @@
                         "Capital Expenditure": "N/A",
                         "Immature": "The immature area of 145.41 ha (MC2022) was declared mature in January 2025. (Source: PA, Pg. 8)"
                     },
-                    "pinfosys": "Not Available"
+                    "pinfosys": "Not Available",
+                    "audit": {
+                        "Overall Rating": "Satisfactory. (Source: Audit Rpt, Pg. 1)",
+                        "FFB Weighing Irregularities": "<b>Finding:</b> Irregularities in FFB weighing procedures at an external weighbridge (Hong Huei). Time-in/out stamps were only seconds apart due to the vendor's manual tare weight entry process. <br><b>Risk:</b> Poses a risk of weight manipulation, though no material variances were found. <br><b>Action:</b> Management will have escorting staff manually record time gaps and attach to weighbridge slips for verification. (Source: Audit Rpt, Pg. 2-5)",
+                        "Stores Management Enhancement": "<b>Finding 1 (Stock Categorization):</b> Similar items (e.g., respirators, gloves) have duplicate stock codes in Quarto, causing confusion and count discrepancies. <br><b>Finding 2 (Lubricant Stock Count):</b> Stock counter used an unreliable method of 'shaking the drum' to estimate lubricant balances. <br><b>Action:</b> Management will review/reorganize stock codes and fabricate a calibrated dipstick for accurate lubricant measurement. (Source: Audit Rpt, Pg. 6-9)"
+                    }
                 },
                 "policy": " <div class='policy-item'><p class='font-semibold'>Ganoderma Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> For areas with >10% infection scheduled for replanting, de-bole all palms by excavating a 1.5m x 1.5m x 1.5m pit at each infected site. Allow 2-3 months of sun exposure before backfilling to suppress inoculum. (AR Pg. 13)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-02:</b> For palms younger than 20 years with >5% infection, conduct mounding to extend the productive lifespan of affected palms. (AR Pg. 15)</p></div> <div class='policy-item'><p class='font-semibold'>Fertilizer Application</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-08:</b> Cease slant trench cutting for mounding on mineral soils. This practice damages roots and increases risk of fertilizer runoff. Revert to straight trenching with cross-paths to improve machinery access. (AR Pg. 21, 26, 66)</p></div> <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-02a:</b> Following a baiting campaign, a post-baiting census must be conducted to evaluate effectiveness and determine if further action is required. (AR Pg. 52)</p></div>"
             };
@@ -226,6 +231,8 @@
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Pinfosys Report Details</button>
                             <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Internal Audit Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
                     </div>`;
             }
@@ -268,6 +275,7 @@
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
                 const pinfosysDiv = document.getElementById(`${estateData.id}-pinfosys`);
+                const auditDiv = document.getElementById(`${estateData.id}-audit`);
                 
                 if (agronomyDiv && estateData.reports.agronomy) {
                     agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
@@ -277,6 +285,11 @@
                 }
                  if (pinfosysDiv && estateData.reports.pinfosys === "Not Available") {
                     pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600">Not Available</p>`;
+                }
+                 if (auditDiv && estateData.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p classs="text-sm text-gray-600">${content}</p>`).join('');
+                } else if (auditDiv) {
+                    auditDiv.innerHTML = `<p class="text-sm text-gray-600">Not Available</p>`;
                 }
             }
 
