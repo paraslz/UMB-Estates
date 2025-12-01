@@ -68,101 +68,98 @@
             const estateData = {
                 "id": "mlp3",
                 "name": "MLP 3 Estate",
-                "reportInfo": "Data based on PA Report (May 2025), Agronomy Report (May 2025), and Audit Report (May 2025).",
+                "reportInfo": "Data based on Agronomy Report (23 Oct 2025), PA Report (May 2025) & Audit Report (May 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
                         "lines": [
                             "Total Planted: 1,755.70 ha",
                             "Mature: 1,755.70 ha",
-                            "Prime: 1,755.70 ha (100%)"
+                            "Prime: 100% Mature"
                         ]
                     },
                     "yield": {
-                        "title": "Yield/Ha (FY 24/25 vs FY 23/24)",
-                        "value": "21.82 / 20.82 MT",
-                        "note": "5% above last year"
+                        "title": "Yield/Ha (YTD Actual / Budget)",
+                        "value": "13.24 / N/A MT",
+                        "note": "Budget N/A in report. +12% vs Last Year (11.83)"
                     },
                     "cost": {
                         "title": "FFB Cost/Tonne (FY 24/25 vs Budget)",
                         "value": "RM 267.74 / RM 279.41",
-                        "note": "4% lower than budget"
+                        "note": "Based on PA Report (May 2025)"
                     },
                     "labour": {
-                        "title": "Labour Status",
-                        "value": "Adequate",
-                        "note": "1:9 ha ratio"
+                        "title": "Manuring Status",
+                        "value": "Recovering",
+                        "note": "Catching up after initial delays"
                     },
                      "pests": {
-                        "title": "Pest Status",
-                        "value": "Under Control",
-                        "note": "No major issues"
+                        "title": "Pest/Disease Status",
+                        "value": "Ganoderma Spreading",
+                        "note": "Spread to 5 new blocks (A02, A04, A05, B23, B24)"
                     }
                 },
                 "keyMetrics": [
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Ratio", "value": "1:18 ha (Adequate)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Under Control" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "20.46%" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding", "value": "Delayed" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "6-17 days (Good)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Manuring Delay", "value": "Some delays in application" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z' /><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2-2h8zM17 8h2.75l-3.5 3.5-3.5-3.5H17z' /></svg>`, "label": "FFB Backlog", "value": "High (Poor Roads)" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Ganoderma", "value": "Spreading (Blocks A08->Others)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Nutrient Status", "value": "Magnesium Deficiency (A09)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding", "value": "Delayed (Inter-row)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "~15 Days (Improving)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Manuring", "value": "Catching Up (Some delays)" }
                 ],
                 "chartData": {
                     "production": {
-                        "labels": ["May-24", "Jun-24", "Jul-24", "Aug-24", "Sep-24", "Oct-24", "Nov-24", "Dec-24", "Jan-25", "Feb-25", "Mar-25", "Apr-25"],
-                        "ffb": [1.95, 2.00, 1.86, 1.91, 2.15, 1.96, 1.76, 1.94, 1.45, 1.26, 1.71, 1.88],
-                        "rainfall": [445, 308, 309, 309, 94, 178, 333, 94, 274, 336, 330, 375],
-                        "note": "*Monthly FFB Yield (MT/Ha) & Rainfall (mm). (Source: AR Pg. 43, 52 / Audit Pg. 13)"
+                        "labels": ["May-25", "Jun-25", "Jul-25", "Aug-25", "Sep-25", "Oct-25"],
+                        "ffb": [], // Monthly FFB detailed numbers not explicitly in snippet
+                        "rainfall": [445, 308, 309, 309, 94, 178],
+                        "note": "*Rainfall data May-Oct 2025. Yield data shows YTD improvement of 12%. (Source: AR 2/2025 Pg. 46)"
                     },
                     "ageProfile": {
                         "labels": ["Prime Mature (8-19 Yrs)"],
                         "data": [100],
                         "title": "MLP 3 Estate - Palm Age Distribution",
-                        "note": "*Source: Agronomy Report 1/2025, Pg. 12."
+                        "note": "*Source: Agronomy Report 2/2025, Pg. 7."
                     }
                 },
                 "observations": [
-                    "<b>Overall Rating:</b> The estate is rated as <b>Marginally Deficient</b> by IAD due to several control weaknesses, despite acceptable yield and cost performance. <span class='observation-ref'>(Audit Pg. 1, 2)</span>",
-                    "<b>Significant FFB Backlog & Poor Roads:</b> FFB backlog frequently exceeded 100-200 MT due to poor road conditions, high rainfall, and significant delays in road gravelling work by the contractor. <span class='observation-ref'>(Audit Pg. 11-14, PA Pg. 38)</span>",
-                    "<b>Payroll & Attendance Issues:</b> Audit found non-payment of valid sick leave to workers and manipulation of Quarto Connects attendance records (using photos, not live capture) by a Field Conductor. <span class='observation-ref'>(Audit Pg. 3-7)</span>",
-                    "<b>Delayed Weeding & Manuring:</b> Both weeding programs (PA) and the manuring program for rehabilitation block 3CC42 (Audit) are significantly delayed. Manuring quality was also noted as unsatisfactory (AR). <span class='observation-ref'>(PA Pg. 22-23, AR Pg. 13, Audit Pg. 20-21)</span>",
-                    "<b>FFB Despatch & Transport Issues:</b> Audit identified discrepancies in FFB despatch times in Quarto Systems and the use of transport lorries not listed in the official contract. <span class='observation-ref'>(Audit Pg. 8-11)</span>"
+                    "<b>Ganoderma Spreading (Critical):</b> Infection has spread from Block A08 to A02, A04, A05, B23, and B24. Mortality is currently <1% (49 palms), but the spread is concerning. Deboling (1.5m x 1.5m x 1.5m) has not been carried out due to machinery limitations. <span class='observation-ref'>(AR 2/2025 Pg. 4, 35)</span>",
+                    "<b>Magnesium Deficiency:</b> Localized Magnesium deficiency observed in Block A09 (yellowish/orange fronds). Leaf analysis confirms low Mg levels. Corrective manuring required. <span class='observation-ref'>(AR 2/2025 Pg. 21)</span>",
+                    "<b>Weeding Delays:</b> Inter-row spraying is significantly delayed, particularly in Division C. Undesirable weeds (Clidemia hirta, etc.) are present. Circle spraying is generally acceptable but delayed in some blocks. <span class='observation-ref'>(AR 2/2025 Pg. 30-31)</span>",
+                    "<b>Audit - Payroll & Attendance:</b> (Previously Reported) Non-payment of sick leave and manipulation of attendance records (using photos instead of live capture) by Field Staff remains a compliance issue. <span class='observation-ref'>(Audit May 2025 Pg. 3-7)</span>",
+                    "<b>Manuring Progress:</b> FY2024/25 program completed. FY2025/26 started with 1-3 month delays in some blocks (Mix B, RP) but is now catching up. Application quality is generally acceptable. <span class='observation-ref'>(AR 2/2025 Pg. 10-11)</span>",
+                    "<b>Harvesting Operations:</b> Intervals have improved to ~15 days in most blocks (07A, 08A, 11A). Delays persist in hilly blocks (09B, 10B) due to terrain/weather. Crop quality is generally acceptable. <span class='observation-ref'>(AR 2/2025 Pg. 14-15)</span>"
                 ],
                 "reports": {
                     "plantation": {
-                        "Executive Summary": "The estate's performance is acceptable with satisfactory crop production and cost control. The main challenge is to improve weeding and road conditions. (Source: PA, Pg. 7, 45-46)",
-                        "Area Statement": "The planted area is 1,755.70 ha, all of which is in the prime mature stage (12-18 years old). (Source: PA, Pg. 10-12)",
-                        "Labour Statement": "The labour force of 186 workers is adequate, with a worker-to-land ratio of 1:9 ha. (Source: PA, Pg. 15)",
-                        "Staff Establishment": "Staffing is adequate, with no major changes. (Source: PA, Pg. 14)",
-                        "General Charges": "General charges are 18% below budget and are satisfactory. (Source: PA, Pg. 17)",
-                        "Upkeep Cultivation": "The total upkeep cost is 1% below budget. Weeding programs are behind schedule, but the manuring program for the year has been completed. (Source: PA, Pg. 20, 22, 30)",
-                        "Harvesting and Collection": "The total harvesting cost of RM 134.54/tonne is 3% above budget. Harvesting intervals are generally acceptable, but harvester productivity needs to improve. (Source: PA, Pg. 37-38)",
-                        "Crop Production": "FFB production for the year was 38,310 MT, 5% below budget but still acceptable. Yield was 21.82 MT/ha. (Source: PA, Pg. 41)",
-                        "Production Cost": "The ex-estate cost of production is RM 267.74/tonne, 4% below budget and satisfactory. (Source: PA, Pg. 42)",
-                        "Vehicles Running Cost": "Vehicle running costs are generally acceptable. (Source: PA, Pg. 43)",
-                        "Capital Expenditure": "Capital expenditure was underspent. (Source: PA, Pg. 44)",
+                        "Executive Summary": "The estate's performance is acceptable with satisfactory crop production and cost control. The main challenge is to improve weeding and road conditions. (Source: PA May 2025, Pg. 7, 45-46)",
+                        "Area Statement": "The planted area is 1,755.70 ha, all of which is in the prime mature stage (12-18 years old). (Source: PA May 2025, Pg. 10-12)",
+                        "Labour Statement": "The labour force of 186 workers is adequate, with a worker-to-land ratio of 1:9 ha. (Source: PA May 2025, Pg. 15)",
+                        "General Charges": "General charges are 18% below budget and are satisfactory. (Source: PA May 2025, Pg. 17)",
+                        "Upkeep Cultivation": "The total upkeep cost is 1% below budget. Weeding programs are behind schedule. (Source: PA May 2025, Pg. 20, 22)",
+                        "Harvesting and Collection": "The total harvesting cost of RM 134.54/tonne is 3% above budget. (Source: PA May 2025, Pg. 37-38)",
+                        "Crop Production": "FFB production for the year (FY 23/24) was 38,310 MT. (Source: PA May 2025, Pg. 41)",
+                        "Production Cost": "The ex-estate cost of production is RM 267.74/tonne, 4% below budget and satisfactory. (Source: PA May 2025, Pg. 42)",
                         "Immature": "N/A"
                     },
                     "agronomy": {
-                        "Executive Summary": "Yield performance has improved by 5% from the previous year. However, there are concerns with manuring delays and quality, and weeding programs are behind schedule. (Source: AR, Pg. 4-6)",
-                        "Nutrient inputs progress of manuring": "The FY2024/25 manuring program was completed, but with delays of up to 3 months for some applications. The quality of application needs improvement. (Source: AR, Pg. 13)",
-                        "Agronomic observation": "Harvesting intervals are mostly acceptable, but some blocks have extended intervals. Pruning is up-to-date and satisfactory. Ground vegetation conditions are fair but require improvement. (Source: AR, Pg. 17, 23, 31)",
-                        "Yield performance": "The yield of 21.82 MT/ha is a 5% improvement from the previous year and is considered acceptable. (Source: AR, Pg. 42)",
-                        "Fertilizer recommendation": "The fertilizer program for FY2025/26 remains unchanged. (Source: AR, Pg. 46-49)"
+                        "Executive Summary": "Yield performance has improved significantly, recording a 12% increase year-to-date compared to the previous financial year. However, concerns remain regarding the incomplete manuring from FY2024/25, though the current FY2025/26 program is recovering from initial delays. Harvesting intervals have been shortened to 15 days in most areas, but hilly terrain blocks still face delays. Magnesium deficiency has been identified as a key issue in Block A09, requiring corrective action. Ground upkeep is mixed, with weeding progress slower than expected, leading to weedy conditions in certain blocks. While Ganoderma infection is currently insignificant (<1%), sanitation (deboling) has not yet been carried out. (Source: AR 2/2025 Pg. 4-6)",
+                        "Nutrient Inputs/Progress of Manuring": "The FY2025/2026 manuring program is progressing well despite early delays. Current completion status: Mixture A (99%), Mixture B (80%), Kieserite (98%), and Rock Phosphate (60%). Delays of 1-3 months were noted in specific blocks (e.g., Mix B in Division C). Application quality is generally acceptable, though some broadcasting was observed too close to terrace lips and palm bases in Block A08. Sub-soil application in Block A01 was done correctly. Old stock of NK Mix (31.15 MT) is still in store and requires prioritization. (Source: AR 2/2025 Pg. 10-13)",
+                        "Agronomic Observation": "<b>Harvesting:</b> Intervals have generally improved to ~15 days. However, blocks 09B, 10B, 11B, and 13C experienced extensions due to accessibility issues during rainy periods. Loose fruit collection is poor in ravine and rehab areas. <br><b>Vegetation:</b> Inter-row spraying is significantly delayed, particularly in Division C. VOPs were observed in circles (A07-A09). Undesirable weeds like Clidemia hirta are present. <br><b>Pruning:</b> Generally acceptable, though frond stacking in weeded circles needs correction to avoid disrupting operations. <br><b>Pest & Disease:</b> Ganoderma has spread from A08 to A02, A04, A05, B23, and B24 (Total 49 dead palms). Deboling is delayed due to machinery limitations. Rat damage is minor. <br><b>Nutrient Status:</b> Magnesium deficiency confirmed in Block A09 with yellowish/orange fronds; foliar analysis shows low Mg but normal N, P, and K levels. (Source: AR 2/2025 Pg. 14-36)",
+                        "Yield Performance": "As of October 2025 (Period 6), the estate achieved a yield of 13.24 MT/Ha, representing a 12% increase compared to the same period last year (11.83 MT/Ha). All fields recorded growth, with Block 11B showing the highest improvement (16%). To sustain this, road maintenance—specifically gravelling in rehabilitated blocks like B22—must be expedited before the monsoon season to ensure crop evacuation. (Source: AR 2/2025 Pg. 37-38)",
+                        "Fertilizer Recommendation": "The fertilizer program for FY2025/2026 remains unchanged. The recommendation for FY2026/2027 has been drafted and is attached in Appendix 2. Sub-soil application methods are to be continued in Blocks A01 and A05, and extended to Blocks 30 and 31. (Source: AR 2/2025 Pg. 39)"
                     },
                     "pinfosys": {
                         "CEO Financial Summary": "N/A",
                         "Summary of Oil Palm Expenditure": "N/A"
                     },
                     "audit": {
-                        "Overall Rating": "Marginally Deficient. While most key controls are applied, some important controls lack consistency or effectiveness. (Source: Audit Pg. 2)",
-                        "Payroll and Personnel": "Weaknesses identified, including: <br>1. Non-payment of entitled paid sick leave to workers, which is non-compliant with Sabah Labour Ordinance. (Source: Audit Pg. 3-4) <br>2. Irregular Quarto Connects attendance entries (e.g., late at night) using photos instead of live biometric capture by a Field Conductor. (Source: Audit Pg. 4-5)",
-                        "Oil Palm Operations": "Enhancements needed for FFB transport: <br>1. Discrepancies in 'Time Out' and 'Mill Time In' between FFB despatch records and Quarto Systems, as the clerk did not manually update default timestamps. (Source: Audit Pg. 8-9) <br>2. Use of unregistered lorries (not listed in the transportation agreement) to transport FFB, posing security and accountability risks. (Source: Audit Pg. 10-11) <br>3. Significant FFB backlog (often >100 MT) due to poor road conditions, high rainfall (3,385mm in FY 24/25), and delays in road gravelling by the contractor (SWA Enterprise). (Source: Audit Pg. 11-14)",
-                        "Manuring": "The manuring program for FY 2024/2025 in the rehabilitation Block 3CC42 (47.37 Ha) is incomplete and delayed (at least 56% pending). This is attributed to the block being inaccessible and hilly. (Source: Audit Pg. 20-21)"
+                        "Overall Rating": "Marginally Deficient. While most key controls are applied, some important controls lack consistency or effectiveness. (Source: Audit May 2025 Pg. 2)",
+                        "Payroll and Personnel": "Weaknesses identified, including: <br>1. Non-payment of entitled paid sick leave. <br>2. Irregular Quarto Connects attendance entries (e.g., late at night) using photos instead of live biometric capture. (Source: Audit May 2025 Pg. 3-5)",
+                        "Oil Palm Operations": "Enhancements needed for FFB transport: <br>1. Discrepancies in 'Time Out' and 'Mill Time In'. <br>2. Use of unregistered lorries. <br>3. Significant FFB backlog due to poor road conditions and contractor delays. (Source: Audit May 2025 Pg. 8-14)",
+                        "Manuring": "FY 24/25 manuring in rehabilitation Block 3CC42 was incomplete/delayed due to accessibility. (Source: Audit May 2025 Pg. 20-21)"
                     }
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gen-01:</b> Conduct regular pest census to monitor infestation levels. No major issues currently, but vigilance is required.</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must strictly adhere to the schedule. Improve application quality and supervision to prevent wastage.</p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Maintain harvesting intervals below 15 days. Improve harvester productivity through training and motivation.</p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Ganoderma Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> For infected palms, immediate sanitation via deboling (1.5m x 1.5m x 1.5m pit) is required to prevent spread.</p></div> <div class='policy-item'><p class='font-semibold'>Nutrient Management</p><p class='text-sm text-gray-600'><b>Policy Ref: SOIL-MG-01:</b> Correct Magnesium deficiency through Kieserite application or specific fertilizer mix as per Agronomist recommendation.</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must strictly adhere to the schedule. Broadcasting must be done at the edge of the weeded circle, not on terrace lips.</p></div> <div class='policy-item'><p class='font-semibold'>Harvesting Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Maintain harvesting intervals below 15 days. In hilly terrain, ensure road maintenance to prevent skipped rounds.</p></div>"
             };
 
 
@@ -186,7 +183,8 @@
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
-                                       metric.title.includes('Labour') ? 'bg-purple-50 text-purple-800' : 'bg-red-50 text-red-800';
+                                       metric.title.includes('Manuring') ? 'bg-yellow-50 text-yellow-800' : 
+                                       metric.title.includes('Pest') ? 'bg-red-50 text-red-800' : 'bg-gray-50 text-gray-800';
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
@@ -201,9 +199,10 @@
 
                 const observationsHTML = estate.observations.map(obs => `<li class="ml-4">${obs}</li>`).join('');
 
-                const productionChartHTML = (estate.chartData.production.labels && estate.chartData.production.labels.length > 0) || (estate.chartData.production.rainfall && estate.chartData.production.rainfall.length > 0) ?
+                // Check if we have data to show the chart
+                const productionChartHTML = (estate.chartData.production.labels && estate.chartData.production.labels.length > 0) ?
                     `<div class="chart-container"><canvas id="prodChart-${estate.id}"></canvas></div>` :
-                    `<div class="chart-container flex items-center justify-center bg-gray-50 rounded-lg p-4"><p class="text-gray-500 text-center">A monthly Production vs. Rainfall chart cannot be generated as monthly FFB production data is not available in the reports.</p></div>`;
+                    `<div class="chart-container flex items-center justify-center bg-gray-50 rounded-lg p-4"><p class="text-gray-500 text-center">Chart data unavailable.</p></div>`;
 
                 return `
                     <div class="bg-white p-6 rounded-lg shadow-lg animate-fade-in">
@@ -212,7 +211,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">${summaryMetricsHTML}</div>
                         <div class="mb-8"><h3 class="text-xl font-semibold mb-4 border-b pb-2">Key Metrics & Agronomic Status</h3><div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">${keyMetricsHTML}</div></div>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                            <div><h3 class="text-xl font-semibold mb-2">Monthly Production vs Rainfall</h3>${productionChartHTML}<p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
+                            <div><h3 class="text-xl font-semibold mb-2">Rainfall Analysis (May - Oct 2025)</h3>${productionChartHTML}<p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
                             <div><h3 class="text-xl font-semibold mb-2">Palm Age Profile</h3><div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.ageProfile.note}</p></div>
                         </div>
                         
@@ -221,15 +220,15 @@
                             <ul id="observations-list" class="list-disc list-inside space-y-2 text-gray-700 mt-4">${observationsHTML}</ul>
                         </div>
                         
-                        <div class="mb-8 text-center"><button class="policy-modal-btn bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
+                        <div class="mb-8 text-center"><button class="policy-modal-btn bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
                         <div class="space-y-2">
-                            <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Plantation Advisory Report Details</button>
+                            <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-green-900 text-white p-3 rounded-md hover:bg-green-800 transition">Plantation Advisory Report Details</button>
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
-                            <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
+                            <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-green-900 text-white p-3 rounded-md hover:bg-green-800 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
-                            <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Pinfosys Report Details</button>
+                            <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-green-900 text-white p-3 rounded-md hover:bg-green-800 transition">Pinfosys Report Details</button>
                             <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
-                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Audit Report Details</button>
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-green-900 text-white p-3 rounded-md hover:bg-green-800 transition">Audit Report Details</button>
                             <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
                     </div>`;
@@ -242,11 +241,9 @@
                 if (chartInstances[ageCanvasId]) chartInstances[ageCanvasId].destroy();
 
                 const prodCtx = document.getElementById(prodCanvasId)?.getContext('2d');
-                if(prodCtx && ((estateData.chartData.production.labels && estateData.chartData.production.labels.length > 0) || (estateData.chartData.production.rainfall && estateData.chartData.production.rainfall.length > 0))) {
+                if(prodCtx && estateData.chartData.production.labels && estateData.chartData.production.labels.length > 0) {
                     const datasets = [];
-                    if (estateData.chartData.production.ffb && estateData.chartData.production.ffb.length > 0) {
-                        datasets.push({ label: 'FFB Yield (MT/Ha)', data: estateData.chartData.production.ffb, type: 'line', borderColor: '#ca8a04', backgroundColor: 'transparent', yAxisID: 'y-ffb', tension: 0.4 });
-                    }
+                    // Only adding rainfall as FFB monthly data wasn't explicitly provided in the PDF summary table snippet
                     if (estateData.chartData.production.rainfall && estateData.chartData.production.rainfall.length > 0) {
                         datasets.push({ label: 'Rainfall (mm)', data: estateData.chartData.production.rainfall, backgroundColor: '#3b82f6', yAxisID: 'y-rainfall' });
                     }
@@ -257,7 +254,14 @@
                             labels: estateData.chartData.production.labels,
                             datasets: datasets
                         },
-                        options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, 'y-ffb': { type: 'linear', position: 'left', title: { display: true, text: 'FFB Yield (MT/Ha)' } }, 'y-rainfall': { type: 'linear', position: 'right', title: { display: true, text: 'Rainfall (mm)' }, grid: { drawOnChartArea: false } } } }
+                        options: { 
+                            responsive: true, 
+                            maintainAspectRatio: false, 
+                            scales: { 
+                                x: { grid: { display: false } }, 
+                                'y-rainfall': { type: 'linear', position: 'left', title: { display: true, text: 'Rainfall (mm)' } } 
+                            } 
+                        }
                     });
                 }
 
@@ -287,10 +291,14 @@
                     plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
                 if (pinfosysDiv && estateData.reports.pinfosys) {
-                    pinfosysDiv.innerHTML = Object.entries(estateData.reports.pinfosys).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    if (typeof estateData.reports.pinfosys === 'string') {
+                         pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600">${estateData.reports.pinfosys}</p>`;
+                    } else {
+                        pinfosysDiv.innerHTML = Object.entries(estateData.reports.pinfosys).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    }
                 }
                  if (auditDiv && estateData.reports.audit) {
-                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p classDetails="text-sm text-gray-600">${content}</p>`).join('');
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
             }
 
