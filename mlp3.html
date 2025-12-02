@@ -12,7 +12,7 @@
         body { font-family: 'Inter', sans-serif; }
         .details-content { display: none; }
         .details-content.active { display: block; }
-        .dropdown-btn.active { background-color: #14532d; } /* dark green */
+        .dropdown-btn.active { background-color: #14532d; }
         .policy-item { border-left: 3px solid #16a34a; padding-left: 1rem; margin-top: 0.75rem; }
         .modal { display: none; }
         .modal.active { display: flex; }
@@ -33,8 +33,10 @@
     <!-- Header -->
     <header class="bg-white shadow-md">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <div id="header-title" class="text-xl font-bold text-gray-900">
-                <!-- Title will be populated by JS -->
+            <div class="text-xl font-bold text-gray-900">
+                <a href="index.html" class="flex items-center">
+                    MLP 3 Estate Report
+                </a>
             </div>
             <a href="estates.html" class="text-green-800 hover:text-green-900 transition duration-300">&larr; Back to Estates List</a>
         </nav>
@@ -68,85 +70,88 @@
             const estateData = {
                 "id": "mlp3",
                 "name": "MLP 3 Estate",
-                "reportInfo": "Data based on Agronomy Report (23 Oct 2025), PA Report (May 2025) & Audit Report (May 2025).",
+                "reportInfo": "Data based on Plantation Advisory Report (12-13 May 2025), Agronomy Report (23 Oct 2025) & Audit Report (May 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
                         "lines": [
                             "Total Planted: 1,755.70 ha",
                             "Mature: 1,755.70 ha",
-                            "Prime: 100% Mature"
+                            "Immature: 0.00 ha"
                         ]
                     },
                     "yield": {
                         "title": "Yield/Ha (YTD Actual / Budget)",
                         "value": "13.24 / N/A MT",
-                        "note": "Budget N/A in report. +12% vs Last Year (11.83)"
+                        "note": "YTD Oct 2025 (Agronomy Report)"
                     },
                     "cost": {
-                        "title": "FFB Cost/Tonne (FY 24/25 vs Budget)",
+                        "title": "FFB Cost/Tonne (Actual vs Budget)",
                         "value": "RM 267.74 / RM 279.41",
-                        "note": "Based on PA Report (May 2025)"
+                        "note": "Ex-Estate (PA Report May 2025)"
                     },
-                    "labour": {
-                        "title": "Manuring Status",
-                        "value": "Recovering",
-                        "note": "Catching up after initial delays"
+                    "road": {
+                        "title": "Road Upkeep Cost",
+                        "value": "RM 955.50/ha",
+                        "note": "44% Above Budget (Critical Issue)"
                     },
                      "pests": {
                         "title": "Pest/Disease Status",
                         "value": "Ganoderma Spreading",
-                        "note": "Spread to 5 new blocks (A02, A04, A05, B23, B24)"
+                        "note": "Spreading to blocks A02, A04, B23"
                     }
                 },
                 "keyMetrics": [
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Ratio", "value": "1:18 ha (Adequate)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Ganoderma", "value": "Spreading (Blocks A08->Others)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Nutrient Status", "value": "Magnesium Deficiency (A09)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding", "value": "Delayed (Inter-row)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "~15 Days (Improving)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Manuring", "value": "Catching Up (Some delays)" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Weeding Status", "value": "Delayed (1.57 vs 3.0 Rds)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (Actual)", "value": "20.46%" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Road Maint.", "value": "44% Over Budget" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "12-15 Days (Satisfactory)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Manuring", "value": "Weather Delays" }
                 ],
                 "chartData": {
                     "production": {
                         "labels": ["May-25", "Jun-25", "Jul-25", "Aug-25", "Sep-25", "Oct-25"],
-                        "ffb": [], // Monthly FFB detailed numbers not explicitly in snippet
+                        "ffb": [], 
                         "rainfall": [445, 308, 309, 309, 94, 178],
-                        "note": "*Rainfall data May-Oct 2025. Yield data shows YTD improvement of 12%. (Source: AR 2/2025 Pg. 46)"
+                        "note": "*Rainfall data May-Oct 2025. Yield data 21.82 MT/Ha (Actual). (Source: PA Report 1/2025, Pg. 41)"
                     },
                     "ageProfile": {
-                        "labels": ["Prime Mature (8-19 Yrs)"],
+                        "labels": ["Prime Mature (12-18 Yrs)"],
                         "data": [100],
                         "title": "MLP 3 Estate - Palm Age Distribution",
-                        "note": "*Source: Agronomy Report 2/2025, Pg. 7."
+                        "note": "*Source: PA Report 1/2025, Pg. 12."
                     }
                 },
                 "observations": [
-                    "<b>Ganoderma Spreading (Critical):</b> Infection has spread from Block A08 to A02, A04, A05, B23, and B24. Mortality is currently <1% (49 palms), but the spread is concerning. Deboling (1.5m x 1.5m x 1.5m) has not been carried out due to machinery limitations. <span class='observation-ref'>(AR 2/2025 Pg. 4, 35)</span>",
+                    "<b>Road Maintenance Issues (Critical):</b> Expenditure on roads is 44% above budget (RM 955.50/ha). Agricultural roads are in unsatisfactory condition, limiting access to 4x4 vehicles and disrupting FFB evacuation during wet weather. <span class='observation-ref'>(PA 1/2025 Pg. 33-34, 45)</span>",
+                    "<b>Ganoderma Spreading:</b> Infection has spread from Block A08 to A02, A04, A05, B23, and B24. Mortality is <1% (49 palms), but sanitation (deboling) is delayed due to machinery limitations. <span class='observation-ref'>(AR 2/2025 Pg. 4, 35)</span>",
+                    "<b>Weeding Delays:</b> Significant delays in weeding program. Only 1.57 rounds of circle spraying completed vs 3.0 budgeted. Inter-row areas are dominated by noxious broadleaf weeds (Clidemia, etc.). <span class='observation-ref'>(PA 1/2025 Pg. 20, 22; AR 2/2025 Pg. 30)</span>",
                     "<b>Magnesium Deficiency:</b> Localized Magnesium deficiency observed in Block A09 (yellowish/orange fronds). Leaf analysis confirms low Mg levels. Corrective manuring required. <span class='observation-ref'>(AR 2/2025 Pg. 21)</span>",
-                    "<b>Weeding Delays:</b> Inter-row spraying is significantly delayed, particularly in Division C. Undesirable weeds (Clidemia hirta, etc.) are present. Circle spraying is generally acceptable but delayed in some blocks. <span class='observation-ref'>(AR 2/2025 Pg. 30-31)</span>",
-                    "<b>Audit - Payroll & Attendance:</b> (Previously Reported) Non-payment of sick leave and manipulation of attendance records (using photos instead of live capture) by Field Staff remains a compliance issue. <span class='observation-ref'>(Audit May 2025 Pg. 3-7)</span>",
-                    "<b>Manuring Progress:</b> FY2024/25 program completed. FY2025/26 started with 1-3 month delays in some blocks (Mix B, RP) but is now catching up. Application quality is generally acceptable. <span class='observation-ref'>(AR 2/2025 Pg. 10-11)</span>",
-                    "<b>Harvesting Operations:</b> Intervals have improved to ~15 days in most blocks (07A, 08A, 11A). Delays persist in hilly blocks (09B, 10B) due to terrain/weather. Crop quality is generally acceptable. <span class='observation-ref'>(AR 2/2025 Pg. 14-15)</span>"
+                    "<b>Audit - Payroll Compliance:</b> Weaknesses identified in non-payment of sick leave and manipulation of attendance records by field staff (using photos instead of live capture). <span class='observation-ref'>(Audit May 2025 Pg. 3-7)</span>",
+                    "<b>Manuring Deviations:</b> FY24/25 program faced delays due to substantial rainy days. Manual broadcasting is inefficient; increasing workers from 16 to 20 is recommended. <span class='observation-ref'>(PA 1/2025 Pg. 28)</span>"
                 ],
                 "reports": {
                     "plantation": {
-                        "Executive Summary": "The estate's performance is acceptable with satisfactory crop production and cost control. The main challenge is to improve weeding and road conditions. (Source: PA May 2025, Pg. 7, 45-46)",
-                        "Area Statement": "The planted area is 1,755.70 ha, all of which is in the prime mature stage (12-18 years old). (Source: PA May 2025, Pg. 10-12)",
-                        "Labour Statement": "The labour force of 186 workers is adequate, with a worker-to-land ratio of 1:9 ha. (Source: PA May 2025, Pg. 15)",
-                        "General Charges": "General charges are 18% below budget and are satisfactory. (Source: PA May 2025, Pg. 17)",
-                        "Upkeep Cultivation": "The total upkeep cost is 1% below budget. Weeding programs are behind schedule. (Source: PA May 2025, Pg. 20, 22)",
-                        "Harvesting and Collection": "The total harvesting cost of RM 134.54/tonne is 3% above budget. (Source: PA May 2025, Pg. 37-38)",
-                        "Crop Production": "FFB production for the year (FY 23/24) was 38,310 MT. (Source: PA May 2025, Pg. 41)",
-                        "Production Cost": "The ex-estate cost of production is RM 267.74/tonne, 4% below budget and satisfactory. (Source: PA May 2025, Pg. 42)",
-                        "Immature": "N/A"
+                        "Executive Summary": "Overall estate performance is satisfactory. Yield (21.82 MT/ha) and production costs (RM 267.74/MT) are within acceptable ranges. The primary challenges are the poor condition of agricultural roads, which hinders operations during rain, and the significant delay in the weeding program. (Source: PA 1/2025, Pg. 7, 45)",
+                        "Area Statement": "Total planted area is 1,755.70 ha, all of which is prime mature (12-18 years old). No changes in area statement since the last visit. (Source: PA 1/2025, Pg. 10-12)",
+                        "Labour Statement": "Total labour force is 186 workers (Ratio 1:9 ha). Harvesters number 100 (Ratio 1:18 ha). The workforce is generally adequate, but productivity needs improvement to retain workers. (Source: PA 1/2025, Pg. 15)",
+                        "Staff Establishment": "Staff establishment is satisfactory. Chief Clerk resigned in Jan 2025; a replacement is currently in training. (Source: PA 1/2025, Pg. 14)",
+                        "General Charges": "Total expenditure is RM 1,266.43/ha, which is 18% below the budget. However, office expenses (professional fees) and transport costs exceeded budget significantly. (Source: PA 1/2025, Pg. 17-18)",
+                        "Upkeep & Cultivation": "Total upkeep cost is RM 2,460.11/ha (10% below budget). Weeding is 31% below budget due to delays (1.57 rounds vs 3.0 planned). Road maintenance is 44% over budget (RM 955.50/ha) due to heavy repairs on agricultural roads. (Source: PA 1/2025, Pg. 19-34)",
+                        "Harvesting and Collection": "Total cost is RM 134.54/tonne (3% above budget). Harvesting intervals are satisfactory (<15 days). Contracting out the entire FFB evacuation is recommended to improve efficiency. (Source: PA 1/2025, Pg. 37-39)",
+                        "Crop Production": "Actual production was 38,309.69 MT (21.82 MT/ha), which is 5% below the budgeted 40,230 MT. OER achieved was 20.46%. (Source: PA 1/2025, Pg. 41)",
+                        "Production Cost": "Ex-estate cost of production is RM 267.74/tonne, 4% below the budget of RM 279.41. This is considered satisfactory. (Source: PA 1/2025, Pg. 42)",
+                        "Vehicles Running Cost": "Running costs are generally acceptable. Underutilized vehicles (Nissan Lorry SAC8935F, Caterpillar Bulldozer) are recommended to be sold or written off. (Source: PA 1/2025, Pg. 43-44)",
+                        "Capital Expenditure": "N/A",
+                        "Immature": "N/A (100% Mature Area)"
                     },
                     "agronomy": {
-                        "Executive Summary": "Yield performance has improved significantly, recording a 12% increase year-to-date compared to the previous financial year. However, concerns remain regarding the incomplete manuring from FY2024/25, though the current FY2025/26 program is recovering from initial delays. Harvesting intervals have been shortened to 15 days in most areas, but hilly terrain blocks still face delays. Magnesium deficiency has been identified as a key issue in Block A09, requiring corrective action. Ground upkeep is mixed, with weeding progress slower than expected, leading to weedy conditions in certain blocks. While Ganoderma infection is currently insignificant (<1%), sanitation (deboling) has not yet been carried out. (Source: AR 2/2025 Pg. 4-6)",
-                        "Nutrient Inputs/Progress of Manuring": "The FY2025/2026 manuring program is progressing well despite early delays. Current completion status: Mixture A (99%), Mixture B (80%), Kieserite (98%), and Rock Phosphate (60%). Delays of 1-3 months were noted in specific blocks (e.g., Mix B in Division C). Application quality is generally acceptable, though some broadcasting was observed too close to terrace lips and palm bases in Block A08. Sub-soil application in Block A01 was done correctly. Old stock of NK Mix (31.15 MT) is still in store and requires prioritization. (Source: AR 2/2025 Pg. 10-13)",
-                        "Agronomic Observation": "<b>Harvesting:</b> Intervals have generally improved to ~15 days. However, blocks 09B, 10B, 11B, and 13C experienced extensions due to accessibility issues during rainy periods. Loose fruit collection is poor in ravine and rehab areas. <br><b>Vegetation:</b> Inter-row spraying is significantly delayed, particularly in Division C. VOPs were observed in circles (A07-A09). Undesirable weeds like Clidemia hirta are present. <br><b>Pruning:</b> Generally acceptable, though frond stacking in weeded circles needs correction to avoid disrupting operations. <br><b>Pest & Disease:</b> Ganoderma has spread from A08 to A02, A04, A05, B23, and B24 (Total 49 dead palms). Deboling is delayed due to machinery limitations. Rat damage is minor. <br><b>Nutrient Status:</b> Magnesium deficiency confirmed in Block A09 with yellowish/orange fronds; foliar analysis shows low Mg but normal N, P, and K levels. (Source: AR 2/2025 Pg. 14-36)",
-                        "Yield Performance": "As of October 2025 (Period 6), the estate achieved a yield of 13.24 MT/Ha, representing a 12% increase compared to the same period last year (11.83 MT/Ha). All fields recorded growth, with Block 11B showing the highest improvement (16%). To sustain this, road maintenance—specifically gravelling in rehabilitated blocks like B22—must be expedited before the monsoon season to ensure crop evacuation. (Source: AR 2/2025 Pg. 37-38)",
-                        "Fertilizer Recommendation": "The fertilizer program for FY2025/2026 remains unchanged. The recommendation for FY2026/2027 has been drafted and is attached in Appendix 2. Sub-soil application methods are to be continued in Blocks A01 and A05, and extended to Blocks 30 and 31. (Source: AR 2/2025 Pg. 39)"
+                        "Executive Summary": "Yield performance has improved significantly (12% increase YTD vs last year). Concerns remain regarding incomplete manuring from FY2024/25 and delayed weeding. Magnesium deficiency identified in Block A09 requires corrective action. Ganoderma infection is <1% but spreading; sanitation (deboling) is delayed. (Source: AR 2/2025 Pg. 4-6)",
+                        "Nutrient Inputs/Progress of Manuring": "FY2025/2026 program started with 1-3 month delays in some blocks. Application quality is generally acceptable, though some broadcasting was observed too close to terrace lips. Old stock of NK Mix (31.15 MT) requires prioritization. (Source: AR 2/2025 Pg. 10-13)",
+                        "Agronomic Observation": "<b>Harvesting:</b> Intervals improved to ~15 days. Delays in hilly blocks (09B, 10B) due to accessibility. <br><b>Vegetation:</b> Inter-row spraying significantly delayed. Undesirable weeds like Clidemia hirta present. <br><b>Pest & Disease:</b> Ganoderma spreading (49 dead palms). Deboling delayed. Rat damage minor. <br><b>Nutrient Status:</b> Magnesium deficiency confirmed in Block A09. (Source: AR 2/2025 Pg. 14-36)",
+                        "Yield Performance": "Yield of 13.24 MT/Ha (YTD Oct 2025), a 12% increase vs same period last year. Block 11B showed highest improvement (16%). Road maintenance in rehab blocks (B22) critical for crop evacuation. (Source: AR 2/2025 Pg. 37-38)",
+                        "Fertilizer Recommendation": "FY2025/2026 program unchanged. FY2026/2027 draft attached. Sub-soil application to be continued in Blocks A01, A05, 30, and 31. (Source: AR 2/2025 Pg. 39)"
                     },
                     "pinfosys": {
                         "CEO Financial Summary": "N/A",
@@ -154,8 +159,8 @@
                     },
                     "audit": {
                         "Overall Rating": "Marginally Deficient. While most key controls are applied, some important controls lack consistency or effectiveness. (Source: Audit May 2025 Pg. 2)",
-                        "Payroll and Personnel": "Weaknesses identified, including: <br>1. Non-payment of entitled paid sick leave. <br>2. Irregular Quarto Connects attendance entries (e.g., late at night) using photos instead of live biometric capture. (Source: Audit May 2025 Pg. 3-5)",
-                        "Oil Palm Operations": "Enhancements needed for FFB transport: <br>1. Discrepancies in 'Time Out' and 'Mill Time In'. <br>2. Use of unregistered lorries. <br>3. Significant FFB backlog due to poor road conditions and contractor delays. (Source: Audit May 2025 Pg. 8-14)",
+                        "Payroll and Personnel": "Weaknesses identified: <br>1. Non-payment of entitled paid sick leave. <br>2. Irregular attendance entries (photos vs live biometric). (Source: Audit May 2025 Pg. 3-5)",
+                        "Oil Palm Operations": "Enhancements needed for FFB transport: <br>1. Discrepancies in 'Time Out' and 'Mill Time In'. <br>2. Use of unregistered lorries. <br>3. Significant FFB backlog due to poor road conditions. (Source: Audit May 2025 Pg. 8-14)",
                         "Manuring": "FY 24/25 manuring in rehabilitation Block 3CC42 was incomplete/delayed due to accessibility. (Source: Audit May 2025 Pg. 20-21)"
                     }
                 },
@@ -169,7 +174,6 @@
 
             // --- FUNCTIONS ---
             function renderEstate() {
-                document.getElementById('header-title').innerText = `${estateData.name} Report`;
                 container.innerHTML = createEstateHTML(estateData);
                 setTimeout(() => {
                     initializeChartsForEstate(estateData);
@@ -184,7 +188,7 @@
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
                                        metric.title.includes('Manuring') ? 'bg-yellow-50 text-yellow-800' : 
-                                       metric.title.includes('Pest') ? 'bg-red-50 text-red-800' : 'bg-gray-50 text-gray-800';
+                                       metric.title.includes('Pest') || metric.title.includes('Road') ? 'bg-red-50 text-red-800' : 'bg-gray-50 text-gray-800';
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
