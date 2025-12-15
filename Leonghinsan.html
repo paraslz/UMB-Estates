@@ -69,7 +69,7 @@
             const estateData = {
                 "id": "leonghinsan",
                 "name": "Leong Hin San Estate",
-                "reportInfo": "Data based on PA Report (Visit: 15th July 2025), Agronomy Report (June 2025) & Audit Report (Nov 2025).",
+                "reportInfo": "Data based on PA Report (Visit: 15th July 2025), Agronomy Report (Visit: 13th Nov 2025) & Audit Report (Nov 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -80,34 +80,34 @@
                         ]
                     },
                     "yield": {
-                        "title": "Yield/Ha (FY 24/25 vs Budget)",
-                        "value": "32.10 / 27.07 MT",
-                        "note": "18.6% above budget (PA Pg. 48)"
+                        "title": "Yield/Ha (FY 24/25 Actual)",
+                        "value": "32.10 MT/Ha",
+                        "note": "Oct '25 YTD: 15.73 MT/Ha (-4.3%) (AR Pg. 50)"
                     },
                     "cost": {
                         "title": "FFB Cost/Tonne (FY 24/25 vs Budget)",
                         "value": "RM 265.60 / RM 272.94",
                         "note": "2.7% lower than budget (PA Pg. 49)"
                     },
-                    "weeding": {
-                        "title": "Weeding Progress",
+                    "manuring": {
+                        "title": "Manuring Progress (FY25/26)",
                         "value": "Behind Schedule",
-                        "note": "Circle (64%), Selective (68%) (PA Pg. 21, 24)"
+                        "note": "32% Completed vs Target. (AR Pg. 11)"
                     },
-                     "manuring": {
-                        "title": "Manuring Progress",
-                        "value": "Completed",
-                        "note": "100% completed (PA Pg. 30)"
+                     "ganoderma": {
+                        "title": "Ganoderma Status",
+                        "value": "High Risk",
+                        "note": ">5% infection in most fields (AR Pg. 44)"
                     }
                 },
                 "keyMetrics": [
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "High (Ganoderma)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Harvester Productivity", "value": "3.0 MT/md (Acceptable)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Critical (Ganoderma >5%)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Nutrient Status", "value": "Mg Deficiency (Old Palms)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Worker Ratio", "value": "1 : 10 ha (Surplus)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-indigo-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21.75 8.25-13.5 2.25m0 0L2.25 8.25m11.25-6v6m-11.25 0v6m11.25 0-11.25 6m11.25-6v6m6-3.75-1.5-1.5m0 0L18 8.25m-1.5-1.5V6.375c0-.621.504-1.125 1.125-1.125H21' /></svg>`, "label": "Harvester Ratio", "value": "1 : 17 ha (Excessive)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding Condition", "value": "Acceptable (Needs Improve)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "<20 days (Acceptable)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' /></svg>`, "label": "Barn Owl Occupancy", "value": "25% (Decreased)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding Condition", "value": "Behind Schedule" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "<15 days (Improved)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' /></svg>`, "label": "Barn Owl Occupancy", "value": "1:11 ha (Sufficient)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-pink-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01' /></svg>`, "label": "Harvesting Cost", "value": "RM 115 / tonne" }
                 ],
                 "chartData": {
@@ -115,7 +115,7 @@
                         "labels": ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
                         "ffb": [2375, 2038, 1947, 2125, 1805, 2269, 2300, 1845, 1705, 1895, 1795, 2430],
                         "rainfall": [275, 158, 146, 172, 189, 118, 244, 149, 75, 91, 73, 361.5],
-                        "note": "*Source: AR Pg. 49, 59."
+                        "note": "*Rainfall data updated to Oct 2025 (AR Pg. 62). FFB data reflects FY24/25."
                     },
                     "ageProfile": {
                         "labels": ["0-3 Yrs", "4-7 Yrs", "8-19 Yrs (Prime)", "20-25 Yrs (Old)", ">26 Yrs"],
@@ -125,12 +125,12 @@
                     }
                 },
                 "observations": [
-                    "<b>Significant Ganoderma Infection:</b> Ganoderma is a major concern, causing significant loss of productive palms. Infection rates exceed 5% in most fields, with some over 10%. Palm mounding is in progress to mitigate losses. <span class='observation-ref'>(AR Pg. 43-44)</span>",
-                    "<b>Critical Vehicle Mismanagement & High Costs:</b> Running costs for tractors are excessive. An audit found this is due to chronic oil leaks (consumption up to 0.47 Lt/Hr vs. 0.05 Lt/Hr benchmark) concealed by a 'self-regulated top-up' practice, indicating poor supervision and high risk of mechanical failure. <span class='observation-ref'>(Audit Pg. 2-5; PA Pg. 50-51)</span>",
-                    "<b>Weeding Program Behind Schedule:</b> Both circle and selective weeding programs are behind schedule, having completed only about 2 out of 3 budgeted rounds. Circle conditions are suboptimal in several blocks. <span class='observation-ref'>(AR Pg. 33-34; PA Pg. 21)</span>",
-                    "<b>Delayed Compliance Reporting:</b> An audit highlighted a significant delay (approx. 2 weeks) in lodging a police report for an absconded foreign worker, exposing the company to potential legal and regulatory risks. <span class='observation-ref'>(Audit Pg. 7-8)</span>",
-                    "<b>Incomplete Loose Fruit Collection:</b> While harvesting standards are generally acceptable, there are instances of incomplete loose fruit collection, especially where palm circles have debris, leading to potential crop loss. <span class='observation-ref'>(AR Pg. 22-23)</span>",
-                    "<b>Aging Palm Profile:</b> 56% of the estate's palms (429 ha) are in the 20-25 year old category. While yields are still high, this indicates a future need for a replanting strategy. <span class='observation-ref'>(AR Pg. 10)</span>"
+                    "<b>Significant Ganoderma Infection:</b> Infection rates exceed 5% in most fields, with some over 10%. Mounding and de-boling in P10 and P12 are in progress, but the disease remains a major threat to stand density. <span class='observation-ref'>(AR Pg. 44-45)</span>",
+                    "<b>Manuring Program Delayed:</b> FY25/26 manuring is only 32% complete as of Oct 2025. Applications of NK and Mixture A are behind schedule and must be expedited to prevent nutrient stress. <span class='observation-ref'>(AR Pg. 11-12)</span>",
+                    "<b>Weeding Behind Schedule:</b> Weeding progress is slower than expected (32% vs target). Circle weeding is pending in P12B, P14A, and P14B. Suboptimal circle conditions are hindering loose fruit collection. <span class='observation-ref'>(AR Pg. 34, 41)</span>",
+                    "<b>Magnesium Deficiency in Old Palms:</b> Leaf analysis reveals suboptimal Magnesium (Mg) levels in older plantings (P01, P02, P03). Mixture A and Kieserite have been prescribed to correct this. <span class='observation-ref'>(AR Pg. 27-31)</span>",
+                    "<b>Harvesting Standards & Loose Fruit:</b> While harvesting intervals have improved to <15 days in Sept-Oct, loose fruit collection is compromised in areas with debris. Over-ripe bunches were noted in P03B2. <span class='observation-ref'>(AR Pg. 16, 19)</span>",
+                    "<b>Vehicle Mismanagement (Critical):</b> High tractor running costs due to chronic oil leaks and 'self-regulated top-ups'. Audit finding remains a critical financial concern. <span class='observation-ref'>(Audit Pg. 2-5; PA Pg. 50-51)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -148,11 +148,11 @@
                         "Immature": "N/A"
                     },
                     "agronomy": {
-                        "Executive Summary": "Yield performance has been satisfactory. Overall field vegetation has improved but further work is needed. The quality of palm mounding needs improvement. Manuring was completed, though with some delays. <span class='observation-ref'>(AR Pg. 4-6)</span>",
-                        "Nutrient inputs progress of manuring": "The FY2024/25 fertilizer program was 100% completed, though most applications were delayed by 1-2 months. The fertilizer store condition has improved. <span class='observation-ref'>(AR Pg. 13-15)</span>",
-                        "Agronomic observation": "Harvesting intervals are acceptable (<20 days). Loose fruit collection needs improvement. Pruning is acceptable. Weeding is behind schedule, with circle conditions being suboptimal in some areas. <span class='observation-ref'>(AR Pg. 20, 22, 26, 34)</span>",
-                        "Yield performance": "The estate yielded 32.10 MT/ha in FY2024/25, a 5.2% increase from the previous year, which is satisfactory. Crop recovery has been good, but loose fruit collection can be improved. <span class='observation-ref'>(AR Pg. 48-49)</span>",
-                        "Fertilizer recommendation": "The fertilizer programme for FY2025/26 should be maintained without amendment. The next program will be formulated after the October 2025 visit. <span class='observation-ref'>(AR Pg. 52)</span>"
+                        "Executive Summary": "Yield performance for FY24/25 was satisfactory at 32.10 MT/ha. Current year (FY25/26) progress is slower (-4.3% YTD). Manuring is behind schedule at 32% completion. Ganoderma infection remains a major concern with infection rates >5% in most fields. Palm census data was updated in 2024; P14 block consolidation is planned for 2026. <span class='observation-ref'>(AR Pg. 4-9)</span>",
+                        "Nutrient Inputs/Progress of Manuring": "Overall progress is 32% (Oct 2025). Significant delays (2 months) noted for NK Mixture (P01A, P02A), Mixture A (P03, P05, P10A), and Mixture B (P10, P11, P12). Kieserite application is complete. Subsurface application in P14A had issues with hole compaction. <span class='observation-ref'>(AR Pg. 11-15)</span>",
+                        "Agronomic Observation": "<b>Harvesting:</b> Intervals improved to <15 days in Sept-Oct after delays in June-Aug. Unripe bunches detected in P11A (7%). Loose fruit collection compromised in debris-filled circles (P01, P03).<br><b>Pruning:</b> 1st round completed Aug 2025; 2nd round 50% complete. P12A slightly under-pruned.<br><b>Weeding:</b> Behind schedule. 1st round circle weeding pending in P12B, P14A/B. Broadleaf weeds (wild brinjal) found in P11, P12.<br><b>Leaf Analysis:</b> Nitrogen levels High. Magnesium (Mg) levels deficient in old plantings (P01, P02, P03). <span class='observation-ref'>(AR Pg. 16-41)</span>",
+                        "Yield Performance": "FY24/25 achieved 32.10 MT/ha. FY25/26 YTD (Oct) is 15.73 MT/ha (-4.3%). Oldest planting P00 recorded lowest yield (12.91 MT/ha). Young mature P14 saw 44.6% yield increase. Cumulative harvesting rounds reached 9.4 (78% of target 12). <span class='observation-ref'>(AR Pg. 50-53)</span>",
+                        "Fertilizer Recommendation": "FY26/27 program formulated. Mixture fertilizers recommended as main source. Corrective Kieserite prescribed for Mg deficient blocks (P01, P02, P03). Rock Phosphate (RP) scheduled for Dec 2025. <span class='observation-ref'>(AR Pg. 55-60)</span>"
                     },
                     "audit": {
                         "Overall Rating": "<b>Marginally Deficient.</b> <span class='observation-ref'>(Audit Pg. 1-2)</span>",
@@ -161,7 +161,7 @@
                     },
                     "pinfosys": "N/A"
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Pest & Disease (Ganoderma)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> Continue the program of palm mounding for Ganoderma-infected palms in younger fields (2010, 2011, 2012 plantings) to prolong their productive life. Ensure mounding is done with adequate, well-compacted soil. <span class='observation-ref'>(AR Pg. 45; PA Pg. 35)</span></p></div> <div class='policy-item'><p class='font-semibold'>Weeding & Ground Cover</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-CON-02:</b> The estate must catch up on the delayed weeding schedule. Prioritize circle weeding to facilitate loose fruit collection and continue with inter-row spraying to eradicate remaining noxious weeds. <span class'='observation-ref'>(AR Pg. 34; PA Pg. 21)</span></p></div> <div class='policy-item'><p class='font-semibold'>Vehicle Maintenance</p><p class='text-sm text-gray-600'><b>Policy Ref: INFRA-VEH-01:</b> Review the maintenance program for all farm tractors to address the frequent breakdowns and high repair costs that are impacting internal transport and overall expenditure. Assess the viability of replacing older units. <span class'='observation-ref'>(PA Pg. 50-52)</span></p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Pest & Disease (Ganoderma)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> Continue the program of palm mounding for Ganoderma-infected palms in younger fields (2010, 2011, 2012 plantings) to prolong their productive life. Ensure mounding is done with adequate, well-compacted soil. <span class='observation-ref'>(AR Pg. 45; PA Pg. 35)</span></p></div> <div class='policy-item'><p class='font-semibold'>Weeding & Ground Cover</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-CON-02:</b> The estate must catch up on the delayed weeding schedule (32% progress). Prioritize circle weeding to facilitate loose fruit collection and continue with inter-row spraying to eradicate remaining noxious weeds. <span class='observation-ref'>(AR Pg. 34; PA Pg. 21)</span></p></div> <div class='policy-item'><p class='font-semibold'>Nutrient Management</p><p class='text-sm text-gray-600'><b>Policy Ref: MANURE-APP-03:</b> Expedite the delayed NK and Mixture A applications. For sloping terrain (hilly sections), consider sub-soil application to minimize runoff. <span class='observation-ref'>(AR Pg. 12, 32)</span></p></div>"
             };
 
 
@@ -185,7 +185,8 @@
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
-                                       metric.title.includes('Weeding') ? 'bg-red-50 text-red-800' : 'bg-yellow-50 text-yellow-800';
+                                       metric.title.includes('Manuring') ? 'bg-red-50 text-red-800' : 
+                                       metric.title.includes('Ganoderma') ? 'bg-red-50 text-red-800' : 'bg-yellow-50 text-yellow-800';
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
@@ -220,7 +221,7 @@
                             <ul id="observations-list" class="list-disc list-inside space-y-2 text-gray-700 mt-4">${observationsHTML}</ul>
                         </div>
                         
-                        <div class="mb-8 text-center"><button class="policy-modal-btn bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
+                        <div class="mb-8 text-center"><button class="policy-modal-btn bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-900 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
                         <div class="space-y-2">
                             <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-red-800 text-white p-3 rounded-md hover:bg-red-700 transition">Internal Audit Issues (Nov 2025)</button>
                             <div id="${estate.id}-audit" class="details-content bg-red-50 p-4 rounded-md border border-red-200"></div>
