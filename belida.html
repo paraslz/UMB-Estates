@@ -26,6 +26,9 @@
         .animate-fade-in {
             animation: fade-in 0.5s ease-out forwards;
         }
+        /* Custom styling for list items in report details */
+        .report-list li { margin-bottom: 0.5rem; }
+        .report-section-title { font-weight: 700; color: #1f2937; margin-top: 1rem; margin-bottom: 0.5rem; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -68,7 +71,7 @@
             const estateData = {
                 "id": "belida",
                 "name": "Belida Estate (Inti)",
-                "reportInfo": "Data based on PA Report (August 2025), Agronomy Report (Apr 2025), and Audit Report (May 2025).",
+                "reportInfo": "Data based on PA Report (August 2025), Agronomy Report (Nov 2025), and Audit Report (May 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -79,9 +82,9 @@
                         ]
                     },
                     "yield": {
-                        "title": "Yield/Ha (FY 24/25 vs Budget)",
-                        "value": "28.96 / 25.80 MT",
-                        "note": "+12% above budget"
+                        "title": "Yield/Ha (FY 24/25)",
+                        "value": "Actual: 28.96 MT vs Budget: 25.86 MT",
+                        "note": "12% above budget / +114% vs FY19/20"
                     },
                     "cost": {
                         "title": "FFB Cost/Tonne (YTD Jul '25)",
@@ -96,38 +99,38 @@
                      "pests": {
                         "title": "Pest Status",
                         "value": "High (Rats)",
-                        "note": "Damage >7% (AR)"
+                        "note": ">5% Damage (Nov '25)"
                     }
                 },
                 "keyMetrics": [
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Ratio", "value": "1:16 ha (Satisfactory)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "High (Rats)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "High (Rats, >5%)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD Jul '25)", "value": "19.93%" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-orange-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding Cost", "value": "8% Over Budget (YTD Jul '25)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "10-15 days (Target)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-teal-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Nutrient Status", "value": "N, P, K, Mg Deficiencies (AR)" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "<15 Days (Avg)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-teal-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Nutrient Status", "value": "Low P, Marginal N" }
                 ],
                 "chartData": {
                     "production": {
-                        "labels": ["May-24", "Jun-24", "Jul-24", "Aug-24", "Sep-24", "Oct-24", "Nov-24", "Dec-24"],
+                        "labels": ["Jan-25", "Feb-25", "Mar-25", "Apr-25", "May-25", "Jun-25", "Jul-25", "Aug-25", "Sep-25", "Oct-25"],
                         "ffb": [],
-                        "rainfall": [124, 293, 180, 104, 121, 143, 368, 350],
-                        "note": "*Monthly FFB production data not available in PA report. Rainfall from AR Pg. 78."
+                        "rainfall": [452, 302, 345, 335, 146, 40, 92, 143, 312, 155],
+                        "note": "*Rainfall data (Jan-Oct 2025) from AR 2/2025. Monthly FFB production data not available."
                     },
                     "ageProfile": {
-                        "labels": ["Prime Mature (8+ Yrs)", "Young & Immature (<8 Yrs)"],
-                        "data": [99.0, 1.0],
-                        "title": "Belida Estate - Palm Age Distribution",
-                        "note": "*Source: PA Report 2/2025, Pg. 14."
+                        "labels": ["2008 (17 Yrs)", "2012 (13 Yrs)", "2013 (12 Yrs)", "2020 (5 Yrs)", "2023 (2 Yrs)"],
+                        "data": [128.82, 775.06, 45.16, 6.76, 2.98],
+                        "title": "Belida Estate - Palm Age Distribution (Ha)",
+                        "note": "*Source: Agronomy Report 2/2025, Pg. 8."
                     }
                 },
                 "observations": [
-                    "<b>Compost Application Issues:</b> Audit found misleading reports on compost application, with over 2,700 palms left unapplied, leading to significant overpayments. <span class='observation-ref'>(Audit Rpt. Pg. 2-3)</span>",
-                    "<b>High Rat Infestation:</b> Fresh rat damage is at 7.4%, which is above the 5% action threshold. Baiting campaign is required. <span class='observation-ref'>(AR Pg. 67)</span>",
-                    "<b>Low Worker & Harvester Productivity:</b> Weeding and harvesting productivity remains low, with worker income often below the minimum wage. Inefficient spraying practices and short working hours are key contributors. <span class='observation-ref'>(PAR Pg. 32, 36, 70)</span>",
-                    "<b>Agricultural Road Condition:</b> Improving and surfacing the agricultural road is the estate's most significant issue, hindering FFB evacuation and increasing transport costs. <span class='observation-ref'>(PAR Pg. 7, 60)</span>",
-                    "<b>Over-pruning Observed:</b> An incident of over-pruning was noted in young mature palms, which could impact future yield. <span class='observation-ref'>(AR Pg. 53; PAR Pg. 7, 55)</span>",
-                    "<b>High Vehicle Repair Costs:</b> High repair costs for mini-tractors persist due to a lack of dedicated operators, leading to poor handling and increased wear and tear. <span class='observation-ref'>(Audit Rpt. Pg. 13)</span>"
+                    "<b>High Rat Infestation:</b> Recent census (Nov 2025) indicates rat damage exceeding the 5% threshold in several blocks (e.g., DG23, DH23, DL23, DK21). A baiting campaign is required urgently starting Dec 2025. <span class='observation-ref'>(AR Pg. 42-43)</span>",
+                    "<b>Water Management & Drainage:</b> 27% of the estate (258.76 ha) is flood-prone with high water tables, particularly in peat areas. Drainage maintenance is critical to prevent root submergence and nutrient loss. <span class='observation-ref'>(AR Pg. 27, 59)</span>",
+                    "<b>Harvesting Quality Issues:</b> While intervals are acceptable (<15 days), 5-8% overripe bunches were observed in blocks DG15/DG16. Loose fruit collection is inconsistent, with trash and rotten fruits mixed in fertilizer bags. <span class='observation-ref'>(AR Pg. 19-20)</span>",
+                    "<b>Agricultural Road Condition:</b> Poor agricultural road conditions remain a critical bottleneck, hindering FFB evacuation and increasing transport costs. <span class='observation-ref'>(PAR Pg. 7, 60)</span>",
+                    "<b>Nutrient Deficiencies:</b> Leaf analysis indicates widespread Low P and Marginal N levels. Corrective fertilizer applications (increased P, balanced N) are incorporated into the 2026/2027 program. <span class='observation-ref'>(AR Pg. 34, 48)</span>",
+                    "<b>Field Maintenance:</b> Depression in palm circles (DG14) and palms planted in drain lines (DB13) have been rectified, improving vigor. However, localized patches of noxious weeds (Clidemia, Asystasia) persist in 15-20% of blocks. <span class='observation-ref'>(AR Pg. 23, 38)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -145,11 +148,11 @@
                         "Immature": "The 2.98 ha immature area (planted 2023) is in acceptable condition but requires circle spraying. Immature harvesting is scheduled to begin in August 2025. (Source: PAR, Pg. 9, 85)"
                     },
                     "agronomy": {
-                        "Executive Summary": "Yield has improved from the previous year, and rehabilitated areas show better palm vigor. However, ground vegetation control needs more effort. Over-pruning and nutrient deficiencies were noted. (Source: AR, Pg. 4-6)",
-                        "Nutrient inputs progress of manuring": "Manuring program is delayed due to flooding; as of March 2025, overall completion is 78.69%. Compost application needs careful management in low-lying areas to avoid promoting fungal growth like Ganoderma. (Source: AR, Pg. 26-27, 31)",
-                        "Agronomic observation": "Harvesting standards have improved, but overripe bunches (up to 20% in DK21-12A1) and poor loose fruit collection indicate crop loss. Over-pruning was noted in several blocks. Ground vegetation is less well-maintained than before. (Source: AR, Pg. 33, 38, 53, 58)",
-                        "Yield performance": "FFB yield improved significantly in FY 2023/24 to 24.28 MT/ha (a 60% increase). The YTD yield for FY 2024/25 (26.53 MT/ha from May-Mar) is on track and above the previous period. (Source: AR, Pg. 70-73)",
-                        "Fertilizer recommendation": "The 2025/26 fertilizer program has been revised to account for application delays, moving from four rounds to three with adjusted dosages for mature plantings. (Source: AR, Pg. 79, 81-82)"
+                        "Executive Summary": "<b>Visit Date:</b> 26th Nov 2025. <br><b>Yield:</b> Achieved 28.96 MT/Ha in FY 24/25, a significant 114% improvement over FY 19/20. <br><b>Key Issues:</b> 27% of the estate (258.76 ha) is flood-prone. Rat damage exceeds 5% threshold in multiple blocks. Nutrient status shows Low P and Marginal N. <br><b>Manuring:</b> 96% completed for FY 25/26 as of Oct 2025. <span class='observation-ref'>(Source: AR, Pg. 4, 7, 44)</span>",
+                        "Nutrient Inputs/Progress of Manuring": "<b>Progress (Oct '25):</b> 96% Overall Completion. <br>&bull; Mix B: 100% <br>&bull; RP: 95% (Slight delay) <br>&bull; Kieserite: 100% <br>&bull; MOP: 40% (Ongoing rounds) <br><b>Issues:</b> Lumpy fertilizer application observed (DG14-12B1). Compost application needs better organization; avoid flood-prone areas to reduce Ganoderma risk. <br><b>Constraint:</b> Incomplete fertilizer must NOT be carried forward beyond April 2026. <span class='observation-ref'>(Source: AR, Pg. 11-17)</span>",
+                        "Agronomic Observation": "<b>Harvesting:</b> Intervals are good (<15 days). However, 5-8% overripe bunches noted in DG15/DG16. Loose fruit quality varies (trash mixed in). <br><b>Water Management:</b> 258.76 ha (27%) is flood-prone with high water tables, requiring drainage maintenance to prevent root submergence. <br><b>Field Upkeep:</b> Depression in palm circles (DG14) and palms in drain lines (DB13) have been rectified. Weeding has improved; noxious weeds reduced. <br><b>Pests:</b> Nov '25 Census shows rat damage >5% in blocks DG23, DH23, DK21, DL23. Baiting campaign to commence Dec '25. <span class='observation-ref'>(Source: AR, Pg. 18-43)</span>",
+                        "Yield Performance": "<b>FY 2024/25:</b> 28.96 MT/Ha (Record High). <br><b>Current YTD (May-Oct '25):</b> 13.19 MT/Ha, marginally higher than previous corresponding period (13.02 MT/Ha). <br><b>Potential:</b> High yield potential as 98.9% of palms are prime age (planted 2008-2012). <br><b>Limiting Factors:</b> Flood-prone peat areas and nutrient lock-up (High C/N ratio). <span class='observation-ref'>(Source: AR, Pg. 44-46)</span>",
+                        "Fertilizer Recommendation": "<b>FY 2026/27 Program:</b> Focus on correcting Low P and Marginal N levels (See Appendix 1a). <br><b>Replanting:</b> No manuring for blocks scheduled for replanting in 2026/28. <br><b>New Plantings:</b> Apply 600g CRF + 500g RP in planting holes. <br><b>Application:</b> Avoid application during waterlogged conditions. <span class='observation-ref'>(Source: AR, Pg. 48-50)</span>"
                     },
                     "audit": {
                         "Overall Rating": "Marginally Deficient. The audit found that while most key controls were applied, certain important controls lacked consistency or effectiveness, requiring timely corrective action from management. (Source: Audit Rpt, Pg. 1-2)",
@@ -186,7 +189,7 @@
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
-                    return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3><p class="text-2xl font-bold">${metric.value}</p><p class="text-xs text-gray-500 mt-1">${metric.note}</p></div>`;
+                    return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3><p class="text-xl font-bold">${metric.value}</p><p class="text-xs text-gray-600 mt-1">${metric.note}</p></div>`;
                 }).join('');
 
                 const keyMetricsHTML = estate.keyMetrics.map(metric => `
@@ -261,7 +264,7 @@
                         type: 'pie',
                         data: {
                             labels: estateData.chartData.ageProfile.labels,
-                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#047857', '#a7f3d0'], hoverOffset: 4 }]
+                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#047857', '#059669', '#10b981', '#34d399', '#6ee7b7'], hoverOffset: 4 }]
                         },
                         options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: false }, legend: { position: 'right' } } }
                     });
@@ -274,13 +277,13 @@
                 const auditDiv = document.getElementById(`${estateData.id}-audit`);
 
                 if (agronomyDiv && estateData.reports.agronomy) {
-                    agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="report-section-title">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-700 leading-relaxed">${content}</p>`).join('');
                 }
                 if (plantationDiv && estateData.reports.plantation) {
-                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="report-section-title">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-700 leading-relaxed">${content}</p>`).join('');
                 }
                 if (auditDiv && estateData.reports.audit) {
-                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="report-section-title">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-700 leading-relaxed">${content}</p>`).join('');
                 }
             }
 
