@@ -12,7 +12,7 @@
         body { font-family: 'Inter', sans-serif; }
         .details-content { display: none; }
         .details-content.active { display: block; }
-        .dropdown-btn.active { background-color: #14532d; } /* dark green */
+        .dropdown-btn.active { background-color: #14532d; }
         .policy-item { border-left: 3px solid #16a34a; padding-left: 1rem; margin-top: 0.75rem; }
         .modal { display: none; }
         .modal.active { display: flex; }
@@ -33,8 +33,10 @@
     <!-- Header -->
     <header class="bg-white shadow-md">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <div id="header-title" class="text-xl font-bold text-gray-900">
-                <!-- Title will be populated by JS -->
+            <div class="text-xl font-bold text-gray-900">
+                <a href="index.html" class="flex items-center">
+                    Paitan Estate Report
+                </a>
             </div>
             <a href="estates.html" class="text-green-800 hover:text-green-900 transition duration-300">&larr; Back to Estates List</a>
         </nav>
@@ -68,76 +70,69 @@
             const estateData = {
                 "id": "paitan",
                 "name": "Paitan Estate",
-                "reportInfo": "Data based on PA Report (May 2025) & Agronomy Report (July 2025).",
+                "reportInfo": "Data based on PA Report (May 2025) & Agronomy Report (1/2026, Visit: 16th Jan 2026).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
                         "lines": [
-                            "Total Planted: 2,220.10 ha",
-                            "Mature: 2,098.95 ha",
-                            "Immature: 6.76 ha",
-                            "Replanting: 114.39 ha"
+                            "Total Planted: 2,222.71 ha",
+                            "Mature: 1,967.24 ha",
+                            "Immature: 255.47 ha",
+                            "Unplanted: 225.15 ha"
                         ]
                     },
                     "yield": {
                         "title": "Yield/Ha (Actual vs Budget)",
                         "value": "16.76 / 21.12 MT",
-                        "note": "20% below budget (11 Mo FY24/25)"
+                        "note": "PA FY24/25 | AR FY25/26 YTD: +18%"
                     },
                     "cost": {
                         "title": "Production Cost (Ex-Estate)",
                         "value": "RM 270 / RM 292",
-                        "note": "8% lower than budget (Source: PA Pg 62)"
+                        "note": "8% lower than budget (Source: PA)"
                     },
                     "manuring": {
                         "title": "Manuring Progress",
-                        "value": "Delayed",
-                        "note": "No progress in Mix B & NK1 (Source: AR Pg 16)"
-                    },
-                     "weeding": {
-                        "title": "Weeding Status",
                         "value": "Behind Schedule",
-                        "note": "Inter-row 53%, Circle 70% (Source: AR Pg 35)"
+                        "note": "Mix A 87%, NK1 78%, Mix B 39%"
+                    },
+                     "ganoderma": {
+                        "title": "Ganoderma Status",
+                        "value": ">5% in several blocks",
+                        "note": "Mounding recommended (Source: AR)"
                     }
                 },
                 "keyMetrics": [
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Productivity", "value": "1.86 MT/md (Low)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Rat baiting deviation" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "19.81%" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding", "value": "VOPs critical in 3 blocks" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": ">20 days (High)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>`, "label": "Mechanization", "value": "Crawlers broken down" }
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>", "label": "Harvester Prod.", "value": "1.86 MT/md (Low)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "P&D Status", "value": "High (Ganoderma >5%)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>", "label": "OER %", "value": "19.81%" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' /></svg>", "label": "Weeding Status", "value": "Inter-row 95%, VOPs 20%" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>", "label": "Harvest Interval", "value": "12-19 days (Acceptable)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>", "label": "Mechanization", "value": "Crawlers broken down" }
                 ],
                 "chartData": {
                     "production": {
-                        "labels": ["May-25", "Jun-25", "Jul-25"],
-                        "ffb": [2.04, 2.22, 1.95],
-                        "rainfall": [261, 168, 87],
-                        "note": "*Monthly FFB Yield (MT/Ha) & Rainfall (mm). (Source: AR Pg 84, yield derived)"
+                        "labels": ["May-25", "Jun-25", "Jul-25", "Aug-25", "Sep-25", "Oct-25", "Nov-25", "Dec-25"],
+                        "ffb": [], // FFB Data not provided in recent AR
+                        "rainfall": [261, 168, 87, 208, 285, 174, 159, 454],
+                        "note": "*Rainfall data for FY 25/26 (May-Dec 2025). Monthly FFB data unavailable."
                     },
                     "ageProfile": {
-                        "labels": ["Old Mature (>20 Yrs)", "Prime Mature (8-19 Yrs)", "Young Mature (4-7 Yrs)", "Immature (<4 Yrs)", "Replanting"],
-                        "data": [1881.33, 217.62, 0, 6.76, 114.39],
+                        "labels": ["0-3 Years (Immature)", "4-7 Years", "8-19 Years", "20-25 Years", ">26 Years"],
+                        "data": [255.47, 0, 177.50, 958.68, 831.06],
                         "title": "Paitan Estate - Palm Age Distribution",
-                        "note": "*Source: Agronomy Report 2/2025, Pg. 9-11."
+                        "note": "*Source: Agronomy Report 1/2026, Pg. 13."
                     }
                 },
                 "observations": [
-                    "<b>Extended Harvesting Intervals:</b> Most blocks recorded harvesting intervals exceeding 20 days. This is attributed to the restructuring of harvester gangs following the takeover of 180 ha and peak crop season impacts. <span class='observation-ref'>(Source: AR Pg. 19; PA Pg. 58)</span>",
-                    "<b>Machinery Breakdown & Evacuation:</b> All crawler machines were broken down and not repaired due to poor backup service from the supplier (AgroStar). The estate has reverted to using wheelbarrows for FFB in-field collection, impacting efficiency. <span class='observation-ref'>(Source: PA Pg. 14, 58)</span>",
-                    "<b>Manuring Delays:</b> Manuring progress is unsatisfactory and behind schedule. Specifically, there is zero progress in Mix B and NK1 applications due to late fertilizer delivery. <span class='observation-ref'>(Source: AR Pg. 16)</span>",
-                    "<b>Weeding & VOPs:</b> Weeding is slightly behind schedule. Inter-row spraying is only 53% complete. Volunteer Oil Palms (VOPs) are a major concern, particularly in Blocks 51, 50, and 48, requiring immediate eradication. <span class='observation-ref'>(Source: AR Pg. 36, 41; PA Pg. 30)</span>",
-                    "<b>Replanting Progress:</b> Replanting works (114.39 ha) are slower than expected. While felling is 83% complete, legume cover crop planting is only 54% complete. Ground conditions in replanting areas are unsatisfactory with weed presence. <span class='observation-ref'>(Source: AR Pg. 62-63)</span>",
-                    "<b>Rat Control Deviation:</b> Rat baiting was carried out in May and June 2025 for <i>all</i> blocks regardless of infestation levels, which deviates from the standard policy of baiting only when census exceeds 5-10%. <span class='observation-ref'>(Source: AR Pg. 50)</span>"
+                    "<b>Harvesting Intervals Improved:</b> Harvesting intervals have shortened to 12-19 days, returning to an acceptable level and overcoming previous delays. <span class='observation-ref'>(Source: AR 1/2026, Pg. 20-21)</span>",
+                    "<b>Ganoderma Infection:</b> Several blocks have exceeded the 5% infection threshold. Mounding is recommended to prolong palm life, though the latest census data is outdated (last updated Oct 2024). <span class='observation-ref'>(Source: AR 1/2026, Pg. 42-44)</span>",
+                    "<b>Manuring Delays:</b> The FY25/26 manuring program remains behind schedule (Mix A 87%, NK1 78%, Mix B 39%). Delays of 1-6 months were noted, exacerbated by low worker productivity (11 bags/man-day). <span class='observation-ref'>(Source: AR 1/2026, Pg. 17-18)</span>",
+                    "<b>Weeding & VOPs:</b> General ground management has improved significantly (Circle 99%, Inter-row 95% for Round 1). However, Volunteer Oil Palms (VOPs) remain a critical issue with only 20% eradicated. <span class='observation-ref'>(Source: AR 1/2026, Pg. 31-32)</span>",
+                    "<b>Replanting Progress (25A & 25B):</b> The 133 ha replanting program is behind schedule due to land preparation delays during the rainy season. Furthermore, the establishment of Mucuna bracteata cover crop is below expectations. <span class='observation-ref'>(Source: AR 1/2026, Pg. 45, 58)</span>",
+                    "<b>Machinery Breakdown & Evacuation:</b> All crawler machines remain broken down and unrepaired due to poor backup service from the supplier (AgroStar). The estate has been forced to revert to wheelbarrows for FFB in-field collection. <span class='observation-ref'>(Source: PA May 2025, Pg. 14, 58)</span>"
                 ],
                 "reports": {
-                    "agronomy": {
-                        "Executive Summary": "<ul class='list-disc pl-5 space-y-1'><li>Yield FY24/25: 18.69 MT/ha (22% drop from FY23/24).</li><li>Yield FY25/26 (YTD): 2% higher than previous year.</li><li>Limiting Factors: Manuring delays (3-5 months), Extended harvesting intervals (>20 days), Harvester shortage. (Source: AR Pg 6, 66-68)</li></ul>",
-                        "Nutrient Inputs/Progress of Manuring": "<ul class='list-disc pl-5 space-y-1'><li>FY24/25: 100% completed but with 3-5 month delays.</li><li>FY25/26 (as of July): Zero progress for Mix B and NK1 due to delivery issues. Mix A 84% applied.</li><li>Sub-soil Application: Block 77 done; distance needs adjustment to 6ft from base. (Source: AR Pg 15-17)</li></ul>",
-                        "Agronomic Observation": "<ul class='list-disc pl-5 space-y-1'><li><b>Harvesting:</b> Intervals >20 days. Unripe bunches found in Block 69.</li><li><b>Pruning:</b> 91% completed. Frond stacking improving (e.g., Block 30).</li><li><b>Weeding:</b> Inter-row 53% / Circle 70% complete. VOPs critical in Blocks 51, 50, 48.</li><li><b>P&D:</b> Rat baiting done in all blocks (May/June) regardless of census (Policy deviation). Ganoderma census outdated since Dec 2022. (Source: AR Pg 19, 26, 35, 41, 50)</li></ul>",
-                        "Yield Performance": "<ul class='list-disc pl-5 space-y-1'><li>FY24/25 Full Year: 18.69 MT/ha (-22% vs prev year).</li><li>FY25/26 YTD (3 Months): 6.21 MT/ha (+2% vs prev year).</li><li>Harvesting Rounds: Avg 4.8 rounds (Target >6). Lowest in 99C, 99F (4 rounds). (Source: AR Pg 66, 68-69)</li></ul>",
-                        "Fertilizer Recommendation": "<ul class='list-disc pl-5 space-y-1'><li>FY25/26: Program unchanged.</li><li>FY26/27: Formulated. Withdrawn for replanting blocks. Sub-soil fertilizer reallocated from Block 77 to 13C-84.</li><li>Compost: To be considered substitute only if distribution improves. (Source: AR Pg 71-72)</li></ul>"
-                    },
                     "plantation": {
                         "Executive Summary": "Estate performance acceptable. Outsourcing of transport appreciated. Focus needed on harvesting standards, maintenance, weeding, and pruning to enhance productivity. (Source: PA Pg 8)",
                         "Area Statement": "<ul class='list-disc pl-5 space-y-1'><li>Mature: 1,969.01 ha (87.03%)</li><li>Immature: 66.83 ha (2.95%)</li><li>Total Planted: 2,035.84 ha</li><li>Total Title Area: 2,262.36 ha</li><li>Note: 5.5 ha excised from Tengkarasan Estate to Paitan. (Source: PA Pg 10-12)</li></ul>",
@@ -152,9 +147,20 @@
                         "Capital Expenditure": "<ul class='list-disc pl-5 space-y-1'><li>Status: Underspent.</li><li>Projects: Labour quarters (WIP), Road gravelling (WIP/Hold). (Source: PA Pg 67)</li></ul>",
                         "Immature": "<ul class='list-disc pl-5 space-y-1'><li>Area: P25A (114.39 ha).</li><li>Progress: Felling/chipping 66.83 ha done. Camber bunding in progress.</li><li>Issues: Cover crop planting not started. Ground conditions unsatisfactory. (Source: PA Pg 73)</li></ul>"
                     },
-                    "pinfosys": "N/A"
+                    "agronomy": {
+                        "1. Executive Summary": "Yield to date for FY25/26 increased by 18% compared to the previous year. Harvesting intervals have shortened to an acceptable level. However, manuring progress remains behind schedule, and replanting for FY25/26 is delayed. Ganoderma infection >5% requires mounding. (Source: AR 1/2026, Pg. 4-7)",
+                        "2. Nutrient Inputs & Manuring": "<b>Progress:</b> As of Dec 2025, behind schedule: Mix A (87%), NK1 (78%), Mix B (39%).<br><b>Delays:</b> 1-6 months delays observed.<br><b>Application:</b> Quality is acceptable, but worker productivity is critically low (11 bags/man-day).<br><b>Observation:</b> Pre-assessment is required before application in high-water table areas like Block 82. (Source: AR 1/2026, Pg. 17-19)",
+                        "3. Harvesting & Crop Recovery": "<b>Interval:</b> 12-19 days (Improved and acceptable).<br><b>Quality:</b> Acceptable, minimal unripe bunches.<br><b>Loose Fruits:</b> Incomplete loose fruit collection was minimal. (Source: AR 1/2026, Pg. 20-22)",
+                        "4. Pruning & Canopy Management": "<b>Status:</b> Acceptable. Most blocks completed 2 rounds.<br><b>Quality:</b> Minimal under-pruning. Frond stacking improving but requires enhancement in some areas. (Source: AR 1/2026, Pg. 25-26)",
+                        "5. Weeding & Ground Vegetation": "<b>Status:</b> Improved (Circle R1 99%, Inter-row R1 95%).<br><b>Issues:</b> Volunteer Oil Palms (VOPs) eradication is extremely slow (20%).<br><b>Debris:</b> Circle raking pending, debris hinders loose fruit collection. (Source: AR 1/2026, Pg. 31-33)",
+                        "6. Pest & Disease Control": "<b>Rats:</b> Damage under control (<10%). Baiting done in May/June 2025.<br><b>Ganoderma:</b> Several blocks >5% infection, necessitating palm mounding. Census outdated (last Oct 2024). (Source: AR 1/2026, Pg. 39-44)",
+                        "7. Yield Performance": "<b>Status:</b> FY25/26 up to Period 8 (Dec 2025) shows an average increase of 18% vs FY24/25.<br><b>Harvesting Rounds:</b> Average 15.1 rounds, falling below target of 2 rounds/month.<br><b>Waterlogging:</b> Yield gap of ~3 MT/ha between Blocks 13D and 13C due to waterlogging in 13C. (Source: AR 1/2026, Pg. 61-63)",
+                        "8. Replanting & Immature (2025)": "<b>Progress:</b> 133 ha replanting program is behind schedule due to land preparation delays.<br><b>Cover Crop:</b> Establishment of Mucuna bracteata cover crop is below expectations. (Source: AR 1/2026, Pg. 45, 58)",
+                        "9. Fertilizer Recommendation & Compost": "<b>Recommendation:</b> FY25/26 program unchanged; FY26/27 revised to align with 5-year replanting.<br><b>EFB Compost:</b> Application is slow, currently at 31% completion. (Source: AR 1/2026, Pg. 51-52, 64)"
+                    },
+                    "pinfosys": "Not Available"
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-01:</b> Rat baiting has deviated from policy; it was carried out for all blocks regardless of infestation levels. Baiting should only be initiated when infestation levels exceed 10%. (Source: AR, Pg. 50)</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule. Current progress is slow due to delivery issues. Delays of 3-5 months were noted in the previous FY. (Source: AR, Pg. 15-16)</p></div> <div class='policy-item'><p class='font-semibold'>Mechanization Strategy</p><p class='text-sm text-gray-600'><b>Policy Ref: MECH-OPS-03:</b> The reversion to wheelbarrows due to crawler breakdown highlights a failure in machinery maintenance policy. Suppliers providing poor backup service (AgroStar) should be reviewed. (Source: PA, Pg. 14)</p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Ganoderma Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> For areas with >5% infection, implement mounding extending 1.0m from the bole and 0.75m high to promote new root growth. (Source: AR 1/2026, Pg. 44)</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule. Current progress is slow due to low worker productivity (11 bags/md). Pre-assessment required to avoid applying in waterlogged areas. (Source: AR 1/2026, Pg. 18-19)</p></div> <div class='policy-item'><p class='font-semibold'>Mechanization Strategy</p><p class='text-sm text-gray-600'><b>Policy Ref: MECH-OPS-03:</b> The reversion to wheelbarrows due to crawler breakdown highlights a failure in machinery maintenance policy. Suppliers providing poor backup service (AgroStar) should be reviewed. (Source: PA May 2025, Pg. 14)</p></div> <div class='policy-item'><p class='font-semibold'>Weeding (VOPs)</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-VOP-01:</b> VOPs must be eradicated as they compete for nutrients and affect adjacent palm growth. Current progress at 20% is highly unsatisfactory. (Source: AR 1/2026, Pg. 48)</p></div>"
             };
 
 
@@ -164,7 +170,6 @@
 
             // --- FUNCTIONS ---
             function renderEstate() {
-                document.getElementById('header-title').innerText = `${estateData.name} Report`;
                 container.innerHTML = createEstateHTML(estateData);
                 setTimeout(() => {
                     initializeChartsForEstate(estateData);
@@ -178,7 +183,7 @@
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
-                                       metric.title.includes('Manuring') ? 'bg-yellow-50 text-yellow-800' : 'bg-red-50 text-red-800';
+                                       metric.title.includes('Ganoderma') ? 'bg-red-50 text-red-800' : 'bg-yellow-50 text-yellow-800';
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
@@ -193,10 +198,6 @@
 
                 const observationsHTML = estate.observations.map(obs => `<li class="ml-4">${obs}</li>`).join('');
 
-                const productionChartHTML = (estate.chartData.production.labels && estate.chartData.production.labels.length > 0) || (estate.chartData.production.rainfall && estate.chartData.production.rainfall.length > 0) ?
-                    `<div class="chart-container"><canvas id="prodChart-${estate.id}"></canvas></div>` :
-                    `<div class="chart-container flex items-center justify-center bg-gray-50 rounded-lg p-4"><p class="text-gray-500 text-center">A monthly Production vs. Rainfall chart cannot be generated as monthly FFB production data is not available in the reports.</p></div>`;
-
                 return `
                     <div class="bg-white p-6 rounded-lg shadow-lg animate-fade-in">
                         <h2 class="text-3xl font-bold mb-2 text-gray-900">${estate.name}</h2>
@@ -204,16 +205,11 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">${summaryMetricsHTML}</div>
                         <div class="mb-8"><h3 class="text-xl font-semibold mb-4 border-b pb-2">Key Metrics & Agronomic Status</h3><div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">${keyMetricsHTML}</div></div>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                            <div><h3 class="text-xl font-semibold mb-2">Monthly Production vs Rainfall</h3>${productionChartHTML}<p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
+                            <div><h3 class="text-xl font-semibold mb-2">Monthly Production vs Rainfall</h3><div class="chart-container"><canvas id="prodChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
                             <div><h3 class="text-xl font-semibold mb-2">Palm Age Profile</h3><div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.ageProfile.note}</p></div>
                         </div>
-                        
-                        <div class="mb-8">
-                            <h3 class="text-xl font-semibold mb-2 border-b pb-2">Key Observations & Issues</h3>
-                            <ul id="observations-list" class="list-disc list-inside space-y-2 text-gray-700 mt-4">${observationsHTML}</ul>
-                        </div>
-                        
-                        <div class="mb-8 text-center"><button class="policy-modal-btn bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
+                        <div class="mb-8"><h3 class="text-xl font-semibold mb-2 border-b pb-2">Key Observations & Issues</h3><ul class="list-disc list-inside space-y-2 text-gray-700 mt-4">${observationsHTML}</ul></div>
+                        <div class="mb-8 text-center"><button class="policy-modal-btn bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-900 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
                         <div class="space-y-2">
                             <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Plantation Advisory Report Details</button>
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
@@ -232,34 +228,29 @@
                 if (chartInstances[ageCanvasId]) chartInstances[ageCanvasId].destroy();
 
                 const prodCtx = document.getElementById(prodCanvasId)?.getContext('2d');
-                if(prodCtx && ((estateData.chartData.production.labels && estateData.chartData.production.labels.length > 0) || (estateData.chartData.production.rainfall && estateData.chartData.production.rainfall.length > 0))) {
-                    const datasets = [];
-                    if (estateData.chartData.production.ffb && estateData.chartData.production.ffb.length > 0) {
-                        datasets.push({ label: 'FFB Yield (MT/Ha)', data: estateData.chartData.production.ffb, type: 'line', borderColor: '#ca8a04', backgroundColor: 'transparent', yAxisID: 'y-ffb', tension: 0.4 });
-                    }
-                    if (estateData.chartData.production.rainfall && estateData.chartData.production.rainfall.length > 0) {
-                        datasets.push({ label: 'Rainfall (mm)', data: estateData.chartData.production.rainfall, backgroundColor: '#3b82f6', yAxisID: 'y-rainfall' });
-                    }
-
+                if(prodCtx) {
                     chartInstances[prodCanvasId] = new Chart(prodCtx, {
                         type: 'bar',
                         data: {
                             labels: estateData.chartData.production.labels,
-                            datasets: datasets
+                            datasets: [
+                                { label: 'FFB Production (MT)', data: estateData.chartData.production.ffb, type: 'line', borderColor: '#ca8a04', backgroundColor: 'transparent', yAxisID: 'y-ffb', tension: 0.4 },
+                                { label: 'Rainfall (mm)', data: estateData.chartData.production.rainfall, backgroundColor: '#3b82f6', yAxisID: 'y-rainfall' }
+                            ]
                         },
-                        options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, 'y-ffb': { type: 'linear', position: 'left', title: { display: true, text: 'FFB Yield (MT/Ha)' } }, 'y-rainfall': { type: 'linear', position: 'right', title: { display: true, text: 'Rainfall (mm)' }, grid: { drawOnChartArea: false } } } }
+                        options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, 'y-ffb': { type: 'linear', position: 'left', title: { display: true, text: 'FFB Production (MT)' } }, 'y-rainfall': { type: 'linear', position: 'right', title: { display: true, text: 'Rainfall (mm)' }, grid: { drawOnChartArea: false } } } }
                     });
                 }
 
                 const ageCtx = document.getElementById(ageCanvasId)?.getContext('2d');
-                if(ageCtx && estateData.chartData.ageProfile.data && estateData.chartData.ageProfile.data.length > 0) {
+                if(ageCtx) {
                     chartInstances[ageCanvasId] = new Chart(ageCtx, {
                         type: 'pie',
                         data: {
                             labels: estateData.chartData.ageProfile.labels,
-                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#047857', '#34d399', '#a7f3d0', '#fde68a', '#fca5a5'], hoverOffset: 4 }]
+                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#fde047', '#facc15', '#eab308', '#ca8a04', '#a16207'], hoverOffset: 4 }]
                         },
-                        options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: false }, legend: { position: 'right' } } }
+                        options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: true, text: estateData.chartData.ageProfile.title, font: { size: 16 } }, legend: { position: 'right' } } }
                     });
                 }
             }
@@ -268,14 +259,20 @@
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
                 const pinfosysDiv = document.getElementById(`${estateData.id}-pinfosys`);
-
+                
                 if (agronomyDiv && estateData.reports.agronomy) {
-                    agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600 mb-2">${content}</p>`).join('');
+                    agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<div class="mb-4"><h4 class="font-bold text-gray-800">${section}</h4><div class="text-sm text-gray-600 mt-1 leading-relaxed">${content}</div></div>`).join('');
+                } else if (agronomyDiv) {
+                    agronomyDiv.innerHTML = `<p class="text-sm text-gray-600">Not Available</p>`;
                 }
+
                 if (plantationDiv && estateData.reports.plantation) {
-                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600 mb-2">${content}</p>`).join('');
+                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<div class="mb-4"><h4 class="font-bold text-gray-800">${section}</h4><div class="text-sm text-gray-600 mt-1 leading-relaxed">${content}</div></div>`).join('');
+                } else if (plantationDiv) {
+                    plantationDiv.innerHTML = `<p class="text-sm text-gray-600">Not Available</p>`;
                 }
-                if (pinfosysDiv && estateData.reports.pinfosys === "N/A") {
+
+                if (pinfosysDiv && estateData.reports.pinfosys === "Not Available") {
                     pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600">Not Available</p>`;
                 }
             }
@@ -285,21 +282,22 @@
                     button.addEventListener('click', (event) => {
                         const id = event.currentTarget.dataset.dropdownId;
                         const content = document.getElementById(id);
-                        const isActive = content.classList.toggle('active');
-                        event.currentTarget.classList.toggle('active', isActive);
+                        content.classList.toggle('active');
+                        event.currentTarget.classList.toggle('active');
                     });
                 });
-                container.querySelector('.policy-modal-btn')?.addEventListener('click', () => openPolicyModal(estateData));
+                container.querySelector('.policy-modal-btn')?.addEventListener('click', openPolicyModal);
             }
 
             renderEstate();
         });
         
-        function openPolicyModal(estate) {
+        function openPolicyModal() {
             const modalTitle = document.getElementById('modalTitle');
             const modalContent = document.getElementById('modalContent');
-            modalTitle.innerText = `Agricultural Policy Cross-Reference: ${estate.name}`;
-            modalContent.innerHTML = estate.policy;
+            const policyData = ` <div class='policy-item'><p class='font-semibold'>Ganoderma Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> For areas with >5% infection, implement mounding extending 1.0m from the bole and 0.75m high to promote new root growth. (Source: AR 1/2026, Pg. 44)</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule. Current progress is slow due to low worker productivity (11 bags/md). Pre-assessment required to avoid applying in waterlogged areas. (Source: AR 1/2026, Pg. 18-19)</p></div> <div class='policy-item'><p class='font-semibold'>Mechanization Strategy</p><p class='text-sm text-gray-600'><b>Policy Ref: MECH-OPS-03:</b> The reversion to wheelbarrows due to crawler breakdown highlights a failure in machinery maintenance policy. Suppliers providing poor backup service (AgroStar) should be reviewed. (Source: PA May 2025, Pg. 14)</p></div> <div class='policy-item'><p class='font-semibold'>Weeding (VOPs)</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-VOP-01:</b> VOPs must be eradicated as they compete for nutrients and affect adjacent palm growth. Current progress at 20% is highly unsatisfactory. (Source: AR 1/2026, Pg. 48)</p></div>`;
+            modalTitle.innerText = 'Agricultural Policy Cross-Reference: Paitan Estate';
+            modalContent.innerHTML = policyData;
             document.getElementById('policyModal').classList.add('active');
         }
 
