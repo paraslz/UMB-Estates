@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>MLP 5 Estate - Plantation and Agronomy Report</title>
+    <title>MLP 5 Estate - Plantation, Agronomy & Audit Report</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -69,7 +68,7 @@
             const estateData = {
                 "id": "mlp5",
                 "name": "MLP 5 Estate",
-                "reportInfo": "Data based on Plantation Advisory Report 2/2025 (October 2025) & Agronomy Report (August 2025).",
+                "reportInfo": "Data based on Plantation Advisory Report 2/2025 (October 2025), Agronomy Report (August 2025) & Internal Audit Report (August 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -94,10 +93,10 @@
                         "value": "Shortage",
                         "note": "Short of 12 Harvesters (Ratio 1:18)"
                     },
-                     "weeding": {
-                        "title": "Weeding/Manuring",
-                        "value": "Delayed",
-                        "note": "Affected by weather & productivity"
+                     "audit": {
+                        "title": "Audit Rating",
+                        "value": "Marginally Deficient",
+                        "note": "Key controls inconsistent (Aug 2025)"
                     }
                 },
                 "keyMetrics": [
@@ -124,10 +123,11 @@
                 },
                 "observations": [
                     "<b>Harvester Shortage:</b> The estate is short of 12 harvesters. The current ratio is 1:18 ha, while the ideal ratio is 1:15 ha given the terrain. <span class='observation-ref'>(PA 2/2025, Pg. 4, 14)</span>",
+                    "<b>Audit - Hourly Pay Inefficiency:</b> Hourly payment practices for FFB loading in Div 5B caused costs to exceed the budget. Management has discontinued this practice immediately. <span class='observation-ref'>(Audit Report, Pg. 2-6)</span>",
                     "<b>Agricultural Road Conditions:</b> The condition of agricultural roads is unacceptable. They become soggy and slippery during rain, hampering FFB evacuation. Gravelling is significantly behind schedule. <span class='observation-ref'>(PA 2/2025, Pg. 33, 48)</span>",
                     "<b>Weeding Delays:</b> Both circle and selective weeding are delayed. Sprayer productivity is low (2.4 - 2.5 ha/man-day) due to dense noxious weeds and steep terrain. <span class='observation-ref'>(PA 2/2025, Pg. 20-22, 47)</span>",
                     "<b>Manuring Delays:</b> The manuring program is delayed primarily due to heavy rains. Productivity is 20 bags/man-day. <span class='observation-ref'>(PA 2/2025, Pg. 26, 47)</span>",
-                    "<b>Yield Performance:</b> FFB production (7,787 MT) is 4% below the seasonal budget. However, yield per hectare (7.06 MT) is close to the seasonal budget of 7.37 MT. <span class='observation-ref'>(PA 2/2025, Pg. 40)</span>",
+                    "<b>Audit - Quarto Connects Usage:</b> Significant variance (up to 100%) found between Quarto Connects and manual records. Management is enforcing mandatory usage and conducting training. <span class='observation-ref'>(Audit Report, Pg. 7-10)</span>",
                     "<b>Agronomy - Mg Deficiency:</b> Magnesium deficiency observed in steep and rehabilitation areas (e.g., P12B-27). <span class='observation-ref'>(AR, Pg. 18-24)</span>"
                 ],
                 "reports": {
@@ -151,6 +151,11 @@
                         "Agronomic Observation": "Harvesting: Intervals extended in May/June but improved to 12-17 days by July. Loose fruit collection is incomplete in blocks P13A-11, P12A-06, P12B-27. Palm Status: Generally acceptable, but Mg deficiency observed in steep/rehab areas (e.g., P12B-27). Pruning: Progressive pruning is slow (16-17% complete). Corrective pruning in rehab areas is 84% complete. (Source: AR, Pg. 18-24, 33)",
                         "Yield Performance": "FY24/25 Yield: 12.40 MT/ha (Budget 18.79 MT/ha). The low yield is attributed to low SPH (avg 92), 211 ha of area under rehabilitation, and poor rainfall distribution in early 2024. FY25/26 YTD Yield is 4.41 MT/ha, a 17% increase over the same period last year. (Source: AR, Pg. 50-52)",
                         "Fertilizer Recommendation": "The FY25/26 program remains unchanged. For FY26/27, sub-soil application is recommended for blocks P13A-03 and P12B-29 due to improper terraces and recent rehabilitation. Supply palms in P22B should now follow the main block fertilizer program. (Source: AR, Pg. 54)"
+                    },
+                    "audit": {
+                        "Executive Summary": "Overall Rating: Marginally Deficient. While most key controls are applied, consistency and effectiveness were lacking in Payroll (hourly payments) and Oil Palm operations (Quarto Connects usage). (Source: Audit Report, Pg. 1-2)",
+                        "Payroll and Personnel": "Issue: Hourly payment (RM 8.17/Hr) was used for FFB loading in Div 5B, causing the cost/MT to exceed the budget. Recommendation: Standardize payment to piece rate (RM 4.00 - RM 4.50/MT) and cease hourly payments. Management has deactivated the hourly payment code. (Source: Audit Report, Pg. 2-6)",
+                        "Oil Palm Operations": "Issue: Significant variances (up to 100%) between Quarto Connects and Quarto Payable Systems indicated heavy reliance on manual recording. Recommendation: Enforce mandatory usage of Quarto Connects. Management has conducted intensive training; Div B achieved 100% usage in October. (Source: Audit Report, Pg. 7-10)"
                     },
                     "pinfosys": "Not Available"
                 },
@@ -178,7 +183,8 @@
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
-                                       metric.title.includes('Labour') ? 'bg-red-50 text-red-800' : 'bg-yellow-50 text-yellow-800';
+                                       metric.title.includes('Labour') ? 'bg-red-50 text-red-800' : 
+                                       metric.title.includes('Audit') ? 'bg-purple-50 text-purple-800' : 'bg-yellow-50 text-yellow-800';
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
@@ -217,8 +223,13 @@
                         <div class="space-y-2">
                             <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Plantation Advisory Report Details</button>
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Internal Audit Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+
                             <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Pinfosys Report Details</button>
                             <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
@@ -287,6 +298,7 @@
             function populateInternalDropdowns() {
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
+                const auditDiv = document.getElementById(`${estateData.id}-audit`);
                 const pinfosysDiv = document.getElementById(`${estateData.id}-pinfosys`);
 
                 if (agronomyDiv && estateData.reports.agronomy) {
@@ -294,6 +306,9 @@
                 }
                 if (plantationDiv && estateData.reports.plantation) {
                     plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
+                if (auditDiv && estateData.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
                 if (pinfosysDiv) {
                     pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600">${estateData.reports.pinfosys}</p>`;
