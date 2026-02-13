@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Marmahat Estate - Plantation and Agronomy Report</title>
+    <title>Marmahat Estate - Plantation, Agronomy & Audit Report</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -68,7 +68,7 @@
             const estateData = {
                 "id": "marmahat",
                 "name": "Marmahat Estate",
-                "reportInfo": "Data based on PA Report (Oct 2025, Review: May-Sep 2025) & Agronomy Report (July 2025).",
+                "reportInfo": "Data based on Internal Audit (Oct 2025), PA Report (Oct 2025) & Agronomy Report (July 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -84,28 +84,28 @@
                         "note": "15% above budget (PAR Pg. 44)"
                     },
                     "cost": {
-                        "title": "FFB Cost/Tonne (Actual vs Budget)",
-                        "value": "RM 336.35 / RM 364.78",
-                        "note": "Ex-Estate, 8% below budget (PAR Pg. 45)"
+                        "title": "FFB Cost/Tonne (Ex-Estate)",
+                        "value": "RM 336.35",
+                        "note": "8% below budget (PAR Pg. 45)"
                     },
                     "labour": {
                         "title": "Labour Status",
-                        "value": "Adequate (1:12 ha)",
-                        "note": "Shortage of 42 vs Req (PAR Pg. 13)"
+                        "value": "Adequate Ratio",
+                        "note": "Productivity Issues noted (Audit Pg. 3)"
                     },
-                     "pests": {
-                        "title": "Pest Status",
-                        "value": "Rats & Ganoderma",
-                        "note": "Mixed signals: PAR 'No issues', Agro 'High'"
+                     "audit": {
+                        "title": "Audit Rating",
+                        "value": "Satisfactory",
+                        "note": "Control systems generally satisfactory (Audit Pg. 2)"
                     }
                 },
                 "keyMetrics": [
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Prod. Cost (Ex-Estate)", "value": "RM 336/MT (Good)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Harvest Interval", "value": "10-20 Days (Improved)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Harvest Interval", "value": ">20 Days (High)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' /></svg>`, "label": "Fertilizer Store", "value": "Wet Conditions" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Weeding Status", "value": "Delayed (21% Done)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3' /></svg>`, "label": "Yield Trend", "value": "+15% vs Budget" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Staffing", "value": "Chief Clerk Vacant" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3' /></svg>`, "label": "Yield Trend", "value": "+19% vs Budget" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Prod.", "value": "<1.5 MT/Day (Low)" }
                 ],
                 "chartData": {
                     "production": {
@@ -122,14 +122,20 @@
                     }
                 },
                 "observations": [
-                    "<b>Positive Yield Performance:</b> The estate achieved 5,168 MT of FFB, which is 15% above the budget. Yield per hectare stands at 9.78 MT, exceeding the budget of 8.51 MT/ha. <span class='observation-ref'>(PAR Pg. 44)</span>",
-                    "<b>Improved Production Costs:</b> Ex-estate production cost is RM 336.35/MT, which is 8% below the seasonal budget. The lower cost is primarily driven by the higher-than-budgeted crop yield. <span class='observation-ref'>(PAR Pg. 45)</span>",
-                    "<b>Manuring Program Delays:</b> The FY25/26 manuring program is behind schedule, with only 36% of the budgeted volume applied by September 2025. Immediate rescheduling is required before the monsoon. <span class='observation-ref'>(PAR Pg. 27)</span>",
-                    "<b>Critical Fertilizer Storage (Recurring):</b> The Agronomy report noted wet/humid conditions in the Kamrah Division fertilizer store, causing caking. This remains a critical issue to resolve to prevent nutrient loss. <span class='observation-ref'>(Agro Pg. 14)</span>",
+                    "<b>Low Harvester Productivity (Critical):</b> Harvesters are averaging below 1.50 MT/day. Inconsistency noted with productivity dropping significantly (e.g., from 3.09 to 0.86 MT/day) for some workers. <span class='observation-ref'>(Audit Pg. 3-4)</span>",
+                    "<b>Extended Harvesting Intervals:</b> Intervals exceeded 20 days in July, August, and September 2025 due to low harvester productivity, contradicting earlier signs of improvement. <span class='observation-ref'>(Audit Pg. 4)</span>",
+                    "<b>Inconsistent Premix Usage:</b> Significant variances found in premix gallons recorded vs. paid (e.g., Block 23C14 paid for 843 gals vs expected ~400 gals). This overstatement directly increases upkeep costs. <span class='observation-ref'>(Audit Pg. 13)</span>",
+                    "<b>Quarto System Discrepancies:</b> Discrepancies up to 23% (July 2025) found between FFB bunches captured in Quarto Connects and payable bunches, indicating manual data entry and potential control weaknesses. <span class='observation-ref'>(Audit Pg. 5)</span>",
+                    "<b>Critical Fertilizer Storage (Recurring):</b> The Agronomy report noted wet/humid conditions in the Kamrah Division fertilizer store, causing caking. Immediate improvements to store ventilation are required. <span class='observation-ref'>(Agro Pg. 14)</span>",
                     "<b>Weeding Backlog:</b> Circle spraying is only 21% complete against the budget. Interrow blanket spraying is 53% complete. Noxious weeds (Clidemia, Melastoma) remain dominant in some interrows. <span class='observation-ref'>(PAR Pg. 18, 21)</span>",
-                    "<b>Pest Status (Mixed):</b> While PAR notes 'No fresh rat damage', the previous Agronomy census recorded damage >20% in blocks C14/C15. Vigilance is required as the estate enters the rainy season. <span class='observation-ref'>(Agro Pg. 34; PAR Pg. 30)</span>"
+                    "<b>Manuring Program Delays:</b> The FY25/26 manuring program is behind schedule, with only 36% of the budgeted volume applied by September 2025. <span class='observation-ref'>(PAR Pg. 27)</span>"
                 ],
                 "reports": {
+                    "audit": {
+                        "Executive Summary": "Overall internal control systems are rated as Satisfactory. However, specific weaknesses were identified in harvester productivity, harvesting intervals, and field maintenance recording which require immediate management attention. (Source: Audit Pg. 1-2)",
+                        "Oil Palm Productivity": "While FFB production shows a 19% surplus against budget (4,207 MT vs 3,538 MT as of Aug 2025), individual harvester productivity is low, averaging below 1.50 MT/day. This has led to harvesting intervals exceeding 20 days in July-Sep 2025. Discrepancies were also noted in Quarto Connects usage, with 23% of bunches in July not scanned at the platform. (Source: Audit Pg. 2-5)",
+                        "Field Maintenance (Premix)": "Inconsistencies were found in premix usage records. Actual gallons paid often exceeded calculated requirements (e.g., usage of 4.9-6.0 Gal/Ha vs expected 3.3-3.5 Gal/Ha). Records are not updated promptly, and circle spraying is often combined with roadside spraying without separate recording, leading to cost overstatements. (Source: Audit Pg. 9-14)"
+                    },
                     "agronomy": {
                         "Executive Summary": "Yield performance for FY24/25 concluded at 14.60 MT/ha, a significant decline of 29% compared to the previous fiscal year. However, the new financial year (FY25/26) shows promise with a 24% increase in yield year-to-date as of July 2025. The primary challenges identified are the inconsistency in harvesting intervals (extending to 20-25 days), delayed manuring program due to delivery issues, and substandard weeding maintenance. Pests remain a concern with high rat infestation in specific blocks and Ganoderma spreading in mature areas. (Source: AR, Pg. 4-6, 52)",
                         "Nutrient Inputs/Progress of Manuring": "The FY24/25 fertilizer program was 100% completed. However, the FY25/26 program is currently facing delays; as of July 2025, only 3.8% of the Mix A allocated for mature areas has been applied. This delay is attributed to late fertilizer delivery. A critical infrastructure issue was noted at the Kamrah Division fertilizer store, where wet and humid conditions are causing fertilizer bags to sweat and cake, compromising nutrient quality. Immediate improvements to store ventilation are required. (Source: AR, Pg. 12-14)",
@@ -143,7 +149,7 @@
                         "Labour Statement": "Total checkroll workers: 116. Shortage of 42 workers against the requirement of 158. Harvesters strength is 45, yielding a ratio of 1:13 ha. The estate needs to recruit more permanent workers to reduce reliance on unstable supplementary labour. (Source: PAR, Pg. 13-14)",
                         "Staff Establishment": "The staff complement is generally acceptable. The position of Chief Clerk is currently vacant and needs to be filled. (Source: PAR, Pg. 12)",
                         "General Charges": "Actual expenditure is RM 471.20/ha, which is 19% below the seasonal budget. However, overspending was noted in Staff EPF (+13%) and Transport & Travelling (+19%) due to high executive travel expenses. (Source: PAR, Pg. 15)",
-                        "Upkeep & Cultivation": "Total upkeep cost is RM 1,149.70/ha. Weeding is significantly delayed, with circle spraying only 21% complete and interrow blanket spraying 53% complete. Manuring is 36% complete, which is behind schedule. (Source: PAR, Pg. 17-29)",
+                        "Upkeep & Cultivation": "Total upkeep cost is RM 1,149.70/ha. Weeding is significantly delayed, with circle spraying is only 21% complete and interrow blanket spraying 53% complete. Manuring is 36% complete, which is behind schedule. (Source: PAR, Pg. 17-29)",
                         "Harvesting and Collection": "The total harvesting cost is RM 144.52/MT. Excluding external transport, the cost is RM 95.29/MT, which is 10% higher than budget due to unbudgeted loose fruit collection (RM 8.61/MT). Harvesting intervals have improved to 10-20 days. (Source: PAR, Pg. 39-42)",
                         "Crop Production": "Actual FFB production to date is 5,167.62 MT, exceeding the budget of 4,496 MT by 15%. Yield per hectare is 9.78 MT, compared to the budgeted 8.51 MT. OER stands at 19.69%. (Source: PAR, Pg. 44)",
                         "Production Cost": "The all-in cost of production is RM 433.19/MT. The ex-estate cost (excluding depreciation/amortization) is RM 336.35/MT, which is 8% favorable against the budget of RM 364.78/MT. (Source: PAR, Pg. 45)",
@@ -152,7 +158,7 @@
                     },
                     "pinfosys": "Not Available"
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Fertilizer Storage</p><p class='text-sm text-gray-600'><b>Policy Ref: STORE-FERT-01:</b> Fertilizer stores must be dry and well-ventilated. Wet conditions compromising fertilizer quality (caking/sweating) are non-compliant.</p></div> <div class='policy-item'><p class='font-semibold'>Harvesting Intervals</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-INT-02:</b> Harvesting intervals must not exceed 15 days. Intervals of 20-25 days result in loose fruit loss and higher FFA.</p></div> <div class='policy-item'><p class='font-semibold'>Weeding Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: AGRO-WEED-03:</b> Inter-rows must be dominated by soft grasses. Woody weeds (Clidemia, Melastoma) must be eradicated via selective spraying.</p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Fertilizer Storage</p><p class='text-sm text-gray-600'><b>Policy Ref: STORE-FERT-01:</b> Fertilizer stores must be dry and well-ventilated. Wet conditions compromising fertilizer quality (caking/sweating) are non-compliant.</p></div> <div class='policy-item'><p class='font-semibold'>Harvesting Intervals</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-INT-02:</b> Harvesting intervals must not exceed 15 days. Intervals of 20-25 days result in loose fruit loss and higher FFA.</p></div> <div class='policy-item'><p class='font-semibold'>Weeding Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: AGRO-WEED-03:</b> Inter-rows must be dominated by soft grasses. Woody weeds (Clidemia, Melastoma) must be eradicated via selective spraying.</p></div> <div class='policy-item'><p class='font-semibold'>Premix Chemical Recording</p><p class='text-sm text-gray-600'><b>Policy Ref: CHEM-REC-01:</b> Premix usage must be recorded separately for circle spraying and roadside spraying. Records must be reconciled with payment systems monthly.</p></div>"
             };
 
 
@@ -176,7 +182,8 @@
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-green-50 text-green-800' :
-                                       metric.title.includes('Labour') ? 'bg-purple-50 text-purple-800' : 'bg-red-50 text-red-800';
+                                       metric.title.includes('Labour') ? 'bg-purple-50 text-purple-800' : 
+                                       metric.title.includes('Audit') ? 'bg-indigo-50 text-indigo-800' : 'bg-red-50 text-red-800';
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
@@ -213,6 +220,9 @@
                         
                         <div class="mb-8 text-center"><button class="policy-modal-btn bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
                         <div class="space-y-2">
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Internal Audit Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             
@@ -265,10 +275,14 @@
             }
             
             function populateInternalDropdowns() {
+                const auditDiv = document.getElementById(`${estateData.id}-audit`);
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
                 const pinfosysDiv = document.getElementById(`${estateData.id}-pinfosys`);
 
+                if (auditDiv && estateData.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
                 if (agronomyDiv && estateData.reports.agronomy) {
                     agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
