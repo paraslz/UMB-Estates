@@ -66,7 +66,7 @@
             const estateData = {
                 "id": "mlp1",
                 "name": "MLP 1 Estate",
-                "reportInfo": "Data based on Planting Advisory Visit (27-28 Oct 2025) & Agronomy Visit (11 Mar 2026).",
+                "reportInfo": "Data based on Planting Advisory (Sept 2025), Agronomy Visit (March 2026), and Internal Audit (April 2026).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -87,10 +87,10 @@
                         "value": "RM 296.04 / RM 346.10",
                         "note": "YTD Sept 2025 (PA 2/2025 Pg. 68)"
                     },
-                    "weeding": {
-                        "title": "Weeding Status",
-                        "value": "Round 2 Lagging",
-                        "note": "Inter-row R2 at 37% (AR Pg. 24)"
+                    "auditRating": {
+                        "title": "Internal Audit Status",
+                        "value": "Marginally Deficient",
+                        "note": "Audit April 2026 (Audit Pg. 1)"
                     },
                      "manuring": {
                         "title": "Manuring Progress",
@@ -101,7 +101,7 @@
                 "keyMetrics": [
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>", "label": "Harvester Strength", "value": "112 (Ratio 1:14 ha)" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' /></svg>", "label": "Yield Trend", "value": "+25% (YTD Feb '26)" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' /></svg>", "label": "Road Condition", "value": "Deep Ruts (PA Pg. 57)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' /></svg>", "label": "Audit Findings", "value": "Marginally Deficient" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-orange-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "Manuring Status", "value": "Mix B Delay (45%)" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4' /></svg>", "label": "Nutrient Status", "value": "Mg Deficiency Persists" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "Pruning Backlog", "value": "Round 3 (15%)" }
@@ -121,43 +121,45 @@
                     }
                 },
                 "observations": [
-                    "<b>Critical Manuring Delay (Mixture B):</b> Manuring for Mixture B has only reached 45% completion as of February 2026. Delivery issues and inaccessibility in dispute areas (B17) caused delays of over 1 month. <span class='observation-ref'>(AR Pg. 12-13)</span>",
-                    "<b>Harvesting Standards & Crop Quality:</b> Unsatisfactory crop recovery with unripe bunches found at collection platforms. Incomplete collection of loose fruits (some oxidised/rotten) remains an issue. <span class='observation-ref'>(AR Pg. 4, 16-17)</span>",
-                    "<b>Pruning Backlog & Quality:</b> While Rounds 1 and 2 are on track, Round 3 is lagging significantly at 15%. Instances of over-pruning (hanging bunches) were noted, which may impact physiological performance. <span class='observation-ref'>(AR Pg. 20, 22)</span>",
-                    "<b>Persistent Magnesium Deficiency:</b> Mg deficiency symptoms persist in hilly areas (Blocks B11, B04, B09, B10, B15). Multiple nutrient deficiencies noted in rehab blocks A08 and A07. <span class='observation-ref'>(AR Pg. 18)</span>",
-                    "<b>Labour Shortage (Sprayers):</b> Critical shortage of 6 sprayers (10 vs 16 required) impacts weeding quality and progress. Quality of weeding has improved but over-spraying occurs in localized spots. <span class='observation-ref'>(PA Pg. 14; AR Pg. 5, 25)</span>",
-                    "<b>Road Maintenance Needs:</b> Deep ruts on agricultural roads require immediate grading and crusher run application to support FFB transport. <span class='observation-ref'>(PA Pg. 57)</span>"
+                    "<b>Overall Internal Control: Marginally Deficient.</b> Applications of certain important controls lacked consistency or effectiveness, requiring timely corrective action. <span class='observation-ref'>(Audit Pg. 2)</span>",
+                    "<b>Critical Manuring Delay (Mixture B):</b> Only 45% completion as of Feb 2026. Delivery issues and inaccessibility in dispute areas (B17) caused delays of >1 month. <span class='observation-ref'>(AR Pg. 12-13)</span>",
+                    "<b>Invoice Splitting & Procurement Breaches:</b> Repairs for Lorry SS6391V (RM 8,370) and Fuso SAB9523K (RM 5,640) were processed via split LPOs to circumvent the RM 5,000 threshold for Purchase Requisitions. <span class='observation-ref'>(Audit Pg. 21-24)</span>",
+                    "<b>Payroll Irregularities (Tractor Drivers):</b> Daily wages were paid to drivers even when tractors were broken down (zero running hours), violating the piece-rate directive effective May 2025. <span class='observation-ref'>(Audit Pg. 2-6)</span>",
+                    "<b>Harvesting Standards & Pruning:</b> Unsatisfactory crop recovery with unripe bunches at platforms. Pruning Round 3 is lagging significantly at 15%. <span class='observation-ref'>(AR Pg. 4, 16-17; 20)</span>",
+                    "<b>Weighbridge System Gaps:</b> Obsolete system lacks date/audit trails. Tare weighing was performed before FFB collection, leading to 4-8 hour gaps between Time-In and Time-Out. <span class='observation-ref'>(Audit Pg. 9-11)</span>"
                 ],
                 "reports": {
                     "agronomy": {
-                        "Executive Summary": "Yield performance has significantly improved with a 25% increase compared to the previous year. However, critical issues include delays in Mixture B manuring (45% completion) and unsatisfactory crop recovery. Harvesting standards need closer supervision to prevent cutting unripe bunches and missed loose fruits. Pruning Round 3 is lagging at 15%. (AR Pg. 4-6, 20)",
-                        "Nutrient Inputs/Progress of Manuring": "Manuring program for Mix A (93%), RP (88%), and Kieserite (88%) is on track. Mix B is significantly delayed at 45% due to delivery issues. Application quality is generally acceptable, though worker productivity (16 bags/day) is below the 20-bag target. Use of non-standard bowls was observed. (AR Pg. 12-14)",
-                        "Agronomic Observation": "<b>Harvesting:</b> Intervals inconsistent across fields; Division B exceeds 15 days. Unripe bunches and rotten loose fruits noted on platforms. <br><b>Canopy:</b> Pruning R1 (96%), R2 (73%), R3 (15%). Over-pruning noted in spotted areas. <br><b>Weeding:</b> Ground conditions acceptable but over-spraying observed in A17, B02, B17. <br><b>Nutrient Status:</b> Mg deficiency persists in hilly blocks. Multiple symptoms (low vigour, thin trunks) in rehab blocks A07/A08. (AR Pg. 15-28)",
-                        "Yield Performance": "Average yield is 17.85 MT/ha (+25% vs last year). Field 05A achieved the highest gain (+32%). Field 11B remains low (5.78 MT/ha) due to slow recovery and historical 56-day intervals in late 2025. (AR Pg. 31-32)",
-                        "Fertilizer Recommendation": "Program for FY2026/2027 is detailed in Appendix 1. Sub-soil application is proposed for steep blocks B03 and B04 to improve uptake and address Mg deficiency. (AR Pg. 33)"
+                        "Executive Summary": "Yield performance improved by 25% vs last year. Critical issues include delays in Mixture B manuring (45% completion) and unsatisfactory crop recovery. Harvesting standards need closer supervision to prevent cutting unripe bunches. Pruning Round 3 is lagging at 15%. (AR Pg. 4-6, 20)",
+                        "Nutrient Inputs/Progress of Manuring": "Manuring program for Mix A (93%), RP (88%), and Kieserite (88%) is on track. Mix B is significantly delayed at 45% due to delivery issues. Application quality acceptable, but worker productivity (16 bags/day) is below the 20-bag target. (AR Pg. 12-14)",
+                        "Agronomic Observation": "<b>Harvesting:</b> Intervals inconsistent; Division B exceeds 15 days. Unripe bunches and rotten loose fruits noted. <br><b>Canopy:</b> Pruning R1 (96%), R2 (73%), R3 (15%). Over-pruning noted in spots. <br><b>Weeding:</b> Over-spraying observed in A17, B02, B17. <br><b>Nutrient Status:</b> Mg deficiency persists in hilly blocks. (AR Pg. 15-28)",
+                        "Yield Performance": "Average yield is 17.85 MT/ha (+25% vs last year). Field 05A achieved the highest gain (+32%). Field 11B remains low (5.78 MT/ha) due to slow recovery. (AR Pg. 31-32)",
+                        "Fertilizer Recommendation": "Program for FY2026/2027 is detailed in Appendix 1. Sub-soil application proposed for steep blocks B03 and B04 to address Mg deficiency. (AR Pg. 33)"
                     },
                     "plantation": {
-                        "Executive Summary": "The estate's crop production is encouraging, achieving 6% above budget YTD September 2025. However, operational challenges persist: weed management is unsatisfactory with overgrown inter-rows, and there is a critical shortage of sprayers. Harvester productivity is low, and road conditions require immediate attention to support FFB evacuation. (Source: PA 2/2025, Pg. 84-85)",
+                        "Executive Summary": "Crop production is encouraging, 6% above budget YTD Sept 2025. Challenges: weed management is unsatisfactory with overgrown inter-rows; critical shortage of sprayers; road conditions require immediate attention. (Source: PA 2/2025, Pg. 84-85)",
                         "Area Statement": "<b>Mature Area:</b> 1,607.14 ha. <br><b>Rehabilitation:</b> 118.93 ha undergoing corrective pruning. <br><b>Infrastructure:</b> 402.86 ha (Roads, Swamp, Buildings). (Source: PA 2/2025, Pg. 9-10)",
-                        "Labour Statement": "<b>Total Workforce:</b> 220 (Req: 231). <br><b>Harvesters:</b> 112 (Ratio 1:14 ha) - Adequate. <br><b>Sprayers:</b> 10 (Req: 16) - Critical shortage of 6. <br><b>General Workers:</b> 5 (Req: 25). (Source: PA 2/2025, Pg. 13-14)",
+                        "Labour Statement": "<b>Total Workforce:</b> 220 (Req: 231). <br><b>Harvesters:</b> 112 (Ratio 1:14 ha) - Adequate. <br><b>Sprayers:</b> 10 (Req: 16) - Shortage of 6. (Source: PA 2/2025, Pg. 13-14)",
                         "Staff Establishment": "Stable. Key positions: Estate Manager (En. Zamri), Sr. Assistant Manager, Assistant Manager, and 4 Field Conductors. (Source: PA 2/2025, Pg. 15-16)",
-                        "General Charges": "YTD Sept expenditure RM 409,691 (11% below budget). Overspending in Office Expenses (52% over) due to unbudgeted Agronomist fees. (Source: PA 2/2025, Pg. 19-22)",
-                        "Upkeep & Cultivation": "RM 1.37M (underspent by 26%). Weeding: Circle spraying (98%) is complete but labour cost is high (RM 23.88/ha). Manuring 73% complete at Sept report. (Source: PA 2/2025, Pg. 24-53)",
-                        "Harvesting and Collection": "Intervals ~14 days. Harvester output low (1.21 - 1.66 tonnes/md). Loose fruit cost RM 3.75/bag. Issues: uncollected fruit in rehab blocks. (Source: PA 2/2025, Pg. 60-65)",
-                        "Crop Production": "YTD Sept 2025: 14,385 MT (6% Above Budget). Yield 8.95 MT/ha. Bunch weight increased for 2004 planting to 21.42 kg. (Source: PA 2/2025, Pg. 66-67)",
+                        "General Charges": "YTD Sept expenditure RM 409,691 (11% below budget). Overspending in Office Expenses (52% over). (Source: PA 2/2025, Pg. 19-22)",
+                        "Upkeep & Cultivation": "RM 1.37M (underspent by 26%). Circle spraying (98%) is complete but labour cost is high (RM 23.88/ha). (Source: PA 2/2025, Pg. 24-53)",
+                        "Harvesting and Collection": "Intervals ~14 days. Harvester output low (1.21 - 1.66 tonnes/md). Loose fruit cost RM 3.75/bag. (Source: PA 2/2025, Pg. 60-65)",
+                        "Crop Production": "YTD Sept 2025: 14,385 MT (6% Above Budget). Yield 8.95 MT/ha. (Source: PA 2/2025, Pg. 66-67)",
                         "Production Cost": "Ex-Estate: RM 296.04/MT (Budget: RM 346.10). Favorable due to higher production and upkeep underspend. (Source: PA 2/2025, Pg. 68)",
                         "Vehicles Running Cost": "Repair costs significant for Tractors and Motor Graders. (Source: PA 2/2025, Pg. 73-78)",
-                        "Capital Expenditure": "Underspent. Major projects: Foot Hill road construction (RM 76,500), Workshop renovation. Metal bridges pending. (Source: PA 2/2025, Pg. 81-83)",
+                        "Capital Expenditure": "Underspent. Major projects: Foot Hill road construction, Workshop renovation. (Source: PA 2/2025, Pg. 81-83)",
                         "Immature": "N/A (All areas mature)."
                     },
                     "audit": {
-                        "Overall Rating": "Marginally Deficient. Key controls lacked consistency. (Source: Audit 16/25, Pg. 2)",
-                        "Payroll and Personnel": "Shortcomings in Quarto Connects; manual amendments to biometric data undermine reliability. (Source: Audit 16/25, Pg. 2-4)",
-                        "Rest Day Payment": "FFB Checkers paid without bunch count verification; led to unjustifiable wage expenses. (Source: Audit 16/25, Pg. 8-9)"
+                        "Overall Rating": "<b>Marginally Deficient</b>. Applications of certain important controls lacked consistency or effectiveness. Management requires timely corrective action. (Source: Audit April 2026, Pg. 2)",
+                        "Payroll and Personnel": "<b>Irregularities in Daily Wages:</b> Daily wages paid to tractor drivers for in-field FFB evacuation despite May 2025 directive to pay piece rate. Instances noted where drivers earned daily wages (charged to workshop internal charges) on days when tractors were broken down with zero running hours. (Source: Audit April 2026, Pg. 2-6)",
+                        "General Services (Weighbridge)": "<b>Operational Gaps:</b> Tare weighing performed before FFB collection, resulting in unusually long gaps (4-8 hours) between Time-In and Time-Out. The obsolete weighbridge system fails to capture dates/audit trails. Irregular weighing hours (10 PM to 3 AM) pose security risks. (Source: Audit April 2026, Pg. 9-13)",
+                        "Contracts and Tenders": "<b>Unclaimed Workshop Charges:</b> MLP 1 failed to charge labour and workshop running hour costs back to All-Planters (East Coast) Sdn Bhd for repair of rental vehicles, despite contract terms allowing recovery of costs for downtime repair (total RM 7,095 for JVD 5471 alone). (Source: Audit April 2026, Pg. 15-20)",
+                        "Purchasing": "<b>Invoice Splitting:</b> Repair expenditures for Lorry SS6391V (RM 8,370), Lorry SAB9523K (RM 5,640), and Backhoe SS6094M (RM 5,330) were split into multiple invoices/LPOs to circumvent the RM 5,000 Purchase Requisition limit. (Source: Audit April 2026, Pg. 21-25)"
                     },
                     "pinfosys": "N/A"
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Weeding Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-CTRL-03:</b> Prioritize circle weeding before fertilizer application to prevent nutrient competition. Ensure inter-row spraying is completed on schedule to suppress woody regeneration.</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must strictly adhere to the schedule. Delays beyond 15 days require a mitigation plan. Avoid application during heavy rainfall or on weedy circles.</p></div> <div class='policy-item'><p class='font-semibold'>Harvesting & Crop Recovery</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Harvesting intervals must be maintained within 15 days. A dedicated loose fruit collection process must be enforced to maximize recovery and reduce VOPs.</p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Procurement & Authority Limits</p><p class='text-sm text-gray-600'><b>Policy Ref: UMB-PLCY-CH1:</b> Purchases or repair works exceeding RM 5,000 must be routed through the Purchase Requisition (PR) process. Splitting of invoices to circumvent this limit is strictly prohibited.</p></div> <div class='policy-item'><p class='font-semibold'>Weighbridge SOP</p><p class='text-sm text-gray-600'><b>Policy Ref: WB-SOP-01:</b> FFB receiving must follow strict sequence: collection -> gross weighing (Time-In) -> unloading -> tare weighing (Time-Out). Systems must maintain date/time audit trails.</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must strictly adhere to the schedule. Delays beyond 15 days require a mitigation plan. Avoid application during heavy rainfall.</p></div> <div class='policy-item'><p class='font-semibold'>Harvesting & Crop Recovery</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Harvesting intervals must be maintained within 15 days. Dedicated loose fruit collection must be enforced to maximize recovery.</p></div>"
             };
 
             // --- RENDER LOGIC ---
@@ -178,42 +180,58 @@
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
-                                       metric.title.includes('Weeding') ? 'bg-red-50 text-red-800' : 'bg-yellow-50 text-yellow-800';
+                                       metric.title.includes('Audit') ? 'bg-red-50 text-red-800' : 'bg-yellow-50 text-yellow-800';
                     if (metric.lines) {
-                        return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
+                        return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold text-xs uppercase tracking-wider opacity-75">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm font-medium">${line}</p>`).join('')}</div>`;
                     }
-                    return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3><p class="text-2xl font-bold">${metric.value}</p><p class="text-xs text-gray-500 mt-1">${metric.note}</p></div>`;
+                    return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold text-xs uppercase tracking-wider opacity-75">${metric.title}</h3><p class="text-2xl font-bold">${metric.value}</p><p class="text-xs mt-1 font-medium opacity-75">${metric.note}</p></div>`;
                 }).join('');
 
                 const keyMetricsHTML = estate.keyMetrics.map(metric => `
-                    <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                        <div class="bg-gray-100 p-2 rounded-full">${metric.icon}</div>
-                        <div><p class="text-sm text-gray-500">${metric.label}</p><p class="font-bold text-lg">${metric.value}</p></div>
+                    <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+                        <div class="bg-white p-2 rounded-full shadow-sm">${metric.icon}</div>
+                        <div><p class="text-[10px] uppercase font-bold text-gray-400 tracking-tight mb-1 leading-none">${metric.label}</p><p class="font-bold text-gray-800 text-sm leading-none">${metric.value}</p></div>
                     </div>`).join('');
 
                 const observationsHTML = estate.observations.map(obs => `<li class="ml-4">${obs}</li>`).join('');
 
                 return `
-                    <div class="bg-white p-6 rounded-lg shadow-lg animate-fade-in">
-                        <h2 class="text-3xl font-bold mb-2 text-gray-900">${estate.name}</h2>
-                        <p class="text-sm text-gray-500 mb-6 italic">${estate.reportInfo}</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">${summaryMetricsHTML}</div>
-                        <div class="mb-8"><h3 class="text-xl font-semibold mb-4 border-b pb-2">Key Metrics & Agronomic Status</h3><div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">${keyMetricsHTML}</div></div>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                            <div><h3 class="text-xl font-semibold mb-2">Monthly Rainfall YTD</h3><div class="chart-container"><canvas id="prodChart-${estate.id}"></canvas></div></div>
-                            <div><h3 class="text-xl font-semibold mb-2">Palm Age Profile</h3><div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.ageProfile.note}</p></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg animate-fade-in border-t-4 border-green-700">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                            <div>
+                                <h2 class="text-3xl font-bold text-gray-900">${estate.name}</h2>
+                                <p class="text-sm text-gray-500 italic mt-1 font-medium">${estate.reportInfo}</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-bold border border-red-200">
+                                Status: Marginally Deficient
+                            </div>
                         </div>
-                        <div class="mb-8"><h3 class="text-xl font-semibold mb-2 border-b pb-2">Key Observations & Issues</h3><ul id="observations-list" class="list-disc list-inside space-y-2 text-gray-700 mt-4">${observationsHTML}</ul></div>
-                        <div class="mb-8 text-center"><button class="policy-modal-btn bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
-                        <div class="space-y-2">
-                            <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Plantation Advisory Report Details</button>
-                            <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
-                            <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
-                            <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
-                            <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Pinfosys Report Details</button>
-                            <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
-                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Audited Report Details</button>
-                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">${summaryMetricsHTML}</div>
+                        
+                        <div class="mb-8"><h3 class="text-xl font-bold mb-4 border-b pb-2 text-gray-800">Key Metrics & Agronomic Status</h3><div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">${keyMetricsHTML}</div></div>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                            <div><h3 class="text-xl font-bold mb-2 text-gray-800">Monthly Rainfall YTD</h3><div class="chart-container"><canvas id="prodChart-${estate.id}"></canvas></div></div>
+                            <div><h3 class="text-xl font-bold mb-2 text-gray-800">Palm Age Profile</h3><div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2 italic">${estate.chartData.ageProfile.note}</p></div>
+                        </div>
+                        
+                        <div class="mb-8"><h3 class="text-xl font-bold mb-2 border-b pb-2 text-gray-800">Key Observations & Issues</h3><ul id="observations-list" class="list-disc list-inside space-y-3 text-gray-700 mt-4">${observationsHTML}</ul></div>
+                        
+                        <div class="mb-8 text-center"><button class="policy-modal-btn bg-gray-700 text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition shadow-lg font-bold">View Agricultural Policy Cross-Reference</button></div>
+                        
+                        <div class="space-y-3">
+                            <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-4 rounded-md hover:bg-gray-700 transition flex justify-between items-center font-bold">Plantation Advisory Report Details <span class="text-xl leading-none">▼</span></button>
+                            <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-6 rounded-md border border-gray-200 shadow-inner"></div>
+                            
+                            <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-4 rounded-md hover:bg-gray-700 transition flex justify-between items-center font-bold">Agronomy Report Details <span class="text-xl leading-none">▼</span></button>
+                            <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-6 rounded-md border border-gray-200 shadow-inner"></div>
+                            
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-green-900 text-white p-4 rounded-md hover:bg-green-800 transition flex justify-between items-center font-bold">Audited Report Details (April 2026) <span class="text-xl leading-none">▼</span></button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-6 rounded-md border border-gray-200 shadow-inner"></div>
+                            
+                            <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-4 rounded-md hover:bg-gray-700 transition flex justify-between items-center font-bold">Pinfosys Report Details <span class="text-xl leading-none">▼</span></button>
+                            <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-6 rounded-md border border-gray-200 shadow-inner"></div>
                         </div>
                     </div>`;
             }
@@ -230,7 +248,7 @@
                         type: 'bar',
                         data: {
                             labels: estate.chartData.production.labels,
-                            datasets: [{ label: 'Rainfall (mm)', data: estate.chartData.production.rainfall, backgroundColor: '#3b82f6' }]
+                            datasets: [{ label: 'Rainfall (mm)', data: estate.chartData.production.rainfall, backgroundColor: '#3b82f6', borderRadius: 4 }]
                         },
                         options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, y: { title: { display: true, text: 'Rainfall (mm)' } } } }
                     });
@@ -255,9 +273,9 @@
                     const div = document.getElementById(`${estate.id}-${sec}`);
                     if (div && estate.reports[sec] && estate.reports[sec] !== "N/A") {
                         div.innerHTML = Object.entries(estate.reports[sec]).map(([section, content]) => `
-                            <div class="mb-3">
-                                <h4 class="font-bold text-gray-800 text-sm uppercase">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4>
-                                <p class="text-sm text-gray-600 text-justify leading-relaxed">${content}</p>
+                            <div class="mb-5">
+                                <h4 class="font-bold text-gray-800 text-base uppercase border-l-4 border-green-700 pl-3 mb-2">${section.replace(/([A-Z])/g, ' $1').trim()}</h4>
+                                <div class="text-sm text-gray-600 text-justify leading-relaxed ml-4">${content}</div>
                             </div>`).join('');
                     } else if (div) {
                         div.innerHTML = `<p class="text-sm text-gray-600 italic">Not Available</p>`;
