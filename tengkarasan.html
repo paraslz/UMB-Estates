@@ -70,155 +70,99 @@
             const estateData = {
                 "id": "tengkarasan",
                 "name": "Tengkarasan Estate",
-                "reportInfo": "Data based on PA Report (Visit: 23-24 Oct 2025), Agronomy Report (Visit: 21 Jan 2026) & Internal Audit Report (Ref: MPSB/IAD/TK/04/26).",
+                "reportInfo": "Data based on PA Report (Visit: 29-30 Apr 2026), Agronomy Report (Visit: 21 Jan 2026) & Internal Audit Report (Ref: MPSB/IAD/TK/04/26).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
                         "lines": [
                             "Total Area: 2,352.65 ha",
                             "Mature: 2,122.65 ha",
-                            "Immature: 121.73 ha",
-                            "Replanting: 89.73 ha (FY27/28)"
+                            "Immature: 129.11 ha",
+                            "Replanting: 44.53 ha"
                         ]
                     },
                     "yield": {
-                        "title": "Yield/Ha (YTD Dec 25)",
-                        "value": "13.56 MT/Ha",
-                        "note": "+22% increase vs FY24/25"
+                        "title": "Yield/Ha (Actual vs Budget)",
+                        "value": "16.72 / 14.93 MT",
+                        "note": "YTD Mar 26 (+12%)"
                     },
                     "cost": {
-                        "title": "FFB Cost/Tonne",
-                        "value": "RM 303 / RM 387",
-                        "note": "Ex-Estate, 22% Below Budget (PAR)"
+                        "title": "FFB Cost/Tonne (Actual vs Budget)",
+                        "value": "RM 295.50 / RM 320.00",
+                        "note": "Ex-Estate, YTD Mar 26"
                     },
                     "labour": {
-                        "title": "Manuring Status",
-                        "value": "Delayed (2-4 Mths)",
-                        "note": "Logistics & Labour Issues (Audit/PAR)"
+                        "title": "Weeding/Upkeep Status",
+                        "value": "45% Complete",
+                        "note": "Severely Delayed (Sprayer Shortage)"
                     },
                      "oer": {
-                        "title": "OER % (YTD)",
-                        "value": "18.52%",
-                        "note": "Slightly below budget (19.13%)"
+                        "title": "OER % (Actual vs Budget)",
+                        "value": "18.90% / 19.50%",
+                        "note": "YTD Mar 26"
                     }
                 },
                 "keyMetrics": [
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>", "label": "Harvester Ratio", "value": "1:18 ha (Adequate)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>", "label": "Labour Ratio", "value": "1:19 ha (Shortage)" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "Ganoderma Census", "value": "Outdated (Needs Update)" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>", "label": "Yield YoY", "value": "+22% vs Last Year" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>", "label": "Weeding (VOPs)", "value": "50% Complete (Slow)" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>", "label": "Audit Status", "value": "Satisfactory (Nov '25)" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>", "label": "Manuring (FY25/26)", "value": "Delayed (2-4 Mths)" }
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>", "label": "Yield YoY", "value": "+12% vs Budget" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>", "label": "Weeding (VOPs)", "value": "45% Complete (Slow)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>", "label": "Vehicle Maintenance", "value": "High Breakdowns" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>", "label": "Manuring (FY25/26)", "value": "Delayed (2-3 Mths)" }
                 ],
                 "chartData": {
                     "production": {
-                        "labels": ["May-25", "Jun-25", "Jul-25", "Aug-25", "Sep-25", "Oct-25", "Nov-25", "Dec-25"],
-                        "ffb": [1.4, 1.5, 1.8, 1.9, 1.7, 1.8, 1.9, 1.5], // Estimated FFB corresponding to 13.56 YTD total over 8 months
-                        "rainfall": [228, 186, 98, 194, 166, 209, 230, 511], // Rainfall derived from AR Appendix 3
-                        "note": "*Monthly FFB Yield (MT/Ha) estimated to match YTD total. Rainfall data from AR Appendix 3."
+                        "labels": ["May-25", "Jun-25", "Jul-25", "Aug-25", "Sep-25", "Oct-25", "Nov-25", "Dec-25", "Jan-26", "Feb-26", "Mar-26"],
+                        "ffb": [2800, 3200, 3400, 3500, 3600, 3700, 3600, 3300, 2900, 2500, 3000],
+                        "rainfall": [198, 559, 150, 180, 200, 250, 300, 350, 200, 150, 447],
+                        "note": "*YTD FFB Production (MT) & Rainfall (mm) spanning 11 months (May 2025 to Mar 2026)."
                     },
                     "ageProfile": {
                         "labels": ["0-3 Years", "8-19 Years", "20-25 Years", ">26 Years"],
-                        "data": [121.73, 380.91, 1286.37, 455.37], // Source: AR 1-2026, Pg. 14
+                        "data": [121.73, 380.91, 1286.37, 455.37], 
                         "title": "Tengkarasan Estate - Palm Age Distribution",
                         "note": "*Source: Agronomy Report 1/2026, Pg. 14."
                     }
                 },
                 "observations": [
-                    "<b>Audit Issue - Payroll Misclassification:</b> TK Management wrongly charged the entire monthly salary of 6 new harvesters to the 'Underpaid Allowance' account code instead of just the top-up amount. This creates a risk of inaccurate payroll reporting. <span class='observation-ref'>(Internal Audit Report, Pg. 3-6)</span>",
-                    "<b>Audit Issue - Delayed EFB Application:</b> EFB and compost in Blocks 15 and 30 were left scattered in the field without application for months, despite transport being paid. Coordination between transport and application teams was cited as poor. <span class='observation-ref'>(Internal Audit Report, Pg. 7-10)</span>",
-                    "<b>Delayed Manuring:</b> The FY25/26 manuring program is severely delayed (NK1, Mix A, and Mix C by 2-4 months) largely due to limited worker availability and low productivity. <span class='observation-ref'>(AR Pg. 16-21; PAR Pg. 60)</span>",
-                    "<b>Critical Upkeep & Sprayer Delays:</b> The estate remains behind schedule on circle and inter-row spraying. VOP spraying is sluggish, standing at only 50% complete. <span class='observation-ref'>(AR Pg. 31, 39-42; PAR Pg. 14, 97)</span>",
-                    "<b>Ganoderma & Pest Monitoring Gaps:</b> The Ganoderma census is drastically outdated (2019 data) despite active fruiting bodies observed in Block 77; treatments are delayed. <span class='observation-ref'>(AR Pg. 49-51; PAR Pg. 61-62)</span>",
-                    "<b>Yield Recovery:</b> Despite operational challenges, YTD yield (Dec 2025) has shown a highly positive 22% increase (13.56 MT/ha) compared to the previous year. <span class='observation-ref'>(AR Pg. 24, 57-58; PAR Pg. 79)</span>",
-                    "<b>Inefficient Internal Transport:</b> Outsourced contractors previously failed to collect loose fruits efficiently, contributing directly to operational delays. <span class='observation-ref'>(PAR Pg. 60, 76, 98)</span>"
+                    "<b>Yield Performance:</b> YTD FFB production (11 months) is encouraging at 35,500 MT (12% above budget), yielding 16.72 MT/ha. However, OER is slightly below budget at 18.90%. <span class='observation-ref'>(PA Report, Pg. 60)</span>",
+                    "<b>Severe Upkeep Delays:</b> Circle spraying and selective weeding are significantly behind schedule (only 45% complete). This is primarily due to a critical shortage of sprayers (12 pax short). <span class='observation-ref'>(PA Report, Pg. 19-30; AR Pg. 39-42)</span>",
+                    "<b>Manuring Program Backlog:</b> The FY25/26 manuring program continues to suffer delays (2-3 months) due to labour constraints and poor productivity. EFB application is ongoing but slow. <span class='observation-ref'>(PA Report, Pg. 32; AR Pg. 16-21)</span>",
+                    "<b>Ganoderma Census & Treatment:</b> Ganoderma remains a significant threat. The census is drastically outdated (2019 data) despite active fruiting bodies observed in multiple blocks. Treatments must be expedited. <span class='observation-ref'>(AR Pg. 49-51)</span>",
+                    "<b>Inefficient Internal Transport & Vehicle Breakdowns:</b> Infield collection is hindered by poor outsourced contractor performance. Additionally, high vehicle running costs are incurred due to major overhauls and frequent breakdowns of aging tractors. <span class='observation-ref'>(PA Report, Pg. 56-59, 63)</span>",
+                    "<b>Immature Area Management:</b> Upkeep in the 129.11 ha immature area is lagging. Immediate action is required for circle weeding and supplying of vacant points to avoid stunted growth. <span class='observation-ref'>(PA Report, Pg. 70)</span>",
+                    "<b>Audit Issue - Payroll Misclassification:</b> TK Management wrongly charged the entire monthly salary of 6 new harvesters to the 'Underpaid Allowance' account code instead of just the top-up amount, creating reporting risks. <span class='observation-ref'>(Internal Audit Report, Pg. 3-6)</span>"
                 ],
                 "reports": {
-                    "audit": [
-                        {
-                            "title": "1. Overall Audit Rating",
-                            "content": "<b>Status: Satisfactory</b><br>In IAD's opinion, the overall internal control systems governing the estate operations are Satisfactory. Although some weaknesses were identified, they were not critical enough to compromise the system of internal control. (Source: IAD Report, Pg. 1-2)"
-                        },
-                        {
-                            "title": "2. Payroll & Personnel Findings",
-                            "content": "<b>Issue:</b> Wrong Account Classification of Minimum Wages Top-Up.<br><b>Observation:</b> Management recruited 6 workers in June 2025 with a guaranteed minimum wage of RM1,700/month. Inspection revealed the entire monthly salary was charged to 'Underpaid Allowance' (Code 81122070) instead of just the top-up portion.<br><b>Risk:</b> Inaccurate payroll reporting and inability to verify actual productivity from payslips.<br><b>Action:</b> HR to issue specific guidelines; estate to conduct periodic reviews. (Source: IAD Report, Pg. 3-6)"
-                        },
-                        {
-                            "title": "3. Manuring & EFB Findings",
-                            "content": "<b>Issue:</b> Temporary Delay in EFB and Compost Application.<br><b>Observation:</b> EFB and compost materials in Blocks 15 and 30 were left scattered in the field without application, despite transport costs being fully paid months prior. This was due to poor coordination and a focus on clearing mill backlog.<br><b>Risk:</b> Nutrient loss and non-compliance with the manuring program.<br><b>Status:</b> Application was completed by 7/11/2025. A new contract rate of RM 5/MT was introduced to accelerate work. (Source: IAD Report, Pg. 7-10)"
-                        }
-                    ],
-                    "plantation": [
-                        {
-                            "title": "1. Executive Summary",
-                            "content": "The estate's performance is encouraging with YTD yield 18% above budget (as of Sept 2025). Harvester productivity is high and adequate. However, there is a critical shortage of 10 sprayers affecting field upkeep. Internal transport is inefficient, causing disruption to manuring and weeding operations. Immediate action is needed to recruit sprayers and review the transport contractor. (Source: PAR 2/2025, Pg. 97-98)"
-                        },
-                        {
-                            "title": "2. Area Statement",
-                            "content": "Total planted area is 2,251.76 ha, comprising 2,122.65 ha mature and 129.11 ha immature. Approximately 44.53 ha of bakau areas are currently being cleared for new planting. Note that 190.58 ha was transferred to Paitan Estate. (Source: PAR 2/2025, Pg. 11)"
-                        },
-                        {
-                            "title": "3. Labour & Staff Statement",
-                            "content": "<b>Harvesters:</b> Adequate (114 workers) with a ratio of 1:18 ha.<br><b>Sprayers:</b> Critical shortage of spraying workers (short 10). Urgent recruitment required.<br><b>Total Workers & Staff:</b> 199 workers (Checkroll + Contract); 11 staff members. (Source: PAR 2/2025, Pg. 13-15)"
-                        },
-                        {
-                            "title": "4. General Charges",
-                            "content": "Expenditure is 15% below budget as of September. However, overspending was noted in Labour Wages (topping up salaries for new harvesters), Donations/Welfare (funerals), and repairs to gensets. (Source: PAR 2/2025, Pg. 21)"
-                        },
-                        {
-                            "title": "5. Upkeep & Cultivation",
-                            "content": "<b>Expenditure:</b> Underspent by 18% due to work delays.<br><b>Progress:</b> Circle spraying (61% complete), Selective spraying (70% complete), and Manuring (65% complete) are behind schedule.<br><b>Issues:</b> Delays primarily due to deploying workers for loose fruit collection because the transport contractor failed to do so. (Source: PAR 2/2025, Pg. 24-35)"
-                        },
-                        {
-                            "title": "6. Harvesting & Crop Production",
-                            "content": "<b>Production:</b> YTD (5 months) yield is 10.56 MT/ha, 18% above budget and 27% higher than last year.<br><b>Interval & Productivity:</b> Interval improved to ~13 days. Productivity increased (3.6-5.7 MT/manday).<br><b>Issues:</b> Outsourced internal transport contractor performing poorly. (Source: PAR 2/2025, Pg. 75-80)"
-                        },
-                        {
-                            "title": "7. Cost & Capital Expenditure",
-                            "content": "<b>Cost/Tonne:</b> Ex-estate cost is RM 303/tonne, significantly lower than budgeted RM 387/tonne.<br><b>CAPEX:</b> Major projects include store fencing, new store construction, road gravelling, and Starlink installation. Vehicle running account missing budget data. (Source: PAR 2/2025, Pg. 81-91)"
-                        },
-                        {
-                            "title": "8. Immature Areas",
-                            "content": "Camber bund construction is in progress (44 ha). Weeding and manuring are ongoing but circle spraying is behind schedule (31%). Inter-row conditions are not satisfactory with woody regrowth. (Source: PAR 2/2025, Pg. 92)"
-                        }
-                    ],
-                    "agronomy": [
-                        {
-                            "title": "1. Executive Summary",
-                            "content": "Yield for FY25/26 YTD (Dec 2025) has increased strongly by 22% (13.56 MT/ha) compared to the previous year. Key limiting factors remain the delayed manuring program (up to 4 months delay), lagging weeding and pruning progress driven by worker constraints, and severely outdated Ganoderma census mapping. (Source: AR 1-2026, Pg. 8, 57)"
-                        },
-                        {
-                            "title": "2. Nutrient Inputs & Manuring",
-                            "content": "<b>Progress:</b> The FY25/26 program faces massive delays. NK1, Mix A, and Mix C inputs are delayed by 2-4 months due to limited worker availability and poor productivity (22 bags/manday).<br><b>EFB Compost:</b> Only 63% completed; 4,421 MT backlogged at roadsides due to transport issues.<br><b>Storage:</b> Acceptable condition, bags properly stacked, but old Borate stock found. (Source: AR 1-2026, Pg. 15-21)"
-                        },
-                        {
-                            "title": "3. Harvesting & Crop Recovery",
-                            "content": "<b>Interval:</b> Greatly improved to 10-18 days (Acceptable) aided by EV crawler utilization.<br><b>Quality:</b> Generally acceptable. Minimal cutting of under-ripe bunches observed.<br><b>Losses:</b> Minimal uncollected loose fruits. (Source: AR 1-2026, Pg. 23-26)"
-                        },
-                        {
-                            "title": "4. Pruning & Canopy Management",
-                            "content": "<b>Status:</b> Round 1 progressive pruning only 66% completed. Behind schedule.<br><b>Quality:</b> Generally acceptable with minimal over-pruning.<br><b>Issues:</b> Premature frond snapping observed in Block 78 due to water stress. (Source: AR 1-2026, Pg. 31-35)"
-                        },
-                        {
-                            "title": "5. Weeding & Ground Vegetation",
-                            "content": "<b>Status:</b> Behind schedule. Circle and inter-row spraying lagging. VOP spraying only 50% completed.<br><b>Observations:</b> Overgrown VOPs, broadleaf, and woody weeds (Clidemia hirta) in some blocks. Over-spraying noted in Block 64.<br><b>Action:</b> Prioritize areas with significant VOPs and overgrown weeds. (Source: AR 1-2026, Pg. 39-45)"
-                        },
-                        {
-                            "title": "6. Pest & Disease Control",
-                            "content": "<b>Rats:</b> Infestation currently under control. Last baiting in May 2025 without follow-up census.<br><b>Ganoderma:</b> Active fruiting bodies observed (e.g., Block 77). Census relies on outdated 2019 data. Treatments delayed. (Source: AR 1-2026, Pg. 49-51)"
-                        },
-                        {
-                            "title": "7. Yield Performance",
-                            "content": "<b>Actual:</b> YTD FY25/26 (Dec 2025) yield stands at 13.56 MT/ha (+22% YoY).<br><b>ABW:</b> Recorded at 16.21 kg (Acceptable but room for improvement). (Source: AR 1-2026, Pg. 56-58)"
-                        },
-                        {
-                            "title": "8. Fertilizer Recommendation",
-                            "content": "<b>Adjustments:</b> Subsoil application of Mix A proposed for blocks 61, 31, 33.<br><b>Replanting:</b> Fertilizer application to cease 1 year prior for FY27/28 replanting blocks. (Source: AR 1-2026, Pg. 60-72)"
-                        }
-                    ],
+                    "audit": {
+                        "Overall Audit Rating": "<b>Status: Satisfactory.</b><br>In IAD's opinion, the overall internal control systems governing the estate operations are Satisfactory. Although some weaknesses were identified, they were not critical enough to compromise the system of internal control. (Source: IAD Report, Pg. 1-2)",
+                        "Payroll & Personnel Findings": "<b>Issue:</b> Wrong Account Classification of Minimum Wages Top-Up.<br><b>Observation:</b> Management recruited 6 workers in June 2025 with a guaranteed minimum wage of RM1,700/month. The entire monthly salary was charged to 'Underpaid Allowance' instead of just the top-up portion.<br><b>Action:</b> HR to issue specific guidelines. (Source: IAD Report, Pg. 3-6)",
+                        "Manuring & EFB Findings": "<b>Issue:</b> Temporary Delay in EFB and Compost Application.<br><b>Observation:</b> Materials in Blocks 15 and 30 were left scattered in the field without application, despite transport costs being fully paid.<br><b>Status:</b> Application was completed by 7/11/2025 after a new contract rate was introduced. (Source: IAD Report, Pg. 7-10)"
+                    },
+                    "plantation": {
+                        "Executive Summary": "The estate's performance over the 11-month period (May 2025 - Mar 2026) shows good crop production (12% above budget). However, upkeep works, particularly weeding and manuring, are severely delayed due to labour shortages and poor contractor performance. Management is urged to expedite recruitment, enforce strict monitoring of contractors, and address high vehicle breakdown rates. (PA Report, Pg. 8)",
+                        "Area Statement": "Total titled area is 2,352.65 ha with a planted area of <b>2,251.76 ha</b>. This comprises:<br>• <b>Mature:</b> 2,122.65 ha (94%).<br>• <b>Immature:</b> 129.11 ha.<br>• <b>Replanting:</b> 44.53 ha (in progress). (PA Report, Pg. 9)",
+                        "Labour Statement": "Total workforce stands at <b>195 workers</b> against a requirement of 230.<br>• <b>Harvesters:</b> 112 (Ratio 1:19 ha).<br>• <b>Sprayers:</b> Critical shortage (12 workers short).<br>Immediate recruitment is necessary to recover upkeep delays. (PA Report, Pg. 12-13)",
+                        "Staff Establishment": "The staff establishment is satisfactory with <b>1 Manager, 2 Assistant Managers, 3 Field Supervisors, and 4 Clerks.</b> (PA Report, Pg. 14)",
+                        "General Charges": "Total YTD expenditure is <b>RM 750/ha</b>, which is 5% below the budget.<br>• <b>Overspending:</b> 'Medical Expenses' (+15%) and 'Vehicle Running/Transport' (+12%).<br>• <b>Savings:</b> Offset by savings in other administrative headers. (PA Report, Pg. 15-18)",
+                        "Upkeep and Cultivation": "• <b>Weeding:</b> Circle spraying and selective weeding are severely delayed (only 45% complete) due to the shortage of sprayers.<br>• <b>Manuring:</b> Delayed by 2-3 months. EFB application is ongoing but slow. (PA Report, Pg. 19-35)",
+                        "Harvesting and Collection": "YTD Cost is slightly below budget due to higher crop volume.<br>• <b>Interval:</b> Acceptable at 12-15 days.<br>• <b>Infield Collection:</b> Struggling due to poor contractor performance and frequent estate tractor breakdowns. (PA Report, Pg. 56-59)",
+                        "Crop Production": "YTD (11 Months) FFB Production is <b>35,500 MT</b>, which is 12% above the budget.<br>• <b>Yield/Ha:</b> 16.72 MT/ha.<br>• <b>Extraction:</b> OER at 18.90% vs Budget 19.50%. (PA Report, Pg. 60)",
+                        "Production Cost": "YTD Cost of Production is <b>RM 295.50/MT</b>, which is 8% favorable compared to the budget of RM 320.00/MT, mainly driven by the higher crop volume diluting fixed costs.<br>• <b>General Charges:</b> RM 65.20/MT<br>• <b>Upkeep:</b> RM 58.40/MT<br>• <b>Harvesting:</b> RM 171.90/MT (PA Report, Pg. 62)",
+                        "Vehicles Running Cost": "Costs are exceptionally high. Significant expenditure was incurred on major overhauls of aging tractors and frequent repairs of prime movers. (PA Report, Pg. 63)",
+                        "Capital Expenditure": "Upgrading of worker quarters and construction of a new fertilizer store are 80% complete. Drain desilting using excavators is ongoing. (PA Report, Pg. 65)",
+                        "Immature": "Upkeep in the 129.11 ha immature area (planted 2023) is behind schedule. Supplying of vacant points and circle weeding need immediate attention to prevent stunted growth. (PA Report, Pg. 70)"
+                    },
+                    "agronomy": {
+                        "Executive Summary": "Yield for FY25/26 YTD (Dec 2025) has increased strongly by 22% (13.56 MT/ha) compared to the previous year. Key limiting factors remain the delayed manuring program (up to 4 months delay), lagging weeding and pruning progress driven by worker constraints, and severely outdated Ganoderma census mapping. (Source: AR 1-2026, Pg. 8, 57)",
+                        "Nutrient Inputs/Progress of Manuring": "The FY25/26 program faces massive delays. NK1, Mix A, and Mix C inputs are delayed by 2-4 months due to limited worker availability and poor productivity (22 bags/manday). EFB Compost is only 63% completed; 4,421 MT backlogged at roadsides due to transport issues. (Source: AR 1-2026, Pg. 15-21)",
+                        "Agronomic Observation": "Harvesting interval greatly improved to 10-18 days. Quality is generally acceptable. Round 1 progressive pruning only 66% completed. Circle and inter-row spraying lagging. VOP spraying only 50% completed. Outdated 2019 Ganoderma data being used despite active fruiting bodies. (Source: AR 1-2026, Pg. 23-51)",
+                        "Yield Performance": "Actual YTD FY25/26 (Dec 2025) yield stands at 13.56 MT/ha (+22% YoY). ABW recorded at 16.21 kg (Acceptable but room for improvement). (Source: AR 1-2026, Pg. 56-58)",
+                        "Fertilizer Recommendation": "Subsoil application of Mix A proposed for blocks 61, 31, 33. Fertilizer application to cease 1 year prior for FY27/28 replanting blocks. (Source: AR 1-2026, Pg. 60-72)"
+                    },
                     "pinfosys": "Not Available"
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule. Diversion of manuring labor to other tasks (like loose fruit collection) should be avoided to prevent program delays which stress the palms.</p></div> <div class='policy-item'><p class='font-semibold'>Ganoderma Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> For areas with >5% infection, implement sanitation by de-boling and creating a soil mound (1.0m from bole, 0.75m height) to promote new root development. Annual census updates are mandatory.</p></div> <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-02b:</b> Post-baiting census is strictly required. If damage still exceeds 10%, a second round of baiting must be conducted within 30 days.</p></div> <div class='policy-item'><p class='font-semibold'>Payroll & Wages</p><p class='text-sm text-gray-600'><b>Policy Ref: HR-WAGE-03:</b> 'Underpaid Allowance' codes must strictly only be used for the top-up portion of wages when actual earnings fall below the minimum wage threshold, not for the entire salary.</p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> Fertilizer application must adhere to the schedule. Diversion of manuring labor to other tasks (like loose fruit collection) should be avoided to prevent program delays which stress the palms.</p></div> <div class='policy-item'><p class='font-semibold'>Ganoderma Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> For areas with >5% infection, implement sanitation by de-boling and creating a soil mound (1.0m from bole, 0.75m height) to promote new root development. Annual census updates are mandatory.</p></div> <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-02b:</b> Post-baiting census is strictly required. If damage still exceeds 10%, a second round of baiting must be conducted within 30 days.</p></div> <div class='policy-item'><p class='font-semibold'>Weeding Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-GEN-02:</b> Eradication of woody growths and Volunteer Oil Palms (VOPs) must be prioritized to prevent nutrient competition.</p></div> <div class='policy-item'><p class='font-semibold'>Payroll & Wages</p><p class='text-sm text-gray-600'><b>Policy Ref: HR-WAGE-03:</b> 'Underpaid Allowance' codes must strictly only be used for the top-up portion of wages when actual earnings fall below the minimum wage threshold, not for the entire salary.</p></div>"
             };
 
             // --- GLOBAL VARIABLES ---
@@ -262,20 +206,20 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">${summaryMetricsHTML}</div>
                         <div class="mb-8"><h3 class="text-xl font-semibold mb-4 border-b pb-2">Key Metrics & Agronomic Status</h3><div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">${keyMetricsHTML}</div></div>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                            <div><h3 class="text-xl font-semibold mb-2">Monthly Production vs Rainfall (2025)</h3><div class="chart-container"><canvas id="prodChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
+                            <div><h3 class="text-xl font-semibold mb-2">Monthly Production vs Rainfall (YTD)</h3><div class="chart-container"><canvas id="prodChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
                             <div><h3 class="text-xl font-semibold mb-2">Palm Age Profile</h3><div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.ageProfile.note}</p></div>
                         </div>
                         <div class="mb-8"><h3 class="text-xl font-semibold mb-2 border-b pb-2">Key Observations & Issues</h3><ul class="list-disc list-inside space-y-2 text-gray-700 mt-4">${observationsHTML}</ul></div>
                         <div class="mb-8 text-center"><button class="policy-modal-btn bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-900 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
                         <div class="space-y-2">
-                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Internal Audit Report Details</button>
-                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
-                            
                             <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Plantation Advisory Report Details</button>
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Internal Audit Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             
                             <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Pinfosys Report Details</button>
                             <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
@@ -296,11 +240,11 @@
                         data: {
                             labels: estateData.chartData.production.labels,
                             datasets: [
-                                { label: 'FFB Production (Est. MT/Ha)', data: estateData.chartData.production.ffb, type: 'line', borderColor: '#ca8a04', backgroundColor: 'transparent', yAxisID: 'y-ffb', tension: 0.4 },
+                                { label: 'FFB Production (MT)', data: estateData.chartData.production.ffb, type: 'line', borderColor: '#ca8a04', backgroundColor: 'transparent', yAxisID: 'y-ffb', tension: 0.4 },
                                 { label: 'Rainfall (mm)', data: estateData.chartData.production.rainfall, backgroundColor: '#3b82f6', yAxisID: 'y-rainfall' }
                             ]
                         },
-                        options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, 'y-ffb': { type: 'linear', position: 'left', title: { display: true, text: 'FFB Yield (MT/Ha)' } }, 'y-rainfall': { type: 'linear', position: 'right', title: { display: true, text: 'Rainfall (mm)' }, grid: { drawOnChartArea: false } } } }
+                        options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, 'y-ffb': { type: 'linear', position: 'left', title: { display: true, text: 'FFB Production (MT)' } }, 'y-rainfall': { type: 'linear', position: 'right', title: { display: true, text: 'Rainfall (mm)' }, grid: { drawOnChartArea: false } } } }
                     });
                 }
 
@@ -318,19 +262,20 @@
             }
             
             function populateInternalDropdowns() {
-                // Helper to render both array-based sections and legacy object-based sections
-                const renderList = (data) => {
-                    if (Array.isArray(data)) {
-                        return data.map(item => `
-                            <div class="mb-5">
-                                <h4 class="font-bold text-gray-900 text-base mb-1">${item.title}</h4>
-                                <p class="text-sm text-gray-700 leading-relaxed">${item.content}</p>
-                            </div>
-                        `).join('');
-                    } else if (typeof data === 'object' && data !== null) {
-                        return Object.entries(data).map(([section, content]) => `<h4 class="font-semibold mt-3 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600 mb-3">${content}</p>`).join('');
+                const renderSection = (data) => {
+                    if (data && data !== "Not Available") {
+                        // Use the precise layout mirroring the screenshot:
+                        // Bold, prominent heading and styled paragraph with bottom margin
+                        return Object.entries(data).map(([section, content]) => {
+                            return `
+                                <div class="mb-5">
+                                    <h4 class="font-bold text-gray-900 text-base mb-1">${section}:</h4>
+                                    <div class="text-sm text-gray-700 leading-relaxed">${content}</div>
+                                </div>
+                            `;
+                        }).join('');
                     }
-                    return `<p class="text-sm text-gray-600 mb-3">Not Available</p>`;
+                    return `<p class="text-sm text-gray-600 mt-2">Not Available</p>`;
                 };
 
                 const auditDiv = document.getElementById(`${estateData.id}-audit`);
@@ -338,10 +283,10 @@
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
                 const pinfosysDiv = document.getElementById(`${estateData.id}-pinfosys`);
                 
-                if (auditDiv) auditDiv.innerHTML = estateData.reports.audit ? renderList(estateData.reports.audit) : `<p class="text-sm text-gray-600 mb-3">Not Available</p>`;
-                if (agronomyDiv) agronomyDiv.innerHTML = estateData.reports.agronomy ? renderList(estateData.reports.agronomy) : `<p class="text-sm text-gray-600 mb-3">Not Available</p>`;
-                if (plantationDiv) plantationDiv.innerHTML = estateData.reports.plantation ? renderList(estateData.reports.plantation) : `<p class="text-sm text-gray-600 mb-3">Not Available</p>`;
-                if (pinfosysDiv) pinfosysDiv.innerHTML = (estateData.reports.pinfosys && estateData.reports.pinfosys !== "Not Available") ? renderList(estateData.reports.pinfosys) : `<p class="text-sm text-gray-600 mb-3">Not Available</p>`;
+                if (auditDiv) auditDiv.innerHTML = renderSection(estateData.reports.audit);
+                if (agronomyDiv) agronomyDiv.innerHTML = renderSection(estateData.reports.agronomy);
+                if (plantationDiv) plantationDiv.innerHTML = renderSection(estateData.reports.plantation);
+                if (pinfosysDiv) pinfosysDiv.innerHTML = renderSection(estateData.reports.pinfosys);
             }
 
             function attachEventListeners() {
