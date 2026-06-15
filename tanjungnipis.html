@@ -18,7 +18,7 @@
         .modal.active { display: flex; }
         .chart-container { position: relative; height: 300px; width: 100%; margin: auto; }
         .pie-chart-container { position: relative; height: 350px; width: 100%; margin: auto; }
-        .observation-ref { font-size: 0.75rem; color: #57534e; font-style: italic; }
+        .observation-ref { font-size: 0.75rem; color: #57534e; font-style: italic; font-weight: 500; }
         @keyframes fade-in {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -36,7 +36,9 @@
             <div id="header-title" class="text-xl font-bold text-gray-900">
                 <!-- Title will be populated by JS -->
             </div>
-            <a href="estates.html" class="text-green-800 hover:text-green-900 transition duration-300">&larr; Back to Estates List</a>
+            <a href="estates.html" class="text-green-800 hover:text-green-900 transition duration-300 font-semibold flex items-center gap-1">
+                &larr; Back to Estates List
+            </a>
         </nav>
     </header>
 
@@ -52,7 +54,7 @@
     <div id="policyModal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4">
         <div class="bg-white p-6 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col">
             <div class="flex justify-between items-center mb-4">
-                <h3 id="modalTitle" class="text-2xl font-bold">Agricultural Policy Cross-Reference</h3>
+                <h3 id="modalTitle" class="text-2xl font-bold text-gray-900">Agricultural Policy Cross-Reference</h3>
                 <button onclick="closePolicyModal()" class="text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
             </div>
             <div id="modalContent" class="space-y-4 overflow-y-auto pr-4 flex-grow">
@@ -68,82 +70,82 @@
             const estateData = {
                 "id": "tanjungnipis",
                 "name": "Tanjung Nipis Estate",
-                "reportInfo": "Data based on PA Report 02/2025 (Oct 2025) & Agronomy Report 2/2025 (Nov 2025).",
+                "reportInfo": "Data based on PA Report 01/2026 (Visit: 27th & 28th April 2026) & Agronomy Report 2/2025 (Visit: 28th November 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
                         "lines": [
-                            "Total Planted: 1,393.70 ha",
-                            "Mature: 1,308.31 ha",
-                            "Immature: 85.39 ha",
+                            "Total Planted: 1,347.33 ha",
+                            "Mature: 1,267.32 ha",
+                            "Immature: 80.01 ha",
                             "Unplanted/Infra: 145.01 ha"
                         ]
                     },
                     "yield": {
                         "title": "Yield/Ha (Actual vs Budget)",
-                        "value": "7.04 / 7.38 MT",
-                        "note": "YTD Sept 2025 (PA Report)"
+                        "value": "16.90 / 20.63 MT",
+                        "note": "Full Year (PA Report 01/2026)"
                     },
                     "cost": {
                         "title": "FFB Cost/Tonne (Actual vs Budget)",
-                        "value": "RM 358.16 / RM 375.01",
-                        "note": "YTD Sept 2025 (PA Report)"
+                        "value": "RM 375.83 / RM 325.05",
+                        "note": "Ex-Estate, Full Year (PA Report 01/2026)"
                     },
                     "labour": {
                         "title": "Labour Status",
                         "value": "Adequate",
-                        "note": "Total 134 workers (Ratio 1:10 ha)"
+                        "note": "Total 130 workers (Ratio 1:10 ha)"
                     },
                      "pests": {
                         "title": "Pest Status",
-                        "value": "Under Control",
-                        "note": "Rat/Gano manageable"
+                        "value": "Manageable",
+                        "note": "Rat/Ganoderma under control"
                     }
                 },
                 "keyMetrics": [
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' /></svg>", "label": "Harvest Interval", "value": "10-15 days (Stable)" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "Yield Recovery", "value": "+17% (PA YTD Sept)" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "Manuring (Main)", "value": "43% (Delayed)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' /></svg>", "label": "Harvest Interval", "value": "10-16 days (Acceptable)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 17h8m0 0V9m0 8l-8-8-4 4-6-6' /></svg>", "label": "FFB Yield Deficit", "value": "-18% vs Budget (Full Year)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "Manuring (2nd Half)", "value": "42% complete (Delayed)" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>", "label": "Labour Ratio", "value": "1:10 ha (Adequate)" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' /></svg>", "label": "Rehab Tobe", "value": "Mature Completed" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' /></svg>", "label": "Weeding", "value": "Slightly Behind" }
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' /></svg>", "label": "Rehab Tobe Division", "value": "Mature rehab complete" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' /></svg>", "label": "Weeding Status", "value": "Delayed (Circle 69% / Selective 63%)" }
                 ],
                 "chartData": {
                     "production": {
                         "labels": ["May-25", "Jun-25", "Jul-25", "Aug-25", "Sep-25", "Oct-25"],
-                        "ffb": [], 
                         "rainfall": [340, 215, 116, 354, 250, 193],
                         "note": "*Rainfall data (mm) from Agronomy Report 2/2025, Appendix 3."
                     },
                     "ageProfile": {
-                        "labels": ["Mature (94%)", "Immature (6%)"],
-                        "data": [94, 6],
-                        "title": "Tanjung Nipis - Area Distribution (Nov 2025)",
-                        "note": "*Source: Agronomy Report 2/2025 (Revised Area Statement)."
+                        "labels": ["Mature (94.06%)", "Immature (5.94%)"],
+                        "data": [94.06, 5.94],
+                        "title": "Tanjung Nipis - Area Distribution (April 2026)",
+                        "note": "*Source: Planting Advisory Report 01/2026 (Revised Area Statement, Pg. 12)."
                     }
                 },
                 "observations": [
-                    "<b>Labour Situation Improved:</b> The workforce is now adequate with 134 workers (ratio 1:10 ha). The previous shortage of harvesters has been resolved (currently 82 harvesters). <span class='observation-ref'>(PA 02/2025, Pg. 14, 63)</span>",
-                    "<b>Rehabilitation Progress:</b> Rehabilitation in Tobe Division's mature areas is complete. However, immature areas (P23A/24A) in hilly terrain still require ongoing work with excavators. <span class='observation-ref'>(PA 02/2025, Pg. 63; AR 2/2025, Pg. 7)</span>",
-                    "<b>Cost Performance:</b> Production cost is RM 358.16/MT, which is 5% lower than the seasonal budget. However, General Charges and Road Maintenance costs remain high. <span class='observation-ref'>(PA 02/2025, Pg. 57, 63)</span>",
-                    "<b>Manuring Delays:</b> Program is delayed. Main Division is 43% complete (Sept), and Tobe Division is 39% complete. Mix B application is lagging. <span class='observation-ref'>(PA 02/2025, Pg. 33; AR 2/2025, Pg. 3)</span>",
-                    "<b>Yield Recovery:</b> Yield has improved to 7.04 MT/ha (YTD Sept), which is +17% higher than the same period last year, though slightly below the aggressive budget of 7.38 MT/ha. <span class='observation-ref'>(PA 02/2025, Pg. 56)</span>",
-                    "<b>Harvesting Standards:</b> Intervals have stabilized at 10-15 days, ensuring better crop recovery. <span class='observation-ref'>(PA 02/2025, Pg. 53)</span>"
+                    "<b>FFB Yield & Crop Production Deficit:</b> Total FFB production achieved was <b>22,111.368 MT</b>, which is <b>18% below the budgeted amount</b> of 26,990.00 MT. This resulted in an average yield of <b>16.90 MT/ha</b> compared to the aggressive budget of 20.63 MT/ha. Sg. Kaindangan (Tobe Division) was the primary laggard, producing 5,584.503 MT, which is <b>45% below budget</b>, while the Main Division performed much better at only 2% below budget (16,526.865 MT). <span class='observation-ref'>(PA Report 01/2026, Pg. 8, 57-58)</span>",
+                    "<b>Elevated Production Cost:</b> Ex-estate cost of production surged to <b>RM 375.83 per ton</b>, representing a <b>16% overspend</b> against the budgeted RM 325.05 per ton. This negative variance is primarily attributed to the 18% deficit in crop production, which failed to dilute fixed General Charges and upkeep costs. <span class='observation-ref'>(PA Report 01/2026, Pg. 9, 59)</span>",
+                    "<b>Severe Manuring Delays in Second Half:</b> While the first half manuring program was successfully executed (97% complete), the second half program is severely lagging at only <b>42% completion</b> (grand total at 76% or 1,097.72 MT applied of 1,441.17 MT programmed). This delay is primarily due to persistent, heavy rainfall in January, February, and March 2026, coupled with acute seasonal labor shortages. <span class='observation-ref'>(PA Report 01/2026, Pg. 6, 31-32)</span>",
+                    "<b>Weeding Delays and Labor Rate Hikes:</b> Both circle/path spraying (2.1 rounds completed or 69% of budget) and interrow selective spraying (1.9 rounds completed or 63% of budget) are behind schedule. The weeding cost reached <b>RM 268/ha</b> (16% over budget) due to an upward revision in labor rates: circle spraying rose from RM15 to RM18/ha and selective spraying from RM21 to RM24/ha. Competitive broadleaf weeds (e.g., <i>Clidemia hirta</i>, <i>Eupatorium</i>, <i>Melastoma</i>) and resilient weeds still dominate the interrow. <span class='observation-ref'>(PA Report 01/2026, Pg. 5, 22, 26, 28)</span>",
+                    "<b>Slow Rehabilitation in Immature Sg. Kaindangan (2023A) Area:</b> Although mature rehabilitation in the Tobe division is complete, progress in the 63.46 ha of immature areas in Sg. Kaindangan (formerly abandoned) remains a critical bottleneck. Excavator clearing of young jungle trees/bushes and terrace repairs are complete, but chemical weed control of resilient weeds (Lalang, Bamboo grass, Giant Paspalum) and seedling supplying must be urgently expedited. Drainage requires critical desilting to prevent localized waterlogging. <span class='observation-ref'>(PA Report 01/2026, Pg. 9, 64; Agronomy Report 2/2025, Pg. 7)</span>",
+                    "<b>Frond Stacking & Pruning Standards:</b> Pruning standards are generally satisfactory (4.6 rounds completed vs 4.0 budgeted), but overspending was noted (RM 255/ha vs RM 149/ha budgeted) due to heavy corrective pruning in Sg. Kaindangan. Stacking of cut fronds in flat/undulating areas is disorganized and needs transition from straight lines to company-policy patch-stacking (within 4 palms) to facilitate mechanical access. <span class='observation-ref'>(PA Report 01/2026, Pg. 6, 37-38)</span>",
+                    "<b>Pest Control and STORM Bait Premium:</b> Pests are under control with negligible fresh rat damage. However, pest and disease upkeep cost exceeded the budget by <b>29%</b> (actual RM 45/ha vs budget RM 35/ha) because the estate purchased premium STORM bait instead of the budgeted Ebor bait. Ganoderma infection remains localized in tall palms planted in 2004/2005 and is currently classified as non-serious. <span class='observation-ref'>(PA Report 01/2026, Pg. 6, 34-36)</span>"
                 ],
                 "reports": {
                     "plantation": {
-                        "Executive Summary": "The estate's performance has improved. Labour force is now adequate (134 workers). Yield (7.04 MT/ha) and Cost (RM 358.16/MT) are both satisfactory, with costs 5% below budget. Rehabilitation of mature Tobe areas is complete. Key focus remains on road maintenance and completing the manuring program. (Source: PA 02/2025, Pg. 63-64)",
-                        "Area Statement": "Total planted area is 1,393.70 ha. Mature: 1,308.31 ha. Immature: 85.39 ha. Rehabilitation in mature Tobe Division is completed. (Source: PA 02/2025, Pg. 10)",
-                        "Labour Statement": "Total workforce is 134 against a requirement of 136 (Shortage -2). Harvester strength is 82 (Ratio 1:16 ha). The labour force is considered adequate and satisfactory. (Source: PA 02/2025, Pg. 14-15)",
-                        "Staff Establishment": "Satisfactory. 1 Manager, 2 Assistant Managers (1 Main, 1 Tobe), 4 Field Conductors, 1 Chief Clerk. (Source: PA 02/2025, Pg. 13)",
-                        "General Charges": "Actual cost RM 636/ha is 7% lower than the budget (RM 672/ha). However, overspending noted in Staff Accommodation (+36%) and Labour Paid Leave (+30%). (Source: PA 02/2025, Pg. 16-17)",
-                        "Upkeep and Cultivation": "Total upkeep cost is RM 1,056/ha (Budget RM 1,207/ha). Weeding cost is RM 109.36/ha (Budget RM 100.43/ha). Manuring is delayed, with only 43% of the first half program completed in Main Div. (Source: PA 02/2025, Pg. 19, 33)",
-                        "Harvesting and Collection": "Cost is RM 117.82/tonne FFB, consistent with budget (RM 118.50). Internal transport costs are high (RM 24.39/tonne vs Budget RM 15.00) due to estate vehicles being used instead of outsourcing. Harvesting interval is satisfactory at <15 days. (Source: PA 02/2025, Pg. 53-54)",
-                        "Crop Production": "YTD Sept Production: 9,215.05 MT. Yield: 7.04 MT/ha. This is 5% below the seasonal budget (9,653 MT) but 17% higher than the same period last year (6.03 MT/ha). (Source: PA 02/2025, Pg. 56)",
-                        "Production Cost": "Ex-estate cost is RM 358.16/tonne, 5% lower than the budget of RM 375.01. (Source: PA 02/2025, Pg. 57)",
-                        "Vehicles Running Cost": "Generally acceptable, except for Farm Tractors which have high repair costs. Mini crawlers are badly damaged and should be written off. (Source: PA 02/2025, Pg. 58)",
-                        "Capital Expenditure": "Road grading/compacting cost RM 29.17/chain. Road surfacing with red stone cost RM 52.69/tonne (Main Div) and RM 56.25/tonne (Tobe Div). Total road/bridge cost is RM 324.38/ha. (Source: PA 02/2025, Pg. 44-47)",
-                        "Immature": "Main Div (16.55 ha): P23A. Tobe Div (68.84 ha): P23A4/A5. Rehabilitation in Tobe immature flat areas completed; hilly areas ongoing with excavators. (Source: PA 02/2025, Pg. 60-61)"
+                        "Executive Summary": "The estate's overall performance during the review period has shown steady improvement. Total FFB production reached <b>22,111.368 MT</b>, which is <b>18% below budget</b> (26,990 MT), primarily due to low cropping patterns and severe monsoonal weather obstructing crop evacuation. Consequently, ex-estate production cost was <b>RM 375.83 per ton</b>, representing a <b>16% overspend</b> against the budgeted RM 325.05 per ton. The labor force is adequate with a ratio of <b>1 worker to 10 ha</b>. Ongoing priorities include expediting the delayed second-half manuring program, controlling aggressive weed species, and advancing mechanization/outsourcing of internal transport. <span class='observation-ref'>(PA Report 01/2026, Pg. 4, 10, 68)</span>",
+                        "Area Statement": "As of April 2026, the total planted area covers <b>1,347.33 ha</b>. This comprises:<br>• <b>Mature:</b> 1,267.32 ha (94.06% of planted area).<br>• <b>Immature:</b> 80.01 ha (5.94% of planted area).<br>• <b>Replanting:</b> None currently in progress.<br>• <b>Non-Planted/Infra:</b> Roads cover <b>85.36 ha</b> (5.72%), unplantable area <b>28.08 ha</b> (1.88%), swamps/forests <b>21.40 ha</b> (1.43%), river/drain buffer zones <b>1.45 ha</b> (0.10%), and buildings/others <b>6.84 ha</b> (0.46%).<br>• <b>Recent Changes:</b> A GIS census correction led to a net reduction of <b>40.99 ha</b> in mature areas and <b>5.38 ha</b> in immature areas. Total estate title area is <b>1,492.34 ha</b>. <span class='observation-ref'>(PA Report 01/2026, Pg. 12-13)</span>",
+                        "Labour Statement": "The total workforce stands at <b>130 checkroll workers</b> against a total requirement of 133 (shortage of -3). This represents a highly satisfactory land-to-worker ratio of <b>1 worker to 10 ha</b>:<br>• <b>Harvesters:</b> 80 active workers vs a requirement of 84 (shortage of -4), resulting in an adequate ratio of <b>1 harvester to 16 ha</b>.<br>• <b>Sprayers & Manuring Workers:</b> 9 sprayers (ratio 1:150 ha) and 11 manuring workers (ratio 1:122 ha), which is highly satisfactory for program completion.<br>• <b>Contractors:</b> No third-party contractor workers are currently engaged.<br>• <b>Demographic Composition:</b> 7 locals, 115 Indonesians, and 8 Filipinos. <span class='observation-ref'>(PA Report 01/2026, Pg. 16-17)</span>",
+                        "Staff Establishment": "The staff establishment is sufficient and satisfactory with <b>9 personnel</b> managing estate divisions:<br>• <b>Management:</b> 1 Estate Manager (Mr. Mark Mathew) and 2 Assistant Managers (Mr. Alexander Gaya supervising the Main Division and Mr. Erikly Effyfian Meyrick supervising the Sg. Kaindangan Division).<br>• <b>Field Supervisors:</b> 4 Field Conductors (Jaery Janeh, Frazelley Mataha, Hassan Bin Abd Rakman, Walter Joseph).<br>• <b>Office Staff:</b> 1 Chief Clerk (Aeffy Soniun), 1 General Clerk (Kayren Lynn), and 1 new Store Clerk (Ivy Christi Pasmin, joined 1/3/2026). <span class='observation-ref'>(PA Report 01/2026, Pg. 14-15)</span>",
+                        "General Charges": "Total actual General Charges was <b>RM 1,628 per hectare</b>, which is <b>1% above the budget</b> of RM 1,613/ha:<br>• <b>Staff Salary & Related costs:</b> RM 502/ha (7% below budget of RM 539/ha).<br>• <b>Labour Overhead:</b> RM 419/ha (8% below budget of RM 455/ha).<br>• <b>Office-Related Expenses:</b> RM 619/ha (10% above budget of RM 564/ha).<br>• <b>Office & Premises Upkeep:</b> RM 89/ha (62% above budget of RM 55/ha).<br>• <b>Overspending Details:</b> Significant overspends occurred in Staff Accommodation (<b>+46%</b> due to staff compound upkeep), Labours Quarters Upkeep (<b>+75%</b> due to unbudgeted backhoe use), Non-Capitalized Fixed Assets (<b>+950%</b> due to unbudgeted purchases), Transport & Travelling (<b>+52%</b> due to Malacca trip for Annual Dinner), and Other Building Maintenance (<b>+148%</b> due to Tobe workshop materials, fertilizer store repairs, and hiring 1 carpenter). <span class='observation-ref'>(PA Report 01/2026, Pg. 18-20, 69-70)</span>",
+                        "Upkeep and Cultivation": "The actual total upkeep and maintenance cost was <b>RM 2,759 per hectare</b> (4% below budget of RM 2,883/ha), equating to <b>RM 158 per ton</b> of FFB produced (budget RM 141):<br>• <b>Weeding:</b> Cost was <b>RM 268/ha</b> (16% above budget of RM 231/ha). Circle and paths weeding completed 2.1 rounds (69% of budget) and interrow selective weeding completed 1.9 rounds (63% of budget) using mist blowers with Trichlopyr and Metsulfuron-methyl. High cost caused by labor rate increases (circle rate rose from RM15 to RM18/ha; selective from RM21 to RM24/ha).<br>• <b>Manuring:</b> Cost was <b>RM 1,148/ha</b> (28% below budget of RM 1,588/ha) due to delays. A total of <b>1,097.72 MT</b> of fertilizer was applied (76% of grand annual budget of 1,441.17 MT). First half program completed (97%), second half program lagging (42%) due to monsoonal rainfall (Jan-Mar 2026) and labor shortage.<br>• <b>Pests & Diseases:</b> Cost was <b>RM 45/ha</b> (29% above budget of RM 35/ha). Rat baiting completed 1 round (1,308.31 ha) using STORM bait, which caused the overspend since it is premium priced compared to budgeted Ebor bait. Fresh rat damage remains minor. Ganoderma is present in tall palms (2004/2005) but is not serious.<br>• <b>Pruning:</b> Cost was <b>RM 255/ha</b> (71% above budget of RM 149/ha) due to heavy corrective pruning in Sg. Kaindangan Estate. Stacking of cut fronds in flat/undulating areas requires improvement to patch-stacking per 4 palms to facilitate tractor access. <span class='observation-ref'>(PA Report 01/2026, Pg. 21-23, 26, 28, 31, 34-38)</span>",
+                        "Harvesting and Collection": "The actual total cost of harvesting and collection reached <b>RM 122.59 per tonne FFB</b>, which is <b>16% higher than budget</b> (RM 105.57/t):<br>• <b>Own Harvesting & Collection:</b> Cost (excluding external transport) was <b>RM 100.78/t</b> (19% above budget of RM 84.95/t) due to unbudgeted infield loading (+RM 7.77) and high internal transport (+RM 5.34), as the estate had to utilize its own farm tractors instead of outsourced contractors.<br>• <b>Harvesting Interval:</b> Satisfactorily maintained within <b>10 to 16 days</b> on average (average 2.85 rounds in Feb 2026), though slippery roads during rain delayed blocks 48/49 to 19-21 days.<br>• <b>Harvesters' Productivity:</b> Ranged from <b>0.50 to 2.83 tons per man-day</b> with average earnings of RM 35 to RM 118 per man-day depending on block terrain. Mini crawlers are badly damaged and should be written off. Electric crawlers or Badang are recommended for mechanization. <span class='observation-ref'>(PA Report 01/2026, Pg. 49, 51-56)</span>",
+                        "Crop Production": "The total crop production for the review period was <b>22,111.368 MT</b>, which is <b>18% below the seasonal budget</b> of 26,990.00 MT. Average yield achieved was <b>16.90 MT/ha</b> vs budget of 20.63 MT/ha:<br>• <b>Main Division:</b> Produced <b>16,526.865 MT</b> (only 2% below budget), yielding <b>19.49 MT/ha</b> vs budget of 19.85 MT/ha.<br>• <b>Sg. Kaindangan Estate (Tobe Division):</b> Produced <b>5,584.503 MT</b> (<b>45% below budget</b>), yielding <b>12.13 MT/ha</b> vs budget of 22.07 MT/ha. Low production is due to rehabilitation constraints, but the Division is expected to recover in the coming financial year. <span class='observation-ref'>(PA Report 01/2026, Pg. 57-58)</span>",
+                        "Production Cost": "Total actual production cost was <b>RM 375.83 per tonne of FFB</b>, representing a <b>16% negative variance</b> compared to the budgeted cost of RM 325.05/t, mainly caused by low crop production:<br>• <b>General Charges:</b> RM 95.09 per ton of FFB (budget RM 78.75/t).<br>• <b>Upkeep & Cultivation:</b> RM 158.15 per ton of FFB (budget RM 140.73/t).<br>• <b>Harvesting & Collection:</b> RM 122.59 per ton of FFB (budget RM 105.57/t). <span class='observation-ref'>(PA Report 01/2026, Pg. 59)</span>",
+                        "Vehicles Running Cost": "Average running costs of farm tractors generally exceeded the budget by over <b>40%</b> due to high repair costs. All 4 Mini Crawlers purchased in 2021 are badly damaged, underutilized (running hours 0 to 310 hrs), and should be written off. Double Cab (SMN7068) actual running cost was <b>RM 0.82/km</b> (budget RM 0.63/km) and Single Cab (SMG5418) was <b>RM 1.63/km</b> (budget RM 1.81/km). Landini Atlantis actual running cost was <b>RM 20.39/hr</b> (budget RM 14.03/hr) and Kubota M8540DT (SAC3874E) was <b>RM 26.23/hr</b> (budget RM 13.43/hr). <span class='observation-ref'>(PA Report 01/2026, Pg. 60-61)</span>",
+                        "Capital Expenditure": "The estate spent significantly on roads and bridges infrastructure, with actual cost reaching <b>RM 873.00 per hectare</b> (15% above budget of RM 759/ha) due to aggressive agricultural and boundary road surfacing in the steep, hilly terrains of the Main Division and newly acquired Sg. Kaindangan division:<br>• <b>Road Grading & Compaction:</b> Completed 873 chains (15% of annual 5,927 chains budget due to rain delays) at <b>RM 29.18 per chain</b> (RM 1.45/m).<br>• <b>Road Surfacing & Gravelling:</b> Completed 385 chains (92% of budget) using 12,416 MT crusher run/red stone at <b>RM 52.69 per ton</b> (Main Div) and <b>RM 56.25 per ton</b> (Tobe Div).<br>• <b>Backhoe & Excavator Rental:</b> Rented backhoe for 1,001 hours at <b>RM 48.00/hr</b> and excavator for 1,962 hours at <b>RM 80.00/hr</b> for heavy repairs. <span class='observation-ref'>(PA Report 01/2026, Pg. 7, 41-44)</span>",
+                        "Immature": "Immature areas stand at <b>80.01 ha</b> following latest GIS census adjustments:<br>• <b>Immature 2024A (8.74 ha) & 2025A (7.81 ha):</b> Formed by partitioning the old 2023A block. Palm seedling planting completed; however, supplying is urgently needed due to severe flood damage and monkey attacks in low-lying fields.<br>• <b>Immature 2023A (Sg. Kaindangan - 63.46 ha):</b> Consists of formerly long-abandoned blocks (2023A4: 34.02 ha, 2023A5: 29.44 ha). Heavy clearing of jungle trees/bushes and repair of collapsed terraces using excavators are complete. Lalang and Giant Paspalum sprayed with Glyphosate. Drainage needs desilting to prevent waterlogging. Palm seedling supplying must be expedited. <span class='observation-ref'>(PA Report 01/2026, Pg. 62-64)</span>"
                     },
                     "agronomy": {
                         "Executive Summary": "Visit 2/2025 (Nov 28). The estate yield improved to 8.85 MT/ha (Period 6), an 11% increase. Harvesting intervals have stabilized (11-15 days). Tobe Division rehab is ongoing but slow in immature areas. Total planted area revised to 1,393.70 ha following drone census. (Source: AR 2/2025, Pg. 1-2, 9)",
@@ -155,7 +157,7 @@
                     },
                     "pinfosys": "N/A"
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> All fertilizer applications must be completed according to the schedule. Delays beyond 2 months as seen in Tobe Mix B are critical non-compliances.</p></div> <div class='policy-item'><p class='font-semibold'>Harvesting Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-INT-01:</b> Harvesting intervals must be maintained below 15 days. Current status (10-15 days) is compliant.</p></div> <div class='policy-item'><p class='font-semibold'>Weeding Control</p><p class='text-sm text-gray-600'><b>Policy Ref: AGRO-WEED-02:</b> Inter-row spraying must be conducted at 3 rounds per year. Delays in circle spraying must be rectified to prevent weed regeneration.</p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> All fertilizer applications must be completed according to the schedule. Delays beyond 2 months due to rainfall or labor shortages represent key operational risks and must be mitigated. (PA Report 01/2026, Pg. 31)</p></div> <div class='policy-item'><p class='font-semibold'>Harvesting Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-INT-01:</b> Harvesting intervals must be maintained below 15 days. Current status ranges mostly between 10-16 days and is largely compliant, though slippery roads from heavy rain delayed blocks 48/49. (PA Report 01/2026, Pg. 51)</p></div> <div class='policy-item'><p class='font-semibold'>Weeding Control</p><p class='text-sm text-gray-600'><b>Policy Ref: AGRO-WEED-02:</b> Inter-row selective spraying must be completed at 3 rounds per year to promote soft grass establishment. Delays in both circle (69% done) and selective (63% done) weeding must be resolved. (PA Report 01/2026, Pg. 22, 26)</p></div>"
             };
 
 
@@ -205,7 +207,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">${summaryMetricsHTML}</div>
                         <div class="mb-8"><h3 class="text-xl font-semibold mb-4 border-b pb-2">Key Metrics & Agronomic Status</h3><div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">${keyMetricsHTML}</div></div>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                            <div><h3 class="text-xl font-semibold mb-2">Monthly Rainfall (mm) - FY 25/26</h3>${productionChartHTML}<p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
+                            <div><h3 class="text-xl font-semibold mb-2 flex items-center justify-between">Monthly Rainfall (mm) - FY 25/26</h3>${productionChartHTML}<p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.production.note}</p></div>
                             <div><h3 class="text-xl font-semibold mb-2">Area Distribution</h3><div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div><p class="text-xs text-center text-gray-500 mt-2">${estate.chartData.ageProfile.note}</p></div>
                         </div>
                         
@@ -268,7 +270,7 @@
                     agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
                 if (plantationDiv && estateData.reports.plantation) {
-                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
                 if (pinfosysDiv) {
                     pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600">${estateData.reports.pinfosys}</p>`;
