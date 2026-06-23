@@ -12,7 +12,7 @@
         body { font-family: 'Inter', sans-serif; }
         .details-content { display: none; }
         .details-content.active { display: block; }
-        .dropdown-btn.active { background-color: #14532d; } /* dark green */
+        .dropdown-btn.active { background-color: #1f2937; } /* gray-800 to match darker theme */
         .policy-item { border-left: 3px solid #16a34a; padding-left: 1rem; margin-top: 0.75rem; }
         .modal { display: none; }
         .modal.active { display: flex; }
@@ -26,8 +26,9 @@
         .animate-fade-in {
             animation: fade-in 0.5s ease-out forwards;
         }
-        .report-list li { margin-bottom: 0.5rem; }
-        .report-section-title { font-weight: 700; color: #1f2937; margin-top: 1rem; margin-bottom: 0.5rem; }
+        /* Structured according to Plantation Advisory report detail section template.jpg */
+        .report-list > div { margin-bottom: 1.25rem; }
+        .report-section-title { font-weight: 700; color: #1f2937; margin-bottom: 0.25rem; font-size: 1rem; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -38,265 +39,328 @@
             <div id="header-title" class="text-xl font-bold text-gray-900">
                 Belida Estate (Inti) Report
             </div>
-            <a href="estates.html" class="text-green-800 hover:text-green-900 transition duration-300">&larr; Back to Estates List</a>
+            <a href="estates.html" class="text-green-800 hover:text-green-900 transition duration-300 font-medium">&larr; Back to Estates List</a>
         </nav>
     </header>
 
     <!-- Main container for the report -->
     <div class="container mx-auto p-4 md:p-8">
         <div id="selected-estate-container" class="grid grid-cols-1 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg animate-fade-in">
-                <h2 class="text-3xl font-bold mb-2 text-gray-900">Belida Estate (Inti)</h2>
-                <p class="text-sm text-gray-500 mb-6 italic">Data based on PA Report (Feb 2026) and Agronomy Report (Nov 2025).</p>
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg animate-fade-in border border-gray-100">
+                <h2 class="text-3xl font-bold mb-2 text-gray-900 tracking-tight">Belida Estate (Inti)</h2>
+                <p class="text-sm text-gray-500 mb-8 italic font-medium">Data based on PA Report (Feb 2026) and Agronomy Report (May 2026).</p>
                 
                 <!-- Dashboard Metrics -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">
-                    <div class="p-4 rounded-lg bg-blue-50 text-blue-800">
-                        <h3 class="font-semibold">Estate Area</h3>
-                        <p class="text-sm">Total Planted: 958.78 ha</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-10">
+                    <div class="p-5 rounded-xl bg-blue-50 text-blue-900 border border-blue-100 shadow-sm">
+                        <h3 class="font-semibold mb-2">Estate Area</h3>
+                        <p class="text-sm font-medium">Total Planted: 958.78 ha</p>
                         <p class="text-sm">Mature: 955.80 ha</p>
                         <p class="text-sm">Immature: 2.98 ha</p>
                     </div>
-                    <div class="p-4 rounded-lg bg-green-50 text-green-800">
-                        <h3 class="font-semibold">Yield/Ha (8M YTD)</h3>
-                        <p class="text-xl font-bold">16.57 vs 19.49 MT</p>
-                        <p class="text-xs text-gray-600 mt-1">Variance: 15% below budget</p>
+                    <div class="p-5 rounded-xl bg-green-50 text-green-900 border border-green-100 shadow-sm">
+                        <h3 class="font-semibold mb-2">Yield/Ha (FY 25/26)</h3>
+                        <p class="text-2xl font-bold">23.69 MT</p>
+                        <p class="text-xs text-green-700 mt-1 font-medium">18% decline from FY 24/25</p>
                     </div>
-                    <div class="p-4 rounded-lg bg-orange-50 text-orange-800">
-                        <h3 class="font-semibold">FFB Cost/Tonne (8M)</h3>
-                        <p class="text-xl font-bold">RM 380 vs RM 289</p>
-                        <p class="text-xs text-gray-600 mt-1">IDR 1.4M vs IDR 1.1M (25% above)</p>
+                    <div class="p-5 rounded-xl bg-orange-50 text-orange-900 border border-orange-100 shadow-sm">
+                        <h3 class="font-semibold mb-2">FFB Cost/Tonne (8M)</h3>
+                        <p class="text-2xl font-bold">RM 380</p>
+                        <p class="text-xs text-orange-700 mt-1 font-medium">25% above budget</p>
                     </div>
-                    <div class="p-4 rounded-lg bg-purple-50 text-purple-800">
-                        <h3 class="font-semibold">Labour Status</h3>
-                        <p class="text-xl font-bold">Sufficient</p>
-                        <p class="text-xs text-gray-600 mt-1">1:7 ha ratio (Dec '25)</p>
+                    <div class="p-5 rounded-xl bg-purple-50 text-purple-900 border border-purple-100 shadow-sm">
+                        <h3 class="font-semibold mb-2">Labour Status</h3>
+                        <p class="text-2xl font-bold">Sufficient</p>
+                        <p class="text-xs text-purple-700 mt-1 font-medium">1:17 ha ratio (Harvesters)</p>
                     </div>
-                    <div class="p-4 rounded-lg bg-red-50 text-red-800">
-                        <h3 class="font-semibold">Pest Status</h3>
-                        <p class="text-xl font-bold">Moderate-High</p>
-                        <p class="text-xs text-gray-600 mt-1">Rat census pending Dec '25 action</p>
+                    <div class="p-5 rounded-xl bg-teal-50 text-teal-900 border border-teal-100 shadow-sm">
+                        <h3 class="font-semibold mb-2">Pest Status</h3>
+                        <p class="text-2xl font-bold text-teal-700">Controlled</p>
+                        <p class="text-xs text-teal-700 mt-1 font-medium">Minimal rat damage (May '26)</p>
                     </div>
                 </div>
 
                 <!-- Key Metrics Grid -->
-                <div class="mb-8">
-                    <h3 class="text-xl font-semibold mb-4 border-b pb-2">Key Metrics & Agronomic Status</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                        <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                            <div class="bg-gray-100 p-2 rounded-full"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg></div>
-                            <div><p class="text-sm text-gray-500">Harvester Ratio</p><p class="font-bold text-lg">1:17 ha (Adequate)</p></div>
+                <div class="mb-10">
+                    <h3 class="text-xl font-bold mb-5 border-b border-gray-200 pb-2 text-gray-800">Key Metrics & Agronomic Status</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <div class="bg-white p-2.5 rounded-full shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg></div>
+                            <div><p class="text-sm font-medium text-gray-500">Harvester Ratio</p><p class="font-bold text-lg text-gray-800">1:17 ha (Adequate)</p></div>
                         </div>
-                        <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                            <div class="bg-gray-100 p-2 rounded-full"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg></div>
-                            <div><p class="text-sm text-gray-500">P&D Status</p><p class="font-bold text-lg">No Significant Outbreaks</p></div>
+                        <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <div class="bg-white p-2.5 rounded-full shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' /></svg></div>
+                            <div><p class="text-sm font-medium text-gray-500">P&D Status</p><p class="font-bold text-lg text-gray-800">Well-Controlled</p></div>
                         </div>
-                        <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                            <div class="bg-gray-100 p-2 rounded-full"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg></div>
-                            <div><p class="text-sm text-gray-500">OER % (YTD)</p><p class="font-bold text-lg">20.01%</p></div>
+                        <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <div class="bg-white p-2.5 rounded-full shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-500' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg></div>
+                            <div><p class="text-sm font-medium text-gray-500">OER % (YTD)</p><p class="font-bold text-lg text-gray-800">20.01%</p></div>
                         </div>
-                        <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                            <div class="bg-gray-100 p-2 rounded-full"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-orange-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg></div>
-                            <div><p class="text-sm text-gray-500">Weeding Cost</p><p class="font-bold text-lg">2% Over Budget</p></div>
+                        <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <div class="bg-white p-2.5 rounded-full shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-orange-500' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg></div>
+                            <div><p class="text-sm font-medium text-gray-500">Uncollected Bunches</p><p class="font-bold text-lg text-gray-800">High in Drains</p></div>
                         </div>
-                        <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                            <div class="bg-gray-100 p-2 rounded-full"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg></div>
-                            <div><p class="text-sm text-gray-500">Harvest Interval</p><p class="font-bold text-lg">&lt; 12 Days (Good)</p></div>
+                        <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <div class="bg-white p-2.5 rounded-full shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg></div>
+                            <div><p class="text-sm font-medium text-gray-500">Harvest Interval</p><p class="font-bold text-lg text-gray-800">9 Days (Avg)</p></div>
                         </div>
-                        <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                            <div class="bg-gray-100 p-2 rounded-full"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-teal-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg></div>
-                            <div><p class="text-sm text-gray-500">Fertilizer Completion</p><p class="font-bold text-lg">99% (Annual)</p></div>
+                        <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <div class="bg-white p-2.5 rounded-full shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-teal-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' /></svg></div>
+                            <div><p class="text-sm font-medium text-gray-500">Fertilizer Completion</p><p class="font-bold text-lg text-gray-800">100% (FY 25/26)</p></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Charts Section -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Age Profile Distribution</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                    <div class="bg-white border border-gray-100 p-5 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-bold mb-4 text-gray-800 text-center">Age Profile Distribution</h3>
                         <div class="pie-chart-container"><canvas id="ageChart-belida"></canvas></div>
-                        <p class="text-xs text-center text-gray-500 mt-2">*Source: PA Report 1/2026, Pg. 12.</p>
+                        <p class="text-xs text-center text-gray-500 mt-4">*Source: Agronomy Report 1/2026, Pg. 10.</p>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">YTD Production Performance</h3>
-                        <div class="chart-container flex items-center justify-center bg-gray-50 rounded-lg p-4">
-                            <p class="text-gray-500 text-center">YTD FFB achieved: 15,837.84 MT vs Budget 18,628.54 MT.<br>15% variance noted due to seasonal low cropping and productivity levels. (Pg. 52)</p>
+                    <div class="bg-white border border-gray-100 p-5 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-bold mb-4 text-gray-800 text-center">YTD Production Performance</h3>
+                        <div class="chart-container flex items-center justify-center bg-gray-50 rounded-lg p-6 border border-dashed border-gray-200">
+                            <div class="text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                <p class="text-gray-600 font-medium text-lg">YTD FFB Achieved: 15,837.84 MT</p>
+                                <p class="text-gray-500 mt-1">vs Budget 18,628.54 MT</p>
+                                <p class="text-sm text-red-500 font-medium mt-3 bg-red-50 inline-block px-3 py-1 rounded-full">15% Variance Noted (PA Pg. 52)</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Key Observations -->
-                <div class="mb-8">
-                    <h3 class="text-xl font-semibold mb-2 border-b pb-2">Key Observations & Issues</h3>
-                    <ul id="observations-list" class="list-disc list-inside space-y-2 text-gray-700 mt-4">
-                        <li><b>Low Crop Production:</b> FFB production is 15% below the seasonal budget (16.57 MT/ha vs 19.49 MT/ha target). Achieving budget in the remaining months will require maximizing recovery. <span class='observation-ref'>(PA Pg. 7, 52)</span></li>
-                        <li><b>High Production Cost:</b> Actual cost of production is RM 380.84/ton, 25% higher than budget, primarily due to the crop shortfall and higher upkeep/cultivation expenses. <span class='observation-ref'>(PA Pg. 7, 53)</span></li>
-                        <li><b>Vehicle Running Costs:</b> Running costs for farm tractors and mini-tractors exceed budget due to high repair costs and low usage. <span class='observation-ref'>(PA Pg. 8, 58)</span></li>
-                        <li><b>Weed Management (Asystasia):</b> While circles are generally clean, patches of Asystasia are growing vigorously in some areas (e.g., DB12-12A1) and must be eradicated during interrow spraying. <span class='observation-ref'>(PA Pg. 5, 24)</span></li>
-                        <li><b>Mechanization Opportunities:</b> Manual cutter and carrier system is still used exclusively. Management is urged to introduce mechanized infield collection and composting to enhance productivity. <span class='observation-ref'>(PA Pg. 8, 46)</span></li>
-                        <li><b>Road Conditions:</b> Surfacing of agricultural roads is still in progress (70% accessible). 30% remain impassable during rain, causing potential evacuation bottlenecks. <span class='observation-ref'>(PA Pg. 40, 62)</span></li>
-                        <li><b>Rat Infestation (Nov '25 Ref):</b> Census from previous visit showed rat damage >5% in specific blocks (DG23, DH23, DK21). Management must ensure baiting followed previous recommendations. <span class='observation-ref'>(AR Pg. 42-43)</span></li>
+                <div class="mb-10 bg-orange-50 border border-orange-100 rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-4 text-orange-900 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                        Key Observations & Issues
+                    </h3>
+                    <ul id="observations-list" class="list-disc list-inside space-y-3 text-orange-800 mt-2">
+                        <li><b>Low Crop Production & Yield Decline:</b> FFB production is 15% below the YTD budget. The full FY25/26 yield declined by 18% to 23.69 MT/ha, primarily driven by a 30% reduction in bunch numbers per palm (10.86/palm). <span class='observation-ref'>(PA Pg. 52, AR Pg. 53)</span></li>
+                        <li><b>High Production Cost:</b> Actual ex-estate cost of production is RM 380.84/ton, which is 25% higher than budget, largely exacerbated by the crop shortfall and vehicle repair costs. <span class='observation-ref'>(PA Pg. 53, 58)</span></li>
+                        <li><b>Harvesting Quality & Losses:</b> While the harvesting interval improved to 9 days, the incidence of overripe bunches remains high (5-9%). Crucially, uncollected bunches are frequently noted left in field drains. <span class='observation-ref'>(AR Pg. 21, 25)</span></li>
+                        <li><b>Flood-Prone Topography:</b> Approximately 258.76 ha (26.86% of the estate) is low-lying and prone to prolonged flooding. This creates challenges in applying fertilizer and managing aggressive fern species. <span class='observation-ref'>(AR Pg. 43, 55)</span></li>
+                        <li><b>Mechanization Delays:</b> The estate still relies entirely on a manual cutter and carrier system for infield collection. Introducing mechanization is critically urged to lower costs. <span class='observation-ref'>(PA Pg. 46)</span></li>
+                        <li><b>Pest Control Efficiency:</b> Rat infestation is now minimal and well-controlled following the late 2025 campaign. To maintain efficiency, transitioning to a second-generation bait is strongly recommended. <span class='observation-ref'>(AR Pg. 49-50)</span></li>
                     </ul>
                 </div>
                 
-                <div class="mb-8 text-center">
-                    <button class="policy-modal-btn bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition shadow-md">View Agricultural Policy Cross-Reference</button>
+                <div class="mb-10 flex justify-center">
+                    <button class="policy-modal-btn bg-gray-800 text-white font-medium px-6 py-3 rounded-lg hover:bg-gray-900 transition shadow-md flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        View Agricultural Policy Cross-Reference
+                    </button>
                 </div>
 
                 <!-- Detailed Report Sections -->
-                <div class="space-y-2">
-                    <button data-dropdown-id="belida-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Plantation Advisory Report Details (Visit: Feb 2026)</button>
-                    <div id="belida-plantation" class="details-content bg-gray-50 p-6 rounded-md border border-gray-200">
-                        <div class="report-list space-y-4">
+                <div class="space-y-3">
+                    <!-- PA Report Details Dropdown (Retained from existing Belida context) -->
+                    <button data-dropdown-id="belida-plantation" class="dropdown-btn w-full text-left bg-[#1f2937] text-white p-4 rounded-lg hover:bg-gray-700 transition font-semibold flex justify-between items-center">
+                        <span>Plantation Advisory Report Details (Visit: Feb 2026)</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="belida-plantation" class="details-content bg-white p-6 rounded-lg border border-gray-200 shadow-inner">
+                        <div class="report-list">
                             <div>
                                 <p class="report-section-title">Executive Summary:</p>
-                                <p class="text-sm leading-relaxed">The estate's performance is generally satisfactory. Crop production of 15,837 MT is 15% below the seasonal budget, and the cost of production (RM 380.84/t) is 25% above budget. Management is urged to focus on enhancing worker productivity and introducing mechanization for FFB infield collection, manuring, and composting to optimize costs. <span class="observation-ref">(PA Report, Pg. 8, 61, 63)</span></p>
+                                <p class="text-sm leading-relaxed text-gray-700">The estate's performance is generally satisfactory. Crop production of 15,837 MT is 15% below the seasonal budget, and the cost of production (RM 380.84/t) is 25% above budget. Management is urged to focus on enhancing worker productivity and introducing mechanization for FFB infield collection, manuring, and composting to optimize costs. <span class="observation-ref">(PA Report, Pg. 8, 61, 63)</span></p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Area Statement:</p>
-                                <p class="text-sm">As of December 2025, the total planted area is <b>958.78 ha</b>. This comprises:
-                                    <ul class="list-disc ml-5 text-sm mt-1">
+                                <p class="text-sm text-gray-700">As of December 2025, the total planted area is <b>958.78 ha</b>. This comprises:
+                                    <ul class="list-disc ml-5 mt-1 space-y-1">
                                         <li><b>Mature:</b> 955.80 ha (99.69% of planted area).</li>
                                         <li><b>Immature:</b> 2.98 ha (planted in 2023). This area is expected to be declared mature in April 2027.</li>
                                         <li><b>Age Profile:</b> 98.99% of palms are in the prime stage (13 to 17 years old).</li>
                                     </ul>
-                                    <span class="observation-ref">(PA Report, Pg. 10, 12)</span>
+                                    <span class="observation-ref block mt-1">(PA Report, Pg. 10, 12)</span>
                                 </p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Labour Statement:</p>
-                                <p class="text-sm">The current workforce is <b>427 workers</b>, which is more than adequate compared to the requirement of 357:
-                                    <ul class="list-disc ml-5 text-sm mt-1">
+                                <p class="text-sm text-gray-700">The current workforce is <b>427 workers</b>, which is more than adequate compared to the requirement of 357:
+                                    <ul class="list-disc ml-5 mt-1 space-y-1">
                                         <li><b>Harvesters:</b> 174 workers (Ratio 1:17 ha). Acceptable given no mechanization is yet implemented.</li>
                                         <li><b>Spraying:</b> 49 workers (Ratio 1:59 ha). Exceeds requirement of 28.</li>
                                         <li><b>Manuring:</b> 62 workers (Ratio 1:47 ha). Includes surplus of 16 workers.</li>
                                         <li><b>General Workers:</b> 82 workers including drivers, security, and workshop.</li>
                                     </ul>
-                                    <span class="observation-ref">(PA Report, Pg. 15-16)</span>
+                                    <span class="observation-ref block mt-1">(PA Report, Pg. 15-16)</span>
                                 </p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Staff Establishment:</p>
-                                <p class="text-sm leading-relaxed">The staff establishment is satisfactory with a total of 7 executives, including the Estate Manager (Bpk Joko Hidayat), 5 Assistant Managers, and 1 KTU. Each division is overseen by a Field Supervisor (4 in total). The ratio of 1 Assistant Manager to 578 hectares is considered adequate. <span class="observation-ref">(PA Report, Pg. 13-14)</span></p>
+                                <p class="text-sm leading-relaxed text-gray-700">The staff establishment is satisfactory with a total of 7 executives, including the Estate Manager (Bpk Joko Hidayat), 5 Assistant Managers, and 1 KTU. Each division is overseen by a Field Supervisor (4 in total). The ratio of 1 Assistant Manager to 578 hectares is considered adequate. <span class="observation-ref">(PA Report, Pg. 13-14)</span></p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">General Charges:</p>
-                                <p class="text-sm">Total General Charges are <b>RM 1,468/ha</b> (IDR 6,048,560), which is 9% below the budget:
-                                    <ul class="list-disc ml-5 text-sm mt-1">
+                                <p class="text-sm text-gray-700">Total General Charges are <b>RM 1,468/ha</b> (IDR 6,048,560), which is 9% below the budget:
+                                    <ul class="list-disc ml-5 mt-1 space-y-1">
                                         <li><b>Overspending:</b> Noted in Staff Other Cost/THR (109%), General Office (70%), Computer Maintenance (146%), and Misc Expenses (549% due to travel).</li>
                                         <li><b>Savings:</b> Offset by lower Labour Overhead (51% below budget) and Staff Mess expenses.</li>
                                     </ul>
-                                    <span class="observation-ref">(PA Report, Pg. 17-19, 64)</span>
+                                    <span class="observation-ref block mt-1">(PA Report, Pg. 17-19, 64)</span>
                                 </p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Upkeep and Cultivation:</p>
-                                <p class="text-sm">Overall cost is RM 3,351/ha (30% above seasonal budget):
-                                    <ul class="list-disc ml-5 text-sm mt-1">
+                                <p class="text-sm text-gray-700">Overall cost is RM 3,351/ha (30% above seasonal budget):
+                                    <ul class="list-disc ml-5 mt-1 space-y-1">
                                         <li><b>Weeding:</b> Circle/Path spraying is 71% complete for the year. Selective spraying is 70% complete. Cost is slightly above budget (2%) at RM 99/ha.</li>
                                         <li><b>Manuring:</b> 99% of the annual program completed (1,398.58 tons applied). Actual cost RM 2,029/ha.</li>
                                         <li><b>Composting:</b> RM 686/ha (43% above budget) due to accelerated work progress.</li>
                                         <li><b>Roads & Bridges:</b> RM 343/ha (2% above budget). Surfacing of agricultural roads is ongoing with laterite soil.</li>
                                     </ul>
-                                    <span class="observation-ref">(PA Report, Pg. 20-30, 33-35)</span>
+                                    <span class="observation-ref block mt-1">(PA Report, Pg. 20-30, 33-35)</span>
                                 </p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Harvesting and Collection:</p>
-                                <p class="text-sm">Cost per tonne is <b>RM 60.77</b> (IDR 250,429), which is 7% below budget:
-                                    <ul class="list-disc ml-5 text-sm mt-1">
+                                <p class="text-sm text-gray-700">Cost per tonne is <b>RM 60.77</b> (IDR 250,429), which is 7% below budget:
+                                    <ul class="list-disc ml-5 mt-1 space-y-1">
                                         <li><b>Intervals:</b> Maintained within 10-12 days for most areas (Good).</li>
                                         <li><b>Productivity:</b> Prime palm harvesters achieved 1.17 to 1.55 MT/md.</li>
                                         <li><b>Mechanization:</b> None currently used for infield collection; management urged to restart.</li>
                                     </ul>
-                                    <span class="observation-ref">(PA Report, Pg. 46-51)</span>
+                                    <span class="observation-ref block mt-1">(PA Report, Pg. 46-51)</span>
                                 </p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Crop Production:</p>
-                                <p class="text-sm">YTD (8 Months) FFB Production is <b>15,837.84 MT</b>, which is 15% below the budget of 18,628.54 MT.
-                                    <ul class="list-disc ml-5 text-sm mt-1">
+                                <p class="text-sm text-gray-700">YTD (8 Months) FFB Production is <b>15,837.84 MT</b>, which is 15% below the budget of 18,628.54 MT.
+                                    <ul class="list-disc ml-5 mt-1 space-y-1">
                                         <li><b>Yield/Ha:</b> 16.57 MT/ha vs 19.49 MT/ha target.</li>
                                         <li><b>Extraction:</b> CPO OER at 20.01% vs budget 21.50%.</li>
                                     </ul>
-                                    <span class="observation-ref">(PA Report, Pg. 52)</span>
+                                    <span class="observation-ref block mt-1">(PA Report, Pg. 52)</span>
                                 </p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Production Cost:</p>
-                                <p class="text-sm">Total production cost (Ex-Estate) is <b>RM 380.84/MT</b>, 25% unfavorable compared to budget:
-                                    <ul class="list-disc ml-5 text-sm mt-1">
+                                <p class="text-sm text-gray-700">Total production cost (Ex-Estate) is <b>RM 380.84/MT</b>, 25% unfavorable compared to budget:
+                                    <ul class="list-disc ml-5 mt-1 space-y-1">
                                         <li><b>General Charges:</b> RM 94.19/MT (+8% over budget).</li>
                                         <li><b>Upkeep & Cultivation:</b> RM 202.23/MT (+53% over budget).</li>
                                         <li><b>Harvesting & Collection:</b> RM 49.33/MT (-8% below budget).</li>
                                     </ul>
-                                    <span class="observation-ref">(PA Report, Pg. 53-54)</span>
+                                    <span class="observation-ref block mt-1">(PA Report, Pg. 53-54)</span>
                                 </p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Vehicles Running Cost:</p>
-                                <p class="text-sm leading-relaxed">Vehicle costs are generally higher than budgeted. Farm tractors for weeding/manuring are 13% above budget. Mini-tractors (Yanmar/Startrac) used for transport exceed budget due to high repair costs. Heavy machinery (Grader/Bomag) also shows high running costs. <span class="observation-ref">(PA Report, Pg. 57-59)</span></p>
+                                <p class="text-sm leading-relaxed text-gray-700">Vehicle costs are generally higher than budgeted. Farm tractors for weeding/manuring are 13% above budget. Mini-tractors (Yanmar/Startrac) used for transport exceed budget due to high repair costs. Heavy machinery (Grader/Bomag) also shows high running costs. <span class="observation-ref">(PA Report, Pg. 57-59)</span></p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Capital Expenditure:</p>
-                                <p class="text-sm leading-relaxed">Actual cost to date is IDR 1.76 Billion (42% of annual budget). Primary expenditures include RM 446,354 for agricultural road lateriting and RM 13,112 for HDPE spiral pipes and culverts. <span class="observation-ref">(PA Report, Pg. 55-56)</span></p>
+                                <p class="text-sm leading-relaxed text-gray-700">Actual cost to date is IDR 1.76 Billion (42% of annual budget). Primary expenditures include RM 446,354 for agricultural road lateriting and RM 13,112 for HDPE spiral pipes and culverts. <span class="observation-ref">(PA Report, Pg. 55-56)</span></p>
                             </div>
 
                             <div>
                                 <p class="report-section-title">Immature:</p>
-                                <p class="text-sm leading-relaxed">Field DG18-23A (2.98 ha) is in acceptable condition. Weeding has been carried out using Glyphosate. Immature harvesting began in August 2025. Full maturity declaration is set for 2027. <span class="observation-ref">(PA Report, Pg. 60)</span></p>
+                                <p class="text-sm leading-relaxed text-gray-700">Field DG18-23A (2.98 ha) is in acceptable condition. Weeding has been carried out using Glyphosate. Immature harvesting began in August 2025. Full maturity declaration is set for 2027. <span class="observation-ref">(PA Report, Pg. 60)</span></p>
                             </div>
                         </div>
                     </div>
 
-                    <button data-dropdown-id="belida-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details (Visit: Nov 2025)</button>
-                    <div id="belida-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200">
+                    <!-- Agronomy Report Details Dropdown (Newly Updated) -->
+                    <button data-dropdown-id="belida-agronomy" class="dropdown-btn w-full text-left bg-[#1f2937] text-white p-4 rounded-lg hover:bg-gray-700 transition font-semibold flex justify-between items-center">
+                        <span>Agronomy Report Details (Visit: May 2026)</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="belida-agronomy" class="details-content bg-white p-6 rounded-lg border border-gray-200 shadow-inner">
                         <div class="report-list">
-                            <p class="report-section-title">Executive Summary:</p>
-                            <p class="text-sm">Yield achieved 28.96 MT/Ha in FY 24/25. Key Issues: 27% of estate is flood-prone. Rat damage exceeds 5% threshold. Nutrient status: Low P, Marginal N. (AR Pg. 4, 7)</p>
-                            
-                            <p class="report-section-title">Nutrient Inputs/Progress of Manuring:</p>
-                            <p class="text-sm">96% completion as of Oct '25. Lumpy fertilizer application observed in DG14. Avoid composting in flood-prone areas. (AR Pg. 11-17)</p>
-                            
-                            <p class="report-section-title">Agronomic Observation:</p>
-                            <p class="text-sm">Harvesting intervals good. 5-8% overripe bunches in DG15/16. Drainage maintenance critical for 258 ha flood-prone peat. Rat baiting required Dec '25. (AR Pg. 18-43)</p>
-                            
-                            <p class="report-section-title">Yield Performance:</p>
-                            <p class="text-sm">FY 24/25 reached record high of 28.96 MT/ha. Prime age palms (98.9%) provide high potential. (AR Pg. 44-46)</p>
+                            <div>
+                                <p class="report-section-title">Executive Summary:</p>
+                                <p class="text-sm leading-relaxed text-gray-700">Overall agronomic conditions and upkeep practices have shown clear improvement, particularly regarding pruning and selective weed control. The FY2025/2026 FFB yield, however, declined by 18% to 23.69 MT/ha due to a lower bunch formation per palm. A notable success is the 100% completion of the fertilizer program and rat control stabilization. <span class="observation-ref">(AR Pg. 12, 31, 39, 50, 53)</span></p>
+                            </div>
+
+                            <div>
+                                <p class="report-section-title">Nutrient Inputs/Progress of Manuring:</p>
+                                <p class="text-sm leading-relaxed text-gray-700">The FY 2025/2026 fertilizer program was fully completed at 100% (applying 1,412.38 MT). Previous issues with lumpy fertilizer applications have been resolved. The estate is strongly advised to maintain proper frond stacking across undulating areas to limit runoff and improve nutrient uptake, moderating the strongly acidic soil pH (3.62-4.19). It is recommended to avoid dumping fresh compost in overly thick layers or in flood-prone areas to mitigate Ganoderma risks. <span class="observation-ref">(AR Pg. 12-19)</span></p>
+                            </div>
+
+                            <div>
+                                <p class="report-section-title">Agronomic Observation:</p>
+                                <p class="text-sm text-gray-700">
+                                    <ul class="list-disc ml-5 mt-1 space-y-1">
+                                        <li><b>Harvesting:</b> Average harvesting interval is stable at 9 days. Harvester loose fruit collection improved, but the rate of overripe bunches remains high (5% - 9%). Uncollected bunches left inside field drains were observed and require stricter supervision.</li>
+                                        <li><b>Pruning:</b> Progressive pruning is 100% complete and highly satisfactory.</li>
+                                        <li><b>Ground Vegetation:</b> Significantly improved. Bracken ferns and noxious weeds have reduced drastically. Selective interrow spraying using mist blowers is recommended instead of blanket spraying.</li>
+                                        <li><b>P&D (Rats):</b> Rat damage is very minimal and well-controlled after successful baiting campaigns. Transitioning to second-generation rat baits is recommended.</li>
+                                        <li><b>Topography Challenge:</b> 258.76 ha (26.86% of total planted area) are recognized as flood-prone low-lying lands, compounding the difficulty of operations and weed management.</li>
+                                    </ul>
+                                    <span class="observation-ref block mt-1">(AR Pg. 21-50, 67)</span>
+                                </p>
+                            </div>
+
+                            <div>
+                                <p class="report-section-title">Yield Performance:</p>
+                                <p class="text-sm leading-relaxed text-gray-700">The estate recorded a yield of <b>23.69 MT/ha</b> in FY 2025/2026, representing an 18% decline from the peak yield of 28.96 MT/ha in FY 2024/2025. Analysis shows this decline stems entirely from a significant 30.33% reduction in bunch numbers (down to 10.86 bunches per palm), which overshadowed a 17.06% increase in average bunch weight (up to 15.30 kg). <span class="observation-ref">(AR Pg. 51-53)</span></p>
+                            </div>
+
+                            <div>
+                                <p class="report-section-title">Fertilizer Recommendation:</p>
+                                <p class="text-sm leading-relaxed text-gray-700">No amendments were made to the upcoming FY 2026/2027 fertilizer program. Management is reminded that the fertilizer program must be strictly followed without deviation. Strict supervision is needed to ensure fertilizers are never applied when soils are waterlogged. <span class="observation-ref">(AR Pg. 55-56)</span></p>
+                            </div>
                         </div>
+                    </div>
+
+                    <!-- Pinfosys Report Details Dropdown -->
+                    <button data-dropdown-id="belida-pinfosys" class="dropdown-btn w-full text-left bg-[#1f2937] text-white p-4 rounded-lg hover:bg-gray-700 transition font-semibold flex justify-between items-center">
+                        <span>Pinfosys Report Details</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="belida-pinfosys" class="details-content bg-white p-6 rounded-lg border border-gray-200 shadow-inner text-gray-600">
+                        <p class="text-sm italic">Not Available at this time.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Modal -->
+    <!-- Modal for Policy Details -->
     <div id="policyModal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4">
-        <div class="bg-white p-6 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="modalTitle" class="text-2xl font-bold">Agricultural Policy Cross-Reference</h3>
-                <button onclick="closePolicyModal()" class="text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col relative">
+            <div class="flex justify-between items-center mb-6 border-b pb-3">
+                <h3 id="modalTitle" class="text-2xl font-bold text-gray-900">Agricultural Policy Cross-Reference</h3>
+                <button onclick="closePolicyModal()" class="text-gray-400 hover:text-red-500 transition text-3xl leading-none">&times;</button>
             </div>
-            <div id="modalContent" class="space-y-4 overflow-y-auto pr-4 flex-grow">
-                <div class='policy-item'><p class='font-semibold'>Mechanization (FFB Collection)</p><p class='text-sm text-gray-600'><b>Policy Ref: MECH-FFB-01:</b> Estates with flat terrain are required to implement mechanized infield collection (mini-crawlers) to improve evacuation efficiency and worker income.</p></div>
-                <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-01:</b> A rat census must be conducted regularly. If fresh damage exceeds 5%, a baiting campaign must be initiated immediately.</p></div>
-                <div class='policy-item'><p class='font-semibold'>Harvesting Intervals</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-INT-02:</b> Harvesting intervals must be maintained within 10-12 days to optimize ripeness and harvester productivity.</p></div>
+            <div id="modalContent" class="space-y-5 overflow-y-auto pr-2 flex-grow">
+                <div class='policy-item'>
+                    <p class='font-bold text-gray-800'>Mechanization (FFB Collection)</p>
+                    <p class='text-sm text-gray-600 mt-1'><b>Policy Ref: MECH-FFB-01:</b> Estates with flat to undulating terrain are required to implement mechanized infield collection (mini-crawlers or similar) to improve evacuation efficiency and reduce reliance on manual cutter/carrier ratios.</p>
+                </div>
+                <div class='policy-item'>
+                    <p class='font-bold text-gray-800'>Pest Control (Rats)</p>
+                    <p class='text-sm text-gray-600 mt-1'><b>Policy Ref: P&D-Rat-01:</b> A rat census must be conducted regularly. If fresh damage exceeds 5%, a baiting campaign using approved baits (e.g., second-generation anticoagulants) must be initiated and replaced at 7-day intervals.</p>
+                </div>
+                <div class='policy-item'>
+                    <p class='font-bold text-gray-800'>Harvesting Intervals & Recovery</p>
+                    <p class='text-sm text-gray-600 mt-1'><b>Policy Ref: HARV-INT-02:</b> Harvesting intervals must be maintained within 10-12 days to minimize the percentage of overripe bunches. All harvested crop, including loose fruits and bunches in drains, must be evacuated to the platform on the same day.</p>
+                </div>
+                <div class='policy-item'>
+                    <p class='font-bold text-gray-800'>Fertilizer Application</p>
+                    <p class='text-sm text-gray-600 mt-1'><b>Policy Ref: FERT-APP-03:</b> Fertilizers must be broadcast evenly along the inner edge of the palm weeded circle. Application must strictly be withheld in fields prone to flooding while waterlogged conditions persist.</p>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Render Age Distribution Pie Chart
             const ageChartId = 'ageChart-belida';
             const ageCtx = document.getElementById(ageChartId)?.getContext('2d');
             if(ageCtx) {
@@ -304,28 +368,66 @@
                     type: 'pie',
                     data: {
                         labels: ["2008 (13.4%)", "2012 (80.8%)", "2013 (4.7%)", "2020 (0.7%)", "2023 (0.3%)"],
-                        datasets: [{ data: [128.82, 775.06, 45.16, 6.76, 2.98], backgroundColor: ['#14532d', '#166534', '#15803d', '#16a34a', '#22c55e'] }]
+                        datasets: [{ 
+                            data: [128.82, 775.06, 45.16, 6.76, 2.98], 
+                            backgroundColor: ['#166534', '#15803d', '#16a34a', '#22c55e', '#4ade80'],
+                            hoverOffset: 4
+                        }]
                     },
-                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
+                    options: { 
+                        responsive: true, 
+                        maintainAspectRatio: false, 
+                        plugins: { 
+                            legend: { 
+                                position: 'right',
+                                labels: {
+                                    font: { family: 'Inter' }
+                                }
+                            } 
+                        } 
+                    }
                 });
             }
 
+            // Accordion Dropdown Logic
             document.querySelectorAll('.dropdown-btn').forEach(button => {
                 button.addEventListener('click', (event) => {
                     const id = event.currentTarget.dataset.dropdownId;
                     const content = document.getElementById(id);
-                    content.classList.toggle('active');
-                    event.currentTarget.classList.toggle('active');
+                    
+                    // Toggle chevron icon
+                    const svg = event.currentTarget.querySelector('svg');
+                    
+                    if (content.classList.contains('active')) {
+                        content.classList.remove('active');
+                        event.currentTarget.classList.remove('active');
+                        svg.classList.remove('rotate-180');
+                    } else {
+                        // Optional: close other accordions here if needed
+                        content.classList.add('active');
+                        event.currentTarget.classList.add('active');
+                        svg.classList.add('rotate-180');
+                    }
                 });
             });
             
+            // Modal Logic
             document.querySelector('.policy-modal-btn')?.addEventListener('click', () => {
                 document.getElementById('policyModal').classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+            
+            // Close modal when clicking outside of it
+            document.getElementById('policyModal').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('policyModal')) {
+                    closePolicyModal();
+                }
             });
         });
 
         function closePolicyModal() {
             document.getElementById('policyModal').classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
         }
     </script>
 </body>
