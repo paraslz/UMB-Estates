@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Tanjung Nipis Estate - Plantation and Agronomy Report</title>
+    <title>Tanjung Nipis Estate - Plantation, Agronomy & Audit Report</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
             const estateData = {
                 "id": "tanjungnipis",
                 "name": "Tanjung Nipis Estate",
-                "reportInfo": "Data based on PA Report 01/2026 (Visit: 27th & 28th April 2026) & Agronomy Report 1/2026 (Visit: 25th May 2026).",
+                "reportInfo": "Data based on PA Report 01/2026 (Visit: 27th & 28th April 2026), Agronomy Report 1/2026 (Visit: 25th May 2026) & IAD Report 19/26 (Visit: 4th March 2026).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -89,17 +89,17 @@
                     "cost": {
                         "title": "FFB Cost/Tonne (Actual vs Budget)",
                         "value": "RM 375.83 / RM 325.05",
-                        "note": "Ex-Estate, Full Year (PA Report 01/2026)"
+                        "note": "Ex-Estate, Full Year (PA 01/2026)"
                     },
                     "labour": {
                         "title": "Labour Status",
                         "value": "Adequate",
                         "note": "Total 130 workers (Ratio 1:10 ha)"
                     },
-                     "pests": {
-                        "title": "Pest Status",
-                        "value": "Manageable",
-                        "note": "Rat/Ganoderma under control"
+                    "audit": {
+                        "title": "Internal Audit Rating",
+                        "value": "Marginally Deficient",
+                        "note": "IAD Report 19/26 (Mar 2026)"
                     }
                 },
                 "keyMetrics": [
@@ -108,7 +108,7 @@
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "Manuring Status", "value": "FY25/26 Completed (Delayed)" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>", "label": "Labour Ratio", "value": "1:10 ha (Adequate)" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z' /></svg>", "label": "Rainfall Impact", "value": "4,122mm (Severe Delays)" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' /></svg>", "label": "Weeding Status", "value": "Inter-row Delayed (1 Round)" }
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' /></svg>", "label": "Audit Rating", "value": "Marginally Deficient" }
                 ],
                 "chartData": {
                     "production": {
@@ -126,10 +126,10 @@
                 "observations": [
                     "<b>FFB Yield & Crop Production Deficit:</b> PA 01/2026 noted an 18% deficit against budget early on. The recent AR 1/2026 indicates a slight late-season recovery, with FY25/26 full-year yield achieving <b>17.12 MT/ha (+4% YoY)</b>. However, Period 1 of FY26/27 showed a sharp <b>23% decline</b> (1.14 MT/ha) due to prior severe weather impacts affecting prime mature blocks (05A, 06A, 16A). <span class='observation-ref'>(PA Report 01/2026, Pg. 8; AR 1/2026, Pg. 45-47)</span>",
                     "<b>Elevated Production Cost:</b> Ex-estate cost of production surged to <b>RM 375.83 per ton</b>, representing a <b>16% overspend</b> against the budgeted RM 325.05 per ton. This negative variance is primarily attributed to the deficit in crop production, which failed to dilute fixed General Charges and upkeep costs. <span class='observation-ref'>(PA Report 01/2026, Pg. 9, 59)</span>",
+                    "<b>Internal Audit Deficiencies:</b> The IAD has rated the estate as <b>Marginally Deficient</b>. A critical operational issue is the underutilization of the Kaindangan Division weighbridge due to limited genset power supply, increasing the risk of undetected FFB weight discrepancies. Furthermore, diesel physical stock takes currently use an inaccurate PVC dipstick and measuring tape. Both issues are being rectified with a solar installation and steel-calibrated sounding tape expected in May 2026. <span class='observation-ref'>(IAD Report 19/26, Pg. 2-8)</span>",
                     "<b>Extreme Rainfall & Operational Delays:</b> The estate recorded a massive <b>4,122 mm of rainfall</b> over 203 wet days in FY25/26. January and February 2026 alone saw exceptional rainfall of 780mm and 870mm respectively. This caused severe waterlogging (e.g., Block 85) and widespread delays in harvesting, manuring, and weeding. <span class='observation-ref'>(AR 1/2026, Pg. 34, 51-53)</span>",
                     "<b>Inconsistent Harvesting Intervals:</b> While the Main Division maintains acceptable intervals (10-14 days), the Tobe Division (Rehab) is facing severe delays. Block 10B reached up to <b>31 days</b> in April/May 2026. This is directly attributed to limited harvester availability combined with poor field accessibility during the heavy rains. <span class='observation-ref'>(AR 1/2026, Pg. 28-29)</span>",
                     "<b>Manuring Program Completion & Delays:</b> The FY25/26 fertilizer program was fully completed, but it was heavily delayed into May 2026 due to extreme weather and delivery issues. As of May 2026, the FY26/27 program has not yet commenced. <span class='observation-ref'>(PA Report 01/2026, Pg. 6; AR 1/2026, Pg. 14-15)</span>",
-                    "<b>Magnesium Deficiency & Hardpan Soils:</b> In Young Mature Block 19A, palms are exhibiting yellow/orange lower fronds indicating Magnesium deficiency. This is exacerbated by sandy soils and hardpan conditions. The estate has positively initiated EFB application to mitigate this. <span class='observation-ref'>(AR 1/2026, Pg. 37-38)</span>",
                     "<b>Rehabilitation & Weed Control Challenges:</b> Weeding operations were severely delayed by rainfall. The Main Division completed only 2 rounds instead of 3, and the Tobe Division completed only 1 round of inter-row spraying. Consequently, unwanted weeds (Giant Grass, Clidemia) are encroaching. Additionally, flood-damaged areas in 24A/25A (near Block 48) urgently require supplying. <span class='observation-ref'>(AR 1/2026, Pg. 24-25, 32, 41-43)</span>"
                 ],
                 "reports": {
@@ -155,11 +155,17 @@
                         "Yield Performance": "FY25/26 closed at <b>17.12 MT/ha</b>, a positive 4% improvement over the prior year. However, several prime mature blocks (05A, 05C, 05D, 09A) still produced below expectation. In Period 1 of FY26/27, yield plummeted to <b>1.14 MT/ha</b> (-23% compared to Period 1 of FY25/26), underscoring the lag effect of severe weather and agronomic delays. <span class='observation-ref'>(AR 1/2026, Pg. 45-48)</span>",
                         "Fertilizer Recommendation": "The FY26/27 fertilizer program has been formally drafted, comprising Mix A, Mix B, NK 1, BRP, and CPD (detailed in Appendix 1). The priority is to execute the program promptly to recover from the delayed FY25/26 applications and to pay specific attention to the recovering immature and rehab blocks. <span class='observation-ref'>(AR 1/2026, Pg. 54-57)</span>"
                     },
+                    "audit": {
+                        "Overall Status": "In IAD's opinion, the overall internal control systems governing the estate operations of TN are rated as <b>Marginally Deficient</b>. Although most key controls were applied, the application of certain important controls lacked consistency or effectiveness, requiring timely corrective action from management. <span class='observation-ref'>(IAD Report 19/26, Pg. 2)</span>",
+                        "Weighbridge Utilization": "The Kaindangan Division (TOBE) weighbridge is significantly underutilized due to a lack of continuous power supply, as the local genset does not operate on a 24-hour basis. Consequently, the weighbridge is only used for fertilizer/diesel and not for consistent FFB weighing prior to dispatch to Meridian POM, exposing the company to potential produce losses. <b>Action Plan:</b> A contractor has been appointed to install a solar-based electricity supply for the division in May 2026. <span class='observation-ref'>(IAD Report 19/26, Pg. 3-5)</span>",
+                        "Diesel Physical Stock Take": "Weaknesses were identified in the diesel physical stock take procedures for the 12,000L tank. The use of a soft, bendable PVC dipstick combined with measuring tape to cross-reference calibration tables is inefficient and highly susceptible to human reading errors. <b>Action Plan:</b> Estate Management has ordered a certified steel-calibrated sounding tape to replace the PVC pipe, immediately eliminating double-reading errors. <span class='observation-ref'>(IAD Report 19/26, Pg. 6-8)</span>"
+                    },
                     "pinfosys": "N/A"
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> All fertilizer applications must be completed according to the schedule. Delays beyond 2 months due to rainfall or labor shortages represent key operational risks and must be mitigated. (PA Report 01/2026, Pg. 31)</p></div> <div class='policy-item'><p class='font-semibold'>Harvesting Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-INT-01:</b> Harvesting intervals must be maintained below 15 days. Current status ranges mostly between 10-16 days and is largely compliant, though slippery roads from heavy rain delayed blocks 48/49. (PA Report 01/2026, Pg. 51)</p></div> <div class='policy-item'><p class='font-semibold'>Weeding Control</p><p class='text-sm text-gray-600'><b>Policy Ref: AGRO-WEED-02:</b> Inter-row selective spraying must be completed at 3 rounds per year to promote soft grass establishment. Delays in both circle (69% done) and selective (63% done) weeding must be resolved. (PA Report 01/2026, Pg. 22, 26)</p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-05:</b> All fertilizer applications must be completed according to the schedule. Delays beyond 2 months due to rainfall or labor shortages represent key operational risks and must be mitigated. (PA Report 01/2026, Pg. 31)</p></div> <div class='policy-item'><p class='font-semibold'>Harvesting Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-INT-01:</b> Harvesting intervals must be maintained below 15 days. Current status ranges mostly between 10-16 days and is largely compliant, though slippery roads from heavy rain delayed blocks 48/49. (PA Report 01/2026, Pg. 51)</p></div> <div class='policy-item'><p class='font-semibold'>Weeding Control</p><p class='text-sm text-gray-600'><b>Policy Ref: AGRO-WEED-02:</b> Inter-row selective spraying must be completed at 3 rounds per year to promote soft grass establishment. Delays in both circle (69% done) and selective (63% done) weeding must be resolved. (PA Report 01/2026, Pg. 22, 26)</p></div> <div class='policy-item'><p class='font-semibold'>Weighbridge Operations</p><p class='text-sm text-gray-600'><b>Policy Ref: SEC-WB-01:</b> All FFB transport vehicles must be weighed at the estate weighbridge station prior to leaving for the POM to prevent produce loss, excluding specific high-terrain exceptions agreed by management. (IAD Report 19/26, Pg. 5)</p></div>"
             };
 
+            // --- STREAMING_CHUNK:Global variables setup... ---
             // --- GLOBAL VARIABLES ---
             let chartInstances = {};
             const container = document.getElementById('selected-estate-container');
@@ -175,12 +181,14 @@
                 }, 0);
             }
 
+            // --- STREAMING_CHUNK:Constructing HTML elements for metric cards and graphs... ---
             function createEstateHTML(estate) {
                 const summaryMetricsHTML = Object.values(estate.summaryMetrics).map(metric => {
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
-                                       metric.title.includes('Labour') ? 'bg-green-50 text-green-800' : 'bg-gray-50 text-gray-800';
+                                       metric.title.includes('Labour') ? 'bg-green-50 text-green-800' :
+                                       metric.title.includes('Audit') ? 'bg-red-50 text-red-800' : 'bg-gray-50 text-gray-800';
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}</div>`;
                     }
@@ -199,6 +207,7 @@
                     `<div class="chart-container"><canvas id="prodChart-${estate.id}"></canvas></div>` :
                     `<div class="chart-container flex items-center justify-center bg-gray-50 rounded-lg p-4"><p class="text-gray-500 text-center">Chart data not available.</p></div>`;
 
+                // --- STREAMING_CHUNK:Assembling final main estate structure template... ---
                 return `
                     <div class="bg-white p-6 rounded-lg shadow-lg animate-fade-in">
                         <h2 class="text-3xl font-bold mb-2 text-gray-900">${estate.name}</h2>
@@ -217,6 +226,8 @@
                         
                         <div class="mb-8 text-center"><button class="policy-modal-btn bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-900 transition shadow-md">View Agricultural Policy Cross-Reference</button></div>
                         <div class="space-y-2">
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Internal Audit Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Plantation Advisory Report Details</button>
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
@@ -227,6 +238,7 @@
                     </div>`;
             }
 
+            // --- STREAMING_CHUNK:Configuring Chart.js instances... ---
             function initializeChartsForEstate() {
                 const prodCanvasId = `prodChart-${estateData.id}`;
                 const ageCanvasId = `ageChart-${estateData.id}`;
@@ -260,9 +272,11 @@
                 }
             }
             
+            // --- STREAMING_CHUNK:Populating dropdown accordions dynamically... ---
             function populateInternalDropdowns() {
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
+                const auditDiv = document.getElementById(`${estateData.id}-audit`);
                 const pinfosysDiv = document.getElementById(`${estateData.id}-pinfosys`);
 
                 if (agronomyDiv && estateData.reports.agronomy) {
@@ -271,11 +285,15 @@
                 if (plantationDiv && estateData.reports.plantation) {
                     plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
                 }
+                if (auditDiv && estateData.reports.audit) {
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                }
                 if (pinfosysDiv) {
                     pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600">${estateData.reports.pinfosys}</p>`;
                 }
             }
 
+            // --- STREAMING_CHUNK:Binding UI interaction event listeners... ---
             function attachEventListeners() {
                 container.querySelectorAll('.dropdown-btn').forEach(button => {
                     button.addEventListener('click', (event) => {
@@ -291,6 +309,7 @@
             renderEstate();
         });
         
+        // --- STREAMING_CHUNK:Defining Modal control functions... ---
         function openPolicyModal(estate) {
             const modalTitle = document.getElementById('modalTitle');
             const modalContent = document.getElementById('modalContent');
