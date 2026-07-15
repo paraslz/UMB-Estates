@@ -70,7 +70,7 @@
             const estateData = {
                 "id": "sepahang",
                 "name": "South East Pahang Estate",
-                "reportInfo": "Data based on PA Report (Visit Oct 2025) & Agronomy Report (Visit May 2026).",
+                "reportInfo": "Data based on PA Report (Visit Oct 2025), Agronomy Report (Visit May 2026) & Internal Audit Report (Visit 2026).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -129,7 +129,8 @@
                     "<b>Harvesting Interval & Quality Issues:</b> Intervals slipped to 20-26 days in Dec 2025 due to the rainy season and a shortage of harvesters (estate is short 27 workers out of required 129). Consequently, a high incidence of over-ripe bunches and trash in loose fruit collection was noted in the Agronomy survey. <span class='observation-ref'>(AR Pg. 24-28, PA Pg. 11)</span>",
                     "<b>Pest & Disease Management:</b> Ganoderma infection remains active, requiring ongoing mounding and de-silting. Furthermore, the rat damage census for FY25/26 has not yet been conducted, and Barn Owl box occupancy is relatively low at 41%. Bagworms are currently under localized treatment. <span class='observation-ref'>(AR Pg. 36, 46, PA Pg. 17-27)</span>",
                     "<b>High Vehicle Running Costs:</b> Farm tractor maintenance costs are severely elevated, running up to 413% over budget. Mini-tractors are also running >300% over budget due to frequent breakdowns and major repairs, inflating overall transport costs. <span class='observation-ref'>(PA Pg. 40)</span>",
-                    "<b>Upkeep & Cultivation Delays:</b> Weeding programs are lagging, with circle spraying only 31% complete. Progress on progressive pruning is also slow (34% vs a target of 4 rounds), with slight under-pruning observed in several blocks (P05A, P05M). <span class='observation-ref'>(AR Pg. 31-33, PA Pg. 17-27)</span>"
+                    "<b>Upkeep & Cultivation Delays:</b> Weeding programs are lagging, with circle spraying only 31% complete. Progress on progressive pruning is also slow (34% vs a target of 4 rounds), with slight under-pruning observed in several blocks (P05A, P05M). <span class='observation-ref'>(AR Pg. 31-33, PA Pg. 17-27)</span>",
+                    "<b>Payroll & Pruning Record Discrepancies (Audit Finding):</b> Significant mismatches were identified between the Piece Rate Book, Quarto System, and Daily Attendance Records. This includes instances of wrong wages computation, replacement workers not updated, and overpayments for routine pruning based on UAV data block variances. Management is taking immediate rectifying actions to systematize records following the estate assistant's resignation in Jan 2026. <span class='observation-ref'>(Audit Report Pg. 1-6)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -152,6 +153,12 @@
                         "Agronomic Observation": "<b>Field Maintenance:</b> Mounding is 39.3% complete. 'Slant cutting' of trenches toward harvesting paths (P05M) observed, wrongly channeling fertilizer into trenches. Straight trenching parallel to rows is required.<br>• <b>Harvesting & Crop Recovery:</b> High incidence of over-ripe bunches in P05F. Loose fruit collection contains high trash and rotten fruits.<br>• <b>Pruning:</b> Progress is unacceptably slow (34% vs target 4 rounds). Slightly under-pruned in P05A/M, P06A/D.<br>• <b>Weeding:</b> Soft grasses and ferns dominate. Localized woody weeds (Clidemia, Tetracera) are present in interrows.<br>• <b>Pests & Diseases:</b> Rat census for FY25/26 is not yet done. Barn Owl occupancy is low at 41%. Bagworm controlled. Ganoderma infection active; de-silting of mounds needed. (AR Pg. 16-46)",
                         "Yield Performance": "FY2024/25 total yield was 22.30 MT/ha. FY2025/26 (May-Nov) is currently at 16.10 MT/ha, marking a 5% improvement. (AR Pg. 48-49)",
                         "Fertilizer Recommendation": "N/A"
+                    },
+                    "audit": {
+                        "Overall Opinion": "Satisfactory. The overall internal control systems governing the estate operations are satisfactory, although some weaknesses in the application of control procedures regarding payroll records were identified. (Audit Report Pg. 2)",
+                        "Payroll and Personnel (Pruning Discrepancies)": "Multiple discrepancies were identified between the Piece Rate Book (PRB), Quarto Systems, and Daily Attendance Records for routine pruning operations: <br>• <b>Mismatched Records:</b> Worker Amir Hossain's transaction was voided in Quarto resulting in an 'Absent' status. 150 palms remain unpaid (RM 45).<br>• <b>Replacement Worker Tracing:</b> Worker Ramli Ahmad replaced an absent worker (Hatta Rudi), but the PRB was never amended, making the records inaccurate.<br>• <b>Inconsistent Rates:</b> For Block 2007G, the PRB was amended to RM 0.30/palm, but the Quarto system still processed it at the old RM 0.60/palm rate, causing an overpayment of RM 315. (Audit Report Pg. 2-4)",
+                        "Variance with UAV Data": "In Block 2007D, routine pruning was paid for a total of 6,165 palms. However, reference data from July 2024 UAV records indicate the total palm count is only 5,989. This calculation error led to an overpayment for 176 excess palms (RM 52.80). (Audit Report Pg. 4-5)",
+                        "Management Response & Action Plan": "The pruning irregularities stem from disorganized field practices and non-compliance with instructions. The assistant responsible submitted his resignation on Jan 14, 2026. Estate management is actively rectifying unorganized pruning areas to ensure systematic operations and payments every three months. Additionally, management is enforcing stricter checking of proof lists before processing Quarto data keys from mandores to prevent future over/underpayments. (Audit Report Pg. 6-7)"
                     },
                     "pinfosys": {
                         "CEO Financial Summary": "N/A",
@@ -212,6 +219,8 @@
                             <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Agronomy Report Details</button>
                             <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
+                            <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Internal Audit Report Details</button>
+                            <div id="${estate.id}-audit" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                             <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-3 rounded-md hover:bg-gray-700 transition">Pinfosys Report Details</button>
                             <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-4 rounded-md border border-gray-200"></div>
                         </div>
@@ -293,7 +302,7 @@
             }
             
             function populateInternalDropdowns() {
-                const reportTypes = ['plantation', 'agronomy', 'pinfosys'];
+                const reportTypes = ['plantation', 'agronomy', 'audit', 'pinfosys'];
                 
                 reportTypes.forEach(type => {
                     const div = document.getElementById(`${estateData.id}-${type}`);
