@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Inter', sans-serif; }
         .details-content { display: none; }
@@ -67,7 +68,7 @@
             const estateData = {
                 "id": "mlp5",
                 "name": "MLP 5 Estate",
-                "reportInfo": "Data based on Agronomy Report 1/2026 (Visit: Feb 2026), Plantation Advisory Report 2/2025 (October 2025), & Internal Audit Report (August 2025).",
+                "reportInfo": "Data based on Agronomy Report 1/2026 (Visit: Feb 2026), Plantation Advisory Report 2/2025 (October 2025), & Internal Audit Report (Feb 2026).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -95,9 +96,10 @@
                      "audit": {
                         "title": "Audit Rating",
                         "value": "Marginally Deficient",
-                        "note": "Key controls inconsistent (Aug 2025)"
+                        "note": "Manuring delays & inventory issues (Feb 2026)"
                     }
                 },
+                
                 "keyMetrics": [
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Ratio", "value": "1:18 ha (Shortage 12)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Mg Deficiency (Hilly)" },
@@ -120,28 +122,30 @@
                         "note": "*Source: Agronomy Report 1/2026, Pg. 12."
                     }
                 },
+                
                 "observations": [
-                    "<b>Significant Manuring Delays:</b> Manuring progress is far behind schedule for both mature and immature areas. Mixture B rounds scheduled for Division B cannot be completed within the current FY due to machinery capacity issues and low worker productivity. <span class='observation-ref'>(AR 1/2026, Pg. 13-14)</span>",
-                    "<b>Crop Quality Concerns:</b> Despite improved harvest intervals (9-14 days), a high occurrence of unripe bunches and uncollected loose fruits at collection platforms were observed, indicating a need for tighter supervision. <span class='observation-ref'>(AR 1/2026, Pg. 18-20)</span>",
+                    "<b>Significant Manuring Delays (Div 5B Focus):</b> Agronomy and Audit reports highlight severe delays in the FY25/26 program. Division 5B is only 26% complete due to workforce shortages, rainy weather, and poor hilly roads. The final round of Mix B for Div 5B has been withdrawn to rebalance the workload. <span class='observation-ref'>(AR 1/2026, Pg. 13-14; Audit Report, Pg. 2-8)</span>",
+                    "<b>Crop Quality & Harvesting Concerns:</b> Despite improved harvest intervals (9-14 days), a high occurrence of unripe bunches and uncollected loose fruits at collection platforms were observed, indicating a need for tighter supervision. <span class='observation-ref'>(AR 1/2026, Pg. 18-20)</span>",
+                    "<b>Stores & Inventory Management Weaknesses:</b> Audit identified RM 50,453 worth of slow-moving/ageing stock, notably Kenrane 200 (709 Litres kept since Jul 2023). There is a high risk of chemical expiry and physical deterioration of spare parts/tyres due to prolonged storage without movement. <span class='observation-ref'>(Audit Report, Pg. 9-11)</span>",
                     "<b>Magnesium Deficiency:</b> Palms in hilly sections of both Division A and B show visible Mg deficiency (yellowing fronds). Supervision of manuring on terraces is critical to avoid omissions. <span class='observation-ref'>(AR 1/2026, Pg. 23)</span>",
                     "<b>Ground Vegetation Backlog:</b> Weeding progress is lagging; circle weeding is only 43% complete. Ground conditions in spotted areas are unsatisfactory with overgrown grasses and woodies. <span class='observation-ref'>(AR 1/2026, Pg. 30-31)</span>",
-                    "<b>Agricultural Road Conditions:</b> Conditions remain unacceptable and significantly behind schedule for gravelling, hampering FFB evacuation during rainy periods. <span class='observation-ref'>(PA 2/2025, Pg. 33, 48)</span>",
-                    "<b>Audit - Hourly Pay & Quarto Usage:</b> Hourly pay practices for loading have been discontinued due to budget exceedance. Significant variances between Quarto Connects and manual records remain a focus for management enforcement. <span class='observation-ref'>(Audit Report, Pg. 2-10)</span>"
+                    "<b>Agricultural Road Conditions:</b> Conditions remain unacceptable and significantly behind schedule for gravelling, hampering FFB evacuation and manuring operations during rainy periods. <span class='observation-ref'>(PA 2/2025, Pg. 33, 48; Audit Report, Pg. 6)</span>"
                 ],
+                
                 "reports": {
                     "plantation": {
-                        "Executive Summary": "The estate's performance is acceptable but requires significant improvement in road access and labour establishment. FFB production was 4% below the seasonal budget. Key challenges include a shortage of harvesters, delayed weeding/manuring due to weather, and poor agricultural road conditions. (Source: PA 2/2025, Pg. 47-48)",
-                        "Area Statement": "Total Planted Area: 1,166.64 ha. Mature Area: 1,102.51 ha. Immature Area (2024B): 64.13 ha. Unplantable/Ravine: 592.55 ha. (Source: PA 2/2025, Pg. 9)",
-                        "Labour Statement": "Total Workforce: 130 (Requirement: 139). Harvesters: 61 (Requirement: 73, Shortage: 12). Current harvester ratio is 1:18 ha. Weeding and manuring gangs are generally sufficient if productivity is maintained. (Source: PA 2/2025, Pg. 14)",
-                        "Staff Establishment": "Current strength includes 1 Manager, 2 Assistant Managers, and 2 Field Conductors. There is a shortage of 2 Field Supervisors, which is critical given the steep terrain. (Source: PA 2/2025, Pg. 13)",
-                        "General Charges": "Total Expenditure: RM 895,911 (RM 767.94/ha), which is 12% below the seasonal budget. Significant overspending occurred in Staff Accommodation (61%), Labour Paid Leave (73%), and Entertainment (187%). (Source: PA 2/2025, Pg. 16-17)",
-                        "Upkeep & Cultivation": "Weeding Cost: RM 104.69/ha (High due to labour rates/poisoning jungle trees). Circle spraying is 28% complete (Delayed). Selective weeding is 13% complete (Delayed). Manuring Cost: RM 261.62/ha (43% of budget, Delayed). Roads: RM 487.03/ha (80% of budget), mostly for machinery rental and repairs. (Source: PA 2/2025, Pg. 18-31)",
-                        "Harvesting and Collection": "Cost (Excl. Ext Transport): RM 94.16/MT (1% above budget). Total Cost: RM 133.32/MT (1% below budget). Harvester productivity is 1.45 MT/man-day. Harvesting intervals are generally satisfactory (10-15 days). (Source: PA 2/2025, Pg. 36-38)",
-                        "Crop Production": "Total FFB: 7,787.40 MT (4% below seasonal budget). Yield: 7.06 MT/ha (Seasonal Budget: 7.37 MT/ha). OER: 20.12%. (Source: PA 2/2025, Pg. 40)",
-                        "Production Cost": "Total Cost: RM 382.39/MT (Ex-estate). This is 1% lower than the seasonal budget of RM 387.41/MT. (Source: PA 2/2025, Pg. 41)",
-                        "Vehicles Running Cost": "Generally acceptable. Exceptions: Nissan Lorry SS915U (65% over budget) and Farm Tractor SYL 8512 (34% over budget) due to high repair costs. (Source: PA 2/2025, Pg. 42-43)",
-                        "Immature (2024B)": "Area: 64.13 ha (7,514 palms). Palm density: 117 palms/ha. Total cost to date: RM 5,101.63/ha. Planting is considered complete, but supplying is needed for vacant points. (Source: PA 2/2025, Pg. 44)",
-                        "Capital Expenditure": "Road surfacing with crusher run has not been carried out due to material shortage and weather. (Source: PA 2/2025, Pg. 31)"
+                        "Executive Summary": "The estate's performance is acceptable but requires significant improvement in road access and labour establishment. FFB production was 4% below the seasonal budget. Key challenges include a shortage of harvesters, delayed weeding/manuring due to weather, and poor agricultural road conditions. <span class='observation-ref'>(Source: PA 2/2025, Pg. 47-48)</span>",
+                        "Area Statement": "Total Planted Area is <b>1,166.64 ha</b>. This comprises:<br>&bull; <b>Mature:</b> 1,102.51 ha.<br>&bull; <b>Immature (2024B):</b> 64.13 ha.<br>&bull; <b>Unplantable/Ravine:</b> 592.55 ha. <span class='observation-ref'>(Source: PA 2/2025, Pg. 9)</span>",
+                        "Labour Statement": "Current workforce is 130 workers vs requirement of 139.<br>&bull; <b>Harvesters:</b> 61 (Requirement: 73, Shortage: 12). Current harvester ratio is 1:18 ha.<br>&bull; <b>Weeding & Manuring:</b> Gangs are generally sufficient if productivity is maintained. <span class='observation-ref'>(Source: PA 2/2025, Pg. 14)</span>",
+                        "Staff Establishment": "Current strength includes 1 Manager, 2 Assistant Managers, and 2 Field Conductors.<br>&bull; <b>Shortages:</b> Short of 2 Field Supervisors, which is critical given the steep terrain. <span class='observation-ref'>(Source: PA 2/2025, Pg. 13)</span>",
+                        "General Charges": "Total Expenditure is <b>RM 895,911</b> (RM 767.94/ha), which is 12% below the seasonal budget.<br>&bull; <b>Overspending:</b> Staff Accommodation (+61%), Labour Paid Leave (+73%), and Entertainment (+187%). <span class='observation-ref'>(Source: PA 2/2025, Pg. 16-17)</span>",
+                        "Upkeep & Cultivation": "&bull; <b>Weeding:</b> Cost is RM 104.69/ha (High due to labour rates/poisoning jungle trees). Circle spraying is 28% complete (Delayed). Selective weeding is 13% complete (Delayed).<br>&bull; <b>Manuring:</b> Cost is RM 261.62/ha (43% of budget, Delayed).<br>&bull; <b>Roads:</b> RM 487.03/ha (80% of budget), mostly for machinery rental and repairs. <span class='observation-ref'>(Source: PA 2/2025, Pg. 18-31)</span>",
+                        "Harvesting and Collection": "Total Cost is <b>RM 133.32/MT</b> (1% below budget). Cost (Excl. Ext Transport) is RM 94.16/MT (1% above budget).<br>&bull; <b>Harvester Productivity:</b> 1.45 MT/man-day.<br>&bull; <b>Interval:</b> Generally satisfactory (10-15 days). <span class='observation-ref'>(Source: PA 2/2025, Pg. 36-38)</span>",
+                        "Crop Production": "Total FFB is <b>7,787.40 MT</b> (4% below seasonal budget).<br>&bull; <b>Yield:</b> 7.06 MT/ha (Seasonal Budget: 7.37 MT/ha).<br>&bull; <b>Extraction:</b> OER at 20.12%. <span class='observation-ref'>(Source: PA 2/2025, Pg. 40)</span>",
+                        "Production Cost": "Total Cost is <b>RM 382.39/MT</b> (Ex-estate). This is 1% lower than the seasonal budget of RM 387.41/MT. <span class='observation-ref'>(Source: PA 2/2025, Pg. 41)</span>",
+                        "Vehicles Running Cost": "Generally acceptable. Exceptions:<br>&bull; <b>Nissan Lorry SS915U:</b> 65% over budget.<br>&bull; <b>Farm Tractor SYL 8512:</b> 34% over budget due to high repair costs. <span class='observation-ref'>(Source: PA 2/2025, Pg. 42-43)</span>",
+                        "Immature (2024B)": "Area is 64.13 ha (7,514 palms).<br>&bull; <b>Density:</b> 117 palms/ha.<br>&bull; <b>Cost:</b> RM 5,101.63/ha to date.<br>&bull; <b>Status:</b> Planting is considered complete, but supplying is needed for vacant points. <span class='observation-ref'>(Source: PA 2/2025, Pg. 44)</span>",
+                        "Capital Expenditure": "<b>N/A</b> (Road surfacing with crusher run has not been carried out due to material shortage and weather). <span class='observation-ref'>(Source: PA 2/2025, Pg. 31)</span>"
                     },
                     "agronomy": {
                         "Executive Summary": "Visit Date: 10th Feb 2026. Yield FY25/26 (to date Feb 2026) is 13.59 MT/ha, a 31.8% increase YoY. Despite improvement, performance remains below potential due to delayed fertilizer application, slow weeding progress, and machinery/accessibility issues. (Source: AR 1/2026, Pg. 4, 6, 41)",
@@ -151,9 +155,9 @@
                         "Fertilizer Recommendation": "FY26/27 Program reviewed. Mixture B stock from FY25/26 to be reconciled. New planting areas in 25C (99.38 ha) and 26D (131.57 ha) have been incorporated into requirements. (Source: AR 1/2026, Pg. 43, 47-49)"
                     },
                     "audit": {
-                        "Executive Summary": "Overall Rating: Marginally Deficient. While most key controls are applied, consistency and effectiveness were lacking in Payroll (hourly payments) and Oil Palm operations (Quarto Connects usage). (Source: Audit Report, Pg. 1-2)",
-                        "Payroll and Personnel": "Issue: Hourly payment (RM 8.17/Hr) was used for FFB loading in Div 5B, causing the cost/MT to exceed the budget. Recommendation: Standardize payment to piece rate (RM 4.00 - RM 4.50/MT). (Source: Audit Report, Pg. 2-6)",
-                        "Oil Palm Operations": "Issue: Significant variances (up to 100%) between Quarto Connects and manual recording. Recommendation: Enforce mandatory usage. Management has conducted intensive training. (Source: Audit Report, Pg. 7-10)"
+                        "Executive Summary": "Overall Rating: <b>Marginally Deficient</b>. Although most key controls were being applied, the application of certain important controls lacked consistency or effectiveness, particularly in manuring progress and inventory management operations. (Source: Audit Report, Pg. 1-2)",
+                        "Manuring Operations (Div 5B)": "<b>Issue:</b> Significant delay in the FY 25/26 manuring implementation. Division 5B is only 26% complete compared to 59% in Division 5A. The delay is attributed to unstable workforce, rainy weather, poor hilly road conditions, and the need to clear FY 24/25 backlog (43.80 MT Hi-Kay).<br><b>Recommendation & Action:</b> Consult the agronomist and assign general workers/harvesters to support. Management has officially withdrawn the final round of the MIX B program for Division 5B to rebalance workload and ensure timely completion of critical applications. (Source: Audit Report, Pg. 2-8)",
+                        "Stores and Purchases": "<b>Issue:</b> Weaknesses in inventory monitoring identified with RM 50,453 in slow-moving/ageing stock. High volume items like Kenrane 200 (709 Litres valued at RM 34,008) have had no movement since July 2023. This raises significant risks of chemical expiry, obsolescence, and physical deterioration of rubber-based spares.<br><b>Recommendation & Action:</b> Conduct housekeeping, dispose of expired items, and align procurement. Management has identified Ebor Rat Bait for write-off, will transfer some chemicals to sister estates, and is actively planning internal consumption for the rest. (Source: Audit Report, Pg. 9-13)"
                     },
                     "pinfosys": "Not Available"
                 },
@@ -161,11 +165,9 @@
             };
 
 
-            // --- GLOBAL VARIABLES ---
             let chartInstances = {};
             const container = document.getElementById('selected-estate-container');
 
-            // --- FUNCTIONS ---
             function renderEstate() {
                 document.getElementById('header-title').innerText = `${estateData.name} Report`;
                 container.innerHTML = createEstateHTML(estateData);
@@ -287,17 +289,18 @@
                 const auditDiv = document.getElementById(`${estateData.id}-audit`);
                 const pinfosysDiv = document.getElementById(`${estateData.id}-pinfosys`);
 
+                // We use a div container instead of p to allow nested HTML styling like bullets
                 if (agronomyDiv && estateData.reports.agronomy) {
-                    agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-3 text-gray-900">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><div class="text-sm text-gray-700 mt-1 space-y-1">${content}</div>`).join('');
                 }
                 if (plantationDiv && estateData.reports.plantation) {
-                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-3 text-gray-900">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><div class="text-sm text-gray-700 mt-1 space-y-1">${content}</div>`).join('');
                 }
                 if (auditDiv && estateData.reports.audit) {
-                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-3 text-gray-900">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><div class="text-sm text-gray-700 mt-1 space-y-1">${content}</div>`).join('');
                 }
                 if (pinfosysDiv) {
-                    pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600">${estateData.reports.pinfosys}</p>`;
+                    pinfosysDiv.innerHTML = `<div class="text-sm text-gray-700 mt-1">${estateData.reports.pinfosys}</div>`;
                 }
             }
 
