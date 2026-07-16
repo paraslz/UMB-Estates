@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Haruan Estate - Plantation and Agronomy Report</title>
+    <title>Haruan Estate - Plantation, Agronomy & Audit Report</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -65,7 +65,7 @@
             const estateData = {
                 "id": "haruan",
                 "name": "Haruan Estate (Inti)",
-                "reportInfo": "Data based on PA Report (Visit Date: Feb 2026), Audit Report (Visit Date: May 2025), & Agronomy Report (Visit Date: May 2026).",
+                "reportInfo": "Data based on PA Report (Visit Date: Feb 2026), Audit Report (Visit Date: Feb 2026), & Agronomy Report (Visit Date: May 2026).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -102,7 +102,7 @@
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Extraction Rate", "value": "20.19% CPO (Actual)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Road Maintenance", "value": "338% Over Budget" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "<10 Days (Mostly)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 17h2.457a.89.89 0 00.513-.158L22 15.143V5.143l-1.5-.714a1.429 1.429 0 00-1.429 0L17 5.143V17zm0 0l-5-2V5l5 2v10zm-5 0l-5-2V5l5 2v10zM7 17H4.543a.89.89 0 01-.513-.158L2 15.143V5.143l1.5-.714a1.429 1.429 0 011.429 0L7 5.143V17z' /></svg>`, "label": "Infield Loading", "value": "100% Over Budget" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 17h2.457a.89.89 0 00.513-.158L22 15.143V5.143l-1.5-.714a1.429 1.429 0 00-1.429 0L17 5.143V17zm0 0l-5-2V5l5 2v10zm-5 0l-5-2V5l5 2v10zM7 17H4.543a.89.89 0 01-.513-.158L2 15.143V5.143l1.5-.714a1.429 1.429 0 011.429 0L7 5.143V17z' /></svg>`, "label": "Internal Controls", "value": "Deficient (Audit Rpt)" }
                 ],
                 "chartData": {
                     "production": {
@@ -118,12 +118,13 @@
                     }
                 },
                 "observations": [
+                    "<b>Harvesting Delays & Severe Uncollected Crop (Agronomy & Audit):</b> Harvesting intervals extended beyond 15 days in several blocks (P13, P15). Alarmingly, audit inspections revealed 347 FFB bunches left uncollected at platforms for up to 6 days and loose fruits rotting in fields for up to 18 days due to poor field supervision. <span class='observation-ref'>(AR 1/2026 Pg. 26, 28; Audit Rpt Pg. 2-7)</span>",
+                    "<b>Payroll Irregularities & Unjustified Incentives (Audit):</b> The productivity of unregistered and over-aged harvesters was improperly 'parked' under registered workers, artificially triggering IDR 9.6M in unjustified harvesting incentives. <span class='observation-ref'>(Audit Rpt Pg. 8-12)</span>",
+                    "<b>Severe Crawler Underutilization & High Costs (PA & Audit):</b> 12 crawler/Startrac units showed only 36% utilization with 50% broken down during the audit. The lack of designated operators and use of daily-rated wages caused low productivity and exorbitant running costs up to IDR 563,649/MT. <span class='observation-ref'>(PAR Pg. 54-56; Audit Rpt Pg. 12-18)</span>",
                     "<b>Excessive Road Maintenance Costs (PA):</b> Expenditure on roads and bridges (RM 976/ha) is 338% above the annual budget due to extensive raising and hardening of 21km of track. <span class='observation-ref'>(PAR Pg. 23, 42)</span>",
                     "<b>Suboptimal Palm Condition in Waterlogged Areas (Agronomy):</b> Persistently high water tables in P12, P13, and P16 are causing stunted growth and 'orange spotting' (Potassium deficiency) which requires immediate mitigation. <span class='observation-ref'>(AR 1/2026 Pg. 37, 42)</span>",
-                    "<b>Harvesting Delays & Loose Fruits (Agronomy):</b> Harvesting intervals extended beyond 15 days in P13 (HF35) and P15 (HG38), leading to over-ripe bunches and uncollected, oxidized loose fruits. <span class='observation-ref'>(AR 1/2026 Pg. 26, 28)</span>",
                     "<b>Compost Application Quality (Agronomy):</b> While the fertilizer program is 100% complete, compost application suffers from incomplete coverage, uneven distribution, and excessive roadside disposal. <span class='observation-ref'>(AR 1/2026 Pg. 21, 23)</span>",
-                    "<b>FFB Production Variance (PA):</b> YTD production (18,965 MT) is 5% below the seasonal budget, largely attributed to moderate crop trends and historical rehabilitation areas still stabilizing. <span class='observation-ref'>(PAR Pg. 51)</span>",
-                    "<b>Vehicle Underutilization (PA):</b> 11 out of 12 Startrac mini tractors show running costs exceeding budget primarily due to low usage (underutilization) and high repair expenses. <span class='observation-ref'>(PAR Pg. 54-56)</span>"
+                    "<b>FFB Production Variance (PA):</b> YTD production (18,965 MT) is 5% below the seasonal budget, largely attributed to moderate crop trends and historical rehabilitation areas still stabilizing. <span class='observation-ref'>(PAR Pg. 51)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -148,10 +149,10 @@
                         "Fertilizer Recommendation": "FY2026/2027 program includes Mixture B, RP, and Compound. GML is recommended for soil pH management. For new supply palms, utilize 600g of CRF + 500g RP per planting hole. <span class='observation-ref'>(Source: AR 1/2026, Pg. 64, 75)</span>"
                     },
                     "audit": {
-                        "Overall Rating": "Marginally Deficient. Key controls lacked consistency. <span class='observation-ref'>(Source: Audit Rpt, Pg. 2)</span>",
-                        "High Manual Slashing Cost": "Field maintenance costs were excessively high due to uncontrolled man-day allocation for manual slashing. <span class='observation-ref'>(Source: Audit Rpt, Pg. 2-7)</span>",
-                        "Wages Overpayment": "IDR 4.7M overpayment identified due to system bug and fictitious wage claims. <span class='observation-ref'>(Source: Audit Rpt, Pg. 10-14)</span>",
-                        "Uncollected Harvested Bunches": "Field visit found 409 bunches left uncollected for up to 29 days. <span class='observation-ref'>(Source: Audit Rpt, Pg. 15-18)</span>"
+                        "Overall Rating": "Rated as Deficient. Certain key controls were not being applied, significantly impairing the overall system of internal control. Management is required to take prompt corrective actions. <span class='observation-ref'>(Source: Audit Rpt, Pg. 2)</span>",
+                        "Uncollected FFB Bunches and Loose Fruits": "A total of 347 FFB bunches and numerous loose fruits were found uncollected in the fields ranging from 3 to 18 days, despite FFB backlog reports showing zero. This was caused by poor supervision by Assistant Managers and lack of field traceability, leading to potential FFB theft and deterioration in freshness and OER. <span class='observation-ref'>(Source: Audit Rpt, Pg. 2-7)</span>",
+                        "Payroll Irregularities & Unjustified Incentives": "The productivity of unregistered and over-aged harvesters was improperly parked under registered harvesters. This practice artificially triggered excessive harvesting incentive payments, resulting in IDR 9,600,000 paid to workers who obtained high yields (up to 99 MT) via combined output rather than individual effort. <span class='observation-ref'>(Source: Audit Rpt, Pg. 8-12)</span>",
+                        "Poor Utilization of Crawler Units": "12 crawler units recorded a dismal 36% utilization between March and December 2025, with 50% broken down during the audit inspection. The payment of daily rated wages instead of productivity-based incentives, coupled with the lack of designated operators, led to extremely low daily output (avg 5-10 MT) and exorbitant operating costs reaching up to IDR 563,649/MT. <span class='observation-ref'>(Source: Audit Rpt, Pg. 12-18)</span>"
                     }
                 },
                 "policy": " <div class='policy-item'><p class='font-semibold'>Weeding Practice</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-CHEM-02:</b> Utilize low-volume nozzle pumps with pure Glyphosate for circular spraying to enhance productivity. (PAR Pg. 5)</p></div> <div class='policy-item'><p class='font-semibold'>Manuring & Fertilizing</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-03:</b> The use of wheelbarrows is proven to enhance fertilizer distribution productivity. (PAR Pg. 5)</p></div> <div class='policy-item'><p class='font-semibold'>Pruning & Harvesting</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-STD-02:</b> Harvesting intervals should be maintained between 10-15 days to minimize over-ripe bunches. (PAR Pg. 65)</p><p class='text-sm text-gray-600'><b>Policy Ref: PRUNE-STD-01:</b> Over-pruning is to be avoided. In young mature palms, retain at least 2 to 3 fronds below the lowest bunch. (PAR Pg. 55)</p></div>"
