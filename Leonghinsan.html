@@ -40,7 +40,6 @@
         </nav>
     </header>
 
-    <!-- Main container for the report -->
     <div class="container mx-auto p-4 md:p-8">
         <!-- Container where the estate data will be rendered -->
         <div id="selected-estate-container" class="grid grid-cols-1 gap-8">
@@ -60,14 +59,13 @@
         </div>
     </div>
 
-    <!-- Main script for application logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // --- DATA STORE ---
             const estateData = {
                 "id": "leonghinsan",
                 "name": "Leong Hin San Estate",
-                "reportInfo": "Data based on PA Report (Visit: 18th June 2026), Agronomy Report (Visit: 13th Nov 2025) & Audit Report (Nov 2025).",
+                "reportInfo": "Data based on PA Report (Visit: 18th June 2026), Agronomy Report (Visit: 23rd June 2026) & Audit Report (Nov 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -75,15 +73,15 @@
                             "Total Planted: 761.16 ha",
                             "Mature: 761.16 ha",
                             "Immature: 0.00 ha",
-                            "No Replanting Planned"
+                            "Nursery: 3.00 ha (In Progress)"
                         ],
-                        "ref": "(PA 1/2026, Pg. 9)"
+                        "ref": "(PA 1/2026 Pg. 9; Agro 1/2026 Pg. 11)"
                     },
                     "yield": {
                         "title": "Yield/Ha (Actual vs Budget)",
                         "value": "28.22 / 29.32 MT",
                         "note": "2.40% below budget (12 Months)",
-                        "ref": "(PA 1/2026, Pg. 47)"
+                        "ref": "(PA 1/2026 Pg. 47; Agro 1/2026 Pg. 46)"
                     },
                     "cost": {
                         "title": "Production Cost (Actual vs Budget)",
@@ -93,21 +91,21 @@
                     },
                     "manuring": {
                         "title": "Manuring Progress",
-                        "value": "100% Completed",
-                        "note": "959.27 tons applied",
-                        "ref": "(PA 1/2026, Pg. 27)"
+                        "value": "FY25/26 Completed",
+                        "note": "FY26/27 delayed by late deliveries",
+                        "ref": "(Agro 1/2026 Pg. 14-15)"
                     },
                      "ganoderma": {
                         "title": "Ganoderma Status",
-                        "value": "High Risk",
-                        "note": "Infection rate >5%; Mounding ongoing",
-                        "ref": "(Agronomy Pg. 27; PA Pg. 33)"
+                        "value": "High Risk (>5%)",
+                        "note": "Mounding in P10-P12; Re-census ongoing",
+                        "ref": "(Agro 1/2026 Pg. 41-42)"
                     }
                 },
                 "keyMetrics": [
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Labour Ratio", "value": "1 : 10 ha (Adequate)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Barn Owl Low (30%)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Nutrient Status", "value": "Mg Deficiency (Old Palms)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "Barn Owl Low / Rats Controlled" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Nutrient Status", "value": "Mg Deficient (P03, P10-P12)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-indigo-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21.75 8.25-13.5 2.25m0 0L2.25 8.25m11.25-6v6m-11.25 0v6m11.25 0-11.25 6m11.25-6v6m6-3.75-1.5-1.5m0 0L18 8.25m-1.5-1.5V6.375c0-.621.504-1.125 1.125-1.125H21' /></svg>`, "label": "Harvester Ratio", "value": "1 : 16 ha (Adequate)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Prod.", "value": "1.6-1.9 MT/md (Low)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "~15 days (Acceptable)" },
@@ -129,12 +127,12 @@
                     }
                 },
                 "observations": [
-                    "<b>Ganoderma & Magnesium Deficiency:</b> Ganoderma remains a risk with infection rates >5%. Mounding is ongoing (3,750 palms in P2010A). Magnesium deficiency persists in older plantings (P01, P02, P03). <span class='observation-ref'>(Agronomy Pg. 27; PA 1/2026 Pg. 33-34)</span>",
-                    "<b>Yield & Production Costs:</b> Full year yield was 28.22 MT/ha (2.4% below budget). Cost of production reached RM 263.90/t (2% above budget), mainly impacted by increased infield loading and vehicle maintenance costs. <span class='observation-ref'>(PA 1/2026 Pg. 47-48)</span>",
-                    "<b>Weeding Delays:</b> Circle and selective spraying are delayed (44% and 68% completed, respectively) as workers were diverted to harvesting. However, field conditions remain generally acceptable. <span class='observation-ref'>(PA 1/2026 Pg. 19, 22)</span>",
-                    "<b>High Vehicle Maintenance Costs:</b> Tractor running costs are extremely high (WTY4487 is 402% over budget) due to major breakdowns of cranes and grabbers. This aligns with past Audit findings on vehicle issues. <span class='observation-ref'>(PA 1/2026 Pg. 49-50; Audit Pg. 2)</span>",
-                    "<b>Low Harvester Productivity:</b> Harvester productivity is between 1.60 and 1.90 MT/man-day, which is below the optimum target of 2.50 to 3.0 MT/man-day, increasing reliance on manual loading. <span class='observation-ref'>(PA 1/2026 Pg. 42-43)</span>",
-                    "<b>Low Barn Owl Occupancy:</b> Occupancy rate is only 30% (23/76 boxes). Boxes require annual cleaning and maintenance to improve occupancy rates against rat populations. <span class='observation-ref'>(PA 1/2026 Pg. 31)</span>"
+                    "<b>Ganoderma & Magnesium Deficiency:</b> Ganoderma remains a risk with infection rates >5% in most fields. Mounding is ongoing (e.g., P10-P12), and a re-census is in progress. Magnesium deficiency ('orange fronds') persists in older and prime plantings (P03, P10-P12). <span class='observation-ref'>(Agro 1/2026 Pg. 29, 41-42; PA 1/2026 Pg. 33-34)</span>",
+                    "<b>Manuring Delays & Quality Issues:</b> Although the FY25/26 program completed, it suffered delays of up to 3 months. The FY26/27 program is currently interrupted by late deliveries. Application quality in P12C was poor, with fertilizers placed in narrow bands and too close to drains. Wet floors were also noted in the fertilizer store. <span class='observation-ref'>(Agro 1/2026 Pg. 14-17)</span>",
+                    "<b>Yield Decline & Production Costs:</b> Yield fell 12% to 28.22 MT/ha (2.4% below budget), heavily influenced by a 9% reduction in rainfall and dry spells. Cost of production is RM 263.90/t (2% above budget), driven up by severe infield loading and vehicle maintenance costs. <span class='observation-ref'>(Agro 1/2026 Pg. 46-49; PA 1/2026 Pg. 47-48)</span>",
+                    "<b>Weeding Backlog:</b> Overall weeding progress is at 55% against the program due to labor diversion. Circle weeding is notably delayed, leading to overgrown circles in P01A, P03B, and P12C. Broadleaf weeds (Clidemia hirta) require immediate attention to prevent spreading. <span class='observation-ref'>(Agro 1/2026 Pg. 32-33; PA 1/2026 Pg. 19, 22)</span>",
+                    "<b>Pruning & Harvesting Standards:</b> Harvesting intervals are well-maintained (15 days or less), but harvester productivity is low (1.60 - 1.90 MT/man-day). While pruning is up to date, cut fronds are frequently stacked too close to palm circles in terraced areas, obstructing loose fruit collection. <span class='observation-ref'>(Agro 1/2026 Pg. 22; PA 1/2026 Pg. 42-43)</span>",
+                    "<b>High Vehicle Maintenance Costs:</b> Tractor running costs are extremely high (WTY4487 is 402% over budget) due to major breakdowns of cranes and grabbers. This forces reliance on manual loading and aligns with past Audit findings on vehicle issues. <span class='observation-ref'>(PA 1/2026 Pg. 49-50; Audit Pg. 2)</span>"
                 ],
                 "reports": {
                     "plantation": {
@@ -163,10 +161,11 @@
                         "Immature": "N/A (100% Mature Estate). (PA 1/2026, Pg. 9)"
                     },
                     "agronomy": {
-                        "Executive Summary": "Yield performance for FY24/25 was satisfactory at 32.10 MT/ha. Ganoderma infection remains a major concern with infection rates >5% in most fields. <span class='observation-ref'>(Agronomy Report Nov 2025)</span>",
-                        "Nutrient Inputs": "Significant delays noted in NK and Mixture applications in early FY25/26. Kieserite application is complete. <span class='observation-ref'>(Agronomy Report Nov 2025)</span>",
-                        "Agronomic Observation": "<b>Harvesting:</b> Unripe bunches detected in P11A (7%). Loose fruit collection compromised in debris-filled circles.<br><b>Leaf Analysis:</b> Nitrogen levels High. Magnesium (Mg) levels deficient in old plantings (P01, P02, P03). <span class='observation-ref'>(Agronomy Report Nov 2025)</span>",
-                        "Fertilizer Recommendation": "FY26/27 program formulated. Corrective Kieserite prescribed for Mg deficient blocks. <span class='observation-ref'>(Agronomy Report Nov 2025)</span>"
+                        "Executive Summary": "Yield declined 12% to 28.22 MT/ha, likely impacted by rainfall deficits. Crop recovery remains satisfactory with short intervals. Main challenges include widespread Ganoderma infection (>5%), weeding backlog (55% progress), and delays in the manuring program. <span class='observation-ref'>(Agro 1/2026 Pg. 46-50)</span>",
+                        "Nutrient Inputs/Progress of Manuring": "The FY25/26 program was completed (958.43 MT) but experienced delays up to 3 months. The FY26/27 manuring program is currently interrupted by late fertilizer deliveries. Application quality issues were identified in P12C (narrow-banding and placed too close to drains/mounding holes). Water pooling was observed in the fertilizer store. <span class='observation-ref'>(Agro 1/2026 Pg. 14-17)</span>",
+                        "Agronomic Observation": "<b>Harvesting & Pruning:</b> Intervals are well-maintained (15 days or less). Pruning is up to date, but fronds are placed too close to palm circles in terraced areas. <br><b>Weeding:</b> Circle weeding is overdue resulting in overgrown circles in P01A, P03B2, and P12C. Broadleaf weeds are spreading. <br><b>Pest & Disease:</b> Ganoderma >5% in most fields; mounding is ongoing. Rat damage is under control but cattle intrusion was spotted damaging lower fronds in P12. <br><b>Deficiency:</b> Mg deficiency (orange fronds) persists in older/prime plantings. <span class='observation-ref'>(Agro 1/2026 Pg. 22-43)</span>",
+                        "Yield Performance": "FY25/26 average yield was 28.22 MT/ha (12% decline). P10 achieved the highest yield at 32.6 MT/ha, while the oldest P00 planting recorded the lowest at 24.0 MT/ha. The decline was heavily influenced by a 9% reduction in rainfall (1,866mm) and prolonged dry spells. <span class='observation-ref'>(Agro 1/2026 Pg. 46-48)</span>",
+                        "Fertilizer Recommendation": "The FY26/27 fertilizer program is maintained without revision. The next program (FY27/28) will be formulated in the second half of the year. <span class='observation-ref'>(Agro 1/2026 Pg. 51)</span>"
                     },
                     "audit": {
                         "Overall Rating": "<b>Marginally Deficient.</b> <span class='observation-ref'>(Audit Nov 2025 Pg. 1)</span>",
@@ -174,14 +173,14 @@
                     },
                     "pinfosys": "N/A"
                 },
-                "policy": " <div class='policy-item'><p class='font-semibold'>Mechanization & Maintenance</p><p class='text-sm text-gray-600'><b>Policy Ref: MECH-MAINT-01:</b> Strict adherence to maintenance schedules is required to prevent major breakdowns. Daily checks must report oil leaks immediately to prevent excessive lubricant consumption. <span class='observation-ref'>(PA 1/2026 Pg. 50; Audit Pg. 5)</span></p></div> <div class='policy-item'><p class='font-semibold'>Pest & Disease (Barn Owls)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-BIO-02:</b> Increase Barn Owl box occupancy from 30% to target levels. Repair and clean damaged boxes immediately. <span class='observation-ref'>(PA 1/2026 Pg. 31)</span></p></div> <div class='policy-item'><p class='font-semibold'>Weeding Schedule</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-GEN-04:</b> Accelerate weeding program to catch up with the delayed schedule. Prioritize palm circles to facilitate loose fruit collection. <span class='observation-ref'>(PA 1/2026 Pg. 19)</span></p></div>"
+                "policy": " <div class='policy-item'><p class='font-semibold'>Mechanization & Maintenance</p><p class='text-sm text-gray-600'><b>Policy Ref: MECH-MAINT-01:</b> Strict adherence to maintenance schedules is required to prevent major breakdowns. Daily checks must report oil leaks immediately to prevent excessive lubricant consumption. <span class='observation-ref'>(PA 1/2026 Pg. 50; Audit Pg. 5)</span></p></div> <div class='policy-item'><p class='font-semibold'>Pest & Disease (Barn Owls)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-BIO-02:</b> Increase Barn Owl box occupancy from 30% to target levels. Repair and clean damaged boxes immediately. <span class='observation-ref'>(PA 1/2026 Pg. 31)</span></p></div> <div class='policy-item'><p class='font-semibold'>Weeding Schedule</p><p class='text-sm text-gray-600'><b>Policy Ref: WEED-GEN-04:</b> Accelerate weeding program to catch up with the delayed schedule. Prioritize palm circles to facilitate loose fruit collection. <span class='observation-ref'>(PA 1/2026 Pg. 19; Agro 1/2026 Pg. 33)</span></p></div> <div class='policy-item'><p class='font-semibold'>Fertilizer Application</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-APP-03:</b> Broadcast fertilizers evenly across weed-free palm circles. Avoid narrow banding or placing fertilizers inside mounding pits and drainage structures to prevent nutrient leaching. <span class='observation-ref'>(Agro 1/2026 Pg. 17)</span></p></div>"
             };
 
             // --- GLOBAL VARIABLES ---
             let chartInstances = {};
             const container = document.getElementById('selected-estate-container');
 
-            // --- FUNCTIONS ---
+            // --- STREAMING_CHUNK:Rendering functions and logic ---
             function renderEstate() {
                 document.getElementById('header-title').innerText = `${estateData.name} Report`;
                 container.innerHTML = createEstateHTML(estateData);
@@ -202,7 +201,7 @@
                     if (metric.lines) {
                         return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm">${line}</p>`).join('')}<p class="text-xs mt-2 opacity-75">${metric.ref || ''}</p></div>`;
                     }
-                    return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3><p class="text-2xl font-bold">${metric.value}</p><p class="text-xs text-gray-600 mt-1">${metric.note}</p><p class="text-xs mt-2 opacity-75">${metric.ref || ''}</p></div>`;
+                    return `<div class="p-4 rounded-lg ${colorClass}"><h3 class="font-semibold">${metric.title}</h3><p class="text-2xl font-bold">${metric.value}</p><p class="text-xs text-gray-800 mt-1">${metric.note}</p><p class="text-xs mt-2 opacity-75">${metric.ref || ''}</p></div>`;
                 }).join('');
 
                 const keyMetricsHTML = estate.keyMetrics.map(metric => `
@@ -243,6 +242,7 @@
                     </div>`;
             }
 
+            // --- STREAMING_CHUNK:Initializing charts... ---
             function initializeChartsForEstate() {
                 const prodCanvasId = `prodChart-${estateData.id}`;
                 const ageCanvasId = `ageChart-${estateData.id}`;
@@ -326,6 +326,7 @@
                 }
             }
             
+            // --- STREAMING_CHUNK:Populating the dropdown sections... ---
             function populateInternalDropdowns() {
                 const agronomyDiv = document.getElementById(`${estateData.id}-agronomy`);
                 const plantationDiv = document.getElementById(`${estateData.id}-plantation`);
@@ -357,6 +358,7 @@
                 }
             }
 
+            // --- STREAMING_CHUNK:Attaching event listeners... ---
             function attachEventListeners() {
                 container.querySelectorAll('.dropdown-btn').forEach(button => {
                     button.addEventListener('click', (event) => {
@@ -372,6 +374,7 @@
             renderEstate();
         });
         
+        // --- STREAMING_CHUNK:Modal helper functions... ---
         function openPolicyModal(estate) {
             const modalTitle = document.getElementById('modalTitle');
             const modalContent = document.getElementById('modalContent');
