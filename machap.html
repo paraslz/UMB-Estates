@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Inter', sans-serif; }
         .details-content { display: none; }
@@ -30,7 +31,6 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <!-- Header -->
     <header class="bg-white shadow-md">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
             <div id="header-title" class="text-xl font-bold text-gray-900">
@@ -40,7 +40,6 @@
         </nav>
     </header>
 
-    <!-- Main container for the report -->
     <div class="container mx-auto p-4 md:p-8">
         <!-- Container where the estate data will be rendered -->
         <div id="selected-estate-container" class="grid grid-cols-1 gap-8">
@@ -48,7 +47,6 @@
         </div>
     </div>
     
-    <!-- Modal for displaying policy details -->
     <div id="policyModal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4">
         <div class="bg-white p-6 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col">
             <div class="flex justify-between items-center mb-4">
@@ -61,14 +59,13 @@
         </div>
     </div>
 
-    <!-- Main script for application logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // --- DATA STORE ---
             const estateData = {
                 "id": "machap",
                 "name": "Machap & Melaka Pinda Estate",
-                "reportInfo": "Data based on PA Report (Visit Date: 16th December 2025), Agronomy Report (Visit Date: 29th June 2026) & Audit Report (November 2025).",
+                "reportInfo": "Data based on PA Report (Visit Date: 9th July 2026), Agronomy Report (Visit Date: 29th June 2026) & Audit Report (November 2025).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
@@ -79,14 +76,14 @@
                         ]
                     },
                     "yield": {
-                        "title": "Yield/Ha (FY25/26 Actual)",
-                        "value": "21.93 MT",
-                        "note": "Declined 21.1% from FY24/25 (Agronomy)"
+                        "title": "Yield/Ha (FY25/26 Actual vs Budget)",
+                        "value": "21.93 MT / 23.96 MT",
+                        "note": "8% below budgeted yield (PA Report)"
                     },
                     "cost": {
-                        "title": "FFB Cost/Tonne (6 Months FY26)",
-                        "value": "RM 268.59 / RM 318.23",
-                        "note": "16% lower than budget (PA Report)"
+                        "title": "FFB Cost/Tonne (Actual vs Budget)",
+                        "value": "RM 302.95 / RM 297.06",
+                        "note": "2% higher than budget (PA Report)"
                     },
                     "ganoderma": {
                         "title": "Ganoderma Status",
@@ -96,22 +93,22 @@
                      "pests": {
                         "title": "Key Pests",
                         "value": "Rats",
-                        "note": "Damage >10% in some blocks, 2nd baiting req."
+                        "note": "Damage >10%, Low Barn Owl Occupancy (16%)"
                     }
                 },
                 "keyMetrics": [
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Labour Ratio", "value": "1:11 ha (Adequate)" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "P&D Status", "value": "High (Ganoderma, Rats)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "19.41%" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Bunches/Palm", "value": "12 (Down from 14)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "Avg 2.1 rnds/mth" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12 12 0 0012 21.644a12 12 0 008.618-15.64z' /></svg>`, "label": "Manuring Prog.", "value": "99% Complete" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "OER % (YTD)", "value": "19.32%" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Harvester Prod.", "value": "1.5-2.2 MT/md (Low)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "11-19 Days" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12 12 0 0012 21.644a12 12 0 008.618-15.64z' /></svg>`, "label": "Manuring Prog.", "value": "100% Complete" }
                 ],
                 "chartData": {
                     "production": {
                         "labels": ["FY 22/23", "FY 23/24", "FY 24/25", "FY 25/26"],
                         "ffb": [27.80, 27.45, 27.79, 21.93],
-                        "rainfall": [1546.2, 969.5, 1509.0, 1500.0], // Approx rainfall
+                        "rainfall": [1546.2, 969.5, 1509.0, 1500.0], 
                         "note": "*Historical Annual FFB yield. FY25/26 Yield declined to 21.93 MT/Ha. (Source: Agronomy Report 1-2026 Pg. 64)"
                     },
                     "ageProfile": {
@@ -122,35 +119,34 @@
                     }
                 },
                 "observations": [
-                    "<b>Yield Decline (Agronomy & PA):</b> While PA noted strong 6-month performance initially, the full FY25/26 yield concluded at 21.93 MT/ha, a 21% drop from the previous year. This was driven by lower bunch counts (14 to 12 per palm) and higher harvesting intervals due to harvester redeployment to LHS Estate. <span class='observation-ref'>(AR 1-2026 Pg. 36, 64-67; PA Pg. 43)</span>",
-                    "<b>Ganoderma Infection (Critical):</b> The estate faces a severe 23% Ganoderma infection rate (11% dead, 12% infected). Trunk chipping trials show deep internal tissue destruction before external symptoms appear. Mounding shows some root regeneration but carries high reinfection risks. <span class='observation-ref'>(AR 1-2026 Pg. 18-26)</span>",
-                    "<b>Harvesting Standards & Losses:</b> Harvesting intervals averaged 2.1 rounds/month. Ripeness standards are satisfactory, but there is significant trash contamination in loose fruit bags and instances of uncollected bunches left in field drains. <span class='observation-ref'>(AR 1-2026 Pg. 36-41)</span>",
-                    "<b>Pruning Improvements:</b> Pruning standards have noticeably improved across both Machap and Melaka Pinda divisions. However, instances of over-pruning and messy frond stacking remain in young mature areas (MC22, MP19A). <span class='observation-ref'>(AR 1-2026 Pg. 42-47, 61-63)</span>",
-                    "<b>Fertilizer Storage Issues:</b> Despite 99% completion of the FY25/26 manuring program, severe wet floor conditions persist in the fertilizer store. Construction of peripheral drainage (similar to Batu Anam) is urgently recommended. <span class='observation-ref'>(AR 1-2026 Pg. 33-35)</span>",
-                    "<b>Pest Control (Rats):</b> Rat damage remains above the 10% threshold in several blocks, requiring follow-up baiting. Barn owl boxes (62 units) require maintenance to improve occupancy. <span class='observation-ref'>(AR 1-2026 Pg. 55-58)</span>",
-                    "<b>Internal Audit Findings:</b> Risks identified in FFB weighing (manual tare entry) and store management (duplicate codes, lubricant measurement). <span class='observation-ref'>(Audit Rpt Pg. 2-8)</span>"
+                    "<b>Yield & Production Deficit (Blend):</b> FY25/26 yield concluded at 21.93 MT/ha, an 8% deficit against the budget (23.96 MT/ha) and a 21% drop from the previous year. While crop extraction (OER) is strong at 19.32%, total FFB production (22,258 MT) fell short due to harvester redeployment, lower bunch counts, and high MTG tractor breakdowns delaying infield collection. <span class='observation-ref'>(PA Pg. 43-46; AR 1-2026 Pg. 64-67)</span>",
+                    "<b>Ganoderma Infection (Agronomy):</b> The estate faces a severe 23% Ganoderma infection rate (11% dead, 12% infected). Trunk chipping trials show deep internal tissue destruction before external symptoms appear. Mounding shows some root regeneration but carries high reinfection risks. <span class='observation-ref'>(AR 1-2026 Pg. 18-26)</span>",
+                    "<b>Harvesting Standards & Mechanization (Blend):</b> Harvesting intervals averaged 11-19 days, but harvester productivity is notably low (1.5-2.2 MT/manday). A significant issue is the high breakdown rate of MTG tractors, leading to a 49% spike in infield loading costs over budget. EV Badang implementation in young palms is satisfactory, though capacity is underutilized. <span class='observation-ref'>(PA Pg. 39-43; AR 1-2026 Pg. 36-41)</span>",
+                    "<b>Pest Control Challenges (Blend):</b> Rat damage remains above the 10% threshold in several blocks, requiring follow-up baiting. Compounding this, barn owl box occupancy is alarmingly low at 16% (7/44 boxes occupied), prompting a recommendation to source specialized boxes from \"The Bright Farm\" to improve occupancy. <span class='observation-ref'>(PA Pg. 28-29; AR 1-2026 Pg. 55-58)</span>",
+                    "<b>Agronomic Upkeep (Blend):</b> The manuring program for the fiscal year is 100% completed. Pruning standards have noticeably improved across divisions. Circle spraying was deliberately delayed (53% complete) to save costs as ground conditions remained very good following mounding works. <span class='observation-ref'>(PA Pg. 17-32; AR 1-2026 Pg. 33-35, 42-47)</span>",
+                    "<b>Internal Audit Findings (Audit):</b> Risks identified in FFB weighing (manual tare entry) and store management (duplicate codes, lubricant measurement). <span class='observation-ref'>(Audit Rpt Pg. 2-8)</span>"
                 ],
                 "reports": {
                     "agronomy": {
                         "Executive Summary": "Yield for FY25/26 declined by 21.1% to 21.93 MT/ha. Major limiting factors include severe Ganoderma infection (23%) and harvester redeployment affecting intervals. However, pruning and ground vegetation management have shown noticeable improvement. The manuring program achieved 99% completion despite some delivery delays. (Source: AR 1-2026, Pg. 4-7, 64-67)",
-                        "Nutrient Inputs/Progress of Manuring": "FY25/26 manuring is 99% complete (1,180.91 MT applied). Minor delays occurred in NK and Mix B applications. Crucially, the fertilizer store continues to suffer from persistent wet floor conditions; installing a peripheral drain is strongly recommended. (Source: AR 1-2026, Pg. 33-35)",
+                        "Nutrient Inputs/Progress of Manuring": "FY25/26 manuring is 100% complete (1,180.86 MT applied). Minor delays occurred in NK and Mix B applications. Crucially, the fertilizer store continues to suffer from persistent wet floor conditions; installing a peripheral drain is strongly recommended. (Source: AR 1-2026, Pg. 33-35)",
                         "Agronomic Observation": "<b>Harvesting:</b> Averaged 2.1 rounds/month. Quality is acceptable (minimal overripe), but loose fruit collection contains excessive trash, and uncollected bunches were found in field drains. <br><b>Pruning:</b> Quality improved in both Machap and Melaka Pinda divisions; however, over-pruning was noted in young mature blocks (MC22, MP19A). <br><b>Weeding:</b> Well managed, dominated by soft grasses (<i>Axonopus compressus</i>). <br><b>Pest & Disease:</b> Rat damage exceeded 10% in certain blocks, necessitating a second baiting round. (Source: AR 1-2026, Pg. 36-63)",
                         "Yield Performance": "FY25/26 yield dropped to 21.93 MT/ha compared to 27.79 MT/ha in FY24/25. The decline is primarily due to a reduction in bunch numbers per palm (from 14 to 12). Young mature blocks (MC2020, MC2022) showed stable or slightly improved yields as they enter their prime. (Source: AR 1-2026, Pg. 64-67)",
                         "Fertilizer Recommendation": "The FY26/27 program is maintained. Any delayed applications from the previous year must not be carried forward beyond April 2027. New plantings should receive 600g controlled-release fertilizer (CRF) and 500g RP in the planting hole. (Source: AR 1-2026, Pg. 70, 81-83)"
                     },
                     "plantation": {
-                        "Executive Summary": "<b>Performance:</b> Satisfactory. <br><b>Production:</b> 13,631.88 MT (24% above budget). <br><b>Cost:</b> RM 268.59/MT (16% below budget). <br><b>Recommendation:</b> Replanting recommended for Field MP2003A (30.04 ha) in FY 26/27 due to low stand (82/ha). <br><b>Focus:</b> enhance worker skills to boost productivity. (Source: PA, Pg. 47-48)",
-                        "Area Statement": "<b>Total Planted (Mature):</b> 1,014.82 ha. <br><b>Immature:</b> 0 ha. <br><b>Other Crops:</b> 5.78 ha (Stevia, Pepper, Durian). <br><b>Pineapple:</b> 13.31 ha on TNB Rentis. <br><b>Replanting Candidate:</b> Field MP2003A (30.04 ha) proposed for FY 26/27. (Source: PA, Pg. 9-11)",
-                        "Labour Statement": "<b>Total Force:</b> 97 workers (83 Checkroll, 14 Contract). <br><b>Ratio:</b> 1 worker : 11 ha. <br><b>Harvesters:</b> 53 total (including MTG drivers). Ratio 1:19 ha. <br><b>Contractors:</b> 14 workers covering 194.06 ha. Turnover is high due to tall palms and competition. <br><b>Action:</b> Intensify efforts to retain workers. (Source: PA, Pg. 13-14)",
-                        "Staff Establishment": "<b>Manager:</b> Mr. Livindran A/L Ganesan. <br><b>Team:</b> 1 Assistant Manager, 1 Cadet Assistant, 2 Field Supervisors (Harvesting), 1 Trainee (Maintenance). <br><b>Status:</b> Establishment is adequate. (Source: PA, Pg. 12)",
-                        "General Charges": "<b>Cost:</b> RM 889.49/ha (Budget: RM 867.38/ha) - 3% Over. <br><b>Key Variances:</b> <ul class='list-disc pl-4'><li>Paid Leave: RM 36k over budget.</li><li>Medical: RM 7k over due to hospitalization.</li><li>Recruitment: High costs incurred.</li></ul> <b>Assessment:</b> Generally acceptable despite overspend. (Source: PA, Pg. 15-16)",
-                        "Upkeep Cultivation": "<b>Total Cost:</b> RM 1,007.37/ha (16% below budget). <br><b>Weeding:</b> RM 117.90/ha. Program delayed (31% complete) to accommodate mounding. <br><b>Manuring:</b> RM 573.56/ha. Delayed due to supplier delivery issues (Oct program pending). <br><b>Pests:</b> RM 43.87/ha. Barn Owl occupancy low (13%). <br><b>Roads:</b> RM 62.58/ha. Major grading deferred to Feb-Apr 2026. (Source: PA, Pg. 17-33)",
-                        "Harvesting and Collection": "<b>Cost:</b> RM 96.11/MT (1% above budget). <br><b>Infield Loading:</b> High at RM 24.35/MT (46% over) due to MTG breakdowns. <br><b>Intervals:</b> 10-18 days. Oct delays due to assisting Leong Hin San Estate. <br><b>Mechanization:</b> 3 Electric Badang (EV) rented for young mature areas. <br><b>Productivity:</b> 1.5-2.2 MT/manday (Low). Target >3.0 MT. (Source: PA, Pg. 37-41)",
-                        "Crop Production": "<b>Total FFB:</b> 13,631.88 MT (6 Months). <br><b>Yield:</b> 13.43 MT/ha (Budget: 10.80 MT/ha). <br><b>OER:</b> 19.41% (Budget: 18.02%). <br><b>KER:</b> 5.08%. <br><b>Assessment:</b> 24% above budget. Highly satisfactory. (Source: PA, Pg. 43)",
-                        "Production Cost": "<b>Total Ex-Estate:</b> RM 268.59/MT (Budget: RM 318.23/MT). <br><b>Breakdown:</b> <ul class='list-disc pl-4'><li>General Charges: RM 66.22/MT</li><li>Upkeep: RM 74.99/MT</li><li>Harvesting: RM 127.38/MT</li></ul> <b>Assessment:</b> 16% below budget driven by high yields. (Source: PA, Pg. 44)",
-                        "Vehicles Running Cost": "<b>Status:</b> Generally acceptable. <br><b>Issues:</b> <ul class='list-disc pl-4'><li>Tractor WA50FF & VAR9642: Exceeded budget due to repairs.</li><li>MTG: All units show higher costs due to major breakdowns.</li></ul> <b>Fleet:</b> 5 Farm Tractors, 5 MTG (4 active). (Source: PA, Pg. 45-46)",
+                        "Executive Summary": "The estate's performance is acceptable. Crop production (22,258.13 MT) is 8% below budget, and the cost of production (RM 302.95/MT) is 2% above budget. Replanting of 30.04 ha has started. Management must focus on enhancing harvester productivity, resolving vehicle breakdown issues, and addressing low barn owl occupancy. (PA Report, Pg. 4, 7, 8, 49)",
+                        "Area Statement": "Total planted area is 1,014.82 ha. This comprises: <ul class='list-disc pl-5 mt-1'><li><b>Mature:</b> 1,014.82 ha (100%).</li><li><b>Replanting:</b> 30.04 ha (Field MP2003A). Felling and chipping commenced in July 2026.</li><li><b>Other Crops:</b> 5.78 ha (Stevia, pepper, durian) and 13.31 ha Pineapple on TNB Rentis.</li></ul> (PA Report, Pg. 10-11, 49)",
+                        "Labour Statement": "Current workforce is 95 workers vs requirement (Ratio 1:11 ha), which is adequate. <ul class='list-disc pl-5 mt-1'><li><b>Harvesters:</b> 61 workers including MTG drivers (Ratio 1:17 ha).</li><li><b>Contractors:</b> Previous harvesting contractor terminated due to inability to adapt to the offered rates.</li></ul> (PA Report, Pg. 13-14, 49)",
+                        "Staff Establishment": "The staff establishment is adequate with 5 personnel, including the Manager (Mr. Livindran A/L Ganesan), 2 Assistant Managers (one overseeing harvesting, the other cash crops), and 3 Field Supervisors. (PA Report, Pg. 12)",
+                        "General Charges": "Total General Charges are <b>RM 1,739.46/ha</b>, which is perfectly in line with the budget of RM 1,740.16/ha. <ul class='list-disc pl-5 mt-1'><li><b>Overspending:</b> 'Labour Wages & Allowance' (+12%), 'Labour EPF' (+77% due to foreign worker unbudgeted costs), 'Welfare & Benefit' (+75%), and 'Recruitment' (+29%).</li></ul> (PA Report, Pg. 15-16)",
+                        "Upkeep and Cultivation": "Total upkeep cost is RM 2,078.55/ha (14% below budget). <ul class='list-disc pl-5 mt-1'><li><b>Weeding:</b> Circle spraying deliberately delayed (53% complete) to save costs as ground conditions were acceptable following mounding. Cost is RM 223.85/ha (17% below budget).</li><li><b>Manuring:</b> 100% complete (1,180.86 MT applied).</li><li><b>Pest & Disease:</b> Cost is 44% below budget due to the absence of bagworms, but Barn Owl occupancy is very low at 16% (7/44 boxes).</li></ul> (PA Report, Pg. 17-35)",
+                        "Harvesting and Collection": "Cost is RM 131.12/MT, slightly higher (6%) than the budget. <ul class='list-disc pl-5 mt-1'><li><b>Infield Loading:</b> Spiked by 49% (RM 23.14/MT vs budget RM 15.58) due to high MTG tractor breakdowns.</li><li><b>Interval:</b> Ranged from 11-19 days (tall palm area >15 days).</li><li><b>Productivity:</b> Low at 1.50 - 2.20 MT/manday. Target needs to be >3.0 MT.</li><li><b>Mechanization:</b> 4 MTG and 3 EV Badang tricycles used in young palms.</li></ul> (PA Report, Pg. 39-43)",
+                        "Crop Production": "Total FFB Production (12 Months) is <b>22,258.13 MT</b>, which is 8% below the budget of 24,321.00 MT. <ul class='list-disc pl-5 mt-1'><li><b>Yield/ha:</b> 21.93 MT/ha.</li><li><b>Extraction:</b> OER at 19.32% vs Budget 18.02%.</li></ul> (PA Report, Pg. 45)",
+                        "Production Cost": "Ex-Estate Cost of Production is <b>RM 302.95/MT</b>, which is 2% above the budget of RM 297.06/MT. <ul class='list-disc pl-5 mt-1'><li><b>General Charges:</b> RM 79.31/MT</li><li><b>Upkeep:</b> RM 92.48/MT</li><li><b>Harvesting:</b> RM 97.26/MT</li></ul> (PA Report, Pg. 46)",
+                        "Vehicles Running Cost": "Vehicle costs are excessively high. <ul class='list-disc pl-5 mt-1'><li><b>Farm Tractors:</b> 5 units exceeded budget by 27% to 68%.</li><li><b>Mini Tractors:</b> 5 units exceeded budget by 82% to 213% due to low utilization and high breakdown/repair costs. Management urged to reassess or write off badly damaged units.</li></ul> (PA Report, Pg. 47-48, 51)",
                         "Capital Expenditure": "N/A",
-                        "Immature": "N/A (0 ha). Immature area declared mature Jan 2025. (Source: PA, Pg. 9)"
+                        "Immature": "N/A (100% Mature Estate prior to July 2026 replanting). (PA Report, Pg. 10)"
                     },
                     "pinfosys": "Not Available",
                     "audit": {
@@ -162,7 +158,6 @@
                 "policy": " <div class='policy-item'><p class='font-semibold'>Ganoderma Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Gano-01:</b> Mounding should be considered as a temporary mitigation measure to prolong the productive lifespan of infected palms. Replanting activities must follow Ganoderma Management SOP to minimize inoculum spread. (AR Pg. 26-32)</p></div> <div class='policy-item'><p class='font-semibold'>Fertilizer Storage</p><p class='text-sm text-gray-600'><b>Policy Ref: FERT-STORE-02:</b> Construct peripheral drains around fertilizer stores to prevent moisture ingress and resolve wet floor conditions. (AR Pg. 35)</p></div> <div class='policy-item'><p class='font-semibold'>Pest Control (Rats)</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Rat-02a:</b> Conduct a post-baiting census after baiting is discontinued. If damage remains >10%, a second round of baiting must be executed. Maintain barn owl boxes annually. (AR Pg. 55-58)</p></div>"
             };
 
-            // --- GLOBAL VARIABLES ---
             let chartInstances = {};
             const container = document.getElementById('selected-estate-container');
 
@@ -204,7 +199,6 @@
                 const ageProfileChartHTML = (estate.chartData.ageProfile.data && estate.chartData.ageProfile.data.length > 0) ?
                     `<div class="pie-chart-container"><canvas id="ageChart-${estate.id}"></canvas></div>` :
                     `<div class="pie-chart-container flex items-center justify-center bg-gray-50 rounded-lg p-4"><p class="text-gray-500 text-center">Palm age profile data is not available in the provided reports.</p></div>`;
-
 
                 return `
                     <div class="bg-white p-6 rounded-lg shadow-lg animate-fade-in">
@@ -277,18 +271,18 @@
                 const auditDiv = document.getElementById(`${estateData.id}-audit`);
                 
                 if (agronomyDiv && estateData.reports.agronomy) {
-                    agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `<h4 class="font-semibold mt-4 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600 mt-1">${content}</p>`).join('');
                 }
                 if (plantationDiv && estateData.reports.plantation) {
-                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600">${content}</p>`).join('');
+                    plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `<h4 class="font-semibold mt-4 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><div class="text-sm text-gray-600 mt-1">${content}</div>`).join('');
                 }
                  if (pinfosysDiv && estateData.reports.pinfosys === "Not Available") {
-                    pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600">Not Available</p>`;
+                    pinfosysDiv.innerHTML = `<p class="text-sm text-gray-600 mt-2">Not Available</p>`;
                 }
                  if (auditDiv && estateData.reports.audit) {
-                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-2 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p classs="text-sm text-gray-600">${content}</p>`).join('');
+                    auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `<h4 class="font-semibold mt-4 text-gray-800">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4><p class="text-sm text-gray-600 mt-1">${content}</p>`).join('');
                 } else if (auditDiv) {
-                    auditDiv.innerHTML = `<p class="text-sm text-gray-600">Not Available</p>`;
+                    auditDiv.innerHTML = `<p class="text-sm text-gray-600 mt-2">Not Available</p>`;
                 }
             }
 
