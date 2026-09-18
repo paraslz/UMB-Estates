@@ -7,6 +7,7 @@
     <title>Arwana Estate - Plantation, Agronomy and Audit Report</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -59,28 +60,33 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Registering the datalabels plugin globally or it can be done specifically per chart
+            Chart.register(ChartDataLabels);
+
             const estateData = {
                 "id": "arwana",
                 "name": "Arwana Estate (Inti)",
-                "reportInfo": "Data based on Audit Report (Apr 2026), PA Report (Feb 2026) & Agronomy Report (Apr 2025).",
+                "reportInfo": "Data based on PA Report (August 2026), Audit Report (April 2026) & Agronomy Report (April 2025).",
                 "summaryMetrics": {
                     "area": {
-                        "title": "Estate Area (Dec 2025)",
+                        "title": "Estate Area (Aug 2026)",
                         "lines": [
                             "Total Planted: 1,450.34 ha",
                             "Mature: 1,000.73 ha",
-                            "Immature: 449.61 ha"
+                            "Immature: 449.61 ha",
+                            "Productive: 589 ha"
                         ]
                     },
                     "yield": {
-                        "title": "Yield/Ha (Actual vs Budget)",
-                        "value": "6.96 / 6.97 MT",
-                        "note": "8 Months YTD Dec '25 (Ref: PAR Pg. 75)"
+                        "title": "Yield/Ha (MT)",
+                        "type": "chart",
+                        "canvasId": "miniYieldChart",
+                        "note": "*FY2025/26 (May-Apr) Actual vs Budget"
                     },
                     "cost": {
-                        "title": "FFB Cost/Tonne (Actual vs Budget)",
-                        "value": "RM 578.00 / RM 409.00",
-                        "note": "Ex-Estate (Ref: PAR Pg. 77)"
+                        "title": "FFB Cost/Tonne",
+                        "value": "RM 572.00 / RM 409.00",
+                        "note": "Actual vs Budget Ex-Estate (Ref: PAR Pg. 42)"
                     },
                     "audit_loss": {
                         "title": "Audit Overpayments",
@@ -90,37 +96,37 @@
                      "pests": {
                         "title": "Pest Status",
                         "value": "High (Rats)",
-                        "note": "High damage >10% post-baiting (Ref: PAR Pg. 60)"
+                        "note": "20% damage, baiting not yet done (Ref: PAR Pg. 31)"
                     }
                 },
                 "keyMetrics": [
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Control Rating", "value": "Deficient (IAD)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Labour Ratio", "value": "1:11 ha (Adequate)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "12 days" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' /></svg>`, "label": "Labour Ratio", "value": "1:9 ha (Satisfactory)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>`, "label": "Harvest Interval", "value": "14 days" },
                     { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-orange-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>`, "label": "Contractor Fraud", "value": "IDR 17.2M Loss" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Seedling Mortality", "value": "High (2025 Plantings)" },
-                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Production", "value": "99% of Budget" }
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>`, "label": "Harvester Prod.", "value": "6.6 hrs/day (Low)" },
+                    { "icon": `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>`, "label": "Production YTD", "value": "101% of Budget" }
                 ],
                 "chartData": {
                     "production": {
-                        "labels": ["2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2025/26 (YTD 8M)"],
-                        "ffb": [1.13, 1.17, 2.99, 4.20, 5.72, 9.61, 6.96],
-                        "note": "*FFB Performance trend (Source: PAR 1/2026 Pg. 75)"
+                        "labels": ["2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25", "2025/26 (12M)"],
+                        "ffb": [1.17, 2.99, 4.20, 5.72, 9.61, 9.14, 10.62],
+                        "note": "*FFB Performance trend (Source: PAR 2/2026 Pg. 40)"
                     },
                     "ageProfile": {
                         "labels": ["Mature (69%)", "Immature (31%)"],
                         "data": [69, 31],
                         "title": "Arwana Estate - Palm Age Distribution",
-                        "note": "*Source: PAR 1/2026, Pg. 10."
+                        "note": "*Source: PAR 2/2026, Pg. 10."
                     }
                 },
                 "observations": [
-                    "<b>Audit Rating - Deficient:</b> Internal Audit has rated Arwana Estate as 'Deficient' due to significant control weaknesses in contract management, field maintenance supervision, and payroll processing. <span class='observation-ref'>(Audit Report Pg. 1, 2)</span>",
-                    "<b>Production Cost & Overspending:</b> Ex-Estate cost is highly over budget at RM 578/MT vs RM 409/MT. This is driven by massive overspending in General Charges (+138%) and Upkeep (+12%). <span class='observation-ref'>(PAR Pg. 19-22, 77)</span>",
-                    "<b>Low Harvester Productivity:</b> Harvesters are missing budget targets, with local harvesters displaying erratic attendance. Harvesting rounds are only 18 vs 24 budgeted. <span class='observation-ref'>(PAR Pg. 72-74)</span>",
-                    "<b>Rehabilitation & Supplying Delays:</b> Rehabilitation is extremely delayed (only 38 ha out of 173 ha done). Furthermore, massive seedling mortality in 2025 plantings means a massive resupply is needed in 2027. <span class='observation-ref'>(PAR Pg. 14, 67, 85)</span>",
-                    "<b>Manuring Program Delay:</b> Only 60% of manuring rounds were completed by December 2025 due to worker shortages and over-estimating rehab needs. Agronomy reports note chronic manuring delays as a primary factor for poor yield expectations. <span class='observation-ref'>(AR Pg. 17-18; PAR Pg. 57-58)</span>",
-                    "<b>Pest Issues:</b> High rat damage was detected during the census despite previous baiting, requiring ongoing follow-up rounds. <span class='observation-ref'>(PAR Pg. 60)</span>"
+                    "<b>Audit Rating - Deficient:</b> Internal Audit rated Arwana as 'Deficient' due to significant control weaknesses in contract management and field maintenance supervision. <span class='observation-ref'>(Audit Report Pg. 1, 2)</span>",
+                    "<b>Massive OPEX Overruns:</b> Ex-Estate cost is highly over budget at RM 572/MT vs RM 409/MT. General Charges are 131% over budget (driven by MSPO compliance and utility allocations), and Upkeep is 10% overspent. <span class='observation-ref'>(PAR Pg. 15, 42)</span>",
+                    "<b>Severe Manuring Delays:</b> Only 30% of manuring rounds (167 out of 550) were completed. This is due to reliance on depleting old stock and delayed delivery caused by transport issues. Both Agronomy and PA reports emphasize this as a yield risk. Semi-mechanization is strongly recommended. <span class='observation-ref'>(AR Pg. 17-18; PAR Pg. 30)</span>",
+                    "<b>High Rat Damage:</b> Census indicates a high rat damage rate of roughly 20%, well above the 10% threshold. However, rat baiting has not yet commenced. <span class='observation-ref'>(PAR Pg. 31)</span>",
+                    "<b>Low Harvester Productivity:</b> Harvesters are only working an average of 6.6 hours per day. Management must monitor workers closely and is urged to implement mechanical in-field FFB collection to boost productivity. <span class='observation-ref'>(PAR Pg. 39)</span>",
+                    "<b>Production Performance:</b> Yield has marginally exceeded the budget, hitting 10.62 MT/ha (101% of budget) and improving 16% over the prior year, despite the rehabilitation areas remaining non-productive. <span class='observation-ref'>(PAR Pg. 40)</span>"
                 ],
                 "reports": {
                     "audit": {
@@ -130,18 +136,18 @@
                         "Payroll Overpayment": "IDR 8,994,863 overpaid due to wrong worker status classification and failure to reconcile piece-rated work against Area Statement palm stands. (Audit Report, Pg. 12-16)"
                     },
                     "plantation": {
-                        "Executive Summary": "The estate's performance requires improvement. Crop production (6,965.75 MT) is slightly below budget (99%), but the cost of production (RM 578/MT) is significantly over budget (+41%). Management is urged to find ways to increase workers' productivity, expedite the rehabilitation of neglected blocks, and strictly control General Charges. (PA Report, Pg. 4, 8, 75, 77)",
-                        "Area Statement": "As of Dec 2025, the total planted area is 1,450.34 ha. This comprises:<br>• <b>Mature:</b> 1,000.73 ha (69%).<br>• <b>Immature:</b> 449.61 ha (31%).<br>• <b>Rehabilitation:</b> Delayed. Only 38 ha of 173 ha completed. Remaining 100 ha carried forward to FY2026/27. (PA Report, Pg. 10, 14)",
-                        "Labour Statement": "Current workforce is 102 actual workers vs requirement of 140. Ratio of workers to planted ha is 1:11 ha (Satisfactory).<br>• <b>Harvesters:</b> 31 available vs 60 required (Ratio 1:32 ha overall, but 1:19 for currently productive 589 ha). Harvester productivity is low due to poor work ethic of local workers.<br>• <b>Manuring:</b> 9 workers available vs 11 required (Shortage of 2).<br>• <b>Upkeep/Spraying:</b> 28 workers available vs 23 required. (PA Report, Pg. 16-17, 74)",
-                        "Staff Establishment": "The staff establishment is adequate. Personnel include 1 Estate Manager (Bpk Ismanto Arga), 2 Senior Assistants (including Bpk Rafael Raya, joined Jan 2026), 2 Assistants, and 1 KTU. (PA Report, Pg. 18)",
-                        "General Charges": "Total General Charges are 1,079 RM/ha, which is 138% above the budget of 432 RM/ha.<br>• <b>Overspending:</b> 'Labour Wages' (+20% due to unbudgeted staff), 'Water/Electricity' (+22%), and massive 'Misc Expenses' due to writing off old palm seedlings.<br>• <b>ISPO:</b> Overspent by 2730% for safety clothing and equipment. (PA Report, Pg. 19-21)",
-                        "Upkeep and Cultivation": "• <b>Weeding:</b> Circle spraying is 60% complete (1,198 ha). Selective spraying is 69% complete (1,386 ha).<br>• <b>Manuring:</b> Only 60% (3 rounds) complete due to over-estimating requirements in rehab areas and worker shortages.<br>• <b>Pest & Disease:</b> High rat damage recorded in census. Baiting program commenced in Jan 2026. (PA Report, Pg. 26, 32, 57-60)",
-                        "Harvesting and Collection": "YTD Cost is RM 72.98/MT, higher than the budget of RM 65.56/MT.<br>• <b>Interval:</b> Averaged 12 days.<br>• <b>Productivity:</b> Rounds achieved were only 18 vs 24 budgeted. Low outturn (85%) due to local harvesters.<br>• <b>Transport:</b> High internal transport costs (RM 18.87/MT) due to using trucks with bins from Seluang Estate. (PA Report, Pg. 72-74)",
-                        "Crop Production": "YTD (8 Months) FFB Production is 6,965.75 MT, which is 99% of the budget of 6,979.15 MT.<br>• <b>Yield/Ha:</b> 6.96 MT/ha.<br>• <b>Extraction:</b> OER at 20.19% vs Budget 21.00%. (PA Report, Pg. 75)",
-                        "Production Cost": "YTD Ex-Estate Cost of Production is RM 578/MT, which is significantly over the budget of RM 409/MT.<br>• <b>General Charges:</b> RM 225/MT.<br>• <b>Upkeep:</b> RM 281/MT.<br>• <b>Harvesting:</b> RM 73/MT. (PA Report, Pg. 77)",
-                        "Vehicles Running Cost": "Vehicle running costs were below the budget for all vehicles and were under control. (PA Report, Pg. 78)",
-                        "Capital Expenditure": "Underspent. Total actual is IDR 5.49 Billion vs Budget IDR 7.88 Billion. 10,985 meters (73%) of roads were surfaced with laterite, primarily at rehabilitated areas. (PA Report, Pg. 62, 79-80)",
-                        "Immature": "Total of 449.61 ha.<br>• <b>2023/24 Plantings:</b> Clean circles and inter-rows. Manuring is delayed.<br>• <b>2025 Plantings:</b> High seedling casualties. Massive supplying will be required in 2027. (PA Report, Pg. 81-86)"
+                        "Executive Summary": "The estate achieved 10,630 MT FFB (101% of budget), producing 10.62 MT/ha. However, the cost of production (RM 572/MT) is alarmingly over budget by RM 163/MT, heavily driven by General Charges. Manuring is severely delayed, and harvesters' daily productivity requires strict monitoring. (PA Report, Pg. 4, 40-42)",
+                        "Area Statement": "As of April 2026, the total planted area remains 1,450.34 ha.<br>• <b>Mature:</b> 1,000.73 ha (only 589 ha currently productive).<br>• <b>Immature:</b> 449.61 ha.<br>• <b>Rehabilitation:</b> 69 ha completed out of 177 ha targeted for FY26/27. (PA Report, Pg. 10)",
+                        "Labour Statement": "Actual workforce is 102 vs requirement of 140. Overall ratio is 1:9 ha (Satisfactory).<br>• <b>Harvesters:</b> 35 available, which is adequate for the 589 ha of productive land (Ratio 1:18 ha).<br>• <b>Manuring:</b> 6 available vs 11 required. (PA Report, Pg. 12-13)",
+                        "Staff Establishment": "The staff establishment is adequate. Personnel include 1 Estate Manager (Bpk Ismanto Arga), 1 Askep (Rafael Raya), 2 Assistants, and 1 KTU. (PA Report, Pg. 14)",
+                        "General Charges": "Total General Charges reached RM 2,309,158, overspent by an incredible 131%.<br>• <b>MSPO Compliance:</b> Overspent by 5396% for mandatory safety clothing/equipment (unbudgeted).<br>• <b>Water/Electricity:</b> +113% due to allocation from the mill.<br>• <b>Wages:</b> +21% due to unbudgeted hires (mosque/fire watchmen, office boy). (PA Report, Pg. 15-16)",
+                        "Upkeep and Cultivation": "Total maintenance is overspent by 10%.<br>• <b>Weeding:</b> Circle spraying (86% completed) shows low productivity at 3.1 ha/man-day; water is inefficiently sourced from drains. Selective spraying is 98% complete and satisfactory.<br>• <b>Manuring:</b> Only 167 out of 550 rounds (30%) achieved due to priority shifting and fertilizer delivery delays. <br>• <b>Pest & Disease:</b> Rat damage census averages 20% but baiting had not yet commenced. (PA Report, Pg. 18-32)",
+                        "Harvesting and Collection": "Productivity and output require intervention.<br>• <b>Interval:</b> Averaged 14 days (intentionally delayed by Manager to manage drought-induced slow ripening).<br>• <b>Productivity:</b> Harvesters only work an average of 6.6 hours/day. Mechanical in-field evacuation is recommended.<br>• <b>Internal Transport:</b> High cost due to excessive tractor reliance vs contracted trucks. (PA Report, Pg. 38-39)",
+                        "Crop Production": "FY2025/26 (12 Months) FFB Production is 10,630 MT (101% of 10,574 MT budget).<br>• <b>Yield/Ha:</b> 10.62 MT/ha (16% increase YoY).<br>• <b>Extraction:</b> OER at 20.19% vs Budget 21.50%. (PA Report, Pg. 40)",
+                        "Production Cost": "Ex-Estate Cost of Production is RM 572/MT, well over the budget of RM 409/MT.<br>• <b>General Charges:</b> RM 217/MT vs RM 94/MT budget.<br>• <b>Upkeep:</b> RM 274/MT vs RM 249/MT budget.<br>• <b>Harvesting:</b> RM 81/MT vs RM 66/MT budget. (PA Report, Pg. 42)",
+                        "Vehicles Running Cost": "Vehicle running costs were satisfactory and in line with budget allocations across tractors and gensets. (PA Report, Pg. 43)",
+                        "Capital Expenditure": "Underspent. However, road maintenance budgeting errors led to CAPEX items being improperly charged to Upkeep OPEX. (PA Report, Pg. 44)",
+                        "Immature & Nursery": "• <b>Immature:</b> P23/24/25 blocks display clean circles and inter-rows. <br>• <b>Nursery:</b> Well established. Culling rate is 5.4%. Cost to date is RM 6.98/seedling. Fungal infections prevented with weekly Decis/fungicide sprays. (PA Report, Pg. 45-52)"
                     },
                     "agronomy": {
                         "Executive Summary": "Yields remain far below expectations. Primary factors are poor crop recovery and chronic manuring delays. (AR, Pg. 4-6)",
@@ -174,15 +180,24 @@
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' : 
                                        metric.title.includes('Overpayments') ? 'bg-red-50 text-red-800' : 'bg-gray-50 text-gray-800';
                     
-                    if (metric.lines) {
-                        return `<div class="p-4 rounded-lg ${colorClass} shadow-sm border border-opacity-10 border-black"><h3 class="font-semibold text-sm uppercase tracking-wider">${metric.title}</h3>${metric.lines.map(line => `<p class="text-sm font-medium mt-1">${line}</p>`).join('')}</div>`;
+                    if (metric.type === 'chart') {
+                        return `
+                        <div class="p-4 rounded-lg ${colorClass} shadow-sm border border-opacity-10 border-black flex flex-col justify-between">
+                            <h3 class="font-semibold text-sm uppercase tracking-wider mb-2">${metric.title}</h3>
+                            <div class="relative h-32 w-full mt-auto">
+                                <canvas id="${metric.canvasId}"></canvas>
+                            </div>
+                            <p class="text-xs opacity-75 mt-2 text-center">${metric.note}</p>
+                        </div>`;
+                    } else if (metric.lines) {
+                        return `<div class="p-4 rounded-lg ${colorClass} shadow-sm border border-opacity-10 border-black flex flex-col"><h3 class="font-semibold text-sm uppercase tracking-wider mb-2">${metric.title}</h3><div class="flex-grow flex flex-col justify-center">${metric.lines.map(line => `<p class="text-sm font-medium leading-relaxed">${line}</p>`).join('')}</div></div>`;
                     }
-                    return `<div class="p-4 rounded-lg ${colorClass} shadow-sm border border-opacity-10 border-black"><h3 class="font-semibold text-sm uppercase tracking-wider">${metric.title}</h3><p class="text-2xl font-bold mt-1">${metric.value}</p><p class="text-xs opacity-75 mt-1">${metric.note}</p></div>`;
+                    return `<div class="p-4 rounded-lg ${colorClass} shadow-sm border border-opacity-10 border-black flex flex-col"><h3 class="font-semibold text-sm uppercase tracking-wider">${metric.title}</h3><div class="flex-grow flex flex-col justify-center"><p class="text-2xl font-bold mt-1">${metric.value}</p><p class="text-xs opacity-75 mt-1">${metric.note}</p></div></div>`;
                 }).join('');
 
                 const keyMetricsHTML = estate.keyMetrics.map(metric => `
-                    <div class="flex items-center space-x-3 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                        <div class="bg-gray-50 p-2 rounded-lg">${metric.icon}</div>
+                    <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
+                        <div class="bg-gray-200 p-2 rounded-full">${metric.icon}</div>
                         <div><p class="text-xs text-gray-500 uppercase font-semibold">${metric.label}</p><p class="font-bold text-gray-800">${metric.value}</p></div>
                     </div>`).join('');
 
@@ -190,7 +205,7 @@
 
                 return `
                     <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl animate-fade-in border border-gray-100">
-                        <div class="mb-8">
+                        <div class="mb-8 border-b pb-4">
                             <h2 class="text-4xl font-extrabold text-gray-900">${estate.name}</h2>
                             <p class="text-md text-gray-500 mt-2 font-medium flex items-center italic">
                                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -201,16 +216,16 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-10">${summaryMetricsHTML}</div>
 
                         <div class="mb-10">
-                            <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center border-b pb-2">
                                 <span class="w-8 h-8 bg-green-100 text-green-700 rounded-lg flex items-center justify-center mr-3 text-base">📊</span>
                                 Key Metrics & Control Status
                             </h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">${keyMetricsHTML}</div>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">${keyMetricsHTML}</div>
                         </div>
 
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
                             <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
-                                <h3 class="text-lg font-bold mb-4 text-gray-700">FFB Yield Performance (MT/Ha)</h3>
+                                <h3 class="text-lg font-bold mb-4 text-gray-700">Historical FFB Yield (MT/Ha)</h3>
                                 <div class="chart-container"><canvas id="prodChart-${estate.id}"></canvas></div>
                                 <p class="text-xs text-center text-gray-400 mt-4">${estate.chartData.production.note}</p>
                             </div>
@@ -222,7 +237,7 @@
                         </div>
                         
                         <div class="mb-12">
-                            <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center border-b pb-2">
                                 <span class="w-8 h-8 bg-red-100 text-red-700 rounded-lg flex items-center justify-center mr-3 text-base">⚠️</span>
                                 Key Observations & Issues
                             </h3>
@@ -239,41 +254,92 @@
 
                         <div class="space-y-4">
                             <div class="section-group">
-                                <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full flex justify-between items-center bg-red-900 text-white p-5 rounded-xl hover:bg-red-800 transition font-bold shadow-md">
-                                    <span>Internal Audit Report Details (Apr 2026)</span>
-                                    <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                <button data-dropdown-id="${estate.id}-audit" class="dropdown-btn w-full text-left bg-gray-800 text-white p-4 rounded-md hover:bg-gray-700 transition font-bold shadow-md">
+                                    Internal Audit Report Details (Apr 2026)
                                 </button>
-                                <div id="${estate.id}-audit" class="details-content bg-white p-6 rounded-b-xl border-x border-b border-gray-200 shadow-inner"></div>
+                                <div id="${estate.id}-audit" class="details-content bg-gray-50 p-6 rounded-b-xl border border-gray-200 shadow-inner mt-1"></div>
                             </div>
 
                             <div class="section-group">
-                                <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full flex justify-between items-center bg-gray-900 text-white p-5 rounded-xl hover:bg-gray-800 transition font-bold shadow-md">
-                                    <span>Plantation Advisory Report Details</span>
-                                    <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                <button data-dropdown-id="${estate.id}-plantation" class="dropdown-btn w-full text-left bg-gray-800 text-white p-4 rounded-md hover:bg-gray-700 transition font-bold shadow-md">
+                                    Plantation Advisory Report Details
                                 </button>
-                                <div id="${estate.id}-plantation" class="details-content bg-white p-6 rounded-b-xl border-x border-b border-gray-200 shadow-inner"></div>
+                                <div id="${estate.id}-plantation" class="details-content bg-gray-50 p-6 rounded-b-xl border border-gray-200 shadow-inner mt-1"></div>
                             </div>
 
                             <div class="section-group">
-                                <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full flex justify-between items-center bg-gray-900 text-white p-5 rounded-xl hover:bg-gray-800 transition font-bold shadow-md">
-                                    <span>Agronomy Report Details</span>
-                                    <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                <button data-dropdown-id="${estate.id}-agronomy" class="dropdown-btn w-full text-left bg-gray-800 text-white p-4 rounded-md hover:bg-gray-700 transition font-bold shadow-md">
+                                    Agronomy Report Details
                                 </button>
-                                <div id="${estate.id}-agronomy" class="details-content bg-white p-6 rounded-b-xl border-x border-b border-gray-200 shadow-inner"></div>
+                                <div id="${estate.id}-agronomy" class="details-content bg-gray-50 p-6 rounded-b-xl border border-gray-200 shadow-inner mt-1"></div>
                             </div>
 
                             <div class="section-group">
-                                <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full flex justify-between items-center bg-gray-900 text-white p-5 rounded-xl hover:bg-gray-800 transition font-bold shadow-md">
-                                    <span>Pinfosys Report Details</span>
-                                    <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                <button data-dropdown-id="${estate.id}-pinfosys" class="dropdown-btn w-full text-left bg-gray-800 text-white p-4 rounded-md hover:bg-gray-700 transition font-bold shadow-md">
+                                    Pinfosys Report Details
                                 </button>
-                                <div id="${estate.id}-pinfosys" class="details-content bg-white p-6 rounded-b-xl border-x border-b border-gray-200 shadow-inner"></div>
+                                <div id="${estate.id}-pinfosys" class="details-content bg-gray-50 p-6 rounded-b-xl border border-gray-200 shadow-inner mt-1"></div>
                             </div>
                         </div>
                     </div>`;
             }
 
             function initializeCharts() {
+                // Initialize Mini Yield Chart
+                if (estateData.summaryMetrics.yield && estateData.summaryMetrics.yield.type === 'chart') {
+                    const miniCtx = document.getElementById(estateData.summaryMetrics.yield.canvasId)?.getContext('2d');
+                    if (miniCtx) {
+                        chartInstances['miniYield'] = new Chart(miniCtx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['FY 24/25', 'FY 25/26'],
+                                datasets: [
+                                    {
+                                        label: 'Actual',
+                                        data: [9.14, 10.62],
+                                        backgroundColor: '#16a34a',
+                                        borderRadius: 4,
+                                        barPercentage: 0.7,
+                                        categoryPercentage: 0.8
+                                    },
+                                    {
+                                        label: 'Budget',
+                                        data: [13.00, 10.57],
+                                        backgroundColor: '#94a3b8',
+                                        borderRadius: 4,
+                                        barPercentage: 0.7,
+                                        categoryPercentage: 0.8
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        position: 'bottom',
+                                        labels: { boxWidth: 10, padding: 5, font: { size: 10 } }
+                                    },
+                                    datalabels: {
+                                        anchor: 'end',
+                                        align: 'top',
+                                        color: '#475569',
+                                        font: { weight: 'bold', size: 10 },
+                                        formatter: (val) => val.toFixed(2)
+                                    },
+                                    tooltip: { enabled: true }
+                                },
+                                scales: {
+                                    x: { grid: { display: false }, border: { display: false }, ticks: { font: { size: 10 } } },
+                                    y: { display: false, beginAtZero: true, max: 15 } // Give headroom for labels
+                                },
+                                layout: { padding: { top: 20 } }
+                            }
+                        });
+                    }
+                }
+
                 const prodCtx = document.getElementById(`prodChart-${estateData.id}`)?.getContext('2d');
                 if(prodCtx) {
                     chartInstances[`prodChart-${estateData.id}`] = new Chart(prodCtx, {
@@ -282,7 +348,15 @@
                             labels: estateData.chartData.production.labels,
                             datasets: [{ label: 'FFB Yield (MT/Ha)', data: estateData.chartData.production.ffb, backgroundColor: '#16a34a', borderRadius: 6 }]
                         },
-                        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, title: { display: true, text: 'MT/Ha' } } } }
+                        options: { 
+                            responsive: true, 
+                            maintainAspectRatio: false, 
+                            plugins: { 
+                                legend: { display: false },
+                                datalabels: { display: false } // Disable datalabels for main chart
+                            }, 
+                            scales: { y: { beginAtZero: true, title: { display: true, text: 'MT/Ha' } } } 
+                        }
                     });
                 }
 
@@ -294,7 +368,14 @@
                             labels: estateData.chartData.ageProfile.labels,
                             datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#047857', '#34d399', '#a7f3d0'], hoverOffset: 10 }]
                         },
-                        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 15 } } } }
+                        options: { 
+                            responsive: true, 
+                            maintainAspectRatio: false, 
+                            plugins: { 
+                                legend: { position: 'bottom', labels: { boxWidth: 12, padding: 15 } },
+                                datalabels: { display: false } // Disable datalabels for main chart
+                            } 
+                        }
                     });
                 }
             }
@@ -308,21 +389,21 @@
                 if (auditDiv && estateData.reports.audit) {
                     auditDiv.innerHTML = Object.entries(estateData.reports.audit).map(([section, content]) => `
                         <div class="mb-4 last:mb-0">
-                            <h4 class="font-bold text-gray-800 border-b border-gray-100 pb-1 mb-2 font-['Inter']">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4>
+                            <h4 class="font-bold text-gray-800 pb-1 mb-1 font-['Inter']">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4>
                             <p class="text-sm text-gray-600 leading-relaxed font-['Inter']">${content}</p>
                         </div>`).join('');
                 }
                 if (agronomyDiv && estateData.reports.agronomy) {
                     agronomyDiv.innerHTML = Object.entries(estateData.reports.agronomy).map(([section, content]) => `
                         <div class="mb-4 last:mb-0">
-                            <h4 class="font-bold text-gray-800 border-b border-gray-100 pb-1 mb-2 font-['Inter']">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4>
+                            <h4 class="font-bold text-gray-800 pb-1 mb-1 font-['Inter']">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4>
                             <p class="text-sm text-gray-600 leading-relaxed font-['Inter']">${content}</p>
                         </div>`).join('');
                 }
                 if (plantationDiv && estateData.reports.plantation) {
                     plantationDiv.innerHTML = Object.entries(estateData.reports.plantation).map(([section, content]) => `
                         <div class="mb-4 last:mb-0">
-                            <h4 class="font-bold text-gray-800 border-b border-gray-100 pb-1 mb-2 font-['Inter']">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4>
+                            <h4 class="font-bold text-gray-800 pb-1 mb-1 font-['Inter']">${section.replace(/([A-Z])/g, ' $1').trim()}:</h4>
                             <p class="text-sm text-gray-600 leading-relaxed font-['Inter']">${content}</p>
                         </div>`).join('');
                 }
@@ -338,8 +419,6 @@
                         const content = document.getElementById(id);
                         const isActive = content.classList.toggle('active');
                         event.currentTarget.classList.toggle('active', isActive);
-                        const svg = event.currentTarget.querySelector('svg');
-                        svg.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
                     });
                 });
                 container.querySelector('.policy-modal-btn')?.addEventListener('click', () => openPolicyModal(estateData));
