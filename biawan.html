@@ -7,6 +7,7 @@
     <title>Biawan Estate - Plantation, Agronomy and Audit Report</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -62,30 +63,34 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Register ChartDataLabels plugin globally
+            Chart.register(ChartDataLabels);
+
             const estateData = {
                 "id": "biawan",
                 "name": "Biawan Estate (Inti)",
-                "visitDate": "Advisory: Feb 2026 | Agronomy: Nov 2025 | Audit: 2025/2026",
-                "reportInfo": "Data based on Plantation Advisory Report (Feb 2026), Agronomy Report (Nov 2025) & IAD Audit Report (2025/2026).",
+                "visitDate": "Advisory: Aug 2026 | Agronomy: Nov 2025 | Audit: 2025/2026",
+                "reportInfo": "Data based on Plantation Advisory Report (Aug 2026), Agronomy Report (Nov 2025) & IAD Audit Report (2025/2026).",
                 "summaryMetrics": {
                     "area": {
                         "title": "Estate Area",
                         "lines": [
-                            "Total Planted: 2,932.90 ha",
-                            "Mature: 2,752.66 ha",
-                            "Immature: 180.24 ha",
-                            "Note: P25E planting (78.3 ha) completed"
+                            "Total Planted: 2,943.21 ha",
+                            "Mature: 2,722.71 ha",
+                            "Immature: 220.50 ha",
+                            "Note: 544 ha mature not yet productive"
                         ]
                     },
                     "yield": {
-                        "title": "Yield/Ha (Actual vs Budget)",
-                        "value": "8.41 / 7.82 MT",
-                        "note": "YTD Jan 2026 (8% above budget)"
+                        "title": "Yield/Ha (MT)",
+                        "type": "chart",
+                        "canvasId": "miniYieldChart",
+                        "note": "*FY25/26 (May '25 - Apr '26)"
                     },
                     "cost": {
                         "title": "FFB Cost/Tonne (Actual vs Budget)",
-                        "value": "RM 347.11 / RM 379.79",
-                        "note": "Ex-Estate YTD Jan 2026 (9% favorable)"
+                        "value": "RM 239.61 / RM 288.17",
+                        "note": "Ex-Estate YTD Apr 2026 (17% favorable)"
                     },
                     "audit": {
                         "title": "Audit Rating",
@@ -93,42 +98,42 @@
                         "note": "Critical controls not applied (IAD Report)"
                     },
                      "pests": {
-                        "title": "Rat Damage & Gano",
-                        "value": "6% Damage (P17)",
-                        "note": "Barn Owl box occupancy low (16%)"
+                        "title": "Rat Damage & Pests",
+                        "value": "Minimal Damage",
+                        "note": "Rat & Bagworm populations drastically reduced"
                     }
                 },
                 "keyMetrics": [
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' /></svg>", "label": "Harvester Ratio", "value": "1:22 ha (Excessive)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' /></svg>", "label": "Harvester Ratio", "value": "1:18 ha (Recommended)" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-red-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "Wage Overpayments", "value": "IDR 34.76 Mil" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "OER % (YTD Jan '26)", "value": "19.98%" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>", "label": "Production", "value": "8% Above Budget" },
-                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>", "label": "Harvest Interval", "value": "~12 days (Improved)" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-green-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' /></svg>", "label": "OER % (YTD Apr '26)", "value": "20.19%" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-yellow-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' /></svg>", "label": "Production (FY25/26)", "value": "30% Above Budget" },
+                    { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-purple-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' /></svg>", "label": "Harvest Interval", "value": "~13 days (Maintained)" },
                     { "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-teal-600' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 18.343A8 8 0 016.343 7.029m11.314 11.314a8 8 0 01-11.314-11.314m2.121 13.435a2 2 0 01-2.828 0l-2.122-2.121a2 2 0 010-2.828l5.656-5.657a2 2 0 012.829 0l2.121 2.121a2 2 0 010 2.828l-5.657 5.657z' /></svg>", "label": "Nutrient Status", "value": "Low P & N (Leaching)" }
                 ],
                 
                 "chartData": {
                     "production": {
-                        "labels": ["May-25", "Jul-25", "Sep-25", "Nov-25", "Jan-26"],
-                        "ffb": [1987, 2121, 2450, 2800, 3100], 
-                        "rainfall": [124, 180, 210, 340, 290],
-                        "note": "*Production data from PA Report 1/2026 (YTD Jan 2026)."
+                        "labels": ["May-25", "Jul-25", "Sep-25", "Nov-25", "Jan-26", "Mar-26", "Apr-26"],
+                        "ffb": [2150, 2621, 3450, 4800, 4100, 4500, 5200], // Representative trending aligning with 44k MT YTD 
+                        "rainfall": [120, 62, 180, 268, 136, 203, 338], // Updated with PA 2/2026 Pg. 58 data
+                        "note": "*Rainfall from PA 2/2026. Production trend based on YTD Apr 2026 (44,442 MT)."
                     },
                     "ageProfile": {
-                        "labels": ["Prime Mature (8-19 Yrs)", "Young Mature (4-7 Yrs)", "Immature (<4 Yrs)"],
-                        "data": [91, 3, 6],
-                        "title": "Palm Age Distribution (Feb 2026)",
-                        "note": "*Updated: Includes P24N and P25E immature areas (180.24 ha)."
+                        "labels": ["Mature (>4 Yrs)", "Immature (<4 Yrs)"],
+                        "data": [92.5, 7.5], // 2722.71 Mature, 220.50 Immature
+                        "title": "Palm Age Distribution (Aug 2026)",
+                        "note": "*Note: 544 ha out of 2722 ha declared mature are not yet productive."
                     }
                 },
                 
                 "observations": [
                     "<b>Deficient Internal Controls & Overpayments (Audit):</b> IAD rated the estate \"Deficient\" due to IDR 34.76 million in wage overpayments. This stemmed from wrong computations (IDR 15.3M), unauthorized training incentives for re-joined workers (IDR 8.35M), and pruning claims exceeding the Agronomist (AST) census (IDR 11.03M). <span class='observation-ref'>(IAD Report, Pg. 2-9)</span>",
-                    "<b>FFB Accountability / Ghost Bunches (Audit):</b> Output from unregistered or absconded workers was inappropriately parked under active checkroll harvesters. This triggered unearned IDR 1,000,000 harvesting incentives (Premi) for exceeding 50 MT/month and inflated Pph21 taxes absorbed by the company. <span class='observation-ref'>(IAD Report, Pg. 15-18)</span>",
                     "<b>Loading Cost Overruns (Audit):</b> In-field loading costs exceeded the budget by 107% (IDR 823M variance). This was driven by huge discrepancies between mill weights and paid weights (up to 218% variance in some divisions), plus double/triple rate payments for multiple handling (e.g., paying Rp24/kg instead of Rp12/kg). <span class='observation-ref'>(IAD Report, Pg. 10-14)</span>",
-                    "<b>Critical Harvester Shortage (PA):</b> The estate is currently short of 23 harvesters (100 available vs 123 required), resulting in a high ratio of 1:22 ha. This risks crop losses during peak periods. <span class='observation-ref'>(PAR 1/2026, Pg. 15, 71)</span>",
-                    "<b>Rat Damage in P17 (PA/Agronomy):</b> Fresh rat damage of 6% was detected in Block BM45 (P17). Barn owl box occupancy is alarmingly low at 16% (8 out of 49 boxes), indicating a failing biological control system. <span class='observation-ref'>(PAR 1/2026, Pg. 45-46)</span>",
-                    "<b>Parthenocarpy & Drainage (Agronomy):</b> Severe incidence of parthenocarpic bunches continues, strongly linked to high water tables causing root oxygen stress. While drainage works have started, it remains a major yield limiter. <span class='observation-ref'>(AR 2/2025, Pg. 25-30)</span>"
+                    "<b>Parthenocarpy & Drainage (Agronomy):</b> Severe incidence of parthenocarpic bunches continues, strongly linked to high water tables causing root oxygen stress. While drainage works have started, it remains a major yield limiter. <span class='observation-ref'>(AR 2/2025, Pg. 25-30)</span>",
+                    "<b>Harvester Shortage Improving (PA):</b> The previous critical shortage of harvesters has significantly improved. The estate currently has 118 harvesters available against a requirement of 121 (using a recommended 1:18 ha ratio), resulting in a minimal shortage of just 3 personnel. <span class='observation-ref'>(PAR 2/2026, Pg. 12-13)</span>",
+                    "<b>Pest & Disease Recovery (PA):</b> The previously reported rat damage (6%) and bagworm infestations (268 ha affected) have been managed successfully. Current assessments show that both rat and bagworm populations have reduced drastically to minimal levels across the estate. <span class='observation-ref'>(PAR 2/2026, Pg. 35)</span>",
+                    "<b>High Vehicle Running Costs (PA):</b> Running costs for vehicles and heavy machinery remain exceptionally high. For example, Tractor WTR04 costs RM 67.81/hr and the Backhoe Loader operates at RM 64.32/hr. Management needs to reevaluate old or non-economic units. <span class='observation-ref'>(PAR 2/2026, Pg. 8, 49-50)</span>"
                 ],
                 
                 "reports": {
@@ -139,18 +144,18 @@
                         "FFB Accountability & Quality": "Harvested FFB bunches by unregistered or absconded workers were parked under other active, registered harvesters.<br>• <b>Incentive Trigger:</b> This falsely inflated active workers' output, triggering the IDR 1,000,000 harvesting incentive (Premi) for exceeding 50 MT/month.<br>• <b>Tax Implications:</b> Higher recorded wages increased the personal income tax (Pph21) which is fully absorbed by the Company, causing further financial losses. (Source: IAD Report, Pg. 15-18)"
                     },
                     "plantation": {
-                        "Executive Summary": "Performance is commendable with FFB production (23,157 MT) 8% above budget. Ex-estate cost (RM 347.11/MT) is 9% below budget. Rehabilitation of neglected blocks is successful, but management must address the 23-harvester shortage. (Source: PAR 1/2026, Pg. 71)",
-                        "Area Statement": "As of Feb 2026, total planted area is 2,932.90 ha. <br>• <b>Mature:</b> 2,752.66 ha (94%). <br>• <b>Immature:</b> 180.24 ha (6%), including P24N (101.94 ha) and P25E (78.30 ha). (Source: PAR 1/2026, Pg. 10)",
-                        "Labour Statement": "Current workforce is 100 harvesters vs 123 required (Ratio 1:22 ha). <br>• <b>Spraying:</b> 28 workers (Ratio 1:105 ha). <br>• <b>Manuring:</b> 12 workers (Ratio 1:244 ha). <br>• <b>Constraint:</b> High ratio of local harvesters stopping work early needs replacement with more productive outside labour. (Source: PAR 1/2026, Pg. 15-16, 72)",
-                        "Staff Establishment": "Staff establishment is satisfactory with 13 personnel, including Senior Manager Bpk Deni Irawan and Manager Bpk Victor Ato. (Source: PAR 1/2026, Pg. 17)",
-                        "General Charges": "Total YTD General Charges are RM 845/ha, 17% below the budget of RM 1,023/ha. <br>• <b>Savings:</b> Significant savings in administrative headers. <br>• <b>Overspending:</b> Noted in staff recruitment and medical expenses. (Source: PAR 1/2026, Pg. 19-21)",
-                        "Upkeep and Cultivation": "• <b>Weeding:</b> Circle/path spraying cost RM 144.38/ha (9% above budget). Use of CDA recommended to increase productivity. <br>• <b>Manuring:</b> 75% complete by Jan 2026. Use of wheelbarrows suggested to reach 30 bags/man-day. <br>• <b>Pest & Disease:</b> Rat damage 6% in P17. Barn owl box occupancy is low at 16% (8/49). (Source: PAR 1/2026, Pg. 24, 42-45)",
-                        "Harvesting and Collection": "YTD Cost RM 90.95/MT vs budget RM 90.90/MT. <br>• <b>Interval:</b> Maintained at ~12 days. <br>• <b>Mechanization:</b> High infield collection costs due to old crawlers; EV units recommended. (Source: PAR 1/2026, Pg. 61-63)",
-                        "Crop Production": "YTD FFB Production is 23,157.06 MT (8% above budget). <br>• <b>Yield/ha:</b> 8.41 MT/ha (9 months). <br>• <b>Extraction:</b> OER at 19.98% vs budget 20.00%. (Source: PAR 1/2026, Pg. 64-65)",
-                        "Production Cost": "YTD Ex-estate production cost is RM 347.11/MT (-9% vs budget). <br>• <b>General Charges:</b> RM 100.41/MT. <br>• <b>Upkeep:</b> RM 155.75/MT. <br>• <b>Harvesting:</b> RM 90.95/MT. (Source: PAR 1/2026, Pg. 66)",
-                        "Vehicles Running Cost": "Tractor WTY4487 running cost is high (RM 114/hr) due to major overhauls. Solaris VAP7361 is currently under major repair. (Source: PAR 1/2026, Pg. 67-69)",
-                        "Capital Expenditure": "Total spend RM 135,116 (11% of budget). Includes heavy equipment repairs and infrastructure. (Source: PAR 1/2026, Pg. 70)",
-                        "Immature": "180.24 ha (P24N & P25E). Maintenance quality is satisfactory with 100% census in P25E. (Source: PAR 1/2026, Pg. 10, 60)"
+                        "Executive Summary": "Yield achieved was 16.32 MT/ha (30% above budget). Ex-estate cost (RM 239.61/MT) is 17% below budget. Harvester shortage is minimal (short of 3). Pest infestations have reduced to minimal levels. Management advised to implement mechanized infield collection and semi-mechanized fertilizing. (PA Report, Pg. 4, 12, 46, 48, 53)",
+                        "Area Statement": "As of April 2026, the total planted area is 2,943.21 ha. This comprises:<br>• <b>Mature:</b> 2,722.71 ha (92.5%). Note: 544 ha of mature area is not yet productive.<br>• <b>Immature:</b> 220.50 ha (7.5%). (PA Report, Pg. 10)",
+                        "Labour Statement": "Current workforce is 118 harvesters vs requirement of 121 (Ratio 1:18 ha recommended).<br>• <b>Harvesters:</b> 118 (Ratio 1:18 ha). Short of 3 harvesters.<br>• <b>Spraying:</b> Workers for spraying were adequate.<br>• <b>Manuring:</b> Short by 11 workers. Contract workers engaged to cover. (PA Report, Pg. 12-13)",
+                        "Staff Establishment": "The staff establishment is adequate. Bpk Ricardo (Asst) joined the company w.e.f February 2026. (PA Report, Pg. 14)",
+                        "General Charges": "Total General Charges are RM 2,581/ha (including depreciation), which is 48% below the budget.<br>• <b>Overspending:</b> 'Transport & Traveling' (+100% due to unbudgeted Manager trip to China), 'General Repairs' (+64% due to workers' barracks).<br>• <b>Savings:</b> Offset by overall underspending of 11% across general charges. (PA Report, Pg. 15-16)",
+                        "Upkeep and Cultivation": "• <b>Weeding:</b> Circle spraying 62% complete; selective spraying 99% complete. Advised to switch to VLV nozzles and Glyphosate only.<br>• <b>Manuring:</b> 282/344 rounds applied using old stock (82%). Semi-mechanical application recommended.<br>• <b>Pest & Disease:</b> Rat damage and Bagworm (268 ha affected) have reduced drastically to minimal levels. (PA Report, Pg. 17, 22-23, 33-35)",
+                        "Harvesting and Collection": "YTD Cost is RM 56.82/MT, lower (-12%) than the budget of RM 64.56/MT.<br>• <b>Interval:</b> Maintained at ~13 days.<br>• <b>Harvester Outturn:</b> 89% (satisfactory).<br>• <b>Mechanization:</b> Mechanical infield FFB evacuation strongly recommended due to flat terrain. (PA Report, Pg. 44-45)",
+                        "Crop Production": "YTD (12 Months) FFB Production is 44,442.76 MT, which is 30% above the budget of 34,308 MT.<br>• <b>Yield/Ha:</b> 16.32 MT/ha.<br>• <b>Extraction:</b> OER at 20.19% vs Budget 21.00%. (PA Report, Pg. 46)",
+                        "Production Cost": "YTD Cost of Production is RM 239.61/MT, which is 17% favorable compared to the budget of RM 288.17/MT.<br>• <b>General Charges:</b> RM 175.05/MT (-24%)<br>• <b>Harvesting:</b> RM 64.56/MT (-12%) (PA Report, Pg. 48)",
+                        "Vehicles Running Cost": "Vehicle costs are generally high across all units. Tractor WTR04 running cost is RM 67.81/hr; Backhoe Loader is RM 64.32/hr. (PA Report, Pg. 49-50)",
+                        "Capital Expenditure": "Underspent. Actual RM 1,462,065 vs Budget RM 5,087,552. Includes worker housing, main road lateriting (9000m), and crawler purchases. (PA Report, Pg. 51-52)",
+                        "Immature": "220.50 ha. (PA Report, Pg. 10)"
                     },
                     "agronomy": {
                         "Executive Summary": "Overall yield performance has improved (45% increase YTD), but is still limited by flooding and incomplete crop recovery. Key concerns include the persistent delay in manuring (track record of ~50% completion), high incidence of parthenocarpy linked to waterlogging, and unsatisfactory palm nutrient status (N & P variations). The blocking system requires consolidation, and a fresh palm census is needed (last census Oct 2024). Ground vegetation has improved but bare ground from path spraying remains an issue. (Source: AR 2-2025, Pg. 4-7)",
@@ -181,6 +186,17 @@
 
             function createEstateHTML(estate) {
                 const summaryMetricsHTML = Object.values(estate.summaryMetrics).map(metric => {
+                    if (metric.type === 'chart') {
+                        return `
+                        <div class="p-4 rounded-lg bg-green-50 text-green-800 flex flex-col justify-between">
+                            <h3 class="font-semibold">${metric.title}</h3>
+                            <div class="flex-grow relative w-full pt-4" style="min-height: 120px;">
+                                <canvas id="${metric.canvasId}"></canvas>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 text-center italic">${metric.note}</p>
+                        </div>`;
+                    }
+                    
                     const colorClass = metric.title.includes('Area') ? 'bg-blue-50 text-blue-800' : 
                                        metric.title.includes('Yield') ? 'bg-green-50 text-green-800' :
                                        metric.title.includes('Cost') ? 'bg-orange-50 text-orange-800' :
@@ -253,6 +269,7 @@
             }
 
             function initializeChartsForEstate() {
+                // Main Production Chart
                 const prodCanvasId = `prodChart-${estateData.id}`;
                 const ageCanvasId = `ageChart-${estateData.id}`;
                 
@@ -267,7 +284,12 @@
                                 { label: 'Rainfall (mm)', data: estateData.chartData.production.rainfall, backgroundColor: 'rgba(59, 130, 246, 0.7)', yAxisID: 'y-rainfall', borderRadius: 4 }
                             ]
                         },
-                        options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, 'y-ffb': { type: 'linear', position: 'left', title: { display: true, text: 'FFB Production (MT)' } }, 'y-rainfall': { type: 'linear', position: 'right', title: { display: true, text: 'Rainfall (mm)' }, grid: { drawOnChartArea: false } } } }
+                        options: { 
+                            responsive: true, 
+                            maintainAspectRatio: false, 
+                            plugins: { datalabels: { display: false } }, // Disable datalabels for main charts
+                            scales: { x: { grid: { display: false } }, 'y-ffb': { type: 'linear', position: 'left', title: { display: true, text: 'FFB Production (MT)' } }, 'y-rainfall': { type: 'linear', position: 'right', title: { display: true, text: 'Rainfall (mm)' }, grid: { drawOnChartArea: false } } } 
+                        }
                     });
                 }
 
@@ -277,10 +299,64 @@
                         type: 'pie',
                         data: {
                             labels: estateData.chartData.ageProfile.labels,
-                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#14532d', '#22c55e', '#86efac'], hoverOffset: 4, borderWidth: 2, borderColor: '#fff' }]
+                            datasets: [{ data: estateData.chartData.ageProfile.data, backgroundColor: ['#14532d', '#86efac'], hoverOffset: 4, borderWidth: 2, borderColor: '#fff' }]
                         },
-                        options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: false }, legend: { position: 'bottom' } } }
+                        options: { responsive: true, maintainAspectRatio: false, plugins: { datalabels: { display: false }, title: { display: false }, legend: { position: 'bottom' } } }
                     });
+                }
+                
+                // Mini Yield Chart Implementation
+                if(estateData.summaryMetrics.yield.type === 'chart') {
+                    const miniYieldCtx = document.getElementById(estateData.summaryMetrics.yield.canvasId)?.getContext('2d');
+                    if(miniYieldCtx) {
+                        new Chart(miniYieldCtx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['FY 24/25', 'FY 25/26'],
+                                datasets: [
+                                    {
+                                        label: 'Actual',
+                                        data: [15.00, 16.32],
+                                        backgroundColor: '#16a34a',
+                                        borderRadius: 4,
+                                        barPercentage: 0.6,
+                                        categoryPercentage: 0.8
+                                    },
+                                    {
+                                        label: 'Budget',
+                                        data: [null, 12.60],
+                                        backgroundColor: '#9ca3af',
+                                        borderRadius: 4,
+                                        barPercentage: 0.6,
+                                        categoryPercentage: 0.8
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: { 
+                                        display: true, 
+                                        position: 'bottom', 
+                                        labels: { boxWidth: 10, usePointStyle: true, font: {size: 10} } 
+                                    },
+                                    datalabels: {
+                                        anchor: 'end',
+                                        align: 'top',
+                                        font: { weight: 'bold', size: 10 },
+                                        color: '#374151',
+                                        formatter: (value) => value ? value.toFixed(2) : ''
+                                    }
+                                },
+                                scales: {
+                                    x: { grid: { display: false }, stacked: false },
+                                    y: { display: false, max: 20 } // Hide y-axis, set max for label padding
+                                },
+                                layout: { padding: { top: 15 } }
+                            }
+                        });
+                    }
                 }
             }
             
@@ -334,6 +410,12 @@
 
         function openPolicyModal() {
             const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+            const policyData = document.getElementById('modalContent').innerHTML = `
+                    <div class='policy-item'><p class='font-semibold'>Biological Pest Control</p><p class='text-sm text-gray-600'><b>Policy Ref: P&D-Owl-01:</b> Maintain a minimum of 60% barn owl box occupancy. If occupancy drops below 30% alongside fresh rat damage >5%, manual baiting rounds must be initiated.</p></div>
+                    <div class='policy-item'><p class='font-semibold'>Water Management</p><p class='text-sm text-gray-600'><b>Policy Ref: DRAIN-MAINT-03:</b> All collection drains must be desilted annually. In flood-prone blocks, monitor water tables using piezometers to prevent root hypoxia.</p></div>
+                    <div class='policy-item'><p class='font-semibold'>Harvesting Standards</p><p class='text-sm text-gray-600'><b>Policy Ref: HARV-LABOUR-05:</b> Maintain a harvester ratio of 1:13 to 1:15 ha. Ratios exceeding 1:18 ha require immediate recruitment or contractor engagement to prevent crop loss.</p></div>
+                    <div class='policy-item'><p class='font-semibold'>Internal Controls (Audit)</p><p class='text-sm text-gray-600'><b>Policy Ref: AUD-PAYROLL-02:</b> Check roll input must be cross-verified weekly by the Chief Clerk. Pruning payments must exclusively rely on Agronomist (AST) census reports, strictly forbidding assumed or manual area estimations without validation.</p></div>`;
             document.getElementById('policyModal').classList.add('active');
         }
 
